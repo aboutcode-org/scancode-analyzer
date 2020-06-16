@@ -1,0 +1,9 @@
+.idea/
+.ipynb_checkpoints/
+**hdf5/
+**.h5
+src/notebooks/junk*
+src/results_analyze/__init__.py
+src/results_analyze/__pycache__/
+src/notebooks/dask-worker-space/
+src/results_analyze/data/credentials.json
