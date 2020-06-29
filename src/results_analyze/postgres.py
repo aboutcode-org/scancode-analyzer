@@ -51,13 +51,13 @@ class PostgresFetch:
         file_path = os.path.join(self.data_dir, 'credentials.json')
         return file_path
 
-    def import_database_credentials(self):
+    @staticmethod
+    def import_data_from_json(file_path):
         """
         Fetch postgres Database credentials.
 
         :returns credentials: JSON dict with credentials
         """
-        file_path = self.get_credentials_filepath()
 
         with open(file_path) as f:
             credentials = json.load(f)
@@ -91,7 +91,8 @@ class PostgresFetch:
         :returns connection: psycopg2.connection Object
         """
         # Fetch credentials from data/credentials.json
-        credentials = self.import_database_credentials()
+        file_path = self.get_credentials_filepath()
+        credentials = self.import_data_from_json(file_path)
 
         # Initialize Connection Object
         connection = psycopg2.connect(user=credentials['user'],

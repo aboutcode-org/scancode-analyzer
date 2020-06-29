@@ -50,6 +50,8 @@ class ResultsDataFramePackage:
         self.results_file = ResultsDataFrameFile()
         self.metadata_filename = 'projects_metadata.h5'
         self.hdf_dir = os.path.join(os.path.dirname(__file__), 'data/hdf5/')
+        self.json_input_dir = os.path.join(os.path.dirname(__file__), 'data/json-scan-results/')
+        self.mock_metadata_filename = 'sample_metadata.json'
 
     @staticmethod
     def get_hdf5_file_path(hdf_dir, filename):
@@ -117,6 +119,29 @@ class ResultsDataFramePackage:
         else:
             self.store_dataframe_to_hdf5(metadata_dataframe, file_path, df_key='metadata',
                                          h5_format='Table', is_append=True)
+
+    @staticmethod
+    def mock_db_data_from_json(json_filepath, metadata_filepath):
+        """
+        Takes Input from a File containing Scancode Scan Results, and returns a DataFrame is the same
+        format as that of the DataBase Data.
+
+        :param json_filepath: String
+        :param metadata_filepath: String
+
+        :return json_df: pd.Dataframe
+            Returns a DataFrame with two columns "path" and "json_content". And one row of Data.
+        """
+
+        json_dict_content = PostgresFetch.import_data_from_json(json_filepath)
+        json_dict_metadata = PostgresFetch.import_data_from_json(metadata_filepath)
+
+        json_dict = pd.Series([{"_metadata": json_dict_metadata, "content": json_dict_content}])
+        mock_path = pd.Series(["mock/data/-/multiple-packages/random/1.0.0/tool/scancode/3.2.2.json"])
+
+        json_df = pd.DataFrame({"path": mock_path, "json_content": json_dict})
+
+        return json_df
 
     @staticmethod
     def decompress_dataframe(compressed_dataframe):
@@ -264,16 +289,24 @@ class ResultsDataFramePackage:
 
         return files_dataframe, metadata_dataframe
 
-    def create_package_level_dataframe(self):
+    def create_package_level_dataframe(self, json_filename=None):
         """
         Creates a Package Level DataFrame, with File/License Information Levels.
+
+        :param json_filename : String
+            Optional Parameter, if Passed, Takes input from a JSON File instead of a Postgres Database
 
         :returns main_dataframe : df.DataFrame object
             Main Storage DataFrame
             Has Project, File and License level information organized via pd.MultiIndex.
         """
         # Loads Dataframes
-        path_json_dataframe = self.convert_records_to_json()
+        if json_filename:
+            json_filepath = os.path.join(self.json_input_dir, json_filename)
+            mock_metadata_filepath = os.path.join(self.json_input_dir, self.mock_metadata_filename)
+            path_json_dataframe = self.mock_db_data_from_json(json_filepath, mock_metadata_filepath)
+        else:
+            path_json_dataframe = self.convert_records_to_json()
 
         # ToDo: Assert Scancode Options
 
