@@ -92,6 +92,9 @@ class ResultsDataFrameFile:
         # makes sha1 column as the file level Index [Primary Key].
         lic_level_dataframe.set_index('sha1', inplace=True)
 
+        # Remove "licenses" column, as the data from it is already added
+        file_level_dataframe.drop(columns=["licenses"], inplace=True)
+
         merged_df = file_level_dataframe.join(lic_level_dataframe, lsuffix='_file', rsuffix='_lic')
         merged_df.reset_index(inplace=True)
 

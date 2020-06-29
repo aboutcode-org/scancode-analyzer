@@ -41,12 +41,15 @@ HDF5_STORE_FORMAT = 'table'
 
 class ResultsDataFramePackage:
 
-    def __init__(self):
+    def __init__(self, has_database=True):
         """
         Constructor for ResultsDataFramePackage, initialized PostgresFetch and ResultsDataFrameFile objects,
         and data paths and filenames used.
         """
-        self.postgres = PostgresFetch()
+
+        if has_database:
+            self.postgres = PostgresFetch()
+
         self.results_file = ResultsDataFrameFile()
         self.metadata_filename = 'projects_metadata.h5'
         self.hdf_dir = os.path.join(os.path.dirname(__file__), 'data/hdf5/')
@@ -110,6 +113,9 @@ class ResultsDataFramePackage:
         :param metadata_dataframe : pd.Dataframe
             The metadata DataFrame which has to be appended
         """
+
+        if not os.path.exists(self.hdf_dir):
+            os.makedirs(self.hdf_dir)
 
         file_path = os.path.join(self.get_hdf5_file_path(self.hdf_dir, self.metadata_filename))
 
