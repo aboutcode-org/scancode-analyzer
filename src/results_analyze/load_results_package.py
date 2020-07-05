@@ -27,6 +27,7 @@ import os
 import gzip
 import json
 import pandas as pd
+import numpy as np
 
 from results_analyze.postgres import PostgresFetch
 from results_analyze.load_results_file import ResultsDataFrameFile
@@ -265,6 +266,54 @@ class ResultsDataFramePackage:
         # Drop String DateTime Column
         dataframe.drop(columns=[old_col], inplace=True)
 
+    def save_schema_num(self, schema_series):
+        """
+        This function takes a Series containing schema counts, and appends it to schema DataFrame and saves on disk.
+
+        :param schema_series : pd.Series
+        """
+        schema_df = pd.DataFrame(schema_series)
+
+        file_path = os.path.join(self.get_hdf5_file_path(self.hdf_dir, self.metadata_filename))
+        self.store_dataframe_to_hdf5(schema_df, file_path, df_key='schema', h5_format='table', is_append=True)
+
+    def assert_dataframe_schema(self, path_json_dataframe):
+        """
+        This function takes a DataFrame containing columns 'path' and 'json_content', extracts info from path.
+        uses schema info to only keep schemaVersion 3.2.2, and saves the schema count which are deleted.
+
+        :param path_json_dataframe : pd.DatFrame
+        """
+
+        # Splits the contents of 'path' column and adds another column 'list_split' containing lists
+        path_json_dataframe['list_split'] = path_json_dataframe['path'].str.split(pat="/")
+
+        # Convert these lists (each having 9 values) into DataFrame Columns named 0-8
+        split_df = pd.DataFrame.from_dict(
+            dict(zip(path_json_dataframe['list_split'].index, path_json_dataframe['list_split'].values))).T
+
+        # Give the path-split columns appropriate names
+        split_df.columns = pd.Index(['pkg_source_1', 'pkg_source_2', 'pkg_owner', 'pkg_name', 'revision',
+                                    'pkg_version', 'tool', 'scancode', 'schema_ver'])
+
+        # Save the Schema Version Counts
+        self.save_schema_num(split_df.groupby(split_df['schema_ver'])['revision'].count())
+
+        # Merge these split path DataFrame with the Main DataFrame (appends columns)
+        merged_df = path_json_dataframe.join(split_df)
+
+        # Only keep Scancode scans of schemaVersion 3.2.2
+        merged_df.drop(merged_df[~ (merged_df['schema_ver'] == "3.2.2.json")].index, inplace=True)
+
+        # Columns 'revision', 'tool', 'scancode' has same entries, and info from "path", "list_split" is extracted
+        # Delete these unnecessary columns
+        merged_df.drop(columns=["path", "list_split", 'revision', 'tool', 'scancode', 'schema_ver'], inplace=True)
+
+        # Replace "-" entries in column "pkg_owner" with np.nan
+        merged_df.loc[merged_df["pkg_owner"] == '-', "pkg_owner"] = np.nan
+
+        return merged_df
+
     def modify_package_level_dataframe(self, metadata_dataframe):
         """
         This function is applied to one column of a Dataframe containing json dicts, at once, to perform
@@ -314,7 +363,8 @@ class ResultsDataFramePackage:
         else:
             path_json_dataframe = self.convert_records_to_json()
 
-        # ToDo: Assert Scancode Options
+        # Asserts if Scancode SchemaVersion is desired value, from path
+        path_json_dataframe = self.assert_dataframe_schema(path_json_dataframe)
 
         # Converts information multiple levels inside dicts into columns
         # Package Level Data, TimeStamp, 'license_clarity_score' values,'files' list -> `New Columns`.
@@ -323,12 +373,20 @@ class ResultsDataFramePackage:
         # Append metadata level information to a MetaData File
         self.append_metadata_dataframe(metadata_dataframe)
 
+        # ToDo: Parallelize the `results_file.create_file_level_dataframe` func call 
         # Iterate through all rows, (i.e. package scans), and calls file level function for each
         # Appends the File and License Level DataFrame returned to a List.
         file_level_dataframes_list = []
+        drop_files_index_list = []
         for package_scan_result in files_dataframe.itertuples():
-            file_level_dataframe = self.results_file.create_file_level_dataframe(package_scan_result[2])
-            file_level_dataframes_list.append(file_level_dataframe)
+            has_data, file_level_dataframe = self.results_file.create_file_level_dataframe(package_scan_result[2])
+            if has_data:
+                file_level_dataframes_list.append(file_level_dataframe)
+            else:
+                drop_files_index_list.append(package_scan_result[0])
+
+        # Drops the Files which has no License Information
+        files_dataframe.drop(drop_files_index_list, inplace=True)
 
         # Creates File level keys, which are used to create package level keys in the MultiIndex
         list_file_level_keys = list(files_dataframe['TimeIndex'])

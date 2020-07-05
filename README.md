@@ -53,13 +53,13 @@ This project aims to:
 ## Quickstart - Google Colab
 
 1. Every Jupyter Notebook (i.e. `.ipynb` files) has a `Open In Colab` Badge like this - 
-[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/AyanSinhaMahapatra/scancode-results-analyzer/blob/master/src/notebooks/mock_db_data_from_json.ipynb)
+[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/nexB/scancode-results-analyzer/blob/master/src/notebooks/mock_db_data_from_json.ipynb)
 
 2. Clicking that Opens the Jupyter Notebook in [Google Colab](https://colab.research.google.com/notebooks/intro.ipynb). 
 Then Run the First Two Group of Cells that do the following tasks.
 
-3. Cloning the [`scancode-results-analyzer` GitHub Repository] so that the Classes/Data can be loaded into the Jupyter
-Notebook Environment.
+3. Cloning the [`scancode-results-analyzer` GitHub Repository](https://github.com/nexB/scancode-results-analyzer/) 
+so that the Classes/Data can be loaded into the Jupyter Notebook Environment.
 
 4. Installing conda and some additional requirements from the `environment.yml` File.
 
