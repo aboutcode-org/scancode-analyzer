@@ -106,7 +106,10 @@ class ResultsDataFrameFile:
         drop files with no license detections, and makes sha1 column as the file level Index [Primary Key].
 
         :param dataframe_files: pd.DataFrame
-            File Level DataFrames
+            File Level DataFrame
+
+        :returns has_data: bool
+            If A File Level DataFrame is non-empty
         """
         # Drops Unnecessary Columns
         dataframe_files.drop(columns=self.drop_columns_list_file_lev, inplace=True)
@@ -118,19 +121,28 @@ class ResultsDataFrameFile:
         dataframe_files['license_detections_no'] = dataframe_files.licenses.apply(lambda x: np.shape(x)[0])
         dataframe_files.drop(dataframe_files[~ (dataframe_files['license_detections_no'] > 0)].index, inplace=True)
 
+        if dataframe_files.shape[0] == 0:
+            has_data = False
+            return has_data
+        else:
+            has_data = True
+
         # Drops files that have the same sha1 hash, i.e. essentially similar files
         dataframe_files.drop_duplicates(subset='sha1', keep="last", inplace=True)
 
         # Makes SHA1 column the index (Slows down calculations)
         dataframe_files.set_index('sha1', inplace=True)
 
-        return
+        return has_data
 
     def create_file_level_dataframe(self, package_files_list):
         """
         Creates a File and License Level DataFrame
 
         :param package_files_list: list of file level dicts
+
+        :returns has_data: bool
+            If A File Level DataFrame is non-empty
         :returns file_and_lic_level_dataframe: pd.DataFrame
             Has File and License level information organized via pd.MultiIndex.
         """
@@ -138,7 +150,12 @@ class ResultsDataFrameFile:
         file_level_dataframe = pd.DataFrame(package_files_list)
 
         # Clean Up and Modify the File Level DataFrame
-        self.modify_file_level_dataframe(file_level_dataframe)
+        has_data = self.modify_file_level_dataframe(file_level_dataframe)
+
+        # Checks if file_level_dataframe is Empty (i.e. if none of the files has any license information)
+        # Exits if Yes with empty DataFrame which won't be added
+        if not has_data:
+            return has_data, file_level_dataframe
 
         # From column 'licenses', which is a list of dicts, create License Level DataFrames
         file_and_lic_level_dataframe = self.create_lic_level_dataframe(file_level_dataframe)
@@ -146,4 +163,4 @@ class ResultsDataFrameFile:
         # Sets 'sha1' and 'lic_det_num' columns as the Indexes (Primary Key Tuple)
         file_and_lic_level_dataframe.set_index(['sha1', 'lic_det_num'], inplace=True)
 
-        return file_and_lic_level_dataframe
+        return has_data, file_and_lic_level_dataframe
