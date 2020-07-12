@@ -31,6 +31,7 @@ import numpy as np
 
 from results_analyze.postgres import PostgresFetch
 from results_analyze.load_results_file import ResultsDataFrameFile
+from results_analyze.df_file_io import DataFrameFileIO
 
 # How many rows of Database to Fetch at once
 # ToDo: Calculation Function based on memory usage stats and RAM/SWAP Available
@@ -52,60 +53,7 @@ class ResultsDataFramePackage:
             self.postgres = PostgresFetch()
 
         self.results_file = ResultsDataFrameFile()
-        self.metadata_filename = 'projects_metadata.h5'
-        self.hdf_dir = os.path.join(os.path.dirname(__file__), 'data/hdf5/')
-        self.json_input_dir = os.path.join(os.path.dirname(__file__), 'data/json-scan-results/')
-        self.mock_metadata_filename = 'sample_metadata.json'
-
-    @staticmethod
-    def get_hdf5_file_path(hdf_dir, filename):
-        """
-        Gets filepath.
-
-        :param hdf_dir : string
-        :param filename : string
-
-        :returns filepath : os.Path
-        """
-        file_path = os.path.join(hdf_dir, filename)
-        return file_path
-
-    # ToDo: Support Selective Query/Search
-    @staticmethod
-    def load_dataframe_from_hdf5(file_path, df_key):
-        """
-        Loads data from the hdf5 to a Pandas Dataframe.
-
-        :param file_path : string
-        :param df_key : string
-
-        :returns filepath : pd.DataFrame object containing the Data read from the hdf5 file.
-        """
-
-        dataframe = pd.read_hdf(path_or_buf=file_path, key=df_key)
-
-        return dataframe
-
-    @staticmethod
-    def store_dataframe_to_hdf5(dataframe, file_path, df_key, h5_format=HDF5_STORE_FORMAT, is_append=False):
-        """
-        Stores data from the a Pandas Dataframe to hdf5.
-
-        :param dataframe : pd.Dataframe
-            The DataFrame which has to be stored
-        :param file_path : string
-        :param df_key: string
-            Table name inside the h5 file for this dataframe.
-        :param h5_format : string
-            PyTables storage format
-        :param is_append : bool
-        """
-
-        if is_append:
-            # File has to exist
-            dataframe.to_hdf(path_or_buf=file_path, key=df_key, mode='r+', format=h5_format)
-        else:
-            dataframe.to_hdf(path_or_buf=file_path, key=df_key, mode='w', format=h5_format)
+        self.df_io = DataFrameFileIO()
 
     def append_metadata_dataframe(self, metadata_dataframe):
         """
@@ -115,40 +63,17 @@ class ResultsDataFramePackage:
             The metadata DataFrame which has to be appended
         """
 
-        if not os.path.exists(self.hdf_dir):
-            os.makedirs(self.hdf_dir)
+        if not os.path.exists(self.df_io.hdf_dir):
+            os.makedirs(self.df_io.hdf_dir)
 
-        file_path = os.path.join(self.get_hdf5_file_path(self.hdf_dir, self.metadata_filename))
+        file_path = os.path.join(self.df_io.get_hdf5_file_path(self.df_io.hdf_dir, self.df_io.metadata_filename))
 
-        if not os.path.isfile(self.get_hdf5_file_path(self.hdf_dir, filename=self.metadata_filename)):
-            self.store_dataframe_to_hdf5(metadata_dataframe, file_path, df_key='metadata',
-                                         h5_format='Table', is_append=False)
+        if not os.path.isfile(self.df_io.get_hdf5_file_path(self.df_io.hdf_dir, filename=self.df_io.metadata_filename)):
+            self.df_io.store_dataframe_to_hdf5(metadata_dataframe, file_path, df_key='metadata',
+                                               h5_format='Table', is_append=False)
         else:
-            self.store_dataframe_to_hdf5(metadata_dataframe, file_path, df_key='metadata',
-                                         h5_format='Table', is_append=True)
-
-    @staticmethod
-    def mock_db_data_from_json(json_filepath, metadata_filepath):
-        """
-        Takes Input from a File containing Scancode Scan Results, and returns a DataFrame is the same
-        format as that of the DataBase Data.
-
-        :param json_filepath: String
-        :param metadata_filepath: String
-
-        :return json_df: pd.Dataframe
-            Returns a DataFrame with two columns "path" and "json_content". And one row of Data.
-        """
-
-        json_dict_content = PostgresFetch.import_data_from_json(json_filepath)
-        json_dict_metadata = PostgresFetch.import_data_from_json(metadata_filepath)
-
-        json_dict = pd.Series([{"_metadata": json_dict_metadata, "content": json_dict_content}])
-        mock_path = pd.Series(["mock/data/-/multiple-packages/random/1.0.0/tool/scancode/3.2.2.json"])
-
-        json_df = pd.DataFrame({"path": mock_path, "json_content": json_dict})
-
-        return json_df
+            self.df_io.store_dataframe_to_hdf5(metadata_dataframe, file_path, df_key='metadata',
+                                               h5_format='Table', is_append=True)
 
     @staticmethod
     def decompress_dataframe(compressed_dataframe):
@@ -274,8 +199,8 @@ class ResultsDataFramePackage:
         """
         schema_df = pd.DataFrame(schema_series)
 
-        file_path = os.path.join(self.get_hdf5_file_path(self.hdf_dir, self.metadata_filename))
-        self.store_dataframe_to_hdf5(schema_df, file_path, df_key='schema', h5_format='table', is_append=True)
+        file_path = os.path.join(self.df_io.get_hdf5_file_path(self.df_io.hdf_dir, self.df_io.metadata_filename))
+        self.df_io.store_dataframe_to_hdf5(schema_df, file_path, df_key='schema', h5_format='table', is_append=True)
 
     def assert_dataframe_schema(self, path_json_dataframe):
         """
@@ -344,6 +269,31 @@ class ResultsDataFramePackage:
 
         return files_dataframe, metadata_dataframe
 
+    def compress_pkg_dataframe(self, main_df):
+        """
+        Compressing Package Level DataFrame by changing DataTypes of some columns,
+        getting rid of unnecessary precision.
+
+        :param main_df: pd.DataFrame
+            Package Level DataFrame containing Scan Data.
+        """
+
+        main_df["rule_relevance"] = main_df["rule_relevance"].astype(np.uint8)
+        main_df['match_coverage'] = main_df['match_coverage'].apply(np.floor).astype(np.uint8)
+
+        main_df["rule_length"] = main_df["rule_length"].astype(np.uint16)
+        main_df["matched_length"] = main_df["matched_length"].astype(np.uint16)
+
+        main_df["license_detections_no"] = main_df["license_detections_no"].astype(np.uint16)
+
+        main_df["start_line"] = main_df["start_line"].astype(np.uint32)
+        main_df["end_line"] = main_df["end_line"].astype(np.uint32)
+        main_df["size"] = main_df["size"].astype(np.uint32)
+
+        # ToDo: Compress `file_type`, `mime_type`,  String->Int Mapping
+        prog_lan_dict = self.df_io.get_prog_lang_dict()
+        main_df["programming_language"] = main_df["programming_language"].map(prog_lan_dict).fillna(0).astype(np.uint8)
+
     def create_package_level_dataframe(self, json_filename=None):
         """
         Creates a Package Level DataFrame, with File/License Information Levels.
@@ -357,9 +307,7 @@ class ResultsDataFramePackage:
         """
         # Loads Dataframes
         if json_filename:
-            json_filepath = os.path.join(self.json_input_dir, json_filename)
-            mock_metadata_filepath = os.path.join(self.json_input_dir, self.mock_metadata_filename)
-            path_json_dataframe = self.mock_db_data_from_json(json_filepath, mock_metadata_filepath)
+            path_json_dataframe = self.df_io.mock_db_data_from_json(json_filename)
         else:
             path_json_dataframe = self.convert_records_to_json()
 
@@ -396,5 +344,8 @@ class ResultsDataFramePackage:
         main_dataframe = pd.concat(file_level_dataframes_list,
                                    keys=list_file_level_keys)
         main_dataframe.index.names = ['pkg_scan_time', 'file_sha1', 'lic_det_num']
+
+        # Compress Package Level DataFrame
+        self.compress_pkg_dataframe(main_dataframe)
 
         return main_dataframe

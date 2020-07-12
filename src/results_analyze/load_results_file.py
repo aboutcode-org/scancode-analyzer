@@ -26,9 +26,14 @@
 import numpy as np
 import pandas as pd
 
+from results_analyze.rules_analyze import LicenseRulesInfo
+
 
 class ResultsDataFrameFile:
     def __init__(self):
+
+        self.lic_rule_info = LicenseRulesInfo(has_loaded=False)
+
         # Which columns to drop from a File Level Dataframe.
         self.drop_columns_list_file_lev = ['type', 'name', 'base_name', 'extension', 'date', 'md5',
                                            'license_expressions', 'holders', 'copyrights', 'authors', 'packages',
@@ -37,6 +42,12 @@ class ResultsDataFrameFile:
         self.drop_columns_list_lic_lev = ['name', 'short_name', 'owner', 'homepage_url', 'text_url', 'reference_url',
                                           'spdx_license_key', 'spdx_url', 'license_expression', 'matched_rule',
                                           'licenses']
+
+        # String to Integer Mappings for Compression
+        self.category_dict = {'Copyleft Limited': 5, 'Copyleft': 6, 'Proprietary Free': 7,
+                              'Permissive': 1,  'Public Domain': 2, 'Free Restricted': 3, 'Source-available': 4,
+                              'Commercial': 8, 'Unstated License': 0, 'Patent License': 9}
+        self.matcher_dict = {'1-hash': 1, '2-aho': 2, '3-seq': 3, '4-spdx-id': 4}
 
     @staticmethod
     def dict_to_rows_matched_rule_dataframes_apply(dataframe):
@@ -66,9 +77,27 @@ class ResultsDataFrameFile:
         # Drops Unnecessary Columns
         dataframe_lic_rule.drop(columns=self.drop_columns_list_lic_lev, inplace=True)
 
-        # ToDo: Map Strings to Int Values
-
         return dataframe_lic_rule
+
+    def compress_lic_level_df(self, dataframe_lic):
+        """
+        The following are converted from Dictionary Mappings loaded with constructor (Short dicts)
+         - "category" (Category of License, i.e. Permissive, Copyleft)
+         - "matcher" (type of matcher used i.e. 2-aho)
+
+        The following are converted from Dictionary Mappings loaded from LicenseRulesInfo (much longer dicts)
+         - "key" - License Key That is Detected (like - "mit")
+         - "identifier" - License or License Rule that is used to detect the license (i.e. "mit_456.RULE"/"mit.LICENSE")
+
+        :param dataframe_lic: pd.DataFrame
+            License Level DataFrame
+        """
+        dataframe_lic["category"] = dataframe_lic["category"].map(self.category_dict).fillna(0).astype(np.uint8)
+        dataframe_lic["matcher"] = dataframe_lic["matcher"].map(self.matcher_dict).fillna(0).astype(np.uint8)
+
+        dataframe_lic["key"] = dataframe_lic["key"].map(self.lic_rule_info.key_dict).fillna(0).astype(np.uint8)
+        dataframe_lic["identifier"] = dataframe_lic["identifier"].map(
+                                                    self.lic_rule_info.identifier_dict).fillna(0).astype(np.uint8)
 
     def create_lic_level_dataframe(self, file_level_dataframe):
         """
@@ -97,6 +126,8 @@ class ResultsDataFrameFile:
 
         merged_df = file_level_dataframe.join(lic_level_dataframe, lsuffix='_file', rsuffix='_lic')
         merged_df.reset_index(inplace=True)
+
+        self.compress_lic_level_df(merged_df)
 
         return merged_df
 
