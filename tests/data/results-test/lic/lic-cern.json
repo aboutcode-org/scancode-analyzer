@@ -1,0 +1,1496 @@
+{
+  "headers": [
+    {
+      "tool_name": "scancode-toolkit",
+      "tool_version": "3.1.1.post351.850399bc3",
+      "options": {
+        "input": [
+          "/home/ayan/Desktop/nexB/main_repos/scancode-analyse/cern"
+        ],
+        "--classify": true,
+        "--copyright": true,
+        "--email": true,
+        "--generated": true,
+        "--info": true,
+        "--is-license-text": true,
+        "--json-pp": "results-test/rule/lic-cern.json",
+        "--license": true,
+        "--license-clarity-score": true,
+        "--license-text": true,
+        "--package": true,
+        "--processes": "8",
+        "--strip-root": true,
+        "--summary": true,
+        "--summary-key-files": true,
+        "--url": true
+      },
+      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "start_timestamp": "2020-07-29T154246.607974",
+      "end_timestamp": "2020-07-29T154254.547889",
+      "message": null,
+      "errors": [],
+      "extra_data": {
+        "files_count": 10
+      }
+    }
+  ],
+  "summary": {
+    "license_expressions": [
+      {
+        "value": "unknown",
+        "count": 13
+      },
+      {
+        "value": null,
+        "count": 5
+      },
+      {
+        "value": "robert-hubley",
+        "count": 3
+      },
+      {
+        "value": "fsf-unlimited-no-warranty",
+        "count": 2
+      },
+      {
+        "value": "cern-ohl-1.1",
+        "count": 1
+      },
+      {
+        "value": "cern-ohl-1.2",
+        "count": 1
+      }
+    ],
+    "copyrights": [
+      {
+        "value": "copyright CERN.",
+        "count": 8
+      },
+      {
+        "value": "copyright of CERN.",
+        "count": 2
+      }
+    ],
+    "holders": [
+      {
+        "value": "CERN - European Organization for Nuclear Research",
+        "count": 10
+      }
+    ],
+    "authors": [
+      {
+        "value": null,
+        "count": 10
+      }
+    ],
+    "programming_language": [
+      {
+        "value": null,
+        "count": 5
+      },
+      {
+        "value": "ActionScript 3",
+        "count": 5
+      }
+    ],
+    "packages": []
+  },
+  "license_clarity_score": {
+    "score": 30,
+    "declared": true,
+    "discovered": 0,
+    "consistency": false,
+    "spdx": false,
+    "license_texts": false
+  },
+  "summary_of_key_files": {
+    "license_expressions": [
+      {
+        "value": "unknown",
+        "count": 13
+      },
+      {
+        "value": "robert-hubley",
+        "count": 3
+      },
+      {
+        "value": "fsf-unlimited-no-warranty",
+        "count": 2
+      },
+      {
+        "value": "cern-ohl-1.1",
+        "count": 1
+      },
+      {
+        "value": "cern-ohl-1.2",
+        "count": 1
+      }
+    ],
+    "copyrights": [
+      {
+        "value": "copyright CERN.",
+        "count": 1
+      },
+      {
+        "value": "copyright of CERN.",
+        "count": 1
+      }
+    ],
+    "holders": [
+      {
+        "value": "CERN - European Organization for Nuclear Research",
+        "count": 5
+      }
+    ],
+    "authors": [
+      {
+        "value": null,
+        "count": 5
+      }
+    ],
+    "programming_language": [
+      {
+        "value": null,
+        "count": 5
+      }
+    ]
+  },
+  "files": [
+    {
+      "path": "cern-ohl-1.1.LICENSE",
+      "type": "file",
+      "name": "cern-ohl-1.1.LICENSE",
+      "base_name": "cern-ohl-1.1",
+      "extension": ".LICENSE",
+      "size": 8197,
+      "date": "2020-07-29",
+      "sha1": "239a86b7444ef8c24053b9cc77519d24d9d97018",
+      "md5": "9f741f73e9578ed6a2d3aa6c3ec75b99",
+      "mime_type": "text/plain",
+      "file_type": "UTF-8 Unicode text, with very long lines",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "cern-ohl-1.1",
+          "score": 100.0,
+          "name": "CERN Open Hardware License v1.1",
+          "short_name": "CERN Open Hardware License v1.1",
+          "category": "Permissive",
+          "is_exception": false,
+          "owner": "CERN",
+          "homepage_url": "https://www.ohwr.org/project/licenses/wikis/cern-ohl-v1.1",
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:cern-ohl-1.1",
+          "spdx_license_key": "CERN-OHL-1.1",
+          "spdx_url": "https://spdx.org/licenses/CERN-OHL-1.1",
+          "start_line": 1,
+          "end_line": 77,
+          "matched_rule": {
+            "identifier": "cern-ohl-1.1.LICENSE",
+            "license_expression": "cern-ohl-1.1",
+            "licenses": [
+              "cern-ohl-1.1"
+            ],
+            "is_license_text": true,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "1-hash",
+            "rule_length": 1270,
+            "matched_length": 1270,
+            "match_coverage": 100.0,
+            "rule_relevance": 100
+          },
+          "matched_text": "CERN OHL v1.1\n\n2011-07-08 - CERN, Geneva, Switzerland\n\nCERN Open Hardware Licence v1.1\n\nPreamble\n\nThrough this CERN Open Hardware Licence (\"CERN OHL\") version 1.1, the Organization wishes to disseminate its hardware designs (as published on http://www.ohwr.org/) as widely as possible, and generally to foster collaboration among public research hardware designers. The CERN OHL is copyright of CERN. Anyone is welcome to use the CERN OHL, in unmodified form only, for the distribution of his own Open Hardware designs. Any other right is reserved.\n\n1. Definitions\n\nIn this Licence, the following terms have the following meanings:\n\n\"Licence\" means this CERN OHL.\n\n\"Documentation\" means schematic diagrams, designs, circuit or circuit board layouts, mechanical drawings, flow charts and descriptive text, and other explanatory material that is explicitly stated as being made available under the conditions of this Licence. The Documentation may be in any medium, including but not limited to computer files and representations on paper, film, or any other media.\n\n\"Product\" means either an entire, or any part of a, device built using the Documentation or the modified Documentation.\n\n\"Licensee\" means any natural or legal person exercising rights under this Licence.\n\n\"Licensor\" means any natural or legal person that creates or modifies Documentation and subsequently communicates to the public and/ or distributes the resulting Documentation under the terms and conditions of this Licence.\n\nA Licensee may at the same time be a Licensor, and vice versa.\n\n\n\n2. Applicability\n\n   2.1 This Licence governs the use, copying, modification, communication to the public and distribution of the Documentation, and the manufacture and distribution of Products. By exercising any right granted under this Licence, the Licensee irrevocably accepts these terms and conditions.\n\n   2.2 This Licence is granted by the Licensor directly to the Licensee, and shall apply worldwide and without limitation in time. The Licensee may assign his licence rights or grant sub-licences.\n\n   2.3 This Licence does not apply to software, firmware, or code loaded into programmable devices which may be used in conjunction with the Documentation, the modified Documentation or with Products. The use of such software, firmware, or code is subject to the applicable licence terms and conditions.\n\n3. Copying, modification, communication to the public and distribution of the Documentation\n\n   3.1 The Licensee shall keep intact all copyright and trademarks notices and all notices that refer to this Licence and to the disclaimer of warranties that is included in the Documentation. He shall include a copy thereof in every copy of the documentation or, as the case may be, modified Documentation, that he communicates to the public or distributes.\n\n   3.2 The Licensee may use, copy, communicate to the public and distribute verbatim copies of the Documentation, in any medium, subject to the requirements specified in section 3.1.\n\n   3.3 The Licensee may modify the Documentation or any portion thereof. The Licensee may communicate to the public and distribute the modified Documentation (thereby in addition to being a Licensee also becoming a Licensor), always provided that he shall:\n\n      a. comply with section 3.1;\n\n      b. cause the modified Documentation to carry prominent notices stating that the Licensee has modified the Documentation, with the date and details of the modifications;\n\n      c. license the modified Documentation under the terms and conditions of this Licence or, where applicable, a later version of this Licence as may be issued by CERN; and\n\n      d. send a copy of the modified Documentation to all Licensors that contributed to the parts of the Documentation that were modified, as well as to any other Licensor who has requested to receive a copy of the modified Documentation and has provided a means of contact with the Documentation.\n\n   3.4 The Licence includes a licence to those patents or registered designs that are held by the Licensor, to the extent necessary to make use of the rights granted under this Licence. The scope of this section 3.4 shall be strictly limited to the parts of the Documentation or modified Documentation created by the Licensor.\n\n4. Manufacture and distribution of Products\n\n   4.1 The Licensee may manufacture or distribute Products always provided that the Licensee distributes to each recipient of such Products a copy of the Documentation or modified Documentation, as applicable, and complies with section 3.\n\n   4.2 The Licensee is invited to inform in writing any Licensor who has indicated its wish to receive this information about the type, quantity and dates of production of Products the Licensee has (had) manufactured.\n\n5. Warranty and liability\n\n   5.1 DISCLAIMER \u2013 The Documentation and any modified Documentation are provided \"as is\" and any express or implied warranties, including, but not limited to, implied warranties of merchantability, of satisfactory quality, and fitness for a particular purpose or use are disclaimed in respect of the Documentation, the modified Documentation or any Product. The Licensor makes no representation that the Documentation, modified Documentation, or any Product, does or will not infringe any patent, copyright, trade secret or other proprietary right. The entire risk as to the use, quality, and performance of a Product shall be with the Licensee and not the Licensor. This disclaimer of warranty is an essential part of this Licence and a condition for the grant of any rights granted under this Licence. The Licensee warrants that it does not act in a consumer capacity.\n\n   5.2 LIMITATION OF LIABILITY \u2013 The Licensor shall have no liability for direct, indirect, special, incidental, consequential, exemplary, punitive or other damages of any character including, without limitation, procurement of substitute goods or services, loss of use, data or profits, or business interruption, however caused and on any theory of contract, warranty, tort (including negligence), product liability or otherwise, arising in any way in relation to the Documentation, modified Documentation and/or the use, manufacture or distribution of a Product, even if advised of the possibility of such damages, and the Licensee shall hold the Licensor(s) free and harmless from any liability, costs, damages, fees and expenses, including claims by third parties, in relation to such use.\n\n6. General\n\n   6.1 The rights granted under this Licence do not imply or represent any transfer or assignment of intellectual property rights to the Licensee.\n\n   6.2 The Licensee shall not use or make reference to any of the names, acronyms, images or logos under which the Licensor is known, save in so far as required to comply with section 3. Any such permitted use or reference shall be factual and shall in no event suggest any kind of endorsement by the Licensor or its personnel of the modified Documentation or any Product, or any kind of implication by the Licensor or its personnel in the preparation of the modified Documentation or Product.\n\n   6.3 CERN may publish updated versions of this Licence which retain the same general provisions as this version, but differ in detail so far this is required and reasonable. New versions will be published with a unique version number.\n\n   6.4 This Licence shall terminate with immediate effect, upon written notice and without involvement of a court if the Licensee fails to comply with any of its terms and conditions, or if the Licensee initiates legal action against Licensor in relation to this Licence. Section 5 shall continue to apply.\n\n   6.5 Except as may be otherwise agreed with the Intergovernmental Organization, any dispute with respect to this Licence involving an Intergovernmental Organization shall, by virtue of the latter's Intergovernmental status, be settled by international arbitration. The arbitration proceedings shall be held at the place where the Intergovernmental Organization has its seat. The arbitral award shall be final and binding upon the parties, who hereby expressly agree to renounce any form of appeal or revision."
+        }
+      ],
+      "license_expressions": [
+        "cern-ohl-1.1"
+      ],
+      "copyrights": [
+        {
+          "value": "copyright of CERN.",
+          "start_line": 9,
+          "end_line": 9
+        }
+      ],
+      "holders": [
+        {
+          "value": "CERN.",
+          "start_line": 9,
+          "end_line": 9
+        }
+      ],
+      "authors": [],
+      "packages": [],
+      "emails": [],
+      "urls": [
+        {
+          "url": "http://www.ohwr.org/",
+          "start_line": 9,
+          "end_line": 9
+        }
+      ],
+      "is_legal": true,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": true,
+      "is_generated": false,
+      "is_license_text": true,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "cern-ohl-1.1.yml",
+      "type": "file",
+      "name": "cern-ohl-1.1.yml",
+      "base_name": "cern-ohl-1.1",
+      "extension": ".yml",
+      "size": 433,
+      "date": "2020-07-29",
+      "sha1": "57d7bf57c3ba93ea9ea5d3a7b7d79272b4dd31cc",
+      "md5": "c2e075e0fb29da3fb324b9daa3da592a",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": "ActionScript 3",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": false,
+      "licenses": [],
+      "license_expressions": [],
+      "copyrights": [
+        {
+          "value": "copyright of CERN.",
+          "start_line": 10,
+          "end_line": 13
+        }
+      ],
+      "holders": [
+        {
+          "value": "CERN.",
+          "start_line": 10,
+          "end_line": 13
+        }
+      ],
+      "authors": [],
+      "packages": [],
+      "emails": [],
+      "urls": [
+        {
+          "url": "https://www.ohwr.org/project/licenses/wikis/cern-ohl-v1.1",
+          "start_line": 6,
+          "end_line": 6
+        },
+        {
+          "url": "http://www.ohwr.org/",
+          "start_line": 15,
+          "end_line": 15
+        }
+      ],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "cern-ohl-1.2.LICENSE",
+      "type": "file",
+      "name": "cern-ohl-1.2.LICENSE",
+      "base_name": "cern-ohl-1.2",
+      "extension": ".LICENSE",
+      "size": 9256,
+      "date": "2020-07-29",
+      "sha1": "7722edd93694c74b03aea29efbc9d6179415e69a",
+      "md5": "0ba0a62fd64b81986ec2124b94477114",
+      "mime_type": "text/plain",
+      "file_type": "UTF-8 Unicode text, with very long lines",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "cern-ohl-1.2",
+          "score": 100.0,
+          "name": "CERN Open Hardware Licence v1.2",
+          "short_name": "CERN Open Hardware Licence v1.2",
+          "category": "Permissive",
+          "is_exception": false,
+          "owner": "CERN",
+          "homepage_url": "https://www.ohwr.org/project/licenses/wikis/cern-ohl-v1.2",
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:cern-ohl-1.2",
+          "spdx_license_key": "CERN-OHL-1.2",
+          "spdx_url": "https://spdx.org/licenses/CERN-OHL-1.2",
+          "start_line": 1,
+          "end_line": 83,
+          "matched_rule": {
+            "identifier": "cern-ohl-1.2.LICENSE",
+            "license_expression": "cern-ohl-1.2",
+            "licenses": [
+              "cern-ohl-1.2"
+            ],
+            "is_license_text": true,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "1-hash",
+            "rule_length": 1430,
+            "matched_length": 1430,
+            "match_coverage": 100.0,
+            "rule_relevance": 100
+          },
+          "matched_text": "CERN OHL v1.2\n\n2013-09-06 - CERN, Geneva, Switzerland\n\nCERN Open Hardware Licence v1.2\n\nPreamble\n\nThrough this CERN Open Hardware Licence (\"CERN OHL\") version 1.2, CERN wishes to provide a tool to foster collaboration and sharing among hardware designers. The CERN OHL is copyright CERN. Anyone is welcome to use the CERN OHL, in unmodified form only, for the distribution of their own Open Hardware designs. Any other right is reserved. Release of hardware designs under the CERN OHL does not constitute an endorsement of the licensor or its designs nor does it imply any involvement by CERN in the development of such designs.\n\n1. Definitions\n\nIn this Licence, the following terms have the following meanings:\n\n\"Licence\" means this CERN OHL.\n\n\"Documentation\" means schematic diagrams, designs, circuit or circuit board layouts, mechanical drawings, flow charts and descriptive text, and other explanatory material that is explicitly stated as being made available under the conditions of this Licence. The Documentation may be in any medium, including but not limited to computer files and representations on paper, film, or any other media.\n\n\"Documentation Location\" means a location where the Licensor has placed Documentation, and which he believes will be publicly accessible for at least three years from the first communication to the public or distribution of Documentation.\n\n\"Product\" means either an entire, or any part of a, device built using the Documentation or the modified Documentation.\n\n\"Licensee\" means any natural or legal person exercising rights under this Licence.\n\n\"Licensor\" means any natural or legal person that creates or modifies Documentation and subsequently communicates to the public and/ or distributes the resulting Documentation under the terms and conditions of this Licence.\n\nA Licensee may at the same time be a Licensor, and vice versa.\n\nUse of the masculine gender includes the feminine and neuter genders and is employed solely to facilitate reading.\n\n\n\n2. Applicability\n\n   2.1. This Licence governs the use, copying, modification, communication to the public and distribution of the Documentation, and the manufacture and distribution of Products. By exercising any right granted under this Licence, the Licensee irrevocably accepts these terms and conditions.\n\n   2.2. This Licence is granted by the Licensor directly to the Licensee, and shall apply worldwide and without limitation in time. The Licensee may assign his licence rights or grant sub-licences.\n\n   2.3. This Licence does not extend to software, firmware, or code loaded into programmable devices which may be used in conjunction with the Documentation, the modified Documentation or with Products, unless such software, firmware, or code is explicitly expressed to be subject to this Licence. The use of such software, firmware, or code is otherwise subject to the applicable licence terms and conditions.\n\n3. Copying, modification, communication to the public and distribution of the Documentation\n\n   3.1. The Licensee shall keep intact all copyright and trademarks notices, all notices referring to Documentation Location, and all notices that refer to this Licence and to the disclaimer of warranties that are included in the Documentation. He shall include a copy thereof in every copy of the Documentation or, as the case may be, modified Documentation, that he communicates to the public or distributes.\n\n   3.2. The Licensee may copy, communicate to the public and distribute verbatim copies of the Documentation, in any medium, subject to the requirements specified in section 3.1.\n\n   3.3. The Licensee may modify the Documentation or any portion thereof provided that upon modification of the Documentation, the Licensee shall make the modified Documentation available from a Documentation Location such that it can be easily located by an original Licensor once the Licensee communicates to the public or distributes the modified Documentation under section 3.4, and, where required by section 4.1, by a recipient of a Product. However, the Licensor shall not assert his rights under the foregoing proviso unless or until a Product is distributed.\n\n   3.4. The Licensee may communicate to the public and distribute the modified Documentation (thereby in addition to being a Licensee also becoming a Licensor), always provided that he shall:\n\n      a) comply with section 3.1;\n\n      b) cause the modified Documentation to carry prominent notices stating that the Licensee has modified the Documentation, with the date and description of the modifications;\n\n      c) cause the modified Documentation to carry a new Documentation Location notice if the original Documentation provided for one;\n\n      d) make available the modified Documentation at the same level of abstraction as that of the Documentation, in the preferred format for making modifications to it (e.g. the native format of the CAD tool as applicable), and in the event that format is proprietary, in a format viewable with a tool licensed under an OSI-approved license if the proprietary tool can create it; and\n\n      e) license the modified Documentation under the terms and conditions of this Licence or, where applicable, a later version of this Licence as may be issued by CERN.\n\n   3.5. The Licence includes a non-exclusive licence to those patents or registered designs that are held by, under the control of, or sub-licensable by the Licensor, to the extent necessary to make use of the rights granted under this Licence. The scope of this section 3.5 shall be strictly limited to the parts of the Documentation or modified Documentation created by the Licensor.\n\n4. Manufacture and distribution of Products\n\n   4.1. The Licensee may manufacture or distribute Products always provided that, where such manufacture or distribution requires a licence under this Licence the Licensee provides to each recipient of such Products an easy means of accessing a copy of the Documentation or modified Documentation, as applicable, as set out in section 3.\n\n   4.2. The Licensee is invited to inform any Licensor who has indicated his wish to receive this information about the type, quantity and dates of production of Products the Licensee has (had) manufactured\n\n5. Warranty and liability\n\n   5.1. DISCLAIMER \u2013 The Documentation and any modified Documentation are provided \"as is\" and any express or implied warranties, including, but not limited to, implied warranties of merchantability, of satisfactory quality, non-infringement of third party rights, and fitness for a particular purpose or use are disclaimed in respect of the Documentation, the modified Documentation or any Product. The Licensor makes no representation that the Documentation, modified Documentation, or any Product, does or will not infringe any patent, copyright, trade secret or other proprietary right. The entire risk as to the use, quality, and performance of a Product shall be with the Licensee and not the Licensor. This disclaimer of warranty is an essential part of this Licence and a condition for the grant of any rights granted under this Licence. The Licensee warrants that it does not act in a consumer capacity.\n\n   5.2. LIMITATION OF LIABILITY \u2013 The Licensor shall have no liability for direct, indirect, special, incidental, consequential, exemplary, punitive or other damages of any character including, without limitation, procurement of substitute goods or services, loss of use, data or profits, or business interruption, however caused and on any theory of contract, warranty, tort (including negligence), product liability or otherwise, arising in any way in relation to the Documentation, modified Documentation and/or the use, manufacture or distribution of a Product, even if advised of the possibility of such damages, and the Licensee shall hold the Licensor(s) free and harmless from any liability, costs, damages, fees and expenses, including claims by third parties, in relation to such use.\n\n6. General\n\n   6.1. Except for the rights explicitly granted hereunder, this Licence does not imply or represent any transfer or assignment of intellectual property rights to the Licensee.\n\n   6.2. The Licensee shall not use or make reference to any of the names (including acronyms and abbreviations), images, or logos under which the Licensor is known, save in so far as required to comply with section 3. Any such permitted use or reference shall be factual and shall in no event suggest any kind of endorsement by the Licensor or its personnel of the modified Documentation or any Product, or any kind of implication by the Licensor or its personnel in the preparation of the modified Documentation or Product.\n\n   6.3. CERN may publish updated versions of this Licence which retain the same general provisions as this version, but differ in detail so far this is required and reasonable. New versions will be published with a unique version number.\n\n   6.4. This Licence shall terminate with immediate effect, upon written notice and without involvement of a court if the Licensee fails to comply with any of its terms and conditions, or if the Licensee initiates legal action against Licensor in relation to this Licence. Section 5 shall continue to apply."
+        }
+      ],
+      "license_expressions": [
+        "cern-ohl-1.2"
+      ],
+      "copyrights": [
+        {
+          "value": "copyright CERN.",
+          "start_line": 9,
+          "end_line": 9
+        }
+      ],
+      "holders": [
+        {
+          "value": "CERN.",
+          "start_line": 9,
+          "end_line": 9
+        }
+      ],
+      "authors": [],
+      "packages": [],
+      "emails": [],
+      "urls": [],
+      "is_legal": true,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": true,
+      "is_generated": false,
+      "is_license_text": true,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "cern-ohl-1.2.yml",
+      "type": "file",
+      "name": "cern-ohl-1.2.yml",
+      "base_name": "cern-ohl-1.2",
+      "extension": ".yml",
+      "size": 387,
+      "date": "2020-07-29",
+      "sha1": "a8f767ac5ca9ecb9674cd4b168b8dbaa10404327",
+      "md5": "67b936711da7d3dca126e520affd156c",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": "ActionScript 3",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": false,
+      "licenses": [],
+      "license_expressions": [],
+      "copyrights": [
+        {
+          "value": "copyright CERN.",
+          "start_line": 10,
+          "end_line": 13
+        }
+      ],
+      "holders": [
+        {
+          "value": "CERN.",
+          "start_line": 10,
+          "end_line": 13
+        }
+      ],
+      "authors": [],
+      "packages": [],
+      "emails": [],
+      "urls": [
+        {
+          "url": "https://www.ohwr.org/project/licenses/wikis/cern-ohl-v1.2",
+          "start_line": 6,
+          "end_line": 6
+        }
+      ],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "cern-ohl-p-2.0.LICENSE",
+      "type": "file",
+      "name": "cern-ohl-p-2.0.LICENSE",
+      "base_name": "cern-ohl-p-2.0",
+      "extension": ".LICENSE",
+      "size": 8855,
+      "date": "2020-07-29",
+      "sha1": "11ee22773f5d21df8bef46323ba76cfcdf237108",
+      "md5": "b16f082a74b67070bf552dd5a0a6967d",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "fsf-unlimited-no-warranty",
+          "score": 6.78,
+          "name": "FSF Unlimited License No Warranty",
+          "short_name": "FSF Unlimited License No Warranty",
+          "category": "Permissive",
+          "is_exception": false,
+          "owner": "Free Software Foundation (FSF)",
+          "homepage_url": "http://www.fsf.org/licensing/licenses/",
+          "text_url": "http://www.fsf.org/licensing/licenses/",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:fsf-unlimited-no-warranty",
+          "spdx_license_key": null,
+          "spdx_url": "",
+          "start_line": 121,
+          "end_line": 121,
+          "matched_rule": {
+            "identifier": "fsf-unlimited-no-warranty_3.RULE",
+            "license_expression": "fsf-unlimited-no-warranty",
+            "licenses": [
+              "fsf-unlimited-no-warranty"
+            ],
+            "is_license_text": true,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "3-seq",
+            "rule_length": 59,
+            "matched_length": 4,
+            "match_coverage": 6.78,
+            "rule_relevance": 100
+          },
+          "matched_text": "      maximum extent permitted by law. The Licensor makes no"
+        },
+        {
+          "key": "fsf-unlimited-no-warranty",
+          "score": 6.78,
+          "name": "FSF Unlimited License No Warranty",
+          "short_name": "FSF Unlimited License No Warranty",
+          "category": "Permissive",
+          "is_exception": false,
+          "owner": "Free Software Foundation (FSF)",
+          "homepage_url": "http://www.fsf.org/licensing/licenses/",
+          "text_url": "http://www.fsf.org/licensing/licenses/",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:fsf-unlimited-no-warranty",
+          "spdx_license_key": null,
+          "spdx_url": "",
+          "start_line": 131,
+          "end_line": 131,
+          "matched_rule": {
+            "identifier": "fsf-unlimited-no-warranty_3.RULE",
+            "license_expression": "fsf-unlimited-no-warranty",
+            "licenses": [
+              "fsf-unlimited-no-warranty"
+            ],
+            "is_license_text": true,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "3-seq",
+            "rule_length": 59,
+            "matched_length": 4,
+            "match_coverage": 6.78,
+            "rule_relevance": 100
+          },
+          "matched_text": "      the maximum extent permitted by law, have no liability for"
+        },
+        {
+          "key": "robert-hubley",
+          "score": 40.57,
+          "name": "Robert Hubley License",
+          "short_name": "Robert Hubley License",
+          "category": "Permissive",
+          "is_exception": false,
+          "owner": "Robert Hubley",
+          "homepage_url": "http://www.bullzip.com/md5/vb/md5-vb-class.htm",
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:robert-hubley",
+          "spdx_license_key": null,
+          "spdx_url": "",
+          "start_line": 132,
+          "end_line": 140,
+          "matched_rule": {
+            "identifier": "robert-hubley.LICENSE",
+            "license_expression": "robert-hubley",
+            "licenses": [
+              "robert-hubley"
+            ],
+            "is_license_text": true,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "3-seq",
+            "rule_length": 106,
+            "matched_length": 43,
+            "match_coverage": 40.57,
+            "rule_relevance": 100
+          },
+          "matched_text": "      direct, indirect, special, incidental, consequential, exemplary,\n      punitive or other damages of any character including, without\n      limitation, procurement of substitute goods or services, loss of\n      use, data or profits, or business interruption, however caused\n      and on any theory of contract, warranty, tort (including\n      negligence), product liability or otherwise, arising in any way\n      in relation to the Covered Source, modified Covered Source\n      and/or the Making or Conveyance of a Product, even if advised of\n      the possibility of such damages, and You shall hold the"
+        },
+        {
+          "key": "unknown",
+          "score": 60.0,
+          "name": "Unknown license detected but not recognized",
+          "short_name": "unknown",
+          "category": "Unstated License",
+          "is_exception": false,
+          "owner": "Unspecified",
+          "homepage_url": null,
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:unknown",
+          "spdx_license_key": null,
+          "spdx_url": "",
+          "start_line": 148,
+          "end_line": 148,
+          "matched_rule": {
+            "identifier": "lead-in_unknown_63.RULE",
+            "license_expression": "unknown",
+            "licenses": [
+              "unknown"
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 4,
+            "matched_length": 4,
+            "match_coverage": 100.0,
+            "rule_relevance": 60.0
+          },
+          "matched_text": "  6.1 Subject to the terms and conditions of this Licence, each"
+        }
+      ],
+      "license_expressions": [
+        "fsf-unlimited-no-warranty",
+        "fsf-unlimited-no-warranty",
+        "robert-hubley",
+        "unknown"
+      ],
+      "copyrights": [
+        {
+          "value": "copyright CERN 2020",
+          "start_line": 14,
+          "end_line": 15
+        }
+      ],
+      "holders": [
+        {
+          "value": "CERN",
+          "start_line": 14,
+          "end_line": 15
+        }
+      ],
+      "authors": [],
+      "packages": [],
+      "emails": [],
+      "urls": [],
+      "is_legal": true,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": true,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "cern-ohl-p-2.0.yml",
+      "type": "file",
+      "name": "cern-ohl-p-2.0.yml",
+      "base_name": "cern-ohl-p-2.0",
+      "extension": ".yml",
+      "size": 812,
+      "date": "2020-07-29",
+      "sha1": "0c11f3cb69c0e39832047e1e95f89fd7b38702d0",
+      "md5": "884231f57fe62c820b1680a15555a42d",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": "ActionScript 3",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": false,
+      "licenses": [],
+      "license_expressions": [],
+      "copyrights": [
+        {
+          "value": "copyright CERN 2020",
+          "start_line": 16,
+          "end_line": 19
+        }
+      ],
+      "holders": [
+        {
+          "value": "CERN",
+          "start_line": 16,
+          "end_line": 19
+        }
+      ],
+      "authors": [],
+      "packages": [],
+      "emails": [],
+      "urls": [
+        {
+          "url": "https://kt.cern/ohlv2",
+          "start_line": 6,
+          "end_line": 6
+        },
+        {
+          "url": "https://ohwr.org/project/cernohl/wikis/uploads/5a639eaec042c5584104afdbc9350245/cern_ohl_p_v2.txt",
+          "start_line": 8,
+          "end_line": 8
+        },
+        {
+          "url": "https://ohwr.org/project/cernohl/wikis/uploads/055bd8b281d0805a3a38188838b370e1/cern_ohl_p_v2.pdf",
+          "start_line": 9,
+          "end_line": 9
+        },
+        {
+          "url": "https://ohwr.org/project/cernohl/wikis/faq",
+          "start_line": 10,
+          "end_line": 10
+        },
+        {
+          "url": "https://ohwr.org/project/cernohl",
+          "start_line": 12,
+          "end_line": 12
+        },
+        {
+          "url": "https://cern-ohl.web.cern.ch/",
+          "start_line": 13,
+          "end_line": 13
+        },
+        {
+          "url": "https://ohwr.org/project/cernohl/wikis/Documents/CERN-OHL-version-2",
+          "start_line": 14,
+          "end_line": 14
+        },
+        {
+          "url": "https://ohwr.org/project/cernohl/wikis/uploads/0be6f561d2b4a686c5765c74be32daf9/CERN_OHL_rationale.pdf",
+          "start_line": 15,
+          "end_line": 15
+        }
+      ],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "cern-ohl-s-2.0.LICENSE",
+      "type": "file",
+      "name": "cern-ohl-s-2.0.LICENSE",
+      "base_name": "cern-ohl-s-2.0",
+      "extension": ".LICENSE",
+      "size": 13419,
+      "date": "2020-07-29",
+      "sha1": "a73737ea1458024a661d92a89c821b6ad6dfde1e",
+      "md5": "e54c225891056b4b5b9aedf720324c48",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "unknown",
+          "score": 11.0,
+          "name": "Unknown license detected but not recognized",
+          "short_name": "unknown",
+          "category": "Unstated License",
+          "is_exception": false,
+          "owner": "Unspecified",
+          "homepage_url": null,
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:unknown",
+          "spdx_license_key": null,
+          "spdx_url": "",
+          "start_line": 33,
+          "end_line": 33,
+          "matched_rule": {
+            "identifier": "lead-in_unknown_28.RULE",
+            "license_expression": "unknown",
+            "licenses": [
+              "unknown"
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 2,
+            "matched_length": 2,
+            "match_coverage": 100.0,
+            "rule_relevance": 11
+          },
+          "matched_text": "          it applies as licensed under CERN-OHL-S provided that on"
+        },
+        {
+          "key": "unknown",
+          "score": 11.0,
+          "name": "Unknown license detected but not recognized",
+          "short_name": "unknown",
+          "category": "Unstated License",
+          "is_exception": false,
+          "owner": "Unspecified",
+          "homepage_url": null,
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:unknown",
+          "spdx_license_key": null,
+          "spdx_url": "",
+          "start_line": 35,
+          "end_line": 35,
+          "matched_rule": {
+            "identifier": "lead-in_unknown_28.RULE",
+            "license_expression": "unknown",
+            "licenses": [
+              "unknown"
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 2,
+            "matched_length": 2,
+            "match_coverage": 100.0,
+            "rule_relevance": 11
+          },
+          "matched_text": "          treat the Source in question as being licensed under"
+        },
+        {
+          "key": "unknown",
+          "score": 11.0,
+          "name": "Unknown license detected but not recognized",
+          "short_name": "unknown",
+          "category": "Unstated License",
+          "is_exception": false,
+          "owner": "Unspecified",
+          "homepage_url": null,
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:unknown",
+          "spdx_license_key": null,
+          "spdx_url": "",
+          "start_line": 80,
+          "end_line": 80,
+          "matched_rule": {
+            "identifier": "lead-in_unknown_28.RULE",
+            "license_expression": "unknown",
+            "licenses": [
+              "unknown"
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 2,
+            "matched_length": 2,
+            "match_coverage": 100.0,
+            "rule_relevance": 11
+          },
+          "matched_text": "      licensed under a licence approved by the Free Software"
+        },
+        {
+          "key": "unknown",
+          "score": 11.0,
+          "name": "Unknown license detected but not recognized",
+          "short_name": "unknown",
+          "category": "Unstated License",
+          "is_exception": false,
+          "owner": "Unspecified",
+          "homepage_url": null,
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:unknown",
+          "spdx_license_key": null,
+          "spdx_url": "",
+          "start_line": 162,
+          "end_line": 162,
+          "matched_rule": {
+            "identifier": "lead-in_unknown_28.RULE",
+            "license_expression": "unknown",
+            "licenses": [
+              "unknown"
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 2,
+            "matched_length": 2,
+            "match_coverage": 100.0,
+            "rule_relevance": 11
+          },
+          "matched_text": "          contained in it, which remain licensed under their own"
+        },
+        {
+          "key": "robert-hubley",
+          "score": 40.57,
+          "name": "Robert Hubley License",
+          "short_name": "Robert Hubley License",
+          "category": "Permissive",
+          "is_exception": false,
+          "owner": "Robert Hubley",
+          "homepage_url": "http://www.bullzip.com/md5/vb/md5-vb-class.htm",
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:robert-hubley",
+          "spdx_license_key": null,
+          "spdx_url": "",
+          "start_line": 209,
+          "end_line": 217,
+          "matched_rule": {
+            "identifier": "robert-hubley.LICENSE",
+            "license_expression": "robert-hubley",
+            "licenses": [
+              "robert-hubley"
+            ],
+            "is_license_text": true,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "3-seq",
+            "rule_length": 106,
+            "matched_length": 43,
+            "match_coverage": 40.57,
+            "rule_relevance": 100
+          },
+          "matched_text": "      direct, indirect, special, incidental, consequential, exemplary,\n      punitive or other damages of any character including, without\n      limitation, procurement of substitute goods or services, loss of\n      use, data or profits, or business interruption, however caused\n      and on any theory of contract, warranty, tort (including\n      negligence), product liability or otherwise, arising in any way\n      in relation to the Covered Source, modified Covered Source\n      and/or the Making or Conveyance of a Product, even if advised of\n      the possibility of such damages, and You shall hold the"
+        },
+        {
+          "key": "unknown",
+          "score": 60.0,
+          "name": "Unknown license detected but not recognized",
+          "short_name": "unknown",
+          "category": "Unstated License",
+          "is_exception": false,
+          "owner": "Unspecified",
+          "homepage_url": null,
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:unknown",
+          "spdx_license_key": null,
+          "spdx_url": "",
+          "start_line": 225,
+          "end_line": 225,
+          "matched_rule": {
+            "identifier": "lead-in_unknown_63.RULE",
+            "license_expression": "unknown",
+            "licenses": [
+              "unknown"
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 4,
+            "matched_length": 4,
+            "match_coverage": 100.0,
+            "rule_relevance": 60.0
+          },
+          "matched_text": "  7.1 Subject to the terms and conditions of this Licence, each"
+        }
+      ],
+      "license_expressions": [
+        "unknown",
+        "unknown",
+        "unknown",
+        "unknown",
+        "robert-hubley",
+        "unknown"
+      ],
+      "copyrights": [
+        {
+          "value": "copyright CERN 2020",
+          "start_line": 14,
+          "end_line": 15
+        }
+      ],
+      "holders": [
+        {
+          "value": "CERN",
+          "start_line": 14,
+          "end_line": 15
+        }
+      ],
+      "authors": [],
+      "packages": [],
+      "emails": [],
+      "urls": [],
+      "is_legal": true,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": true,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "cern-ohl-s-2.0.yml",
+      "type": "file",
+      "name": "cern-ohl-s-2.0.yml",
+      "base_name": "cern-ohl-s-2.0",
+      "extension": ".yml",
+      "size": 719,
+      "date": "2020-07-29",
+      "sha1": "2310a2d5bedf487caec0d5ac496346600dbf2d3d",
+      "md5": "465d5d79d0582777928e0d3960472a64",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": "ActionScript 3",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": false,
+      "licenses": [],
+      "license_expressions": [],
+      "copyrights": [
+        {
+          "value": "copyright CERN 2020",
+          "start_line": 15,
+          "end_line": 18
+        }
+      ],
+      "holders": [
+        {
+          "value": "CERN",
+          "start_line": 15,
+          "end_line": 18
+        }
+      ],
+      "authors": [],
+      "packages": [],
+      "emails": [],
+      "urls": [
+        {
+          "url": "https://kt.cern/ohlv2",
+          "start_line": 6,
+          "end_line": 6
+        },
+        {
+          "url": "https://ohwr.org/project/cernohl/wikis/uploads/002d0b7d5066e6b3829168730237bddb/cern_ohl_s_v2.txt",
+          "start_line": 8,
+          "end_line": 8
+        },
+        {
+          "url": "https://ohwr.org/project/cernohl/wikis/uploads/ee7922912e58f8676e1d7ff841b391cb/cern_ohl_s_v2.pdf",
+          "start_line": 9,
+          "end_line": 9
+        },
+        {
+          "url": "https://ohwr.org/project/cernohl/wikis/faq",
+          "start_line": 10,
+          "end_line": 10
+        },
+        {
+          "url": "https://ohwr.org/project/cernohl",
+          "start_line": 12,
+          "end_line": 12
+        },
+        {
+          "url": "https://cern-ohl.web.cern.ch/",
+          "start_line": 13,
+          "end_line": 13
+        },
+        {
+          "url": "https://ohwr.org/project/cernohl/wikis/Documents/CERN-OHL-version-2",
+          "start_line": 14,
+          "end_line": 14
+        }
+      ],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "cern-ohl-w-2.0.LICENSE",
+      "type": "file",
+      "name": "cern-ohl-w-2.0.LICENSE",
+      "base_name": "cern-ohl-w-2.0",
+      "extension": ".LICENSE",
+      "size": 14530,
+      "date": "2020-07-29",
+      "sha1": "a319dd2c9c2f052e7789c72bd991ca63fa8e612c",
+      "md5": "6fe23f4c414e6b26515b355bdcd66cf0",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "unknown",
+          "score": 11.0,
+          "name": "Unknown license detected but not recognized",
+          "short_name": "unknown",
+          "category": "Unstated License",
+          "is_exception": false,
+          "owner": "Unspecified",
+          "homepage_url": null,
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:unknown",
+          "spdx_license_key": null,
+          "spdx_url": "",
+          "start_line": 33,
+          "end_line": 33,
+          "matched_rule": {
+            "identifier": "lead-in_unknown_28.RULE",
+            "license_expression": "unknown",
+            "licenses": [
+              "unknown"
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 2,
+            "matched_length": 2,
+            "match_coverage": 100.0,
+            "rule_relevance": 11
+          },
+          "matched_text": "          it applies as licensed under CERN-OHL-S or CERN-OHL-W"
+        },
+        {
+          "key": "unknown",
+          "score": 11.0,
+          "name": "Unknown license detected but not recognized",
+          "short_name": "unknown",
+          "category": "Unstated License",
+          "is_exception": false,
+          "owner": "Unspecified",
+          "homepage_url": null,
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:unknown",
+          "spdx_license_key": null,
+          "spdx_url": "",
+          "start_line": 36,
+          "end_line": 36,
+          "matched_rule": {
+            "identifier": "lead-in_unknown_28.RULE",
+            "license_expression": "unknown",
+            "licenses": [
+              "unknown"
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 2,
+            "matched_length": 2,
+            "match_coverage": 100.0,
+            "rule_relevance": 11
+          },
+          "matched_text": "          licensed under CERN-OHL-S or CERN-OHL-W as appropriate."
+        },
+        {
+          "key": "unknown",
+          "score": 11.0,
+          "name": "Unknown license detected but not recognized",
+          "short_name": "unknown",
+          "category": "Unstated License",
+          "is_exception": false,
+          "owner": "Unspecified",
+          "homepage_url": null,
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:unknown",
+          "spdx_license_key": null,
+          "spdx_url": "",
+          "start_line": 89,
+          "end_line": 89,
+          "matched_rule": {
+            "identifier": "lead-in_unknown_28.RULE",
+            "license_expression": "unknown",
+            "licenses": [
+              "unknown"
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 2,
+            "matched_length": 2,
+            "match_coverage": 100.0,
+            "rule_relevance": 11
+          },
+          "matched_text": "      licensed under a licence approved by the Free Software"
+        },
+        {
+          "key": "unknown",
+          "score": 11.0,
+          "name": "Unknown license detected but not recognized",
+          "short_name": "unknown",
+          "category": "Unstated License",
+          "is_exception": false,
+          "owner": "Unspecified",
+          "homepage_url": null,
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:unknown",
+          "spdx_license_key": null,
+          "spdx_url": "",
+          "start_line": 169,
+          "end_line": 169,
+          "matched_rule": {
+            "identifier": "lead-in_unknown_28.RULE",
+            "license_expression": "unknown",
+            "licenses": [
+              "unknown"
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 2,
+            "matched_length": 2,
+            "match_coverage": 100.0,
+            "rule_relevance": 11
+          },
+          "matched_text": "          interfaced, which remain licensed under their own applicable"
+        },
+        {
+          "key": "robert-hubley",
+          "score": 40.57,
+          "name": "Robert Hubley License",
+          "short_name": "Robert Hubley License",
+          "category": "Permissive",
+          "is_exception": false,
+          "owner": "Robert Hubley",
+          "homepage_url": "http://www.bullzip.com/md5/vb/md5-vb-class.htm",
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:robert-hubley",
+          "spdx_license_key": null,
+          "spdx_url": "",
+          "start_line": 226,
+          "end_line": 234,
+          "matched_rule": {
+            "identifier": "robert-hubley.LICENSE",
+            "license_expression": "robert-hubley",
+            "licenses": [
+              "robert-hubley"
+            ],
+            "is_license_text": true,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "3-seq",
+            "rule_length": 106,
+            "matched_length": 43,
+            "match_coverage": 40.57,
+            "rule_relevance": 100
+          },
+          "matched_text": "      direct, indirect, special, incidental, consequential, exemplary,\n      punitive or other damages of any character including, without\n      limitation, procurement of substitute goods or services, loss of\n      use, data or profits, or business interruption, however caused\n      and on any theory of contract, warranty, tort (including\n      negligence), product liability or otherwise, arising in any way\n      in relation to the Covered Source, modified Covered Source\n      and/or the Making or Conveyance of a Product, even if advised of\n      the possibility of such damages, and You shall hold the"
+        },
+        {
+          "key": "unknown",
+          "score": 60.0,
+          "name": "Unknown license detected but not recognized",
+          "short_name": "unknown",
+          "category": "Unstated License",
+          "is_exception": false,
+          "owner": "Unspecified",
+          "homepage_url": null,
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:unknown",
+          "spdx_license_key": null,
+          "spdx_url": "",
+          "start_line": 242,
+          "end_line": 242,
+          "matched_rule": {
+            "identifier": "lead-in_unknown_63.RULE",
+            "license_expression": "unknown",
+            "licenses": [
+              "unknown"
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 4,
+            "matched_length": 4,
+            "match_coverage": 100.0,
+            "rule_relevance": 60.0
+          },
+          "matched_text": "  7.1 Subject to the terms and conditions of this Licence, each"
+        },
+        {
+          "key": "unknown",
+          "score": 11.0,
+          "name": "Unknown license detected but not recognized",
+          "short_name": "unknown",
+          "category": "Unstated License",
+          "is_exception": false,
+          "owner": "Unspecified",
+          "homepage_url": null,
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:unknown",
+          "spdx_license_key": null,
+          "spdx_url": "",
+          "start_line": 290,
+          "end_line": 290,
+          "matched_rule": {
+            "identifier": "lead-in_unknown_28.RULE",
+            "license_expression": "unknown",
+            "licenses": [
+              "unknown"
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 2,
+            "matched_length": 2,
+            "match_coverage": 100.0,
+            "rule_relevance": 11
+          },
+          "matched_text": "      You may treat Covered Source licensed under CERN-OHL-W as"
+        },
+        {
+          "key": "unknown",
+          "score": 11.0,
+          "name": "Unknown license detected but not recognized",
+          "short_name": "unknown",
+          "category": "Unstated License",
+          "is_exception": false,
+          "owner": "Unspecified",
+          "homepage_url": null,
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:unknown",
+          "spdx_license_key": null,
+          "spdx_url": "",
+          "start_line": 291,
+          "end_line": 291,
+          "matched_rule": {
+            "identifier": "lead-in_unknown_28.RULE",
+            "license_expression": "unknown",
+            "licenses": [
+              "unknown"
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 2,
+            "matched_length": 2,
+            "match_coverage": 100.0,
+            "rule_relevance": 11
+          },
+          "matched_text": "      licensed under CERN-OHL-S if and only if all Available"
+        }
+      ],
+      "license_expressions": [
+        "unknown",
+        "unknown",
+        "unknown",
+        "unknown",
+        "robert-hubley",
+        "unknown",
+        "unknown",
+        "unknown"
+      ],
+      "copyrights": [
+        {
+          "value": "copyright CERN 2020",
+          "start_line": 14,
+          "end_line": 15
+        }
+      ],
+      "holders": [
+        {
+          "value": "CERN",
+          "start_line": 14,
+          "end_line": 15
+        }
+      ],
+      "authors": [],
+      "packages": [],
+      "emails": [],
+      "urls": [],
+      "is_legal": true,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": true,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "cern-ohl-w-2.0.yml",
+      "type": "file",
+      "name": "cern-ohl-w-2.0.yml",
+      "base_name": "cern-ohl-w-2.0",
+      "extension": ".yml",
+      "size": 723,
+      "date": "2020-07-29",
+      "sha1": "a852c84234b1f39c6c59748e3af429d06fd3f803",
+      "md5": "4a400fcca2835d6a157c404438ede18e",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": "ActionScript 3",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": false,
+      "licenses": [],
+      "license_expressions": [],
+      "copyrights": [
+        {
+          "value": "copyright CERN 2020",
+          "start_line": 15,
+          "end_line": 18
+        }
+      ],
+      "holders": [
+        {
+          "value": "CERN",
+          "start_line": 15,
+          "end_line": 18
+        }
+      ],
+      "authors": [],
+      "packages": [],
+      "emails": [],
+      "urls": [
+        {
+          "url": "https://kt.cern/ohlv2",
+          "start_line": 6,
+          "end_line": 6
+        },
+        {
+          "url": "https://ohwr.org/project/cernohl/wikis/uploads/10946616b8cbcdef2274a58d9f3a98fb/cern_ohl_w_v2.txt",
+          "start_line": 8,
+          "end_line": 8
+        },
+        {
+          "url": "https://ohwr.org/project/cernohl/wikis/uploads/b94a1a92b29984226c56a0dd4dca0d39/cern_ohl_w_v2.pdf",
+          "start_line": 9,
+          "end_line": 9
+        },
+        {
+          "url": "https://ohwr.org/project/cernohl/wikis/faq",
+          "start_line": 10,
+          "end_line": 10
+        },
+        {
+          "url": "https://ohwr.org/project/cernohl",
+          "start_line": 12,
+          "end_line": 12
+        },
+        {
+          "url": "https://cern-ohl.web.cern.ch/",
+          "start_line": 13,
+          "end_line": 13
+        },
+        {
+          "url": "https://ohwr.org/project/cernohl/wikis/Documents/CERN-OHL-version-2",
+          "start_line": 14,
+          "end_line": 14
+        }
+      ],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    }
+  ]
+}

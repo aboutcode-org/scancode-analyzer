@@ -1,0 +1,1331 @@
+{
+  "headers": [
+    {
+      "tool_name": "scancode-toolkit",
+      "tool_version": "3.1.1.post351.850399bc3",
+      "options": {
+        "input": [
+          "/home/ayan/Desktop/nexB/main_repos/scancode-analyse/downloaded_licenses/t-z"
+        ],
+        "--classify": true,
+        "--copyright": true,
+        "--email": true,
+        "--generated": true,
+        "--info": true,
+        "--is-license-text": true,
+        "--json-pp": "results-test/rule/lic-t-z.json",
+        "--license": true,
+        "--license-clarity-score": true,
+        "--license-text": true,
+        "--package": true,
+        "--processes": "8",
+        "--strip-root": true,
+        "--summary": true,
+        "--summary-key-files": true,
+        "--url": true
+      },
+      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "start_timestamp": "2020-07-15T101030.608165",
+      "end_timestamp": "2020-07-15T101040.289219",
+      "message": null,
+      "errors": [],
+      "extra_data": {
+        "files_count": 13
+      }
+    }
+  ],
+  "summary": {
+    "license_expressions": [
+      {
+        "value": null,
+        "count": 1
+      },
+      {
+        "value": "cnri-python-1.6",
+        "count": 1
+      },
+      {
+        "value": "efl-1.0",
+        "count": 1
+      },
+      {
+        "value": "lgpl-2.0-plus WITH wxwindows-exception-3.1",
+        "count": 1
+      },
+      {
+        "value": "osl-2.1",
+        "count": 1
+      },
+      {
+        "value": "ucl-1.0",
+        "count": 1
+      },
+      {
+        "value": "uoi-ncsa",
+        "count": 1
+      },
+      {
+        "value": "upl-1.0",
+        "count": 1
+      },
+      {
+        "value": "vsl-1.0",
+        "count": 1
+      },
+      {
+        "value": "w3c-software-19980720",
+        "count": 1
+      },
+      {
+        "value": "xnet",
+        "count": 1
+      },
+      {
+        "value": "zlib",
+        "count": 1
+      },
+      {
+        "value": "zpl-2.0",
+        "count": 1
+      }
+    ],
+    "copyrights": [
+      {
+        "value": null,
+        "count": 6
+      },
+      {
+        "value": "Copyright (c) World Wide Web Consortium, (Massachusetts Institute of Technology, Institut National de Recherche en Informatique et en Automatique, Keio University)",
+        "count": 2
+      },
+      {
+        "value": "Copyright (c) Julian Smart, Robert Roebling",
+        "count": 1
+      },
+      {
+        "value": "Copyright (c) Lawrence E. Rosen",
+        "count": 1
+      },
+      {
+        "value": "Copyright (c) Lawrence Rosen",
+        "count": 1
+      },
+      {
+        "value": "Copyright (c) Nigel Tzeng",
+        "count": 1
+      },
+      {
+        "value": "Copyright (c) Vovida Networks, Inc.",
+        "count": 1
+      },
+      {
+        "value": "Copyright (c) X.Net, Inc. Lafayette, California, USA",
+        "count": 1
+      },
+      {
+        "value": "Copyright (c) Zope Corporation (tm) and Contributors",
+        "count": 1
+      }
+    ],
+    "holders": [
+      {
+        "value": null,
+        "count": 6
+      },
+      {
+        "value": "World Wide Web Consortium, (Massachusetts Institute of Technology, Institut National de Recherche en Informatique et en Automatique, Keio University)",
+        "count": 2
+      },
+      {
+        "value": "Julian Smart, Robert Roebling",
+        "count": 1
+      },
+      {
+        "value": "Lawrence E. Rosen",
+        "count": 1
+      },
+      {
+        "value": "Lawrence Rosen",
+        "count": 1
+      },
+      {
+        "value": "Nigel Tzeng",
+        "count": 1
+      },
+      {
+        "value": "Vovida Networks, Inc.",
+        "count": 1
+      },
+      {
+        "value": "X.Net, Inc. Lafayette, California, USA",
+        "count": 1
+      },
+      {
+        "value": "Zope Corporation (tm) and Contributors",
+        "count": 1
+      }
+    ],
+    "authors": [
+      {
+        "value": null,
+        "count": 12
+      },
+      {
+        "value": "and/or Contributors",
+        "count": 2
+      }
+    ],
+    "programming_language": [
+      {
+        "value": null,
+        "count": 12
+      },
+      {
+        "value": "ActionScript 3",
+        "count": 1
+      }
+    ],
+    "packages": []
+  },
+  "license_clarity_score": {
+    "score": 13,
+    "declared": false,
+    "discovered": 0.54,
+    "consistency": false,
+    "spdx": false,
+    "license_texts": false
+  },
+  "summary_of_key_files": {
+    "license_expressions": [],
+    "copyrights": [],
+    "holders": [],
+    "authors": [],
+    "programming_language": []
+  },
+  "files": [
+    {
+      "path": "Talis Community License.txt",
+      "type": "file",
+      "name": "Talis Community License.txt",
+      "base_name": "Talis Community License",
+      "extension": ".txt",
+      "size": 5456,
+      "date": "2020-03-12",
+      "sha1": "790e5b37654dc6a81ec05b7491aa27abc7e16bba",
+      "md5": "7d7f385874459f598e26f8bd7b9d8c64",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text, with very long lines",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [],
+      "license_expressions": [],
+      "copyrights": [],
+      "holders": [],
+      "authors": [
+        {
+          "value": "and/or Contributors",
+          "start_line": 44,
+          "end_line": 44
+        },
+        {
+          "value": "and/or Contributors",
+          "start_line": 47,
+          "end_line": 47
+        }
+      ],
+      "packages": [],
+      "emails": [],
+      "urls": [
+        {
+          "url": "http://tdnarchive.capita-libraries.co.uk/tcl",
+          "start_line": 36,
+          "end_line": 36
+        }
+      ],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "The CNRI portion of the multi-part Python License (CNRI-Python).txt",
+      "type": "file",
+      "name": "The CNRI portion of the multi-part Python License (CNRI-Python).txt",
+      "base_name": "The CNRI portion of the multi-part Python License (CNRI-Python)",
+      "extension": ".txt",
+      "size": 3344,
+      "date": "2020-03-13",
+      "sha1": "115d36f56c94ba5b3f971beca72f04061fa24a8b",
+      "md5": "d138c6e4171da2982af1495fde43c7cd",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text, with very long lines",
+      "programming_language": "ActionScript 3",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "cnri-python-1.6",
+          "score": 99.08,
+          "name": "CNRI Open Source License Agreement for Python 1.6",
+          "short_name": "CNRI Python 1.6",
+          "category": "Permissive",
+          "is_exception": false,
+          "owner": "CNRI",
+          "homepage_url": "http://www.handle.net/python_licenses/python1.6_9-5-00.html",
+          "text_url": "http://www.handle.net/python_licenses/python1.6_9-5-00.html",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:cnri-python-1.6",
+          "spdx_license_key": "CNRI-Python",
+          "spdx_url": "https://spdx.org/licenses/CNRI-Python",
+          "start_line": 1,
+          "end_line": 23,
+          "matched_rule": {
+            "identifier": "cnri-python-1.6.SPDX.RULE",
+            "license_expression": "cnri-python-1.6",
+            "licenses": [
+              "cnri-python-1.6"
+            ],
+            "is_license_text": true,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "3-seq",
+            "rule_length": 546,
+            "matched_length": 541,
+            "match_coverage": 99.08,
+            "rule_relevance": 100
+          },
+          "matched_text": "IMPORTANT: PLEASE READ THE FOLLOWING AGREEMENT CAREFULLY.\n\nBY CLICKING ON \"ACCEPT\" WHERE INDICATED BELOW, OR BY COPYING, INSTALLING OR OTHERWISE USING PYTHON 1.6, beta 1 SOFTWARE, YOU ARE DEEMED TO HAVE AGREED TO THE TERMS AND CONDITIONS OF THIS LICENSE AGREEMENT.\n\n1. This LICENSE AGREEMENT is between the Corporation for National Research Initiatives, having an office at 1895 Preston White Drive, Reston, VA 20191 (\"CNRI\"), and the Individual or Organization (\"Licensee\") accessing and otherwise using Python 1.6, beta 1 software in source or binary form and its associated documentation, as released at the www.python.org Internet site on August 4, 2000 (\"Python 1.6b1\").\n\n2. Subject to the terms and conditions of this License Agreement, CNRI hereby grants Licensee a non-exclusive, royalty-free, world-wide license to reproduce, analyze, test, perform and/or display publicly, prepare derivative works, distribute, and otherwise use Python 1.6b1 alone or in any derivative version, provided, however, that CNRIs License Agreement is retained in Python 1.6b1, alone or in any derivative version prepared by Licensee.\n\nAlternately, in lieu of CNRIs License Agreement, Licensee may substitute the following text (omitting the quotes): \"Python 1.6, beta 1, is made available subject to the terms and conditions in CNRIs License Agreement. This Agreement may be located on the Internet using the following unique, persistent identifier (known as a handle): 1895.22/1011. This Agreement may also be obtained from a proxy server on the Internet using the URL:http://hdl.handle.net/1895.22/1011\".\n\n3. In the event Licensee prepares a derivative work that is based on or incorporates Python 1.6b1 or any part thereof, and wants to make the derivative work available to the public as provided herein, then Licensee hereby agrees to indicate in any such work the nature of the modifications made to Python 1.6b1.\n\n4. CNRI is making Python 1.6b1 available to Licensee on an \"AS IS\" basis. CNRI MAKES NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR IMPLIED. BY WAY OF EXAMPLE, BUT NOT LIMITATION, CNRI MAKES NO AND DISCLAIMS ANY REPRESENTATION OR WARRANTY OF MERCHANTABILITY OR FITNESS FOR ANY PARTICULAR PURPOSE OR THAT THE USE OF PYTHON 1.6b1 WILL NOT INFRINGE ANY THIRD PARTY RIGHTS.\n\n5. CNRI SHALL NOT BE LIABLE TO LICENSEE OR ANY OTHER USERS OF THE SOFTWARE FOR ANY INCIDENTAL, SPECIAL, OR CONSEQUENTIAL DAMAGES OR LOSS AS A RESULT OF USING, MODIFYING OR DISTRIBUTING PYTHON 1.6b1, OR ANY DERIVATIVE THEREOF, EVEN IF ADVISED OF THE POSSIBILITY THEREOF.\n\n6. This License Agreement will automatically terminate upon a material breach of its terms and conditions.\n\n7. This License Agreement shall be governed by and interpreted in all respects by the law of the State of Virginia, excluding conflict of law provisions. Nothing in this License Agreement shall be deemed to create any relationship of agency, partnership, or joint venture between CNRI and Licensee. This License Agreement does not grant permission to use CNRI trademarks or trade name in a trademark sense to endorse or promote products or services of Licensee, or any third party.\n\n8. By clicking on the \"ACCEPT\" button where indicated, or by copying, installing or otherwise using Python 1.6b1, Licensee agrees to be bound by the terms and conditions of this License Agreement.\n\nACCEPT"
+        }
+      ],
+      "license_expressions": [
+        "cnri-python-1.6"
+      ],
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "packages": [],
+      "emails": [],
+      "urls": [
+        {
+          "url": "http://www.python.org/",
+          "start_line": 5,
+          "end_line": 5
+        },
+        {
+          "url": "http://hdl.handle.net/1895.22/1011",
+          "start_line": 9,
+          "end_line": 9
+        }
+      ],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": true,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "The Eiffel Forum License, version 1 (EFL-1.0).txt",
+      "type": "file",
+      "name": "The Eiffel Forum License, version 1 (EFL-1.0).txt",
+      "base_name": "The Eiffel Forum License, version 1 (EFL-1.0)",
+      "extension": ".txt",
+      "size": 870,
+      "date": "2020-03-13",
+      "sha1": "b20fcc5c69a40cd00abd4f8c57ca10ac0d00dac6",
+      "md5": "81c0911e36b5d6f6f445ab60579b1ee3",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text, with very long lines",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "efl-1.0",
+          "score": 96.35,
+          "name": "Eiffel Forum License 1.0",
+          "short_name": "EFL 1.0",
+          "category": "Permissive",
+          "is_exception": false,
+          "owner": "Eiffel NICE",
+          "homepage_url": "http://www.eiffel-nice.org/license/",
+          "text_url": "http://www.eiffel-nice.org/license/forum.txt",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:efl-1.0",
+          "spdx_license_key": "EFL-1.0",
+          "spdx_url": "https://spdx.org/licenses/EFL-1.0",
+          "start_line": 1,
+          "end_line": 10,
+          "matched_rule": {
+            "identifier": "efl-1.0.LICENSE",
+            "license_expression": "efl-1.0",
+            "licenses": [
+              "efl-1.0"
+            ],
+            "is_license_text": true,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "3-seq",
+            "rule_length": 137,
+            "matched_length": 132,
+            "match_coverage": 96.35,
+            "rule_relevance": 100
+          },
+          "matched_text": "Permission is hereby granted to use, copy, modify and/or distribute this package, provided that:\n\ncopyright notices are retained unchanged\n\nany distribution of this package, whether modified or not, includes this file\n\nPermission is hereby also granted to distribute binary programs which depend on this package, provided that:\n\nif the binary program depends on a modified version of this package, you must publicly release the modified version of this package\nTHIS PACKAGE IS PROVIDED \"AS IS\" AND WITHOUT WARRANTY. ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHORS BE LIABLE TO ANY PARTY FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES ARISING IN ANY WAY OUT OF THE USE OF THIS PACKAGE."
+        }
+      ],
+      "license_expressions": [
+        "efl-1.0"
+      ],
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "packages": [],
+      "emails": [],
+      "urls": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": true,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "The Open Software License 2.1 (OSL-2.1).txt",
+      "type": "file",
+      "name": "The Open Software License 2.1 (OSL-2.1).txt",
+      "base_name": "The Open Software License 2.1 (OSL-2.1)",
+      "extension": ".txt",
+      "size": 9788,
+      "date": "2020-03-13",
+      "sha1": "15c39ad15ce8c462965f2e9f7122148295b817d2",
+      "md5": "b62e7acf44ab8a5c56b794a75fad8f44",
+      "mime_type": "text/plain",
+      "file_type": "UTF-8 Unicode text, with very long lines",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "osl-2.1",
+          "score": 99.61,
+          "name": "Open Software License 2.1",
+          "short_name": "OSL 2.1",
+          "category": "Copyleft",
+          "is_exception": false,
+          "owner": "Lawrence Rosen",
+          "homepage_url": "http://www.nexb.com/license/LICENSE-OSL-2.1.html",
+          "text_url": "http://web.archive.org/web/20050212003940/http://www.rosenlaw.com/osl21.htm",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:osl-2.1",
+          "spdx_license_key": "OSL-2.1",
+          "spdx_url": "https://spdx.org/licenses/OSL-2.1",
+          "start_line": 1,
+          "end_line": 40,
+          "matched_rule": {
+            "identifier": "osl-2.1.LICENSE",
+            "license_expression": "osl-2.1",
+            "licenses": [
+              "osl-2.1"
+            ],
+            "is_license_text": true,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "3-seq",
+            "rule_length": 1556,
+            "matched_length": 1550,
+            "match_coverage": 99.61,
+            "rule_relevance": 100
+          },
+          "matched_text": "This Open Software License (the \"License\") applies to any original work of authorship (the \"Original Work\") whose owner (the \"Licensor\") has placed the following notice immediately following the copyright notice for the Original Work:\n\nLicensed under the Open Software License version 2.1\n\n1) Grant of Copyright License. Licensor hereby grants You a world-wide, royalty-free, non-exclusive, perpetual, sublicenseable license to do the following:\n\nto reproduce the Original Work in copies;\nto prepare derivative works (\"Derivative Works\") based upon the Original Work;\nto distribute copies of the Original Work and Derivative Works to the public, with the proviso that copies of Original Work or Derivative Works that You distribute shall be licensed under the Open Software License;\nto perform the Original Work publicly; and\nto display the Original Work publicly.\n2) Grant of Patent License. Licensor hereby grants You a world-wide, royalty-free, non-exclusive, perpetual, sublicenseable license, under patent claims owned or controlled by the Licensor that are embodied in the Original Work as furnished by the Licensor, to make, use, sell and offer for sale the Original Work and Derivative Works.\n\n3) Grant of Source Code License. The term \"Source Code\" means the preferred form of the Original Work for making modifications to it and all available documentation describing how to modify the Original Work. Licensor hereby agrees to provide a machine-readable copy of the Source Code of the Original Work along with each copy of the Original Work that Licensor distributes. Licensor reserves the right to satisfy this obligation by placing a machine-readable copy of the Source Code in an information repository reasonably calculated to permit inexpensive and convenient access by You for as long as Licensor continues to distribute the Original Work, and by publishing the address of that information repository in a notice immediately following the copyright notice that applies to the Original Work.\n\n4) Exclusions From License Grant. Neither the names of Licensor, nor the names of any contributors to the Original Work, nor any of their trademarks or service marks, may be used to endorse or promote products derived from this Original Work without express prior written permission of the Licensor. Nothing in this License shall be deemed to grant any rights to trademarks, copyrights, patents, trade secrets or any other intellectual property of Licensor except as expressly stated herein. No patent license is granted to make, use, sell or offer to sell embodiments of any patent claims other than the licensed claims defined in Section 2. No right is granted to the trademarks of Licensor even if such marks are included in the Original Work. Nothing in this License shall be interpreted to prohibit Licensor from licensing under different terms from this License any Original Work that Licensor otherwise would have a right to license.\n\n5) External Deployment. The term \"External Deployment\" means the use or distribution of the Original Work or Derivative Works in any way such that the Original Work or Derivative Works may be used by anyone other than You, whether the Original Work or Derivative Works are distributed to those persons or made available as an application intended for use over a computer network. As an express condition for the grants of license hereunder, You agree that any External Deployment by You of a Derivative Work shall be deemed a distribution and shall be licensed to all under the terms of this License, as prescribed in section 1(c) herein.\n\n6) Attribution Rights. You must retain, in the Source Code of any Derivative Works that You create, all copyright, patent or trademark notices from the Source Code of the Original Work, as well as any notices of licensing and any descriptive text identified therein as an \"Attribution Notice.\" You must cause the Source Code for any Derivative Works that You create to carry a prominent Attribution Notice reasonably calculated to inform recipients that You have modified the Original Work.\n\n7) Warranty of Provenance and Disclaimer of Warranty. Licensor warrants that the copyright in and to the Original Work and the patent rights granted herein by Licensor are owned by the Licensor or are sublicensed to You under the terms of this License with the permission of the contributor(s) of those copyrights and patent rights. Except as expressly stated in the immediately proceeding sentence, the Original Work is provided under this License on an \"AS IS\" BASIS and WITHOUT WARRANTY, either express or implied, including, without limitation, the warranties of NON-INFRINGEMENT, MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY OF THE ORIGINAL WORK IS WITH YOU. This DISCLAIMER OF WARRANTY constitutes an essential part of this License. No license to Original Work is granted hereunder except under this disclaimer.\n\n8) Limitation of Liability. Under no circumstances and under no legal theory, whether in tort (including negligence), contract, or otherwise, shall the Licensor be liable to any person for any direct, indirect, special, incidental, or consequential damages of any character arising as a result of this License or the use of the Original Work including, without limitation, damages for loss of goodwill, work stoppage, computer failure or malfunction, or any and all other commercial damages or losses. This limitation of liability shall not apply to liability for death or personal injury resulting from Licensor's negligence to the extent applicable law prohibits such limitation. Some jurisdictions do not allow the exclusion or limitation of incidental or consequential damages, so this exclusion and limitation may not apply to You.\n\n9) Acceptance and Termination. If You distribute copies of the Original Work or a Derivative Work, You must make a reasonable effort under the circumstances to obtain the express assent of recipients to the terms of this License. Nothing else but this License (or another written agreement between Licensor and You) grants You permission to create Derivative Works based upon the Original Work or to exercise any of the rights granted in Section 1 herein, and any attempt to do so except under the terms of this License (or another written agreement between Licensor and You) is expressly prohibited by U.S. copyright law, the equivalent laws of other countries, and by international treaty. Therefore, by exercising any of the rights granted to You in Section 1 herein, You indicate Your acceptance of this License and all of its terms and conditions. This License shall terminate immediately and you may no longer exercise any of the rights granted to You by this License upon Your failure to honor the proviso in Section 1(c) herein.\n\n10) Termination for Patent Action. This License shall terminate automatically and You may no longer exercise any of the rights granted to You by this License as of the date You commence an action, including a cross-claim or counterclaim, against Licensor or any licensee alleging that the Original Work infringes a patent. This termination provision shall not apply for an action alleging patent infringement by combinations of the Original Work with other software or hardware.\n\n11) Jurisdiction, Venue and Governing Law. Any action or suit relating to this License may be brought only in the courts of a jurisdiction wherein the Licensor resides or in which Licensor conducts its primary business, and under the laws of that jurisdiction excluding its conflict-of-law provisions. The application of the United Nations Convention on Contracts for the International Sale of Goods is expressly excluded. Any use of the Original Work outside the scope of this License or after its termination shall be subject to the requirements and penalties of the U.S. Copyright Act, 17 U.S.C. \u00a7 101 et seq., the equivalent laws of other countries, and international treaty. This section shall survive the termination of this License.\n\n12) Attorneys Fees. In any action to enforce the terms of this License or seeking damages relating thereto, the prevailing party shall be entitled to recover its costs and expenses, including, without limitation, reasonable attorneys' fees and costs incurred in connection with such action, including any appeal of such action. This section shall survive the termination of this License.\n\n13) Miscellaneous. This License represents the complete agreement concerning the subject matter hereof. If any provision of this License is held to be unenforceable, such provision shall be reformed only to the extent necessary to make it enforceable.\n\n14) Definition of \"You\" in This License. \"You\" throughout this License, whether in upper or lower case, means an individual or a legal entity exercising rights under, and complying with all of the terms of, this License. For legal entities, \"You\" includes any entity that controls, is controlled by, or is under common control with you. For purposes of this definition, \"control\" means (i) the power, direct or indirect, to cause the direction or management of such entity, whether by contract or otherwise, or (ii) ownership of fifty percent (50%) or more of the outstanding shares, or (iii) beneficial ownership of such entity.\n\n15) Right to Use. You may use the Original Work in all ways not otherwise restricted or conditioned by this License or by law, and Licensor promises not to interfere with or be responsible for such uses by You.\n\nThis license is Copyright (C) 2003-2004 Lawrence E. Rosen. All rights reserved. Permission is hereby granted to copy and distribute this license without modification. This license may not be modified without the express written permission of its copyright owner."
+        }
+      ],
+      "license_expressions": [
+        "osl-2.1"
+      ],
+      "copyrights": [
+        {
+          "value": "Copyright (c) 2003-2004 Lawrence E. Rosen",
+          "start_line": 40,
+          "end_line": 40
+        }
+      ],
+      "holders": [
+        {
+          "value": "Lawrence E. Rosen",
+          "start_line": 40,
+          "end_line": 40
+        }
+      ],
+      "authors": [],
+      "packages": [],
+      "emails": [],
+      "urls": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": true,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "The Universal Permissive License (UPL), Version 1.0.txt",
+      "type": "file",
+      "name": "The Universal Permissive License (UPL), Version 1.0.txt",
+      "base_name": "The Universal Permissive License (UPL), Version 1.0",
+      "extension": ".txt",
+      "size": 1836,
+      "date": "2020-03-13",
+      "sha1": "cd6c1570c660fb811d3a37b57c9e81d7c85efcf0",
+      "md5": "da40eb4a77ddd3d332871a34b7235490",
+      "mime_type": "text/plain",
+      "file_type": "UTF-8 Unicode text, with very long lines",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "upl-1.0",
+          "score": 100.0,
+          "name": "Universal Permissive License (UPL) v1.0",
+          "short_name": "UPL 1.0",
+          "category": "Permissive",
+          "is_exception": false,
+          "owner": "Oracle Corporation",
+          "homepage_url": "http://opensource.org/licenses/UPL",
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:upl-1.0",
+          "spdx_license_key": "UPL-1.0",
+          "spdx_url": "https://spdx.org/licenses/UPL-1.0",
+          "start_line": 3,
+          "end_line": 17,
+          "matched_rule": {
+            "identifier": "upl-1.0.LICENSE",
+            "license_expression": "upl-1.0",
+            "licenses": [
+              "upl-1.0"
+            ],
+            "is_license_text": true,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 287,
+            "matched_length": 287,
+            "match_coverage": 100.0,
+            "rule_relevance": 100
+          },
+          "matched_text": "The Universal Permissive License (UPL), Version 1.0\n\nSubject to the condition set forth below, permission is hereby granted to any person obtaining a copy of this software, associated documentation and/or data (collectively the \"Software\"), free of charge and under any and all copyright rights in the Software, and any and all patent rights owned or freely licensable by each licensor hereunder covering either (i) the unmodified Software as contributed to or provided by such licensor, or (ii) the Larger Works (as defined below), to deal in both\n\n(a) the Software, and\n\n(b) any piece of software and/or hardware listed in the lrgrwrks.txt file if one is included with the Software (each a \u201cLarger Work\u201d to which the Software is contributed by such licensors),\n\nwithout restriction, including without limitation the rights to copy, create derivative works of, display, perform, and distribute the Software and make, use, sell, offer for sale, import, export, have made, and have sold the Software and the Larger Work(s), and to sublicense the foregoing rights on either these or other terms.\n\nThis license is subject to the following condition:\n\nThe above copyright notice and either this complete permission notice or at a minimum a reference to the UPL must be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
+        }
+      ],
+      "license_expressions": [
+        "upl-1.0"
+      ],
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "packages": [],
+      "emails": [],
+      "urls": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": true,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "University of Illinois - NCSA Open Source License.txt",
+      "type": "file",
+      "name": "University of Illinois - NCSA Open Source License.txt",
+      "base_name": "University of Illinois - NCSA Open Source License",
+      "extension": ".txt",
+      "size": 1679,
+      "date": "2020-03-12",
+      "sha1": "e67ab0fa7ed2a6b70dfac5b8d8d83d01044158ed",
+      "md5": "a4286b48d2b4c8653f571b238a3ee0ef",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text, with very long lines",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "uoi-ncsa",
+          "score": 100.0,
+          "name": "University of Illinois/NCSA Open Source License",
+          "short_name": "NCSA Open Source License",
+          "category": "Permissive",
+          "is_exception": false,
+          "owner": "NCSA - University of Illinois",
+          "homepage_url": "http://www.otm.illinois.edu/faculty/forms/opensource.asp",
+          "text_url": "http://www.otm.illinois.edu/faculty/forms/opensource.asp",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:uoi-ncsa",
+          "spdx_license_key": "NCSA",
+          "spdx_url": "https://spdx.org/licenses/NCSA",
+          "start_line": 10,
+          "end_line": 14,
+          "matched_rule": {
+            "identifier": "uoi-ncsa_8.RULE",
+            "license_expression": "uoi-ncsa",
+            "licenses": [
+              "uoi-ncsa"
+            ],
+            "is_license_text": true,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 222,
+            "matched_length": 222,
+            "match_coverage": 100.0,
+            "rule_relevance": 100
+          },
+          "matched_text": "Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal with the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\nRedistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimers.\nRedistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimers in the documentation and/or other materials provided with the distribution.\nNeither the names of <Name of Development Group, Name of Institution>, nor the names of its contributors may be used to endorse or promote products derived from this Software without specific prior written permission.\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE CONTRIBUTORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS WITH THE SOFTWARE."
+        }
+      ],
+      "license_expressions": [
+        "uoi-ncsa"
+      ],
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "packages": [],
+      "emails": [],
+      "urls": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "Upstream Compatibility License v1.0.txt",
+      "type": "file",
+      "name": "Upstream Compatibility License v1.0.txt",
+      "base_name": "Upstream Compatibility License v1.0",
+      "extension": ".txt",
+      "size": 10455,
+      "date": "2020-03-13",
+      "sha1": "06d18d01f458620f49bf732e59402ca91db99df5",
+      "md5": "d09bff3438edaeb903ab168980feb6c6",
+      "mime_type": "text/plain",
+      "file_type": "UTF-8 Unicode text, with very long lines",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "ucl-1.0",
+          "score": 99.04,
+          "name": "Upstream Compatibility License v1.0",
+          "short_name": "UCL-1.0",
+          "category": "Copyleft Limited",
+          "is_exception": false,
+          "owner": "Lawrence Rosen",
+          "homepage_url": "https://opensource.org/licenses/UCL-1.0",
+          "text_url": "https://opensource.org/licenses/UCL-1.0",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:ucl-1.0",
+          "spdx_license_key": "UCL-1.0",
+          "spdx_url": "https://spdx.org/licenses/UCL-1.0",
+          "start_line": 2,
+          "end_line": 78,
+          "matched_rule": {
+            "identifier": "ucl-1.0.LICENSE",
+            "license_expression": "ucl-1.0",
+            "licenses": [
+              "ucl-1.0"
+            ],
+            "is_license_text": true,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "3-seq",
+            "rule_length": 1660,
+            "matched_length": 1644,
+            "match_coverage": 99.04,
+            "rule_relevance": 100
+          },
+          "matched_text": "This Upstream Compatibility License (the \"License\") applies to any original work of authorship (the \"Original Work\") whose owner (the \"Licensor\") has placed the following licensing notice adjacent to the copyright notice for the Original Work:\n\nLicensed under the Upstream Compatibility License 1.0\n\n1) Grant of Copyright License.\n\nLicensor grants You a worldwide, royalty-free, non-exclusive, sublicensable license, for the duration of the copyright, to do the following:\n\na) to reproduce the Original Work in copies, either alone or as part of a collective work;\n\nb) to translate, adapt, alter, transform, modify, or arrange the Original Work, thereby creating derivative works (\"Derivative Works\") based upon the Original Work;\n\nc) to distribute or communicate copies of the Original Work and Derivative Works to the public, with the proviso that copies of Original Work You distribute or communicate shall be licensed under this Upstream Compatibility License and all Derivative Work You distribute or communicate shall be licensed under both this Upstream Compatibility License and the Apache License 2.0 or later;\n\nd) to perform the Original Work publicly; and\n\ne) to display the Original Work publicly.\n\n2) Grant of Patent License.\n\nLicensor grants You a worldwide, royalty-free, non-exclusive, sublicensable license, under patent claims owned or controlled by the Licensor that are embodied in the Original Work as furnished by the Licensor, for the duration of the patents, to make, use, sell, offer for sale, have made, and import the Original Work and Derivative Works.\n\n3) Grant of Source Code License.\n\nThe term \"Source Code\" means the preferred form of the Original Work for making modifications to it and all available documentation describing how to modify the Original Work. Licensor agrees to provide a machine-readable copy of the Source Code of the Original Work along with each copy of the Original Work that Licensor distributes. Licensor reserves the right to satisfy this obligation by placing a machine-readable copy of the Source Code in an information repository reasonably calculated to permit inexpensive and convenient access by You for as long as Licensor continues to distribute the Original Work.\n\n4) Exclusions From License Grant.\n\nNeither the names of Licensor, nor the names of any contributors to the Original Work, nor any of their trademarks or service marks, may be used to endorse or promote products derived from this Original Work without express prior permission of the Licensor. Except as expressly stated herein, nothing in this License grants any license to Licensor's trademarks, copyrights, patents, trade secrets or any other intellectual property. No patent license is granted to make, use, sell, offer for sale, have made, or import embodiments of any patent claims other than the licensed claims defined in Section 2. No license is granted to the trademarks of Licensor even if such marks are included in the Original Work. Nothing in this License shall be interpreted to prohibit Licensor from licensing under terms different from this License any Original Work that Licensor otherwise would have a right to license.\n\n5) External Deployment.\n\nThe term \"External Deployment\" means the use, distribution, or communication of the Original Work or Derivative Works in any way such that the Original Work or Derivative Works may be used by anyone other than You, whether those works are distributed or communicated to those persons or made available as an application intended for use over a network. As an express condition for the grants of license hereunder, You must treat any External Deployment by You of the Original Work or a Derivative Work as a distribution under section 1(c).\n\n6) Attribution Rights.\n\nYou must retain, in the Source Code of any Derivative Works that You create, all copyright, patent, or trademark notices from the Source Code of the Original Work, as well as any notices of licensing and any descriptive text identified therein as an \"Attribution Notice.\" You must cause the Source Code for any Derivative Works that You create to carry a prominent Attribution Notice reasonably calculated to inform recipients that You have modified the Original Work.\n\n7) Warranty of Provenance and Disclaimer of Warranty.\n\nLicensor warrants that the copyright in and to the Original Work and the patent rights granted herein by Licensor are owned by the Licensor or are sublicensed to You under the terms of this License with the permission of the contributor(s) of those copyrights and patent rights. Except as expressly stated in the immediately preceding sentence, the Original Work is provided under this License on an \"AS IS\" BASIS and WITHOUT WARRANTY, either express or implied, including, without limitation, the warranties of non-infringement, merchantability or fitness for a particular purpose. THE ENTIRE RISK AS TO THE QUALITY OF THE ORIGINAL WORK IS WITH YOU. This DISCLAIMER OF WARRANTY constitutes an essential part of this License. No license to the Original Work is granted by this License except under this disclaimer.\n\n8) Limitation of Liability.\n\nUnder no circumstances and under no legal theory, whether in tort (including negligence), contract, or otherwise, shall the Licensor be liable to anyone for any indirect, special, incidental, or consequential damages of any character arising as a result of this License or the use of the Original Work including, without limitation, damages for loss of goodwill, work stoppage, computer failure or malfunction, or any and all other commercial damages or losses. This limitation of liability shall not apply to the extent applicable law prohibits such limitation.\n\n9) Acceptance and Termination.\n\nIf, at any time, You expressly assented to this License, that assent indicates your clear and irrevocable acceptance of this License and all of its terms and conditions. If You distribute or communicate copies of the Original Work or a Derivative Work, You must make a reasonable effort under the circumstances to obtain the express assent of recipients to the terms of this License. This License conditions your rights to undertake the activities listed in Section 1, including your right to create Derivative Works based upon the Original Work, and doing so without honoring these terms and conditions is prohibited by copyright law and international treaty. Nothing in this License is intended to affect copyright exceptions and limitations (including \"fair use\" or \"fair dealing\"). This License shall terminate immediately and You may no longer exercise any of the rights granted to You by this License upon your failure to honor the conditions in Section 1(c).\n\n10) Termination for Patent Action.\n\nThis License shall terminate automatically and You may no longer exercise any of the rights granted to You by this License as of the date You commence an action, including a cross-claim or counterclaim, against Licensor or any licensee alleging that the Original Work infringes a patent. This termination provision shall not apply for an action alleging patent infringement by combinations of the Original Work with other software or hardware.\n\n11) Jurisdiction, Venue and Governing Law.\n\nAny action or suit relating to this License may be brought only in the courts of a jurisdiction wherein the Licensor resides or in which Licensor conducts its primary business, and under the laws of that jurisdiction excluding its conflict-of-law provisions. The application of the United Nations Convention on Contracts for the International Sale of Goods is expressly excluded. Any use of the Original Work outside the scope of this License or after its termination shall be subject to the requirements and penalties of copyright or patent law in the appropriate jurisdiction. This section shall survive the termination of this License.\n\n12) Attorneys' Fees.\n\nIn any action to enforce the terms of this License or seeking damages relating thereto, the prevailing party shall be entitled to recover its costs and expenses, including, without limitation, reasonable attorneys' fees and costs incurred in connection with such action, including any appeal of such action. This section shall survive the termination of this License.\n\n13) Miscellaneous.\n\nIf any provision of this License is held to be unenforceable, such provision shall be reformed only to the extent necessary to make it enforceable.\n\n14) Definition of \"You\" in This License.\n\n\"You\" throughout this License, whether in upper or lower case, means an individual or a legal entity exercising rights under, and complying with all of the terms of, this License. For legal entities, \"You\" includes any entity that controls, is controlled by, or is under common control with you. For purposes of this definition, \"control\" means (i) the power, direct or indirect, to cause the direction or management of such entity, whether by contract or otherwise, or (ii) ownership of fifty percent (50%) or more of the outstanding shares, or (iii) beneficial ownership of such entity.\n\n15) Right to Use.\n\nYou may use the Original Work in all ways not otherwise restricted or conditioned by this License or by law, and Licensor promises not to interfere with or be responsible for such uses by You.\n\n16) Modification of This License.\n\nThis License is Copyright \u00a9 2005 Lawrence Rosen and Copyright \u00a9 2017 Nigel Tzeng. Permission is granted to copy, distribute, or communicate this License without modification. Nothing in this License permits You to modify this License as applied to the Original Work or to Derivative Works. However, You may modify the text of this License and copy, distribute or communicate your modified version (the \"Modified License\") and apply it to other original works of authorship subject to the following conditions: (i) You may not indicate in any way that your Modified License is the \"Open Software License\" or \"OSL\" or the \"Upstream Compatibility License\" or \"UCL\" and you may not use those names in the name of your Modified License; (ii) You must replace the notice specified in the first paragraph above with the notice \"Licensed under \" or with a notice of your own that is not confusingly similar to the notice in this License; and (iii) You may not claim that your original works are open source software unless your Modified License has been approved by Open Source Initiative (OSI) and You comply with its license review and certification process."
+        }
+      ],
+      "license_expressions": [
+        "ucl-1.0"
+      ],
+      "copyrights": [
+        {
+          "value": "Copyright (c) 2005 Lawrence Rosen",
+          "start_line": 78,
+          "end_line": 78
+        },
+        {
+          "value": "Copyright (c) 2017 Nigel Tzeng",
+          "start_line": 78,
+          "end_line": 78
+        }
+      ],
+      "holders": [
+        {
+          "value": "Lawrence Rosen",
+          "start_line": 78,
+          "end_line": 78
+        },
+        {
+          "value": "Nigel Tzeng",
+          "start_line": 78,
+          "end_line": 78
+        }
+      ],
+      "authors": [],
+      "packages": [],
+      "emails": [],
+      "urls": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": true,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "Vovida Software License 1.0.txt",
+      "type": "file",
+      "name": "Vovida Software License 1.0.txt",
+      "base_name": "Vovida Software License 1.0",
+      "extension": ".txt",
+      "size": 2344,
+      "date": "2020-03-12",
+      "sha1": "305f347c810536b7f5911c9f1daa31a32b02bb5b",
+      "md5": "2aba4801bf008a6aad40667dc67d0b40",
+      "mime_type": "text/plain",
+      "file_type": "UTF-8 Unicode text, with very long lines",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "vsl-1.0",
+          "score": 97.21,
+          "name": "Vovida Software License v. 1.0",
+          "short_name": "Vovida Software License 1.0",
+          "category": "Permissive",
+          "is_exception": false,
+          "owner": "Vovida",
+          "homepage_url": "http://www.vovida.org/About/license.html",
+          "text_url": "http://www.vovida.org/About/license.html",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:vsl-1.0",
+          "spdx_license_key": "VSL-1.0",
+          "spdx_url": "https://spdx.org/licenses/VSL-1.0",
+          "start_line": 2,
+          "end_line": 14,
+          "matched_rule": {
+            "identifier": "vsl-1.0.LICENSE",
+            "license_expression": "vsl-1.0",
+            "licenses": [
+              "vsl-1.0"
+            ],
+            "is_license_text": true,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "3-seq",
+            "rule_length": 358,
+            "matched_length": 348,
+            "match_coverage": 97.21,
+            "rule_relevance": 100
+          },
+          "matched_text": "This license applies to all software incorporated in the \"Vovida Open Communication Application Library\" except for those portions incorporating third party software specifically identified as being licensed under separate license.\nThe Vovida Software License, Version 1.0\nCopyright (c) 2000 Vovida Networks, Inc. All rights reserved.\nRedistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:\n1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.\n2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.\n3. The names \"VOCAL\", \"Vovida Open Communication Application Library\", and \"Vovida Open Communication Application Library (VOCAL)\" must not be used to endorse or promote products derived from this software without prior written permission. For written permission, please contact vocal@vovida.org.\n4. Products derived from this software may not be called \"VOCAL\", nor may \"VOCAL\" appear in their name, without prior written permission.\nTHIS SOFTWARE IS PROVIDED \"AS IS\" AND ANY EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE AND NON-INFRINGEMENT ARE DISCLAIMED. IN NO EVENT SHALL VOVIDA NETWORKS, INC. OR ITS CONTRIBUTORS BE LIABLE FOR ANY DAMAGES IN EXCESS OF $1,000, NOR FOR ANY INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n\u00a0\n\u00a0\nThis software consists of voluntary contributions made by Vovida Networks, Inc. and many individuals on behalf of Vovida Networks, Inc. For more information on Vovida Networks, Inc., please see .\nAll third party licenses and copyright notices and other required legends also need to be complied with as well."
+        }
+      ],
+      "license_expressions": [
+        "vsl-1.0"
+      ],
+      "copyrights": [
+        {
+          "value": "Copyright (c) 2000 Vovida Networks, Inc.",
+          "start_line": 4,
+          "end_line": 4
+        }
+      ],
+      "holders": [
+        {
+          "value": "Vovida Networks, Inc.",
+          "start_line": 4,
+          "end_line": 4
+        }
+      ],
+      "authors": [],
+      "packages": [],
+      "emails": [
+        {
+          "email": "vocal@vovida.org",
+          "start_line": 8,
+          "end_line": 8
+        }
+      ],
+      "urls": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": true,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "W3C License.txt",
+      "type": "file",
+      "name": "W3C License.txt",
+      "base_name": "W3C License",
+      "extension": ".txt",
+      "size": 2442,
+      "date": "2020-03-12",
+      "sha1": "f1f8cf13a7f4f69fcbe25a63b062aff5daae804a",
+      "md5": "bf933b5e0a6e1e5b6540cb3d4b164fcb",
+      "mime_type": "text/plain",
+      "file_type": "UTF-8 Unicode text, with very long lines",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "w3c-software-19980720",
+          "score": 99.1,
+          "name": "W3C Software Notice and License (1998-07-20)",
+          "short_name": "W3C-SOFTWARE-19980720",
+          "category": "Permissive",
+          "is_exception": false,
+          "owner": "W3C - World Wide Web Consortium",
+          "homepage_url": "http://www.w3.org/Consortium/Legal/copyright-software-19980720.html",
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:w3c-software-19980720",
+          "spdx_license_key": "W3C-19980720",
+          "spdx_url": "https://spdx.org/licenses/W3C-19980720",
+          "start_line": 3,
+          "end_line": 12,
+          "matched_rule": {
+            "identifier": "w3c_1.RULE",
+            "license_expression": "w3c-software-19980720",
+            "licenses": [
+              "w3c-software-19980720"
+            ],
+            "is_license_text": true,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "3-seq",
+            "rule_length": 331,
+            "matched_length": 331,
+            "match_coverage": 100.0,
+            "rule_relevance": 100
+          },
+          "matched_text": "This W3C work (including software, documents, or other related items) is being provided by the copyright holders under the following license. By obtaining, using and/or copying this work, you (the licensee) agree that you have read, understood, and will comply with the following terms and conditions:\nPermission to use, copy, modify, and distribute this software and its documentation, with or without modification, for any purpose and without fee or royalty is hereby granted, provided that you include the following on ALL copies of the software and documentation or portions thereof, including modifications, that you make:\n\n1. The full text of this NOTICE in a location viewable to users of the redistributed or derivative work.\n2. Any pre-existing intellectual property disclaimers, notices, or terms and conditions. If none exist, a short notice of the following form (hypertext is preferred, text is permitted) should be used within the body of any redistributed or derivative code: \"Copyright \u00a9 [$date-of-software] World Wide Web Consortium, (Massachusetts Institute of Technology, Institut National de Recherche en Informatique et en Automatique, Keio University). All Rights Reserved. http://www.w3.org/Consortium/Legal/\"\n3. Notice of any changes or modifications to the W3C files, including the date changes were made. (We recommend you provide URIs to the location from which the code is derived.)\n\nTHIS SOFTWARE AND DOCUMENTATION IS PROVIDED \"AS IS,\" AND COPYRIGHT HOLDERS MAKE NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, WARRANTIES OF MERCHANTABILITY OR FITNESS FOR ANY PARTICULAR PURPOSE OR THAT THE USE OF THE SOFTWARE OR DOCUMENTATION WILL NOT INFRINGE ANY THIRD PARTY PATENTS, COPYRIGHTS, TRADEMARKS OR OTHER RIGHTS.\nCOPYRIGHT HOLDERS WILL NOT BE LIABLE FOR ANY DIRECT, INDIRECT, SPECIAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF ANY USE OF THE SOFTWARE OR DOCUMENTATION.\nThe name and trademarks of copyright holders may NOT be used in advertising or publicity pertaining to the software without specific, written prior permission. Title to copyright in this software and any associated documentation will at all times remain with copyright holders."
+        }
+      ],
+      "license_expressions": [
+        "w3c-software-19980720"
+      ],
+      "copyrights": [
+        {
+          "value": "Copyright (c) 1994-2001 World Wide Web Consortium, (Massachusetts Institute of Technology, Institut National de Recherche en Informatique et en Automatique, Keio University)",
+          "start_line": 2,
+          "end_line": 4
+        },
+        {
+          "value": "Copyright (c) World Wide Web Consortium, (Massachusetts Institute of Technology, Institut National de Recherche en Informatique et en Automatique, Keio University)",
+          "start_line": 7,
+          "end_line": 8
+        }
+      ],
+      "holders": [
+        {
+          "value": "World Wide Web Consortium, (Massachusetts Institute of Technology, Institut National de Recherche en Informatique et en Automatique, Keio University)",
+          "start_line": 2,
+          "end_line": 4
+        },
+        {
+          "value": "World Wide Web Consortium, (Massachusetts Institute of Technology, Institut National de Recherche en Informatique et en Automatique, Keio University)",
+          "start_line": 7,
+          "end_line": 8
+        }
+      ],
+      "authors": [],
+      "packages": [],
+      "emails": [],
+      "urls": [
+        {
+          "url": "http://www.w3.org/Consortium/Legal/",
+          "start_line": 2,
+          "end_line": 2
+        }
+      ],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": true,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "wxWindows Library License.txt",
+      "type": "file",
+      "name": "wxWindows Library License.txt",
+      "base_name": "wxWindows Library License",
+      "extension": ".txt",
+      "size": 2278,
+      "date": "2020-03-12",
+      "sha1": "143d58a26214a576cb3aacd2b291a8ef3a568001",
+      "md5": "ab93e864e37eb90899f53f49a6557471",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text, with very long lines",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "lgpl-2.0-plus",
+          "score": 95.06,
+          "name": "GNU Library General Public License 2.0 or later",
+          "short_name": "LGPL 2.0 or later",
+          "category": "Copyleft Limited",
+          "is_exception": false,
+          "owner": "Free Software Foundation (FSF)",
+          "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.0.html",
+          "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.0-standalone.html",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:lgpl-2.0-plus",
+          "spdx_license_key": "LGPL-2.0-or-later",
+          "spdx_url": "https://spdx.org/licenses/LGPL-2.0-or-later",
+          "start_line": 3,
+          "end_line": 13,
+          "matched_rule": {
+            "identifier": "lgpl-2.0-plus_with_wxwindows-exception-3.1_1.RULE",
+            "license_expression": "lgpl-2.0-plus WITH wxwindows-exception-3.1",
+            "licenses": [
+              "lgpl-2.0-plus",
+              "wxwindows-exception-3.1"
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "3-seq",
+            "rule_length": 385,
+            "matched_length": 366,
+            "match_coverage": 95.06,
+            "rule_relevance": 100
+          },
+          "matched_text": "Everyone is permitted to copy and distribute verbatim copies of this licence document, but changing it is not allowed. \nWXWINDOWS LIBRARY LICENCE\nTERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION \nThis library is free software; you can redistribute it and/or modify it under the terms of the GNU Library General Public Licence as published by the Free Software Foundation; either version 2 of the Licence, or (at your option) any later version. \nThis library is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Library General Public Licence for more details. \nYou should have received a copy of the GNU Library General Public Licence along with this software, usually in a file named COPYING.LIB. If not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA. \nEXCEPTION NOTICE \n1. As a special exception, the copyright holders of this library give permission for additional uses of the text contained in this release of the library as licenced under the wxWindows Library Licence, applying either version 3 of the Licence, or (at your option) any later version of the Licence as published by the copyright holders of version 3 of the Licence document. \n2. The exception is that you may use, copy, link, modify and distribute under the user's own terms, binary object code versions of works based on the Library. \n3. If you copy code from files distributed under the terms of the GNU General Public Licence or the GNU Library General Public Licence into a copy of this library, as this licence permits, the exception does not apply to the code that you add in this way. To avoid misleading anyone as to the status of such modified files, you must delete this exception notice from such code and/or adjust the licensing conditions notice accordingly. \n4. If you write modifications of your own for this library, it is your choice whether to permit this exception to apply to your modifications. If you do not wish that, you must delete the exception notice from such code and/or adjust the licensing conditions notice accordingly."
+        },
+        {
+          "key": "wxwindows-exception-3.1",
+          "score": 95.06,
+          "name": "WxWindows Library Exception to GPL 2.0 or later",
+          "short_name": "WxWindows Library Exception to GPL 2.0 or later",
+          "category": "Copyleft Limited",
+          "is_exception": true,
+          "owner": "wxWidgets",
+          "homepage_url": "http://www.wxwidgets.org/about/newlicen.htm",
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:wxwindows-exception-3.1",
+          "spdx_license_key": "WxWindows-exception-3.1",
+          "spdx_url": "https://spdx.org/licenses/WxWindows-exception-3.1",
+          "start_line": 3,
+          "end_line": 13,
+          "matched_rule": {
+            "identifier": "lgpl-2.0-plus_with_wxwindows-exception-3.1_1.RULE",
+            "license_expression": "lgpl-2.0-plus WITH wxwindows-exception-3.1",
+            "licenses": [
+              "lgpl-2.0-plus",
+              "wxwindows-exception-3.1"
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "3-seq",
+            "rule_length": 385,
+            "matched_length": 366,
+            "match_coverage": 95.06,
+            "rule_relevance": 100
+          },
+          "matched_text": "Everyone is permitted to copy and distribute verbatim copies of this licence document, but changing it is not allowed. \nWXWINDOWS LIBRARY LICENCE\nTERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION \nThis library is free software; you can redistribute it and/or modify it under the terms of the GNU Library General Public Licence as published by the Free Software Foundation; either version 2 of the Licence, or (at your option) any later version. \nThis library is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Library General Public Licence for more details. \nYou should have received a copy of the GNU Library General Public Licence along with this software, usually in a file named COPYING.LIB. If not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA. \nEXCEPTION NOTICE \n1. As a special exception, the copyright holders of this library give permission for additional uses of the text contained in this release of the library as licenced under the wxWindows Library Licence, applying either version 3 of the Licence, or (at your option) any later version of the Licence as published by the copyright holders of version 3 of the Licence document. \n2. The exception is that you may use, copy, link, modify and distribute under the user's own terms, binary object code versions of works based on the Library. \n3. If you copy code from files distributed under the terms of the GNU General Public Licence or the GNU Library General Public Licence into a copy of this library, as this licence permits, the exception does not apply to the code that you add in this way. To avoid misleading anyone as to the status of such modified files, you must delete this exception notice from such code and/or adjust the licensing conditions notice accordingly. \n4. If you write modifications of your own for this library, it is your choice whether to permit this exception to apply to your modifications. If you do not wish that, you must delete the exception notice from such code and/or adjust the licensing conditions notice accordingly."
+        }
+      ],
+      "license_expressions": [
+        "lgpl-2.0-plus WITH wxwindows-exception-3.1"
+      ],
+      "copyrights": [
+        {
+          "value": "Copyright (c) 1998 Julian Smart, Robert Roebling",
+          "start_line": 2,
+          "end_line": 4
+        }
+      ],
+      "holders": [
+        {
+          "value": "Julian Smart, Robert Roebling",
+          "start_line": 2,
+          "end_line": 4
+        }
+      ],
+      "authors": [],
+      "packages": [],
+      "emails": [],
+      "urls": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": true,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "X.Net License.txt",
+      "type": "file",
+      "name": "X.Net License.txt",
+      "base_name": "X.Net License",
+      "extension": ".txt",
+      "size": 1286,
+      "date": "2020-03-12",
+      "sha1": "cf3406eb759cbe373992859058d126d14d80a7ce",
+      "md5": "687d5156952349498627d68d978fda63",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text, with very long lines",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "xnet",
+          "score": 100.0,
+          "name": "Altera License",
+          "short_name": "Altera License",
+          "category": "Permissive",
+          "is_exception": false,
+          "owner": "Altera Corporation",
+          "homepage_url": "http://www.opensource.org/licenses/xnet.php",
+          "text_url": "http://www.opensource.org/licenses/xnet.php",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:xnet",
+          "spdx_license_key": "Xnet",
+          "spdx_url": "https://spdx.org/licenses/Xnet",
+          "start_line": 4,
+          "end_line": 7,
+          "matched_rule": {
+            "identifier": "xnet.LICENSE",
+            "license_expression": "xnet",
+            "licenses": [
+              "xnet"
+            ],
+            "is_license_text": true,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 187,
+            "matched_length": 187,
+            "match_coverage": 100.0,
+            "rule_relevance": 100
+          },
+          "matched_text": "Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\nThis agreement shall be governed in all respects by the laws of the State of California and by the laws of the United States of America."
+        }
+      ],
+      "license_expressions": [
+        "xnet"
+      ],
+      "copyrights": [
+        {
+          "value": "Copyright (c) 2000-2001 X.Net, Inc. Lafayette, California, USA",
+          "start_line": 2,
+          "end_line": 7
+        }
+      ],
+      "holders": [
+        {
+          "value": "X.Net, Inc. Lafayette, California, USA",
+          "start_line": 2,
+          "end_line": 7
+        }
+      ],
+      "authors": [],
+      "packages": [],
+      "emails": [],
+      "urls": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "zlib - libpng license.txt",
+      "type": "file",
+      "name": "zlib - libpng license.txt",
+      "base_name": "zlib - libpng license",
+      "extension": ".txt",
+      "size": 883,
+      "date": "2020-03-12",
+      "sha1": "7bb5572a17c237662f44de74eca4ced85d1969e6",
+      "md5": "1e340268545e69f5c5022849a5bb0fef",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "zlib",
+          "score": 100.0,
+          "name": "ZLIB License",
+          "short_name": "ZLIB License",
+          "category": "Permissive",
+          "is_exception": false,
+          "owner": "zlib",
+          "homepage_url": "http://www.zlib.net/",
+          "text_url": "http://www.gzip.org/zlib/zlib_license.html",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+          "spdx_license_key": "Zlib",
+          "spdx_url": "https://spdx.org/licenses/Zlib",
+          "start_line": 7,
+          "end_line": 21,
+          "matched_rule": {
+            "identifier": "zlib.LICENSE",
+            "license_expression": "zlib",
+            "licenses": [
+              "zlib"
+            ],
+            "is_license_text": true,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 132,
+            "matched_length": 132,
+            "match_coverage": 100.0,
+            "rule_relevance": 100
+          },
+          "matched_text": "This software is provided 'as-is', without any express or implied\n  warranty.  In no event will the authors be held liable for any damages\n  arising from the use of this software.\nPermission is granted to anyone to use this software for any purpose,\n  including commercial applications, and to alter it and redistribute it\n  freely, subject to the following restrictions:\n\n1. The origin of this software must not be misrepresented; you must not\n     claim that you wrote the original software. If you use this software\n     in a product, an acknowledgment in the product documentation would be\n     appreciated but is not required.\n2. Altered source versions must be plainly marked as such, and must not be\n     misrepresented as being the original software.\n3. This notice may not be removed or altered from any source\n distribution."
+        }
+      ],
+      "license_expressions": [
+        "zlib"
+      ],
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "packages": [],
+      "emails": [],
+      "urls": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": true,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "Zope Public License 2.0.txt",
+      "type": "file",
+      "name": "Zope Public License 2.0.txt",
+      "base_name": "Zope Public License 2.0",
+      "extension": ".txt",
+      "size": 2374,
+      "date": "2020-03-12",
+      "sha1": "7f7db69a444daafb1db221c3bc6f5b9bd00d4c53",
+      "md5": "d09caf180cc9a823198d5484e535267c",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "zpl-2.0",
+          "score": 100.0,
+          "name": "Zope Public License 2.0",
+          "short_name": "ZPL 2.0",
+          "category": "Permissive",
+          "is_exception": false,
+          "owner": "Zope Community",
+          "homepage_url": "http://www.zope.org/Resources/License/",
+          "text_url": "http://www.zope.org/Resources/License/",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zpl-2.0",
+          "spdx_license_key": "ZPL-2.0",
+          "spdx_url": "https://spdx.org/licenses/ZPL-2.0",
+          "start_line": 6,
+          "end_line": 64,
+          "matched_rule": {
+            "identifier": "zpl-2.0.SPDX.RULE",
+            "license_expression": "zpl-2.0",
+            "licenses": [
+              "zpl-2.0"
+            ],
+            "is_license_text": true,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "1-hash",
+            "rule_length": 349,
+            "matched_length": 349,
+            "match_coverage": 100.0,
+            "rule_relevance": 100
+          },
+          "matched_text": "Zope Public License (ZPL) Version 2.0\n-----------------------------------------------\n\nThis software is Copyright (c) Zope Corporation (tm) and\nContributors. All rights reserved.\n\nThis license has been certified as open source. It has also\nbeen designated as GPL compatible by the Free Software\nFoundation (FSF).\n\nRedistribution and use in source and binary forms, with or\nwithout modification, are permitted provided that the\nfollowing conditions are met:\n\n1. Redistributions in source code must retain the above\n   copyright notice, this list of conditions, and the following\n   disclaimer.\n\n2. Redistributions in binary form must reproduce the above\n   copyright notice, this list of conditions, and the following\n   disclaimer in the documentation and/or other materials\n   provided with the distribution.\n\n3. The name Zope Corporation (tm) must not be used to\n   endorse or promote products derived from this software\n   without prior written permission from Zope Corporation.\n\n4. The right to distribute this software or to use it for\n   any purpose does not give you the right to use Servicemarks\n   (sm) or Trademarks (tm) of Zope Corporation. Use of them is\n   covered in a separate agreement (see\n   http://www.zope.com/Marks).\n\n5. If any files are modified, you must cause the modified\n   files to carry prominent notices stating that you changed\n   the files and the date of any change.\n\nDisclaimer\n\n  THIS SOFTWARE IS PROVIDED BY ZOPE CORPORATION ``AS IS''\n  AND ANY EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT\n  NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY\n  AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.  IN\n  NO EVENT SHALL ZOPE CORPORATION OR ITS CONTRIBUTORS BE\n  LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,\n  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\n  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;\n  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\n  HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN\n  CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE\n  OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS\n  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH\n  DAMAGE.\n\n\nThis software consists of contributions made by Zope\nCorporation and many individuals on behalf of Zope\nCorporation.  Specific attributions are listed in the\naccompanying credits file."
+        }
+      ],
+      "license_expressions": [
+        "zpl-2.0"
+      ],
+      "copyrights": [
+        {
+          "value": "Copyright (c) Zope Corporation (tm) and Contributors",
+          "start_line": 9,
+          "end_line": 10
+        }
+      ],
+      "holders": [
+        {
+          "value": "Zope Corporation (tm) and Contributors",
+          "start_line": 9,
+          "end_line": 10
+        }
+      ],
+      "authors": [],
+      "packages": [],
+      "emails": [],
+      "urls": [
+        {
+          "url": "http://www.zope.com/Marks",
+          "start_line": 37,
+          "end_line": 37
+        }
+      ],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": true,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    }
+  ]
+}
