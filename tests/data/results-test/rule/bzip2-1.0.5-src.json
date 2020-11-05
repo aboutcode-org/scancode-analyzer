@@ -1,0 +1,5080 @@
+{
+  "headers": [
+    {
+      "tool_name": "scancode-toolkit",
+      "tool_version": "3.1.1.post351.850399bc3",
+      "options": {
+        "input": [
+          "/home/ayan/Desktop/nexB/license-tests/february-pom-tests/software/bzip2-1.0.5-src"
+        ],
+        "--classify": true,
+        "--copyright": true,
+        "--email": true,
+        "--generated": true,
+        "--info": true,
+        "--is-license-text": true,
+        "--json-pp": "results-test/rule/bzip2-1.0.5-src.json",
+        "--license": true,
+        "--license-clarity-score": true,
+        "--license-text": true,
+        "--package": true,
+        "--processes": "8",
+        "--strip-root": true,
+        "--summary": true,
+        "--summary-key-files": true,
+        "--url": true
+      },
+      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "start_timestamp": "2020-07-15T074047.975319",
+      "end_timestamp": "2020-07-15T074059.943308",
+      "message": null,
+      "errors": [],
+      "extra_data": {
+        "files_count": 65
+      }
+    }
+  ],
+  "summary": {
+    "license_expressions": [
+      {
+        "value": null,
+        "count": 35
+      },
+      {
+        "value": "bzip2-libbzip-2010",
+        "count": 29
+      },
+      {
+        "value": "bsd-new",
+        "count": 1
+      },
+      {
+        "value": "free-unknown",
+        "count": 1
+      },
+      {
+        "value": "public-domain",
+        "count": 1
+      }
+    ],
+    "copyrights": [
+      {
+        "value": null,
+        "count": 36
+      },
+      {
+        "value": "Copyright (c) Julian Seward <jseward@bzip.org>",
+        "count": 22
+      },
+      {
+        "value": "copyright (c) Julian R Seward",
+        "count": 6
+      },
+      {
+        "value": "(c) Julian Seward <jseward@acm.org>",
+        "count": 5
+      },
+      {
+        "value": "Copyright (c) by Julian Seward",
+        "count": 1
+      },
+      {
+        "value": "copyright (c) Julian Seward",
+        "count": 1
+      }
+    ],
+    "holders": [
+      {
+        "value": null,
+        "count": 36
+      },
+      {
+        "value": "Julian Seward",
+        "count": 29
+      },
+      {
+        "value": "Julian R Seward",
+        "count": 6
+      }
+    ],
+    "authors": [
+      {
+        "value": null,
+        "count": 54
+      },
+      {
+        "value": "Philippe Troin <phil@fifi.org>",
+        "count": 11
+      },
+      {
+        "value": "Yoshioka Tsuneo (tsuneo@rr.iij4u.or.jp)",
+        "count": 3
+      },
+      {
+        "value": "Charles Levert <charles@comm.polymtl.ca>",
+        "count": 1
+      }
+    ],
+    "programming_language": [
+      {
+        "value": null,
+        "count": 34
+      },
+      {
+        "value": "C++",
+        "count": 16
+      },
+      {
+        "value": "C",
+        "count": 5
+      },
+      {
+        "value": "Bash",
+        "count": 4
+      },
+      {
+        "value": "Python",
+        "count": 2
+      },
+      {
+        "value": "ActionScript 3",
+        "count": 1
+      },
+      {
+        "value": "CSS",
+        "count": 1
+      },
+      {
+        "value": "GAS",
+        "count": 1
+      },
+      {
+        "value": "Perl6",
+        "count": 1
+      }
+    ],
+    "packages": []
+  },
+  "license_clarity_score": {
+    "score": 3,
+    "declared": false,
+    "discovered": 0.12,
+    "consistency": false,
+    "spdx": false,
+    "license_texts": false
+  },
+  "summary_of_key_files": {
+    "license_expressions": [],
+    "copyrights": [],
+    "holders": [],
+    "authors": [],
+    "programming_language": []
+  },
+  "files": [
+    {
+      "path": "manifest",
+      "type": "directory",
+      "name": "manifest",
+      "base_name": "manifest",
+      "extension": "",
+      "size": 0,
+      "date": null,
+      "sha1": null,
+      "md5": null,
+      "mime_type": null,
+      "file_type": null,
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": false,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [],
+      "license_expressions": [],
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "packages": [],
+      "emails": [],
+      "urls": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 2,
+      "dirs_count": 0,
+      "size_count": 4806,
+      "scan_errors": []
+    },
+    {
+      "path": "manifest/bzip2-1.0.5-src.mft",
+      "type": "file",
+      "name": "bzip2-1.0.5-src.mft",
+      "base_name": "bzip2-1.0.5-src",
+      "extension": ".mft",
+      "size": 4767,
+      "date": "2008-03-20",
+      "sha1": "cdf982e6f522fb320eff46ae7b56db1a885a84ac",
+      "md5": "883c65baa3bb3b46fdc71b213117c76e",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [],
+      "license_expressions": [],
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "packages": [],
+      "emails": [],
+      "urls": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "manifest/bzip2-1.0.5-src.ver",
+      "type": "file",
+      "name": "bzip2-1.0.5-src.ver",
+      "base_name": "bzip2-1.0.5-src",
+      "extension": ".ver",
+      "size": 39,
+      "date": "2008-03-20",
+      "sha1": "91691a856c9b627eb66e2d65003d71b33729ef5b",
+      "md5": "95c57e1284918a2810fd936529c2a05b",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [],
+      "license_expressions": [],
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "packages": [],
+      "emails": [],
+      "urls": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "src",
+      "type": "directory",
+      "name": "src",
+      "base_name": "src",
+      "extension": "",
+      "size": 0,
+      "date": null,
+      "sha1": null,
+      "md5": null,
+      "mime_type": null,
+      "file_type": null,
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": false,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [],
+      "license_expressions": [],
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "packages": [],
+      "emails": [],
+      "urls": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 63,
+      "dirs_count": 5,
+      "size_count": 1102211,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2",
+      "type": "directory",
+      "name": "bzip2",
+      "base_name": "bzip2",
+      "extension": "",
+      "size": 0,
+      "date": null,
+      "sha1": null,
+      "md5": null,
+      "mime_type": null,
+      "file_type": null,
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": false,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [],
+      "license_expressions": [],
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "packages": [],
+      "emails": [],
+      "urls": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 63,
+      "dirs_count": 4,
+      "size_count": 1102211,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2/1.0.5",
+      "type": "directory",
+      "name": "1.0.5",
+      "base_name": "1.0.5",
+      "extension": "",
+      "size": 0,
+      "date": null,
+      "sha1": null,
+      "md5": null,
+      "mime_type": null,
+      "file_type": null,
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": false,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [],
+      "license_expressions": [],
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "packages": [],
+      "emails": [],
+      "urls": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 63,
+      "dirs_count": 3,
+      "size_count": 1102211,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2/1.0.5/bzip2-1.0.5",
+      "type": "directory",
+      "name": "bzip2-1.0.5",
+      "base_name": "bzip2-1.0.5",
+      "extension": "",
+      "size": 0,
+      "date": null,
+      "sha1": null,
+      "md5": null,
+      "mime_type": null,
+      "file_type": null,
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": false,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [],
+      "license_expressions": [],
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "packages": [],
+      "emails": [],
+      "urls": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 63,
+      "dirs_count": 2,
+      "size_count": 1102211,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2/1.0.5/bzip2-1.0.5/blocksort.c",
+      "type": "file",
+      "name": "blocksort.c",
+      "base_name": "blocksort",
+      "extension": ".c",
+      "size": 30694,
+      "date": "2007-12-09",
+      "sha1": "980a6d51f514e512c3251e4309aeb16c51b0a98f",
+      "md5": "a44863f04888d58438fc5e836fdd1d02",
+      "mime_type": "text/x-c",
+      "file_type": "C source, ASCII text",
+      "programming_language": "C++",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "bzip2-libbzip-2010",
+          "score": 69.35,
+          "name": "bzip2 License 2010",
+          "short_name": "bzip2 License 2010",
+          "category": "Permissive",
+          "is_exception": false,
+          "owner": "bzip",
+          "homepage_url": "https://github.com/asimonov-im/bzip2/blob/master/LICENSE",
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:bzip2-libbzip-2010",
+          "spdx_license_key": "bzip2-1.0.6",
+          "spdx_url": "https://spdx.org/licenses/bzip2-1.0.6",
+          "start_line": 8,
+          "end_line": 18,
+          "matched_rule": {
+            "identifier": "bzip2-libbzip-2010_5.RULE",
+            "license_expression": "bzip2-libbzip-2010",
+            "licenses": [
+              "bzip2-libbzip-2010"
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "3-seq",
+            "rule_length": 43,
+            "matched_length": 43,
+            "match_coverage": 100.0,
+            "rule_relevance": 100.0
+          },
+          "matched_text": "   This file is part of bzip2/libbzip2, a program and library for\n   lossless, block-sorting data compression.\n\n   bzip2/libbzip2 version 1.0.5 of 10 December 2007\n   Copyright (C) 1996-2007 Julian Seward <jseward@bzip.org>\n\n   Please read the WARNING, DISCLAIMER and PATENTS sections in the \n   README file.\n\n   This program is released under the terms of the license contained\n   in the file LICENSE."
+        }
+      ],
+      "license_expressions": [
+        "bzip2-libbzip-2010"
+      ],
+      "copyrights": [
+        {
+          "value": "Copyright (c) 1996-2007 Julian Seward <jseward@bzip.org>",
+          "start_line": 11,
+          "end_line": 12
+        }
+      ],
+      "holders": [
+        {
+          "value": "Julian Seward",
+          "start_line": 11,
+          "end_line": 12
+        }
+      ],
+      "authors": [],
+      "packages": [],
+      "emails": [
+        {
+          "email": "jseward@bzip.org",
+          "start_line": 12,
+          "end_line": 12
+        }
+      ],
+      "urls": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2/1.0.5/bzip2-1.0.5/bz-common.xsl",
+      "type": "file",
+      "name": "bz-common.xsl",
+      "base_name": "bz-common",
+      "extension": ".xsl",
+      "size": 1057,
+      "date": "2007-01-03",
+      "sha1": "51b99fe4dc8b8920f3d0b74fe98b4c41869fb986",
+      "md5": "3fb324f03471a5c1c40a1fa846882ae4",
+      "mime_type": "application/xml",
+      "file_type": "XML document text",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [],
+      "license_expressions": [],
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "packages": [],
+      "emails": [],
+      "urls": [
+        {
+          "url": "http://docbook.sourceforge.net/xmlns/l10n/1.0",
+          "start_line": 11,
+          "end_line": 11
+        }
+      ],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2/1.0.5/bzip2-1.0.5/bz-fo.xsl",
+      "type": "file",
+      "name": "bz-fo.xsl",
+      "base_name": "bz-fo",
+      "extension": ".xsl",
+      "size": 10585,
+      "date": "2007-01-03",
+      "sha1": "76bab526da329c42354c8b6ccebbeb89fb7e9ff9",
+      "md5": "f8f902c999fcf335d8a32355c8974b3d",
+      "mime_type": "application/xml",
+      "file_type": "XML document text",
+      "programming_language": "Python",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": false,
+      "licenses": [],
+      "license_expressions": [],
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "packages": [],
+      "emails": [],
+      "urls": [
+        {
+          "url": "http://www.w3.org/1999/XSL/Format",
+          "start_line": 3,
+          "end_line": 3
+        },
+        {
+          "url": "http://docbook.sourceforge.net/release/xsl/current/fo/docbook.xsl",
+          "start_line": 5,
+          "end_line": 5
+        }
+      ],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2/1.0.5/bzip2-1.0.5/bz-html.xsl",
+      "type": "file",
+      "name": "bz-html.xsl",
+      "base_name": "bz-html",
+      "extension": ".xsl",
+      "size": 646,
+      "date": "2007-01-03",
+      "sha1": "74a907fba29447848e3e5bad7ea12a874009d735",
+      "md5": "be02d1c56a945503de7c004db8198828",
+      "mime_type": "application/xml",
+      "file_type": "XML document text",
+      "programming_language": "Python",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": false,
+      "licenses": [],
+      "license_expressions": [],
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "packages": [],
+      "emails": [],
+      "urls": [
+        {
+          "url": "http://docbook.sourceforge.net/release/xsl/current/html/docbook.xsl",
+          "start_line": 7,
+          "end_line": 7
+        }
+      ],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2/1.0.5/bzip2-1.0.5/bzdiff",
+      "type": "file",
+      "name": "bzdiff",
+      "base_name": "bzdiff",
+      "extension": "",
+      "size": 2128,
+      "date": "2007-01-03",
+      "sha1": "b18f2c881197ae12beeea03f26b85ce3ec875a42",
+      "md5": "fc15271b1df9d9e574e200d7cc625802",
+      "mime_type": "text/x-shellscript",
+      "file_type": "POSIX shell script, ASCII text executable",
+      "programming_language": "Bash",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": true,
+      "licenses": [],
+      "license_expressions": [],
+      "copyrights": [],
+      "holders": [],
+      "authors": [
+        {
+          "value": "Philippe Troin <phil@fifi.org>",
+          "start_line": 5,
+          "end_line": 5
+        }
+      ],
+      "packages": [],
+      "emails": [
+        {
+          "email": "phil@fifi.org",
+          "start_line": 5,
+          "end_line": 5
+        }
+      ],
+      "urls": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2/1.0.5/bzip2-1.0.5/bzdiff.1",
+      "type": "file",
+      "name": "bzdiff.1",
+      "base_name": "bzdiff",
+      "extension": ".1",
+      "size": 897,
+      "date": "2007-01-03",
+      "sha1": "0cc1976289e55d6c40ab1d88f267ac4fc022de5e",
+      "md5": "4636e77b3d6a4b60b60fa45da744d6de",
+      "mime_type": "text/troff",
+      "file_type": "troff or preprocessor input, ASCII text",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [],
+      "license_expressions": [],
+      "copyrights": [],
+      "holders": [],
+      "authors": [
+        {
+          "value": "Philippe Troin <phil@fifi.org>",
+          "start_line": 1,
+          "end_line": 3
+        }
+      ],
+      "packages": [],
+      "emails": [
+        {
+          "email": "phil@fifi.org",
+          "start_line": 1,
+          "end_line": 1
+        }
+      ],
+      "urls": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2/1.0.5/bzip2-1.0.5/bzgrep",
+      "type": "file",
+      "name": "bzgrep",
+      "base_name": "bzgrep",
+      "extension": "",
+      "size": 1677,
+      "date": "2007-01-03",
+      "sha1": "500ea98094773c3ac10a76009c34f194c9ff2aea",
+      "md5": "a05c9b42d07fd069359c38cb6c62fb16",
+      "mime_type": "text/x-shellscript",
+      "file_type": "POSIX shell script, ASCII text executable",
+      "programming_language": "Bash",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": true,
+      "licenses": [],
+      "license_expressions": [],
+      "copyrights": [],
+      "holders": [],
+      "authors": [
+        {
+          "value": "Philippe Troin <phil@fifi.org>",
+          "start_line": 4,
+          "end_line": 7
+        },
+        {
+          "value": "Charles Levert <charles@comm.polymtl.ca>",
+          "start_line": 4,
+          "end_line": 7
+        }
+      ],
+      "packages": [],
+      "emails": [
+        {
+          "email": "phil@fifi.org",
+          "start_line": 4,
+          "end_line": 4
+        },
+        {
+          "email": "charles@comm.polymtl.ca",
+          "start_line": 7,
+          "end_line": 7
+        }
+      ],
+      "urls": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2/1.0.5/bzip2-1.0.5/bzgrep.1",
+      "type": "file",
+      "name": "bzgrep.1",
+      "base_name": "bzgrep",
+      "extension": ".1",
+      "size": 1299,
+      "date": "2008-03-20",
+      "sha1": "9538f7d72d75fb0f57bfd00ddf90ed1b37d9dc13",
+      "md5": "e2899291558da7bd119143c445ad10b5",
+      "mime_type": "text/troff",
+      "file_type": "troff or preprocessor input, ASCII text",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [],
+      "license_expressions": [],
+      "copyrights": [],
+      "holders": [],
+      "authors": [
+        {
+          "value": "Philippe Troin <phil@fifi.org>",
+          "start_line": 1,
+          "end_line": 3
+        },
+        {
+          "value": "Philippe Troin <phil@fifi.org>",
+          "start_line": 52,
+          "end_line": 55
+        }
+      ],
+      "packages": [],
+      "emails": [
+        {
+          "email": "phil@fifi.org",
+          "start_line": 1,
+          "end_line": 1
+        },
+        {
+          "email": "charles@comm.polymtl.ca",
+          "start_line": 53,
+          "end_line": 53
+        }
+      ],
+      "urls": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2/1.0.5/bzip2-1.0.5/bzip.css",
+      "type": "file",
+      "name": "bzip.css",
+      "base_name": "bzip",
+      "extension": ".css",
+      "size": 1746,
+      "date": "2007-01-03",
+      "sha1": "a8f0ca26dbd1225c1e2e4f8b44a702ae80bd0d40",
+      "md5": "9143456827b0ca10b4ec3aa160c4cc21",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": "CSS",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": false,
+      "licenses": [],
+      "license_expressions": [],
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "packages": [],
+      "emails": [],
+      "urls": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2/1.0.5/bzip2-1.0.5/bzip2-ltversion",
+      "type": "file",
+      "name": "bzip2-ltversion",
+      "base_name": "bzip2-ltversion",
+      "extension": "",
+      "size": 6,
+      "date": "2008-03-20",
+      "sha1": "5d43d9864bde7c8ec84a4f1afe9bbce4922527b6",
+      "md5": "d5cb428fdcf3ff38c9491383d007071b",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": "ActionScript 3",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": false,
+      "licenses": [],
+      "license_expressions": [],
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "packages": [],
+      "emails": [],
+      "urls": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2/1.0.5/bzip2-1.0.5/bzip2.1",
+      "type": "file",
+      "name": "bzip2.1",
+      "base_name": "bzip2",
+      "extension": ".1",
+      "size": 16256,
+      "date": "2007-01-03",
+      "sha1": "a0652a6f2d9a9ee223c0ca7161e9fe4e1708a427",
+      "md5": "e55ae8f846128cb1b0654bc9c66528a8",
+      "mime_type": "text/troff",
+      "file_type": "troff or preprocessor input, ASCII text",
+      "programming_language": "GAS",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": false,
+      "licenses": [],
+      "license_expressions": [],
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "packages": [],
+      "emails": [],
+      "urls": [
+        {
+          "url": "http://www.bzip.org/",
+          "start_line": 432,
+          "end_line": 432
+        }
+      ],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2/1.0.5/bzip2-1.0.5/bzip2.1.preformatted",
+      "type": "file",
+      "name": "bzip2.1.preformatted",
+      "base_name": "bzip2.1",
+      "extension": ".preformatted",
+      "size": 20935,
+      "date": "2007-01-03",
+      "sha1": "1a9e138881c74712545e8edd4a21b12fb2181d7a",
+      "md5": "88724155aeb4bfb6df5117df2b434fff",
+      "mime_type": "text/plain",
+      "file_type": "UTF-8 Unicode text, with overstriking",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [],
+      "license_expressions": [],
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "packages": [],
+      "emails": [],
+      "urls": [
+        {
+          "url": "http://www.bzip.org/",
+          "start_line": 377,
+          "end_line": 377
+        }
+      ],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2/1.0.5/bzip2-1.0.5/bzip2.c",
+      "type": "file",
+      "name": "bzip2.c",
+      "base_name": "bzip2",
+      "extension": ".c",
+      "size": 58670,
+      "date": "2008-03-20",
+      "sha1": "5dd305e238554f6d0c5b9064a29607816a2e0878",
+      "md5": "df7798bc9d6feb2437a166e6936e285f",
+      "mime_type": "text/x-c",
+      "file_type": "C source, ASCII text",
+      "programming_language": "C++",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "bzip2-libbzip-2010",
+          "score": 62.79,
+          "name": "bzip2 License 2010",
+          "short_name": "bzip2 License 2010",
+          "category": "Permissive",
+          "is_exception": false,
+          "owner": "bzip",
+          "homepage_url": "https://github.com/asimonov-im/bzip2/blob/master/LICENSE",
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:bzip2-libbzip-2010",
+          "spdx_license_key": "bzip2-1.0.6",
+          "spdx_url": "https://spdx.org/licenses/bzip2-1.0.6",
+          "start_line": 13,
+          "end_line": 17,
+          "matched_rule": {
+            "identifier": "bzip2-libbzip-2010_5.RULE",
+            "license_expression": "bzip2-libbzip-2010",
+            "licenses": [
+              "bzip2-libbzip-2010"
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "3-seq",
+            "rule_length": 43,
+            "matched_length": 27,
+            "match_coverage": 62.79,
+            "rule_relevance": 100.0
+          },
+          "matched_text": "   Please read the WARNING, DISCLAIMER and PATENTS sections in the \n   README file.\n\n   This program is released under the terms of the license contained\n   in the file LICENSE."
+        },
+        {
+          "key": "bsd-new",
+          "score": 85.0,
+          "name": "BSD-3-Clause",
+          "short_name": "BSD-3-Clause",
+          "category": "Permissive",
+          "is_exception": false,
+          "owner": "Regents of the University of California",
+          "homepage_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+          "text_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:bsd-new",
+          "spdx_license_key": "BSD-3-Clause",
+          "spdx_url": "https://spdx.org/licenses/BSD-3-Clause",
+          "start_line": 1610,
+          "end_line": 1611,
+          "matched_rule": {
+            "identifier": "bsd-new_547.RULE",
+            "license_expression": "bsd-new",
+            "licenses": [
+              "bsd-new"
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "3-seq",
+            "rule_length": 20,
+            "matched_length": 17,
+            "match_coverage": 85.0,
+            "rule_relevance": 100.0
+          },
+          "matched_text": "    \"   This program is free software; you can redistribute it and/or modify \"\n    \"   it under the terms set out in the LICENSE file, which is included \""
+        },
+        {
+          "key": "free-unknown",
+          "score": 90.7,
+          "name": "Free unknown license detected but not recognized",
+          "short_name": "Free unknown",
+          "category": "Unstated License",
+          "is_exception": false,
+          "owner": "Unspecified",
+          "homepage_url": null,
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:free-unknown",
+          "spdx_license_key": null,
+          "spdx_url": "",
+          "start_line": 1610,
+          "end_line": 1616,
+          "matched_rule": {
+            "identifier": "free-unknown_26.RULE",
+            "license_expression": "free-unknown",
+            "licenses": [
+              "free-unknown"
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "3-seq",
+            "rule_length": 43,
+            "matched_length": 39,
+            "match_coverage": 90.7,
+            "rule_relevance": 100
+          },
+          "matched_text": "    \"   This program is free software; you can redistribute it and/or modify \"\n    \"   it under the terms set out in the LICENSE file, which is included \"\n    \"   in the bzip2-1.0.5 source distribution. \"\n    \"    \"\n    \"   This program is distributed in the hope that it will be useful, \"\n    \"   but WITHOUT ANY WARRANTY; without even the implied warranty of \"\n    \"   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the \""
+        }
+      ],
+      "license_expressions": [
+        "bzip2-libbzip-2010",
+        "bsd-new",
+        "free-unknown"
+      ],
+      "copyrights": [
+        {
+          "value": "Copyright (c) 1996-2007 Julian Seward <jseward@bzip.org>",
+          "start_line": 10,
+          "end_line": 11
+        },
+        {
+          "value": "Copyright (c) 1996-2007 by Julian Seward",
+          "start_line": 1608,
+          "end_line": 1608
+        }
+      ],
+      "holders": [
+        {
+          "value": "Julian Seward",
+          "start_line": 10,
+          "end_line": 11
+        },
+        {
+          "value": "Julian Seward",
+          "start_line": 1608,
+          "end_line": 1608
+        }
+      ],
+      "authors": [],
+      "packages": [],
+      "emails": [
+        {
+          "email": "jseward@bzip.org",
+          "start_line": 11,
+          "end_line": 11
+        }
+      ],
+      "urls": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2/1.0.5/bzip2-1.0.5/bzip2.txt",
+      "type": "file",
+      "name": "bzip2.txt",
+      "base_name": "bzip2",
+      "extension": ".txt",
+      "size": 18988,
+      "date": "2007-01-03",
+      "sha1": "48cc7494b648e0eacb7a79cef60438690af028f7",
+      "md5": "197a733da9b667e1fbef373483a4a26e",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [],
+      "license_expressions": [],
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "packages": [],
+      "emails": [],
+      "urls": [
+        {
+          "url": "http://www.bzip.org/",
+          "start_line": 372,
+          "end_line": 372
+        }
+      ],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2/1.0.5/bzip2-1.0.5/bzip2recover.c",
+      "type": "file",
+      "name": "bzip2recover.c",
+      "base_name": "bzip2recover",
+      "extension": ".c",
+      "size": 14982,
+      "date": "2008-03-20",
+      "sha1": "9e6fb143dc5613aaf3d0dba4cb7816fcac04497b",
+      "md5": "494658db79a931a9a0e87f7f7d81ba2d",
+      "mime_type": "text/x-c",
+      "file_type": "C source, ASCII text",
+      "programming_language": "C++",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "bzip2-libbzip-2010",
+          "score": 69.35,
+          "name": "bzip2 License 2010",
+          "short_name": "bzip2 License 2010",
+          "category": "Permissive",
+          "is_exception": false,
+          "owner": "bzip",
+          "homepage_url": "https://github.com/asimonov-im/bzip2/blob/master/LICENSE",
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:bzip2-libbzip-2010",
+          "spdx_license_key": "bzip2-1.0.6",
+          "spdx_url": "https://spdx.org/licenses/bzip2-1.0.6",
+          "start_line": 7,
+          "end_line": 17,
+          "matched_rule": {
+            "identifier": "bzip2-libbzip-2010_5.RULE",
+            "license_expression": "bzip2-libbzip-2010",
+            "licenses": [
+              "bzip2-libbzip-2010"
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "3-seq",
+            "rule_length": 43,
+            "matched_length": 43,
+            "match_coverage": 100.0,
+            "rule_relevance": 100.0
+          },
+          "matched_text": "   This file is part of bzip2/libbzip2, a program and library for\n   lossless, block-sorting data compression.\n\n   bzip2/libbzip2 version 1.0.5 of 10 December 2007\n   Copyright (C) 1996-2007 Julian Seward <jseward@bzip.org>\n\n   Please read the WARNING, DISCLAIMER and PATENTS sections in the \n   README file.\n\n   This program is released under the terms of the license contained\n   in the file LICENSE."
+        }
+      ],
+      "license_expressions": [
+        "bzip2-libbzip-2010"
+      ],
+      "copyrights": [
+        {
+          "value": "Copyright (c) 1996-2007 Julian Seward <jseward@bzip.org>",
+          "start_line": 10,
+          "end_line": 11
+        }
+      ],
+      "holders": [
+        {
+          "value": "Julian Seward",
+          "start_line": 10,
+          "end_line": 11
+        }
+      ],
+      "authors": [],
+      "packages": [],
+      "emails": [
+        {
+          "email": "jseward@bzip.org",
+          "start_line": 11,
+          "end_line": 11
+        }
+      ],
+      "urls": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2/1.0.5/bzip2-1.0.5/bzlib.c",
+      "type": "file",
+      "name": "bzlib.c",
+      "base_name": "bzlib",
+      "extension": ".c",
+      "size": 45995,
+      "date": "2007-12-09",
+      "sha1": "ae3e652f19726195cdee5774dbab571b0faf361c",
+      "md5": "07e24e511c43c7a981f00545810d8095",
+      "mime_type": "text/x-c",
+      "file_type": "C source, ASCII text",
+      "programming_language": "C++",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "bzip2-libbzip-2010",
+          "score": 69.35,
+          "name": "bzip2 License 2010",
+          "short_name": "bzip2 License 2010",
+          "category": "Permissive",
+          "is_exception": false,
+          "owner": "bzip",
+          "homepage_url": "https://github.com/asimonov-im/bzip2/blob/master/LICENSE",
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:bzip2-libbzip-2010",
+          "spdx_license_key": "bzip2-1.0.6",
+          "spdx_url": "https://spdx.org/licenses/bzip2-1.0.6",
+          "start_line": 8,
+          "end_line": 18,
+          "matched_rule": {
+            "identifier": "bzip2-libbzip-2010_5.RULE",
+            "license_expression": "bzip2-libbzip-2010",
+            "licenses": [
+              "bzip2-libbzip-2010"
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "3-seq",
+            "rule_length": 43,
+            "matched_length": 43,
+            "match_coverage": 100.0,
+            "rule_relevance": 100.0
+          },
+          "matched_text": "   This file is part of bzip2/libbzip2, a program and library for\n   lossless, block-sorting data compression.\n\n   bzip2/libbzip2 version 1.0.5 of 10 December 2007\n   Copyright (C) 1996-2007 Julian Seward <jseward@bzip.org>\n\n   Please read the WARNING, DISCLAIMER and PATENTS sections in the \n   README file.\n\n   This program is released under the terms of the license contained\n   in the file LICENSE."
+        }
+      ],
+      "license_expressions": [
+        "bzip2-libbzip-2010"
+      ],
+      "copyrights": [
+        {
+          "value": "Copyright (c) 1996-2007 Julian Seward <jseward@bzip.org>",
+          "start_line": 11,
+          "end_line": 12
+        }
+      ],
+      "holders": [
+        {
+          "value": "Julian Seward",
+          "start_line": 11,
+          "end_line": 12
+        }
+      ],
+      "authors": [
+        {
+          "value": "Yoshioka Tsuneo (tsuneo@rr.iij4u.or.jp)",
+          "start_line": 1353,
+          "end_line": 1355
+        }
+      ],
+      "packages": [],
+      "emails": [
+        {
+          "email": "jseward@bzip.org",
+          "start_line": 12,
+          "end_line": 12
+        },
+        {
+          "email": "tsuneo@rr.iij4u.or.jp",
+          "start_line": 1353,
+          "end_line": 1353
+        }
+      ],
+      "urls": [
+        {
+          "url": "http://www.memtest86.com/",
+          "start_line": 72,
+          "end_line": 72
+        }
+      ],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2/1.0.5/bzip2-1.0.5/bzlib.h",
+      "type": "file",
+      "name": "bzlib.h",
+      "base_name": "bzlib",
+      "extension": ".h",
+      "size": 7246,
+      "date": "2008-03-20",
+      "sha1": "50691c4c3f957e08f66e987946e6cfadd68736fe",
+      "md5": "b9353e6a3daee077166c1eef2049b5e6",
+      "mime_type": "text/x-c",
+      "file_type": "C source, ASCII text",
+      "programming_language": "C++",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "bzip2-libbzip-2010",
+          "score": 69.35,
+          "name": "bzip2 License 2010",
+          "short_name": "bzip2 License 2010",
+          "category": "Permissive",
+          "is_exception": false,
+          "owner": "bzip",
+          "homepage_url": "https://github.com/asimonov-im/bzip2/blob/master/LICENSE",
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:bzip2-libbzip-2010",
+          "spdx_license_key": "bzip2-1.0.6",
+          "spdx_url": "https://spdx.org/licenses/bzip2-1.0.6",
+          "start_line": 8,
+          "end_line": 18,
+          "matched_rule": {
+            "identifier": "bzip2-libbzip-2010_5.RULE",
+            "license_expression": "bzip2-libbzip-2010",
+            "licenses": [
+              "bzip2-libbzip-2010"
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "3-seq",
+            "rule_length": 43,
+            "matched_length": 43,
+            "match_coverage": 100.0,
+            "rule_relevance": 100.0
+          },
+          "matched_text": "   This file is part of bzip2/libbzip2, a program and library for\n   lossless, block-sorting data compression.\n\n   bzip2/libbzip2 version 1.0.5 of 10 December 2007\n   Copyright (C) 1996-2007 Julian Seward <jseward@bzip.org>\n\n   Please read the WARNING, DISCLAIMER and PATENTS sections in the \n   README file.\n\n   This program is released under the terms of the license contained\n   in the file LICENSE."
+        }
+      ],
+      "license_expressions": [
+        "bzip2-libbzip-2010"
+      ],
+      "copyrights": [
+        {
+          "value": "Copyright (c) 1996-2007 Julian Seward <jseward@bzip.org>",
+          "start_line": 11,
+          "end_line": 12
+        }
+      ],
+      "holders": [
+        {
+          "value": "Julian Seward",
+          "start_line": 11,
+          "end_line": 12
+        }
+      ],
+      "authors": [
+        {
+          "value": "Yoshioka Tsuneo (tsuneo@rr.iij4u.or.jp)",
+          "start_line": 259,
+          "end_line": 261
+        }
+      ],
+      "packages": [],
+      "emails": [
+        {
+          "email": "jseward@bzip.org",
+          "start_line": 12,
+          "end_line": 12
+        },
+        {
+          "email": "tsuneo@rr.iij4u.or.jp",
+          "start_line": 259,
+          "end_line": 259
+        }
+      ],
+      "urls": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2/1.0.5/bzip2-1.0.5/bzlib_private.h",
+      "type": "file",
+      "name": "bzlib_private.h",
+      "base_name": "bzlib_private",
+      "extension": ".h",
+      "size": 13363,
+      "date": "2008-03-20",
+      "sha1": "dedb19fe16baaca084f285ea9da3dab715e1f068",
+      "md5": "98ca8225d4086fd2779dda10d63e4685",
+      "mime_type": "text/x-c",
+      "file_type": "C source, ASCII text",
+      "programming_language": "C++",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "bzip2-libbzip-2010",
+          "score": 69.35,
+          "name": "bzip2 License 2010",
+          "short_name": "bzip2 License 2010",
+          "category": "Permissive",
+          "is_exception": false,
+          "owner": "bzip",
+          "homepage_url": "https://github.com/asimonov-im/bzip2/blob/master/LICENSE",
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:bzip2-libbzip-2010",
+          "spdx_license_key": "bzip2-1.0.6",
+          "spdx_url": "https://spdx.org/licenses/bzip2-1.0.6",
+          "start_line": 8,
+          "end_line": 18,
+          "matched_rule": {
+            "identifier": "bzip2-libbzip-2010_5.RULE",
+            "license_expression": "bzip2-libbzip-2010",
+            "licenses": [
+              "bzip2-libbzip-2010"
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "3-seq",
+            "rule_length": 43,
+            "matched_length": 43,
+            "match_coverage": 100.0,
+            "rule_relevance": 100.0
+          },
+          "matched_text": "   This file is part of bzip2/libbzip2, a program and library for\n   lossless, block-sorting data compression.\n\n   bzip2/libbzip2 version 1.0.5 of 10 December 2007\n   Copyright (C) 1996-2007 Julian Seward <jseward@bzip.org>\n\n   Please read the WARNING, DISCLAIMER and PATENTS sections in the \n   README file.\n\n   This program is released under the terms of the license contained\n   in the file LICENSE."
+        }
+      ],
+      "license_expressions": [
+        "bzip2-libbzip-2010"
+      ],
+      "copyrights": [
+        {
+          "value": "Copyright (c) 1996-2007 Julian Seward <jseward@bzip.org>",
+          "start_line": 11,
+          "end_line": 12
+        }
+      ],
+      "holders": [
+        {
+          "value": "Julian Seward",
+          "start_line": 11,
+          "end_line": 12
+        }
+      ],
+      "authors": [],
+      "packages": [],
+      "emails": [
+        {
+          "email": "jseward@bzip.org",
+          "start_line": 12,
+          "end_line": 12
+        }
+      ],
+      "urls": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2/1.0.5/bzip2-1.0.5/bzmore",
+      "type": "file",
+      "name": "bzmore",
+      "base_name": "bzmore",
+      "extension": "",
+      "size": 1259,
+      "date": "2007-01-03",
+      "sha1": "565f7e9a4db0aa84738983ed1172dfd0e5d294cc",
+      "md5": "81d379d5a10e88f28d2733c10fbdd3ed",
+      "mime_type": "text/x-shellscript",
+      "file_type": "POSIX shell script, ASCII text executable",
+      "programming_language": "Bash",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": true,
+      "licenses": [],
+      "license_expressions": [],
+      "copyrights": [],
+      "holders": [],
+      "authors": [
+        {
+          "value": "Philippe Troin <phil@fifi.org>",
+          "start_line": 4,
+          "end_line": 4
+        }
+      ],
+      "packages": [],
+      "emails": [
+        {
+          "email": "phil@fifi.org",
+          "start_line": 4,
+          "end_line": 4
+        }
+      ],
+      "urls": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2/1.0.5/bzip2-1.0.5/bzmore.1",
+      "type": "file",
+      "name": "bzmore.1",
+      "base_name": "bzmore",
+      "extension": ".1",
+      "size": 4310,
+      "date": "2007-01-03",
+      "sha1": "7b159165532953ecb33df5871f109cd14a4c7ad0",
+      "md5": "566a3abb3e8dfbcb0638bd2af88c7f2d",
+      "mime_type": "text/troff",
+      "file_type": "troff or preprocessor input, ASCII text",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [],
+      "license_expressions": [],
+      "copyrights": [],
+      "holders": [],
+      "authors": [
+        {
+          "value": "Philippe Troin <phil@fifi.org>",
+          "start_line": 1,
+          "end_line": 3
+        }
+      ],
+      "packages": [],
+      "emails": [
+        {
+          "email": "phil@fifi.org",
+          "start_line": 1,
+          "end_line": 1
+        }
+      ],
+      "urls": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2/1.0.5/bzip2-1.0.5/CHANGES",
+      "type": "file",
+      "name": "CHANGES",
+      "base_name": "CHANGES",
+      "extension": "",
+      "size": 11255,
+      "date": "2007-12-09",
+      "sha1": "61c73ad17268291f7ecbfa824426334bb9c593d5",
+      "md5": "6c993d4a0384e53a22c93cc9ea36b3c3",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "bzip2-libbzip-2010",
+          "score": 69.35,
+          "name": "bzip2 License 2010",
+          "short_name": "bzip2 License 2010",
+          "category": "Permissive",
+          "is_exception": false,
+          "owner": "bzip",
+          "homepage_url": "https://github.com/asimonov-im/bzip2/blob/master/LICENSE",
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:bzip2-libbzip-2010",
+          "spdx_license_key": "bzip2-1.0.6",
+          "spdx_url": "https://spdx.org/licenses/bzip2-1.0.6",
+          "start_line": 2,
+          "end_line": 12,
+          "matched_rule": {
+            "identifier": "bzip2-libbzip-2010_5.RULE",
+            "license_expression": "bzip2-libbzip-2010",
+            "licenses": [
+              "bzip2-libbzip-2010"
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "3-seq",
+            "rule_length": 43,
+            "matched_length": 43,
+            "match_coverage": 100.0,
+            "rule_relevance": 100.0
+          },
+          "matched_text": " This file is part of bzip2/libbzip2, a program and library for\n lossless, block-sorting data compression.\n\n bzip2/libbzip2 version 1.0.5 of 10 December 2007\n Copyright (C) 1996-2007 Julian Seward <jseward@bzip.org>\n\n Please read the WARNING, DISCLAIMER and PATENTS sections in the \n README file.\n\n This program is released under the terms of the license contained\n in the file LICENSE."
+        }
+      ],
+      "license_expressions": [
+        "bzip2-libbzip-2010"
+      ],
+      "copyrights": [
+        {
+          "value": "Copyright (c) 1996-2007 Julian Seward <jseward@bzip.org>",
+          "start_line": 5,
+          "end_line": 6
+        }
+      ],
+      "holders": [
+        {
+          "value": "Julian Seward",
+          "start_line": 5,
+          "end_line": 6
+        }
+      ],
+      "authors": [],
+      "packages": [],
+      "emails": [
+        {
+          "email": "jseward@bzip.org",
+          "start_line": 6,
+          "end_line": 6
+        }
+      ],
+      "urls": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2/1.0.5/bzip2-1.0.5/compress.c",
+      "type": "file",
+      "name": "compress.c",
+      "base_name": "compress",
+      "extension": ".c",
+      "size": 20561,
+      "date": "2007-12-09",
+      "sha1": "69c85b942b0fedceb11f6aacda7382b848c4178f",
+      "md5": "5e45f57f831352866b8a9e03883bd578",
+      "mime_type": "text/x-c",
+      "file_type": "C source, ASCII text",
+      "programming_language": "C++",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "bzip2-libbzip-2010",
+          "score": 69.35,
+          "name": "bzip2 License 2010",
+          "short_name": "bzip2 License 2010",
+          "category": "Permissive",
+          "is_exception": false,
+          "owner": "bzip",
+          "homepage_url": "https://github.com/asimonov-im/bzip2/blob/master/LICENSE",
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:bzip2-libbzip-2010",
+          "spdx_license_key": "bzip2-1.0.6",
+          "spdx_url": "https://spdx.org/licenses/bzip2-1.0.6",
+          "start_line": 8,
+          "end_line": 18,
+          "matched_rule": {
+            "identifier": "bzip2-libbzip-2010_5.RULE",
+            "license_expression": "bzip2-libbzip-2010",
+            "licenses": [
+              "bzip2-libbzip-2010"
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "3-seq",
+            "rule_length": 43,
+            "matched_length": 43,
+            "match_coverage": 100.0,
+            "rule_relevance": 100.0
+          },
+          "matched_text": "   This file is part of bzip2/libbzip2, a program and library for\n   lossless, block-sorting data compression.\n\n   bzip2/libbzip2 version 1.0.5 of 10 December 2007\n   Copyright (C) 1996-2007 Julian Seward <jseward@bzip.org>\n\n   Please read the WARNING, DISCLAIMER and PATENTS sections in the \n   README file.\n\n   This program is released under the terms of the license contained\n   in the file LICENSE."
+        }
+      ],
+      "license_expressions": [
+        "bzip2-libbzip-2010"
+      ],
+      "copyrights": [
+        {
+          "value": "Copyright (c) 1996-2007 Julian Seward <jseward@bzip.org>",
+          "start_line": 11,
+          "end_line": 12
+        }
+      ],
+      "holders": [
+        {
+          "value": "Julian Seward",
+          "start_line": 11,
+          "end_line": 12
+        }
+      ],
+      "authors": [],
+      "packages": [],
+      "emails": [
+        {
+          "email": "jseward@bzip.org",
+          "start_line": 12,
+          "end_line": 12
+        }
+      ],
+      "urls": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2/1.0.5/bzip2-1.0.5/crctable.c",
+      "type": "file",
+      "name": "crctable.c",
+      "base_name": "crctable",
+      "extension": ".c",
+      "size": 4818,
+      "date": "2007-12-09",
+      "sha1": "a4f5ee8a94ca88ce156bbcc47589fae1ed0fc3f5",
+      "md5": "8ffd198ce4fc3ebe1c47528d2dd393fe",
+      "mime_type": "text/x-c",
+      "file_type": "C source, ASCII text",
+      "programming_language": "C++",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "bzip2-libbzip-2010",
+          "score": 69.35,
+          "name": "bzip2 License 2010",
+          "short_name": "bzip2 License 2010",
+          "category": "Permissive",
+          "is_exception": false,
+          "owner": "bzip",
+          "homepage_url": "https://github.com/asimonov-im/bzip2/blob/master/LICENSE",
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:bzip2-libbzip-2010",
+          "spdx_license_key": "bzip2-1.0.6",
+          "spdx_url": "https://spdx.org/licenses/bzip2-1.0.6",
+          "start_line": 8,
+          "end_line": 18,
+          "matched_rule": {
+            "identifier": "bzip2-libbzip-2010_5.RULE",
+            "license_expression": "bzip2-libbzip-2010",
+            "licenses": [
+              "bzip2-libbzip-2010"
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "3-seq",
+            "rule_length": 43,
+            "matched_length": 43,
+            "match_coverage": 100.0,
+            "rule_relevance": 100.0
+          },
+          "matched_text": "   This file is part of bzip2/libbzip2, a program and library for\n   lossless, block-sorting data compression.\n\n   bzip2/libbzip2 version 1.0.5 of 10 December 2007\n   Copyright (C) 1996-2007 Julian Seward <jseward@bzip.org>\n\n   Please read the WARNING, DISCLAIMER and PATENTS sections in the \n   README file.\n\n   This program is released under the terms of the license contained\n   in the file LICENSE."
+        }
+      ],
+      "license_expressions": [
+        "bzip2-libbzip-2010"
+      ],
+      "copyrights": [
+        {
+          "value": "Copyright (c) 1996-2007 Julian Seward <jseward@bzip.org>",
+          "start_line": 11,
+          "end_line": 12
+        }
+      ],
+      "holders": [
+        {
+          "value": "Julian Seward",
+          "start_line": 11,
+          "end_line": 12
+        }
+      ],
+      "authors": [],
+      "packages": [],
+      "emails": [
+        {
+          "email": "jseward@bzip.org",
+          "start_line": 12,
+          "end_line": 12
+        }
+      ],
+      "urls": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2/1.0.5/bzip2-1.0.5/decompress.c",
+      "type": "file",
+      "name": "decompress.c",
+      "base_name": "decompress",
+      "extension": ".c",
+      "size": 22679,
+      "date": "2008-03-20",
+      "sha1": "dc7f255ee5c47000d7a4d26bdc512e48aa0e7ead",
+      "md5": "fb98406ba9e5ed2370d9b4d4cfbddb81",
+      "mime_type": "text/x-c",
+      "file_type": "C source, ASCII text",
+      "programming_language": "C++",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "bzip2-libbzip-2010",
+          "score": 69.35,
+          "name": "bzip2 License 2010",
+          "short_name": "bzip2 License 2010",
+          "category": "Permissive",
+          "is_exception": false,
+          "owner": "bzip",
+          "homepage_url": "https://github.com/asimonov-im/bzip2/blob/master/LICENSE",
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:bzip2-libbzip-2010",
+          "spdx_license_key": "bzip2-1.0.6",
+          "spdx_url": "https://spdx.org/licenses/bzip2-1.0.6",
+          "start_line": 8,
+          "end_line": 18,
+          "matched_rule": {
+            "identifier": "bzip2-libbzip-2010_5.RULE",
+            "license_expression": "bzip2-libbzip-2010",
+            "licenses": [
+              "bzip2-libbzip-2010"
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "3-seq",
+            "rule_length": 43,
+            "matched_length": 43,
+            "match_coverage": 100.0,
+            "rule_relevance": 100.0
+          },
+          "matched_text": "   This file is part of bzip2/libbzip2, a program and library for\n   lossless, block-sorting data compression.\n\n   bzip2/libbzip2 version 1.0.5 of 10 December 2007\n   Copyright (C) 1996-2007 Julian Seward <jseward@bzip.org>\n\n   Please read the WARNING, DISCLAIMER and PATENTS sections in the \n   README file.\n\n   This program is released under the terms of the license contained\n   in the file LICENSE."
+        }
+      ],
+      "license_expressions": [
+        "bzip2-libbzip-2010"
+      ],
+      "copyrights": [
+        {
+          "value": "Copyright (c) 1996-2007 Julian Seward <jseward@bzip.org>",
+          "start_line": 11,
+          "end_line": 12
+        }
+      ],
+      "holders": [
+        {
+          "value": "Julian Seward",
+          "start_line": 11,
+          "end_line": 12
+        }
+      ],
+      "authors": [],
+      "packages": [],
+      "emails": [
+        {
+          "email": "jseward@bzip.org",
+          "start_line": 12,
+          "end_line": 12
+        }
+      ],
+      "urls": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2/1.0.5/bzip2-1.0.5/dlltest.c",
+      "type": "file",
+      "name": "dlltest.c",
+      "base_name": "dlltest",
+      "extension": ".c",
+      "size": 4402,
+      "date": "2007-01-03",
+      "sha1": "a0fa4547db29c7128475129707220ca32dda6d4a",
+      "md5": "40caf916238e982b1f4bdb4f01fbc71e",
+      "mime_type": "text/x-c",
+      "file_type": "C source, ASCII text, with CRLF line terminators",
+      "programming_language": "C++",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "public-domain",
+          "score": 16.0,
+          "name": "Public Domain",
+          "short_name": "Public Domain",
+          "category": "Public Domain",
+          "is_exception": false,
+          "owner": "Unspecified",
+          "homepage_url": "http://www.linfo.org/publicdomain.html",
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:public-domain",
+          "spdx_license_key": null,
+          "spdx_url": "",
+          "start_line": 5,
+          "end_line": 5,
+          "matched_rule": {
+            "identifier": "public-domain_38.RULE",
+            "license_expression": "public-domain",
+            "licenses": [
+              "public-domain"
+            ],
+            "is_license_text": true,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 3,
+            "matched_length": 3,
+            "match_coverage": 100.0,
+            "rule_relevance": 16
+          },
+          "matched_text": "      This file is Public Domain.  Welcome any email to me."
+        }
+      ],
+      "license_expressions": [
+        "public-domain"
+      ],
+      "copyrights": [],
+      "holders": [],
+      "authors": [
+        {
+          "value": "Yoshioka Tsuneo (tsuneo@rr.iij4u.or.jp)",
+          "start_line": 4,
+          "end_line": 5
+        }
+      ],
+      "packages": [],
+      "emails": [
+        {
+          "email": "tsuneo@rr.iij4u.or.jp",
+          "start_line": 4,
+          "end_line": 4
+        }
+      ],
+      "urls": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2/1.0.5/bzip2-1.0.5/dlltest.dsp",
+      "type": "file",
+      "name": "dlltest.dsp",
+      "base_name": "dlltest",
+      "extension": ".dsp",
+      "size": 3516,
+      "date": "2007-01-03",
+      "sha1": "4d860f30c3e79484b6fb023791546def1fb21542",
+      "md5": "2a61d438704326b590df2c69e971e410",
+      "mime_type": "text/plain",
+      "file_type": "Non-ISO extended-ASCII text, with CRLF line terminators",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [],
+      "license_expressions": [],
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "packages": [],
+      "emails": [],
+      "urls": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2/1.0.5/bzip2-1.0.5/entities.xml",
+      "type": "file",
+      "name": "entities.xml",
+      "base_name": "entities",
+      "extension": ".xml",
+      "size": 240,
+      "date": "2007-12-09",
+      "sha1": "bf6f91069c6fa5741c669b9593d74fd525af913b",
+      "md5": "5d84e2886f43b5912e076ee3cf65b69d",
+      "mime_type": "text/plain",
+      "file_type": "exported SGML document, ASCII text",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [],
+      "license_expressions": [],
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "packages": [],
+      "emails": [
+        {
+          "email": "jseward@bzip.org",
+          "start_line": 3,
+          "end_line": 3
+        }
+      ],
+      "urls": [
+        {
+          "url": "http://www.bzip.org/",
+          "start_line": 2,
+          "end_line": 2
+        }
+      ],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2/1.0.5/bzip2-1.0.5/format.pl",
+      "type": "file",
+      "name": "format.pl",
+      "base_name": "format",
+      "extension": ".pl",
+      "size": 1689,
+      "date": "2007-12-09",
+      "sha1": "b4e70cf277a06d2be481d99c35d4300bfe02216e",
+      "md5": "1d0f101496c5cc7e4bce0ae57cc3d2f7",
+      "mime_type": "text/plain",
+      "file_type": "a /usr/bin/perl -w script, ASCII text executable",
+      "programming_language": "Perl6",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": true,
+      "licenses": [
+        {
+          "key": "bzip2-libbzip-2010",
+          "score": 69.35,
+          "name": "bzip2 License 2010",
+          "short_name": "bzip2 License 2010",
+          "category": "Permissive",
+          "is_exception": false,
+          "owner": "bzip",
+          "homepage_url": "https://github.com/asimonov-im/bzip2/blob/master/LICENSE",
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:bzip2-libbzip-2010",
+          "spdx_license_key": "bzip2-1.0.6",
+          "spdx_url": "https://spdx.org/licenses/bzip2-1.0.6",
+          "start_line": 4,
+          "end_line": 14,
+          "matched_rule": {
+            "identifier": "bzip2-libbzip-2010_5.RULE",
+            "license_expression": "bzip2-libbzip-2010",
+            "licenses": [
+              "bzip2-libbzip-2010"
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "3-seq",
+            "rule_length": 43,
+            "matched_length": 43,
+            "match_coverage": 100.0,
+            "rule_relevance": 100.0
+          },
+          "matched_text": "# This file is part of bzip2/libbzip2, a program and library for\n# lossless, block-sorting data compression.\n#\n# bzip2/libbzip2 version 1.0.5 of 10 December 2007\n# Copyright (C) 1996-2007 Julian Seward <jseward@bzip.org>\n#\n# Please read the WARNING, DISCLAIMER and PATENTS sections in the \n# README file.\n#\n# This program is released under the terms of the license contained\n# in the file LICENSE."
+        }
+      ],
+      "license_expressions": [
+        "bzip2-libbzip-2010"
+      ],
+      "copyrights": [
+        {
+          "value": "Copyright (c) 1996-2007 Julian Seward <jseward@bzip.org>",
+          "start_line": 7,
+          "end_line": 8
+        }
+      ],
+      "holders": [
+        {
+          "value": "Julian Seward",
+          "start_line": 7,
+          "end_line": 8
+        }
+      ],
+      "authors": [],
+      "packages": [],
+      "emails": [
+        {
+          "email": "jseward@bzip.org",
+          "start_line": 8,
+          "end_line": 8
+        }
+      ],
+      "urls": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2/1.0.5/bzip2-1.0.5/huffman.c",
+      "type": "file",
+      "name": "huffman.c",
+      "base_name": "huffman",
+      "extension": ".c",
+      "size": 7509,
+      "date": "2008-03-20",
+      "sha1": "9e1b9115261c887e1a1d5c69f724e7be750599d5",
+      "md5": "ef7d0e1f298323ee0cffa84a5960e1bb",
+      "mime_type": "text/x-c",
+      "file_type": "C source, ASCII text",
+      "programming_language": "C++",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "bzip2-libbzip-2010",
+          "score": 69.35,
+          "name": "bzip2 License 2010",
+          "short_name": "bzip2 License 2010",
+          "category": "Permissive",
+          "is_exception": false,
+          "owner": "bzip",
+          "homepage_url": "https://github.com/asimonov-im/bzip2/blob/master/LICENSE",
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:bzip2-libbzip-2010",
+          "spdx_license_key": "bzip2-1.0.6",
+          "spdx_url": "https://spdx.org/licenses/bzip2-1.0.6",
+          "start_line": 8,
+          "end_line": 18,
+          "matched_rule": {
+            "identifier": "bzip2-libbzip-2010_5.RULE",
+            "license_expression": "bzip2-libbzip-2010",
+            "licenses": [
+              "bzip2-libbzip-2010"
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "3-seq",
+            "rule_length": 43,
+            "matched_length": 43,
+            "match_coverage": 100.0,
+            "rule_relevance": 100.0
+          },
+          "matched_text": "   This file is part of bzip2/libbzip2, a program and library for\n   lossless, block-sorting data compression.\n\n   bzip2/libbzip2 version 1.0.5 of 10 December 2007\n   Copyright (C) 1996-2007 Julian Seward <jseward@bzip.org>\n\n   Please read the WARNING, DISCLAIMER and PATENTS sections in the \n   README file.\n\n   This program is released under the terms of the license contained\n   in the file LICENSE."
+        }
+      ],
+      "license_expressions": [
+        "bzip2-libbzip-2010"
+      ],
+      "copyrights": [
+        {
+          "value": "Copyright (c) 1996-2007 Julian Seward <jseward@bzip.org>",
+          "start_line": 11,
+          "end_line": 12
+        }
+      ],
+      "holders": [
+        {
+          "value": "Julian Seward",
+          "start_line": 11,
+          "end_line": 12
+        }
+      ],
+      "authors": [],
+      "packages": [],
+      "emails": [
+        {
+          "email": "jseward@bzip.org",
+          "start_line": 12,
+          "end_line": 12
+        }
+      ],
+      "urls": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2/1.0.5/bzip2-1.0.5/libbz2.dsp",
+      "type": "file",
+      "name": "libbz2.dsp",
+      "base_name": "libbz2",
+      "extension": ".dsp",
+      "size": 4254,
+      "date": "2007-01-03",
+      "sha1": "335e704b98f50cc9526b12ce5cec2f286051a312",
+      "md5": "8e0095b958b1a72b853aded041a13533",
+      "mime_type": "text/plain",
+      "file_type": "Non-ISO extended-ASCII text, with CRLF line terminators",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [],
+      "license_expressions": [],
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "packages": [],
+      "emails": [],
+      "urls": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2/1.0.5/bzip2-1.0.5/LICENSE",
+      "type": "file",
+      "name": "LICENSE",
+      "base_name": "LICENSE",
+      "extension": "",
+      "size": 1901,
+      "date": "2007-12-09",
+      "sha1": "d964dbe91cbf7511e4f1857db9e99fdaf6658055",
+      "md5": "7023994919680c533b77301b306ea1c9",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "bzip2-libbzip-2010",
+          "score": 100.0,
+          "name": "bzip2 License 2010",
+          "short_name": "bzip2 License 2010",
+          "category": "Permissive",
+          "is_exception": false,
+          "owner": "bzip",
+          "homepage_url": "https://github.com/asimonov-im/bzip2/blob/master/LICENSE",
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:bzip2-libbzip-2010",
+          "spdx_license_key": "bzip2-1.0.6",
+          "spdx_url": "https://spdx.org/licenses/bzip2-1.0.6",
+          "start_line": 8,
+          "end_line": 37,
+          "matched_rule": {
+            "identifier": "bzip2-libbzip-2010.LICENSE",
+            "license_expression": "bzip2-libbzip-2010",
+            "licenses": [
+              "bzip2-libbzip-2010"
+            ],
+            "is_license_text": true,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 233,
+            "matched_length": 233,
+            "match_coverage": 100.0,
+            "rule_relevance": 100
+          },
+          "matched_text": "Redistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions\nare met:\n\n1. Redistributions of source code must retain the above copyright\n   notice, this list of conditions and the following disclaimer.\n\n2. The origin of this software must not be misrepresented; you must \n   not claim that you wrote the original software.  If you use this \n   software in a product, an acknowledgment in the product \n   documentation would be appreciated but is not required.\n\n3. Altered source versions must be plainly marked as such, and must\n   not be misrepresented as being the original software.\n\n4. The name of the author may not be used to endorse or promote \n   products derived from this software without specific prior written \n   permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS\nOR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED\nWARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE\nARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY\nDIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\nDAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE\nGOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS\nINTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,\nWHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING\nNEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS\nSOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+        }
+      ],
+      "license_expressions": [
+        "bzip2-libbzip-2010"
+      ],
+      "copyrights": [
+        {
+          "value": "copyright (c) 1996-2007 Julian R Seward",
+          "start_line": 5,
+          "end_line": 6
+        }
+      ],
+      "holders": [
+        {
+          "value": "Julian R Seward",
+          "start_line": 5,
+          "end_line": 6
+        }
+      ],
+      "authors": [],
+      "packages": [],
+      "emails": [
+        {
+          "email": "jseward@bzip.org",
+          "start_line": 39,
+          "end_line": 39
+        }
+      ],
+      "urls": [],
+      "is_legal": true,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2/1.0.5/bzip2-1.0.5/Makefile",
+      "type": "file",
+      "name": "Makefile",
+      "base_name": "Makefile",
+      "extension": "",
+      "size": 7413,
+      "date": "2008-03-20",
+      "sha1": "e857dc306bfac7e49f999ee9b6cc7063497da79c",
+      "md5": "e4fc5924d89d9d9a5b0a7bc98073f0c0",
+      "mime_type": "text/x-makefile",
+      "file_type": "makefile script, ASCII text",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "bzip2-libbzip-2010",
+          "score": 69.35,
+          "name": "bzip2 License 2010",
+          "short_name": "bzip2 License 2010",
+          "category": "Permissive",
+          "is_exception": false,
+          "owner": "bzip",
+          "homepage_url": "https://github.com/asimonov-im/bzip2/blob/master/LICENSE",
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:bzip2-libbzip-2010",
+          "spdx_license_key": "bzip2-1.0.6",
+          "spdx_url": "https://spdx.org/licenses/bzip2-1.0.6",
+          "start_line": 2,
+          "end_line": 12,
+          "matched_rule": {
+            "identifier": "bzip2-libbzip-2010_5.RULE",
+            "license_expression": "bzip2-libbzip-2010",
+            "licenses": [
+              "bzip2-libbzip-2010"
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "3-seq",
+            "rule_length": 43,
+            "matched_length": 43,
+            "match_coverage": 100.0,
+            "rule_relevance": 100.0
+          },
+          "matched_text": "# This file is part of bzip2/libbzip2, a program and library for\n# lossless, block-sorting data compression.\n#\n# bzip2/libbzip2 version 1.0.5 of 10 December 2007\n# Copyright (C) 1996-2007 Julian Seward <jseward@bzip.org>\n#\n# Please read the WARNING, DISCLAIMER and PATENTS sections in the \n# README file.\n#\n# This program is released under the terms of the license contained\n# in the file LICENSE."
+        }
+      ],
+      "license_expressions": [
+        "bzip2-libbzip-2010"
+      ],
+      "copyrights": [
+        {
+          "value": "Copyright (c) 1996-2007 Julian Seward <jseward@bzip.org>",
+          "start_line": 5,
+          "end_line": 6
+        }
+      ],
+      "holders": [
+        {
+          "value": "Julian Seward",
+          "start_line": 5,
+          "end_line": 6
+        }
+      ],
+      "authors": [],
+      "packages": [],
+      "emails": [
+        {
+          "email": "jseward@bzip.org",
+          "start_line": 6,
+          "end_line": 6
+        }
+      ],
+      "urls": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2/1.0.5/bzip2-1.0.5/Makefile-libbz2_so",
+      "type": "file",
+      "name": "Makefile-libbz2_so",
+      "base_name": "Makefile-libbz2_so",
+      "extension": "",
+      "size": 1734,
+      "date": "2007-12-09",
+      "sha1": "f71eb267f6396edad5f5c8dce0e59575121921ee",
+      "md5": "402ed48ef190e3a8b6ff0a81af13abac",
+      "mime_type": "text/x-makefile",
+      "file_type": "makefile script, ASCII text",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "bzip2-libbzip-2010",
+          "score": 69.35,
+          "name": "bzip2 License 2010",
+          "short_name": "bzip2 License 2010",
+          "category": "Permissive",
+          "is_exception": false,
+          "owner": "bzip",
+          "homepage_url": "https://github.com/asimonov-im/bzip2/blob/master/LICENSE",
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:bzip2-libbzip-2010",
+          "spdx_license_key": "bzip2-1.0.6",
+          "spdx_url": "https://spdx.org/licenses/bzip2-1.0.6",
+          "start_line": 10,
+          "end_line": 20,
+          "matched_rule": {
+            "identifier": "bzip2-libbzip-2010_5.RULE",
+            "license_expression": "bzip2-libbzip-2010",
+            "licenses": [
+              "bzip2-libbzip-2010"
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "3-seq",
+            "rule_length": 43,
+            "matched_length": 43,
+            "match_coverage": 100.0,
+            "rule_relevance": 100.0
+          },
+          "matched_text": "# This file is part of bzip2/libbzip2, a program and library for\n# lossless, block-sorting data compression.\n#\n# bzip2/libbzip2 version 1.0.5 of 10 December 2007\n# Copyright (C) 1996-2007 Julian Seward <jseward@bzip.org>\n#\n# Please read the WARNING, DISCLAIMER and PATENTS sections in the \n# README file.\n#\n# This program is released under the terms of the license contained\n# in the file LICENSE."
+        }
+      ],
+      "license_expressions": [
+        "bzip2-libbzip-2010"
+      ],
+      "copyrights": [
+        {
+          "value": "Copyright (c) 1996-2007 Julian Seward <jseward@bzip.org>",
+          "start_line": 13,
+          "end_line": 14
+        }
+      ],
+      "holders": [
+        {
+          "value": "Julian Seward",
+          "start_line": 13,
+          "end_line": 14
+        }
+      ],
+      "authors": [],
+      "packages": [],
+      "emails": [
+        {
+          "email": "jseward@bzip.org",
+          "start_line": 14,
+          "end_line": 14
+        }
+      ],
+      "urls": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2/1.0.5/bzip2-1.0.5/makefile.msc",
+      "type": "file",
+      "name": "makefile.msc",
+      "base_name": "makefile",
+      "extension": ".msc",
+      "size": 1615,
+      "date": "2007-01-03",
+      "sha1": "27f8c82b02cfb149cbf49742237946c562bec1db",
+      "md5": "714314558670576e006ce907edb630e9",
+      "mime_type": "text/x-makefile",
+      "file_type": "makefile script, ASCII text, with CRLF line terminators",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [],
+      "license_expressions": [],
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "packages": [],
+      "emails": [
+        {
+          "email": "syring@gsf.de",
+          "start_line": 3,
+          "end_line": 3
+        }
+      ],
+      "urls": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2/1.0.5/bzip2-1.0.5/manual.xml",
+      "type": "file",
+      "name": "manual.xml",
+      "base_name": "manual",
+      "extension": ".xml",
+      "size": 111919,
+      "date": "2007-12-09",
+      "sha1": "3153e6c388a2e36e292c1485c582c705c05ae81b",
+      "md5": "7a003c59ef2f36322fcb36ab195f3f70",
+      "mime_type": "application/xml",
+      "file_type": "XML document text",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "bzip2-libbzip-2010",
+          "score": 95.02,
+          "name": "bzip2 License 2010",
+          "short_name": "bzip2 License 2010",
+          "category": "Permissive",
+          "is_exception": false,
+          "owner": "bzip",
+          "homepage_url": "https://github.com/asimonov-im/bzip2/blob/master/LICENSE",
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:bzip2-libbzip-2010",
+          "spdx_license_key": "bzip2-1.0.6",
+          "spdx_url": "https://spdx.org/licenses/bzip2-1.0.6",
+          "start_line": 37,
+          "end_line": 81,
+          "matched_rule": {
+            "identifier": "bzip2-libbzip-2010_2.RULE",
+            "license_expression": "bzip2-libbzip-2010",
+            "licenses": [
+              "bzip2-libbzip-2010"
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "3-seq",
+            "rule_length": 267,
+            "matched_length": 267,
+            "match_coverage": 100.0,
+            "rule_relevance": 100
+          },
+          "matched_text": "  <para>Redistribution and use in source and binary forms, with\n  or without modification, are permitted provided that the\n  following conditions are met:</para>\n\n  <itemizedlist mark='bullet'>\n\n   <listitem><para>Redistributions of source code must retain the\n   above copyright notice, this list of conditions and the\n   following disclaimer.</para></listitem>\n\n   <listitem><para>The origin of this software must not be\n   misrepresented; you must not claim that you wrote the original\n   software.  If you use this software in a product, an\n   acknowledgment in the product documentation would be\n   appreciated but is not required.</para></listitem>\n\n   <listitem><para>Altered source versions must be plainly marked\n   as such, and must not be misrepresented as being the original\n   software.</para></listitem>\n\n   <listitem><para>The name of the author may not be used to\n   endorse or promote products derived from this software without\n   specific prior written permission.</para></listitem>\n\n  </itemizedlist>\n\n  <para>THIS SOFTWARE IS PROVIDED BY THE AUTHOR \"AS IS\" AND ANY\n  EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,\n  THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A\n  PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE\n  AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,\n  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED\n  TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\n  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND\n  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT\n  LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING\n  IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF\n  THE POSSIBILITY OF SUCH DAMAGE.</para>\n\n <para>PATENTS: To the best of my knowledge,\n <computeroutput>bzip2</computeroutput> and\n <computeroutput>libbzip2</computeroutput> do not use any patented\n algorithms.  However, I do not have the resources to carry\n out a patent search.  Therefore I cannot give any guarantee of\n the above statement."
+        }
+      ],
+      "license_expressions": [
+        "bzip2-libbzip-2010"
+      ],
+      "copyrights": [
+        {
+          "value": "copyright (c) Julian Seward",
+          "start_line": 34,
+          "end_line": 35
+        }
+      ],
+      "holders": [
+        {
+          "value": "Julian Seward",
+          "start_line": 34,
+          "end_line": 35
+        }
+      ],
+      "authors": [],
+      "packages": [],
+      "emails": [
+        {
+          "email": "tsuneo@rr.iij4u.or.jp",
+          "start_line": 822,
+          "end_line": 822
+        }
+      ],
+      "urls": [
+        {
+          "url": "http://www.zlib.org/",
+          "start_line": 2874,
+          "end_line": 2874
+        },
+        {
+          "url": "http://www.gzip.org/",
+          "start_line": 2875,
+          "end_line": 2875
+        },
+        {
+          "url": "http://www.oberhumer.com/opensource",
+          "start_line": 2881,
+          "end_line": 2881
+        },
+        {
+          "url": "ftp://ftp.digital.com/pub/DEC/SRC/research-reports/SRC-124.ps.gz",
+          "start_line": 2902,
+          "end_line": 2902
+        },
+        {
+          "url": "http://www.nzdl.org/",
+          "start_line": 2904,
+          "end_line": 2904
+        },
+        {
+          "url": "ftp://ftp.cl.cam.ac.uk/users/djw3/",
+          "start_line": 2915,
+          "end_line": 2915
+        },
+        {
+          "url": "http://www.cs.princeton.edu/~rs",
+          "start_line": 2920,
+          "end_line": 2920
+        },
+        {
+          "url": "ftp://ftp.cs.auckland.ac.nz/pub/peter-f/ACSC96paper.ps",
+          "start_line": 2931,
+          "end_line": 2931
+        },
+        {
+          "url": "http://naomi.is.s.u-tokyo.ac.jp/~sada/papers/Sada98b.ps.gz",
+          "start_line": 2936,
+          "end_line": 2936
+        },
+        {
+          "url": "http://www.cs.arizona.edu/people/gene/PAPERS/suffix.ps",
+          "start_line": 2942,
+          "end_line": 2942
+        }
+      ],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2/1.0.5/bzip2-1.0.5/mk251.c",
+      "type": "file",
+      "name": "mk251.c",
+      "base_name": "mk251",
+      "extension": ".c",
+      "size": 919,
+      "date": "2007-12-09",
+      "sha1": "49cb45fdab971b0aea09d48d9c046b28a8001ba0",
+      "md5": "c2b7ffac77831397223a2a3c4e12edae",
+      "mime_type": "text/x-c",
+      "file_type": "C source, ASCII text",
+      "programming_language": "C++",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "bzip2-libbzip-2010",
+          "score": 69.35,
+          "name": "bzip2 License 2010",
+          "short_name": "bzip2 License 2010",
+          "category": "Permissive",
+          "is_exception": false,
+          "owner": "bzip",
+          "homepage_url": "https://github.com/asimonov-im/bzip2/blob/master/LICENSE",
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:bzip2-libbzip-2010",
+          "spdx_license_key": "bzip2-1.0.6",
+          "spdx_url": "https://spdx.org/licenses/bzip2-1.0.6",
+          "start_line": 9,
+          "end_line": 19,
+          "matched_rule": {
+            "identifier": "bzip2-libbzip-2010_5.RULE",
+            "license_expression": "bzip2-libbzip-2010",
+            "licenses": [
+              "bzip2-libbzip-2010"
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "3-seq",
+            "rule_length": 43,
+            "matched_length": 43,
+            "match_coverage": 100.0,
+            "rule_relevance": 100.0
+          },
+          "matched_text": "   This file is part of bzip2/libbzip2, a program and library for\n   lossless, block-sorting data compression.\n\n   bzip2/libbzip2 version 1.0.5 of 10 December 2007\n   Copyright (C) 1996-2007 Julian Seward <jseward@bzip.org>\n\n   Please read the WARNING, DISCLAIMER and PATENTS sections in the \n   README file.\n\n   This program is released under the terms of the license contained\n   in the file LICENSE."
+        }
+      ],
+      "license_expressions": [
+        "bzip2-libbzip-2010"
+      ],
+      "copyrights": [
+        {
+          "value": "Copyright (c) 1996-2007 Julian Seward <jseward@bzip.org>",
+          "start_line": 12,
+          "end_line": 13
+        }
+      ],
+      "holders": [
+        {
+          "value": "Julian Seward",
+          "start_line": 12,
+          "end_line": 13
+        }
+      ],
+      "authors": [],
+      "packages": [],
+      "emails": [
+        {
+          "email": "jseward@bzip.org",
+          "start_line": 13,
+          "end_line": 13
+        }
+      ],
+      "urls": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2/1.0.5/bzip2-1.0.5/randtable.c",
+      "type": "file",
+      "name": "randtable.c",
+      "base_name": "randtable",
+      "extension": ".c",
+      "size": 3860,
+      "date": "2007-12-09",
+      "sha1": "91211babc38b6ab03cedd7b2ee5f42f619efa807",
+      "md5": "ddc954cf325f93ad07cd1c0a2f0e69fa",
+      "mime_type": "text/x-c",
+      "file_type": "C source, ASCII text",
+      "programming_language": "C++",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "bzip2-libbzip-2010",
+          "score": 69.35,
+          "name": "bzip2 License 2010",
+          "short_name": "bzip2 License 2010",
+          "category": "Permissive",
+          "is_exception": false,
+          "owner": "bzip",
+          "homepage_url": "https://github.com/asimonov-im/bzip2/blob/master/LICENSE",
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:bzip2-libbzip-2010",
+          "spdx_license_key": "bzip2-1.0.6",
+          "spdx_url": "https://spdx.org/licenses/bzip2-1.0.6",
+          "start_line": 8,
+          "end_line": 18,
+          "matched_rule": {
+            "identifier": "bzip2-libbzip-2010_5.RULE",
+            "license_expression": "bzip2-libbzip-2010",
+            "licenses": [
+              "bzip2-libbzip-2010"
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "3-seq",
+            "rule_length": 43,
+            "matched_length": 43,
+            "match_coverage": 100.0,
+            "rule_relevance": 100.0
+          },
+          "matched_text": "   This file is part of bzip2/libbzip2, a program and library for\n   lossless, block-sorting data compression.\n\n   bzip2/libbzip2 version 1.0.5 of 10 December 2007\n   Copyright (C) 1996-2007 Julian Seward <jseward@bzip.org>\n\n   Please read the WARNING, DISCLAIMER and PATENTS sections in the \n   README file.\n\n   This program is released under the terms of the license contained\n   in the file LICENSE."
+        }
+      ],
+      "license_expressions": [
+        "bzip2-libbzip-2010"
+      ],
+      "copyrights": [
+        {
+          "value": "Copyright (c) 1996-2007 Julian Seward <jseward@bzip.org>",
+          "start_line": 11,
+          "end_line": 12
+        }
+      ],
+      "holders": [
+        {
+          "value": "Julian Seward",
+          "start_line": 11,
+          "end_line": 12
+        }
+      ],
+      "authors": [],
+      "packages": [],
+      "emails": [
+        {
+          "email": "jseward@bzip.org",
+          "start_line": 12,
+          "end_line": 12
+        }
+      ],
+      "urls": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2/1.0.5/bzip2-1.0.5/README",
+      "type": "file",
+      "name": "README",
+      "base_name": "README",
+      "extension": "",
+      "size": 7493,
+      "date": "2007-12-09",
+      "sha1": "9c58e28108bb8bb0191615b3bd9b2cc4f2648433",
+      "md5": "3bd558f470d45637a1bf485c95798543",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "bzip2-libbzip-2010",
+          "score": 95.35,
+          "name": "bzip2 License 2010",
+          "short_name": "bzip2 License 2010",
+          "category": "Permissive",
+          "is_exception": false,
+          "owner": "bzip",
+          "homepage_url": "https://github.com/asimonov-im/bzip2/blob/master/LICENSE",
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:bzip2-libbzip-2010",
+          "spdx_license_key": "bzip2-1.0.6",
+          "spdx_url": "https://spdx.org/licenses/bzip2-1.0.6",
+          "start_line": 6,
+          "end_line": 15,
+          "matched_rule": {
+            "identifier": "bzip2-libbzip-2010_5.RULE",
+            "license_expression": "bzip2-libbzip-2010",
+            "licenses": [
+              "bzip2-libbzip-2010"
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "3-seq",
+            "rule_length": 43,
+            "matched_length": 41,
+            "match_coverage": 95.35,
+            "rule_relevance": 100.0
+          },
+          "matched_text": "This file is part of bzip2/libbzip2, a program and library for\nlossless, block-sorting data compression.\n\nbzip2/libbzip2 version 1.0.5 of 10 December 2007\nCopyright (C) 1996-2007 Julian Seward <jseward@bzip.org>\n\nPlease read the WARNING, DISCLAIMER and PATENTS sections in this file.\n\nThis program is released under the terms of the license contained\nin the file LICENSE."
+        }
+      ],
+      "license_expressions": [
+        "bzip2-libbzip-2010"
+      ],
+      "copyrights": [
+        {
+          "value": "Copyright (c) 1996-2007 Julian Seward <jseward@bzip.org>",
+          "start_line": 9,
+          "end_line": 10
+        }
+      ],
+      "holders": [
+        {
+          "value": "Julian Seward",
+          "start_line": 9,
+          "end_line": 10
+        }
+      ],
+      "authors": [],
+      "packages": [],
+      "emails": [
+        {
+          "email": "jseward@bzip.org",
+          "start_line": 10,
+          "end_line": 10
+        }
+      ],
+      "urls": [
+        {
+          "url": "http://www.bzip.org/",
+          "start_line": 76,
+          "end_line": 76
+        }
+      ],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": true,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2/1.0.5/bzip2-1.0.5/README.COMPILATION.PROBLEMS",
+      "type": "file",
+      "name": "README.COMPILATION.PROBLEMS",
+      "base_name": "README.COMPILATION",
+      "extension": ".PROBLEMS",
+      "size": 2511,
+      "date": "2007-12-09",
+      "sha1": "7198407168fcb858c3ec8ea9b1567d2aba7c9a09",
+      "md5": "8e67ef520a6df54ea3f251fccdc84b01",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "bzip2-libbzip-2010",
+          "score": 69.35,
+          "name": "bzip2 License 2010",
+          "short_name": "bzip2 License 2010",
+          "category": "Permissive",
+          "is_exception": false,
+          "owner": "bzip",
+          "homepage_url": "https://github.com/asimonov-im/bzip2/blob/master/LICENSE",
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:bzip2-libbzip-2010",
+          "spdx_license_key": "bzip2-1.0.6",
+          "spdx_url": "https://spdx.org/licenses/bzip2-1.0.6",
+          "start_line": 2,
+          "end_line": 12,
+          "matched_rule": {
+            "identifier": "bzip2-libbzip-2010_5.RULE",
+            "license_expression": "bzip2-libbzip-2010",
+            "licenses": [
+              "bzip2-libbzip-2010"
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "3-seq",
+            "rule_length": 43,
+            "matched_length": 43,
+            "match_coverage": 100.0,
+            "rule_relevance": 100.0
+          },
+          "matched_text": "This file is part of bzip2/libbzip2, a program and library for\nlossless, block-sorting data compression.\n\nbzip2/libbzip2 version 1.0.5 of 10 December 2007\nCopyright (C) 1996-2007 Julian Seward <jseward@bzip.org>\n\nPlease read the WARNING, DISCLAIMER and PATENTS sections in the \nREADME file.\n\nThis program is released under the terms of the license contained\nin the file LICENSE."
+        }
+      ],
+      "license_expressions": [
+        "bzip2-libbzip-2010"
+      ],
+      "copyrights": [
+        {
+          "value": "Copyright (c) 1996-2007 Julian Seward <jseward@bzip.org>",
+          "start_line": 5,
+          "end_line": 6
+        }
+      ],
+      "holders": [
+        {
+          "value": "Julian Seward",
+          "start_line": 5,
+          "end_line": 6
+        }
+      ],
+      "authors": [],
+      "packages": [],
+      "emails": [
+        {
+          "email": "jseward@bzip.org",
+          "start_line": 6,
+          "end_line": 6
+        }
+      ],
+      "urls": [
+        {
+          "url": "http://ftp.sas.com/standards/large.file",
+          "start_line": 37,
+          "end_line": 37
+        }
+      ],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": true,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2/1.0.5/bzip2-1.0.5/README.XML.STUFF",
+      "type": "file",
+      "name": "README.XML.STUFF",
+      "base_name": "README.XML",
+      "extension": ".STUFF",
+      "size": 1364,
+      "date": "2007-12-09",
+      "sha1": "b52937f213c9c136873eb9e32e519d9e4cb7867f",
+      "md5": "c401d8d5fe8e1abf1b9baeac08d735bb",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "bzip2-libbzip-2010",
+          "score": 69.35,
+          "name": "bzip2 License 2010",
+          "short_name": "bzip2 License 2010",
+          "category": "Permissive",
+          "is_exception": false,
+          "owner": "bzip",
+          "homepage_url": "https://github.com/asimonov-im/bzip2/blob/master/LICENSE",
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:bzip2-libbzip-2010",
+          "spdx_license_key": "bzip2-1.0.6",
+          "spdx_url": "https://spdx.org/licenses/bzip2-1.0.6",
+          "start_line": 2,
+          "end_line": 12,
+          "matched_rule": {
+            "identifier": "bzip2-libbzip-2010_5.RULE",
+            "license_expression": "bzip2-libbzip-2010",
+            "licenses": [
+              "bzip2-libbzip-2010"
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "3-seq",
+            "rule_length": 43,
+            "matched_length": 43,
+            "match_coverage": 100.0,
+            "rule_relevance": 100.0
+          },
+          "matched_text": "  This file is part of bzip2/libbzip2, a program and library for\n  lossless, block-sorting data compression.\n\n  bzip2/libbzip2 version 1.0.5 of 10 December 2007\n  Copyright (C) 1996-2007 Julian Seward <jseward@bzip.org>\n\n  Please read the WARNING, DISCLAIMER and PATENTS sections in the \n  README file.\n\n  This program is released under the terms of the license contained\n  in the file LICENSE."
+        }
+      ],
+      "license_expressions": [
+        "bzip2-libbzip-2010"
+      ],
+      "copyrights": [
+        {
+          "value": "Copyright (c) 1996-2007 Julian Seward <jseward@bzip.org>",
+          "start_line": 5,
+          "end_line": 6
+        }
+      ],
+      "holders": [
+        {
+          "value": "Julian Seward",
+          "start_line": 5,
+          "end_line": 6
+        }
+      ],
+      "authors": [],
+      "packages": [],
+      "emails": [
+        {
+          "email": "jseward@bzip.org",
+          "start_line": 6,
+          "end_line": 6
+        }
+      ],
+      "urls": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": true,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2/1.0.5/bzip2-1.0.5/sample1.bz2",
+      "type": "file",
+      "name": "sample1.bz2",
+      "base_name": "sample1",
+      "extension": ".bz2",
+      "size": 32348,
+      "date": "2007-01-03",
+      "sha1": "5a40301f7848aa4a8032f6c73f396fe4fbabbf58",
+      "md5": "66b2be322f2cb131905e6ac8e90bc728",
+      "mime_type": "application/x-bzip2",
+      "file_type": "bzip2 compressed data, block size = 100k",
+      "programming_language": null,
+      "is_binary": true,
+      "is_text": false,
+      "is_archive": true,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [],
+      "license_expressions": [],
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "packages": [],
+      "emails": [],
+      "urls": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2/1.0.5/bzip2-1.0.5/sample1.ref",
+      "type": "file",
+      "name": "sample1.ref",
+      "base_name": "sample1",
+      "extension": ".ref",
+      "size": 98696,
+      "date": "2007-01-03",
+      "sha1": "f9424e7063d5af685875e8235a5f732109a797a2",
+      "md5": "bdcc8c23172c2dce94e4aafdbb5c2292",
+      "mime_type": "application/x-dvi",
+      "file_type": "TeX DVI file (TeX output 1995.07.01:1517\\213)",
+      "programming_language": null,
+      "is_binary": true,
+      "is_text": false,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [],
+      "license_expressions": [],
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "packages": [],
+      "emails": [
+        {
+          "email": "sewardj@cs.man.ac.uk",
+          "start_line": 16,
+          "end_line": 16
+        }
+      ],
+      "urls": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2/1.0.5/bzip2-1.0.5/sample2.bz2",
+      "type": "file",
+      "name": "sample2.bz2",
+      "base_name": "sample2",
+      "extension": ".bz2",
+      "size": 73732,
+      "date": "2007-01-03",
+      "sha1": "c718455e05337503df1fa3590a70bcd39e454ab1",
+      "md5": "1255e290bce89098195f16530878d6f3",
+      "mime_type": "application/x-bzip2",
+      "file_type": "bzip2 compressed data, block size = 200k",
+      "programming_language": null,
+      "is_binary": true,
+      "is_text": false,
+      "is_archive": true,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [],
+      "license_expressions": [],
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "packages": [],
+      "emails": [],
+      "urls": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2/1.0.5/bzip2-1.0.5/sample2.ref",
+      "type": "file",
+      "name": "sample2.ref",
+      "base_name": "sample2",
+      "extension": ".ref",
+      "size": 212340,
+      "date": "2007-01-03",
+      "sha1": "03c7807ac7139d2fe64c2a9bad01eb046482be2d",
+      "md5": "d413b70b5187411922d4889c595ba11f",
+      "mime_type": "application/x-dvi",
+      "file_type": "TeX DVI file (TeX output 1995.10.19:1430\\213)",
+      "programming_language": null,
+      "is_binary": true,
+      "is_text": false,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [],
+      "license_expressions": [],
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "packages": [],
+      "emails": [
+        {
+          "email": "sewardj@cs.man.ac.uk",
+          "start_line": 32,
+          "end_line": 32
+        }
+      ],
+      "urls": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2/1.0.5/bzip2-1.0.5/sample3.bz2",
+      "type": "file",
+      "name": "sample3.bz2",
+      "base_name": "sample3",
+      "extension": ".bz2",
+      "size": 235,
+      "date": "2007-01-03",
+      "sha1": "02d5c1eb8bbe2c7853cbeb4f5342a90b4d1d9b21",
+      "md5": "324eb83ef8be184820c6d2bd9036b5a2",
+      "mime_type": "application/x-bzip2",
+      "file_type": "bzip2 compressed data, block size = 300k",
+      "programming_language": null,
+      "is_binary": true,
+      "is_text": false,
+      "is_archive": true,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [],
+      "license_expressions": [],
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "packages": [],
+      "emails": [],
+      "urls": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2/1.0.5/bzip2-1.0.5/sample3.ref",
+      "type": "file",
+      "name": "sample3.ref",
+      "base_name": "sample3",
+      "extension": ".ref",
+      "size": 120244,
+      "date": "2007-01-03",
+      "sha1": "77871348050d28bcd471d88e69cf7b7b74b992ef",
+      "md5": "9dfe8b5471d8464b6a9407990c3f099b",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [],
+      "license_expressions": [],
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "packages": [],
+      "emails": [],
+      "urls": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2/1.0.5/bzip2-1.0.5/spewG.c",
+      "type": "file",
+      "name": "spewG.c",
+      "base_name": "spewG",
+      "extension": ".c",
+      "size": 1730,
+      "date": "2007-12-09",
+      "sha1": "9c2f2d5a567b3c1ffcf0b7e84ca44b4fb535df64",
+      "md5": "fb463bfd0b95047aa50a5d4520ff91dd",
+      "mime_type": "text/x-c",
+      "file_type": "C source, ASCII text",
+      "programming_language": "C++",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "bzip2-libbzip-2010",
+          "score": 69.35,
+          "name": "bzip2 License 2010",
+          "short_name": "bzip2 License 2010",
+          "category": "Permissive",
+          "is_exception": false,
+          "owner": "bzip",
+          "homepage_url": "https://github.com/asimonov-im/bzip2/blob/master/LICENSE",
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:bzip2-libbzip-2010",
+          "spdx_license_key": "bzip2-1.0.6",
+          "spdx_url": "https://spdx.org/licenses/bzip2-1.0.6",
+          "start_line": 13,
+          "end_line": 23,
+          "matched_rule": {
+            "identifier": "bzip2-libbzip-2010_5.RULE",
+            "license_expression": "bzip2-libbzip-2010",
+            "licenses": [
+              "bzip2-libbzip-2010"
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "3-seq",
+            "rule_length": 43,
+            "matched_length": 43,
+            "match_coverage": 100.0,
+            "rule_relevance": 100.0
+          },
+          "matched_text": "   This file is part of bzip2/libbzip2, a program and library for\n   lossless, block-sorting data compression.\n\n   bzip2/libbzip2 version 1.0.5 of 10 December 2007\n   Copyright (C) 1996-2007 Julian Seward <jseward@bzip.org>\n\n   Please read the WARNING, DISCLAIMER and PATENTS sections in the \n   README file.\n\n   This program is released under the terms of the license contained\n   in the file LICENSE."
+        }
+      ],
+      "license_expressions": [
+        "bzip2-libbzip-2010"
+      ],
+      "copyrights": [
+        {
+          "value": "Copyright (c) 1996-2007 Julian Seward <jseward@bzip.org>",
+          "start_line": 16,
+          "end_line": 17
+        }
+      ],
+      "holders": [
+        {
+          "value": "Julian Seward",
+          "start_line": 16,
+          "end_line": 17
+        }
+      ],
+      "authors": [],
+      "packages": [],
+      "emails": [
+        {
+          "email": "jseward@bzip.org",
+          "start_line": 17,
+          "end_line": 17
+        }
+      ],
+      "urls": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2/1.0.5/bzip2-1.0.5/unzcrash.c",
+      "type": "file",
+      "name": "unzcrash.c",
+      "base_name": "unzcrash",
+      "extension": ".c",
+      "size": 3651,
+      "date": "2007-12-09",
+      "sha1": "8c29cd7e97c7a0a0ee9061fd29c1212aa9608876",
+      "md5": "bcfebca2daf0209741d5da56c2448841",
+      "mime_type": "text/x-c",
+      "file_type": "C source, ASCII text",
+      "programming_language": "C++",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "bzip2-libbzip-2010",
+          "score": 69.35,
+          "name": "bzip2 License 2010",
+          "short_name": "bzip2 License 2010",
+          "category": "Permissive",
+          "is_exception": false,
+          "owner": "bzip",
+          "homepage_url": "https://github.com/asimonov-im/bzip2/blob/master/LICENSE",
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:bzip2-libbzip-2010",
+          "spdx_license_key": "bzip2-1.0.6",
+          "spdx_url": "https://spdx.org/licenses/bzip2-1.0.6",
+          "start_line": 17,
+          "end_line": 27,
+          "matched_rule": {
+            "identifier": "bzip2-libbzip-2010_5.RULE",
+            "license_expression": "bzip2-libbzip-2010",
+            "licenses": [
+              "bzip2-libbzip-2010"
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "3-seq",
+            "rule_length": 43,
+            "matched_length": 43,
+            "match_coverage": 100.0,
+            "rule_relevance": 100.0
+          },
+          "matched_text": "   This file is part of bzip2/libbzip2, a program and library for\n   lossless, block-sorting data compression.\n\n   bzip2/libbzip2 version 1.0.5 of 10 December 2007\n   Copyright (C) 1996-2007 Julian Seward <jseward@bzip.org>\n\n   Please read the WARNING, DISCLAIMER and PATENTS sections in the \n   README file.\n\n   This program is released under the terms of the license contained\n   in the file LICENSE."
+        }
+      ],
+      "license_expressions": [
+        "bzip2-libbzip-2010"
+      ],
+      "copyrights": [
+        {
+          "value": "Copyright (c) 1996-2007 Julian Seward <jseward@bzip.org>",
+          "start_line": 20,
+          "end_line": 21
+        }
+      ],
+      "holders": [
+        {
+          "value": "Julian Seward",
+          "start_line": 20,
+          "end_line": 21
+        }
+      ],
+      "authors": [],
+      "packages": [],
+      "emails": [
+        {
+          "email": "jseward@bzip.org",
+          "start_line": 21,
+          "end_line": 21
+        }
+      ],
+      "urls": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2/1.0.5/bzip2-1.0.5/words0",
+      "type": "file",
+      "name": "words0",
+      "base_name": "words0",
+      "extension": "",
+      "size": 376,
+      "date": "2007-01-03",
+      "sha1": "40fb550a6bdf9c47e46e931ef79745959bf2f46b",
+      "md5": "e37423ebe94946204559ba4089f444d9",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [],
+      "license_expressions": [],
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "packages": [],
+      "emails": [],
+      "urls": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2/1.0.5/bzip2-1.0.5/words1",
+      "type": "file",
+      "name": "words1",
+      "base_name": "words1",
+      "extension": "",
+      "size": 103,
+      "date": "2007-01-03",
+      "sha1": "a1ed6f79912176a1ad57283168c2fc22b49693b0",
+      "md5": "4e72ed8d157a8f6d4acc1d7104d35ecf",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [],
+      "license_expressions": [],
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "packages": [],
+      "emails": [],
+      "urls": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2/1.0.5/bzip2-1.0.5/words2",
+      "type": "file",
+      "name": "words2",
+      "base_name": "words2",
+      "extension": "",
+      "size": 186,
+      "date": "2007-01-03",
+      "sha1": "4510f8fc12f41462f2a144a04b7f0582c8abe77b",
+      "md5": "8c9e642fbe01168113d97d090c335e24",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [],
+      "license_expressions": [],
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "packages": [],
+      "emails": [
+        {
+          "email": "jseward@bzip.org",
+          "start_line": 4,
+          "end_line": 4
+        }
+      ],
+      "urls": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2/1.0.5/bzip2-1.0.5/words3",
+      "type": "file",
+      "name": "words3",
+      "base_name": "words3",
+      "extension": "",
+      "size": 945,
+      "date": "2007-01-03",
+      "sha1": "46d4aca09ef74ad869876d8f6880f1a5eb7c08f9",
+      "md5": "5e437033628d28994afd1a8d48e3f076",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [],
+      "license_expressions": [],
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "packages": [],
+      "emails": [],
+      "urls": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2/1.0.5/bzip2-1.0.5/xmlproc.sh",
+      "type": "file",
+      "name": "xmlproc.sh",
+      "base_name": "xmlproc",
+      "extension": ".sh",
+      "size": 2916,
+      "date": "2007-12-09",
+      "sha1": "e75f9c718dcd35032998a2865c8107702bcfaf5d",
+      "md5": "5c45faecc81b211fd51a24ac25901cd6",
+      "mime_type": "text/x-shellscript",
+      "file_type": "Bourne-Again shell script, ASCII text executable",
+      "programming_language": "Bash",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": true,
+      "licenses": [
+        {
+          "key": "bzip2-libbzip-2010",
+          "score": 69.35,
+          "name": "bzip2 License 2010",
+          "short_name": "bzip2 License 2010",
+          "category": "Permissive",
+          "is_exception": false,
+          "owner": "bzip",
+          "homepage_url": "https://github.com/asimonov-im/bzip2/blob/master/LICENSE",
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:bzip2-libbzip-2010",
+          "spdx_license_key": "bzip2-1.0.6",
+          "spdx_url": "https://spdx.org/licenses/bzip2-1.0.6",
+          "start_line": 5,
+          "end_line": 15,
+          "matched_rule": {
+            "identifier": "bzip2-libbzip-2010_5.RULE",
+            "license_expression": "bzip2-libbzip-2010",
+            "licenses": [
+              "bzip2-libbzip-2010"
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "3-seq",
+            "rule_length": 43,
+            "matched_length": 43,
+            "match_coverage": 100.0,
+            "rule_relevance": 100.0
+          },
+          "matched_text": "#  This file is part of bzip2/libbzip2, a program and library for\n#  lossless, block-sorting data compression.\n#\n#  bzip2/libbzip2 version 1.0.5 of 10 December 2007\n#  Copyright (C) 1996-2007 Julian Seward <jseward@bzip.org>\n#\n#  Please read the WARNING, DISCLAIMER and PATENTS sections in the \n#  README file.\n#\n#  This program is released under the terms of the license contained\n#  in the file LICENSE."
+        }
+      ],
+      "license_expressions": [
+        "bzip2-libbzip-2010"
+      ],
+      "copyrights": [
+        {
+          "value": "Copyright (c) 1996-2007 Julian Seward <jseward@bzip.org>",
+          "start_line": 8,
+          "end_line": 9
+        }
+      ],
+      "holders": [
+        {
+          "value": "Julian Seward",
+          "start_line": 8,
+          "end_line": 9
+        }
+      ],
+      "authors": [],
+      "packages": [],
+      "emails": [
+        {
+          "email": "jseward@bzip.org",
+          "start_line": 9,
+          "end_line": 9
+        }
+      ],
+      "urls": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2/1.0.5/bzip2-1.0.5/patches",
+      "type": "directory",
+      "name": "patches",
+      "base_name": "patches",
+      "extension": "",
+      "size": 0,
+      "date": null,
+      "sha1": null,
+      "md5": null,
+      "mime_type": null,
+      "file_type": null,
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": false,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [],
+      "license_expressions": [],
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "packages": [],
+      "emails": [],
+      "urls": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 3,
+      "dirs_count": 0,
+      "size_count": 48191,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2/1.0.5/bzip2-1.0.5/patches/bzip2-1.0.4.diff",
+      "type": "file",
+      "name": "bzip2-1.0.4.diff",
+      "base_name": "bzip2-1.0.4",
+      "extension": ".diff",
+      "size": 20819,
+      "date": "2007-05-12",
+      "sha1": "cc6d1c7b8ad5b2b5bec7a76c569dfb84e894cf51",
+      "md5": "5c998137f61c21550260295b97148090",
+      "mime_type": "text/x-diff",
+      "file_type": "unified diff output, ASCII text, with very long lines",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [],
+      "license_expressions": [],
+      "copyrights": [],
+      "holders": [],
+      "authors": [
+        {
+          "value": "Philippe Troin <phil@fifi.org>",
+          "start_line": 163,
+          "end_line": 170
+        },
+        {
+          "value": "Philippe Troin <phil@fifi.org>",
+          "start_line": 163,
+          "end_line": 170
+        }
+      ],
+      "packages": [],
+      "emails": [
+        {
+          "email": "phil@fifi.org",
+          "start_line": 166,
+          "end_line": 166
+        }
+      ],
+      "urls": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2/1.0.5/bzip2-1.0.5/patches/bzip2-1.0.4.diff.log",
+      "type": "file",
+      "name": "bzip2-1.0.4.diff.log",
+      "base_name": "bzip2-1.0.4.diff",
+      "extension": ".log",
+      "size": 6553,
+      "date": "2008-03-20",
+      "sha1": "573a75fed04440715b11145cb09ce1db96211b6f",
+      "md5": "c48dce9da2a0a21eba720897685f57eb",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text, with very long lines",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [],
+      "license_expressions": [],
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "packages": [],
+      "emails": [],
+      "urls": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2/1.0.5/bzip2-1.0.5/patches/bzip2-1.0.5.diff",
+      "type": "file",
+      "name": "bzip2-1.0.5.diff",
+      "base_name": "bzip2-1.0.5",
+      "extension": ".diff",
+      "size": 20819,
+      "date": "2008-03-20",
+      "sha1": "39bbaec2454bddd746bb0a2e90841ff643004ec8",
+      "md5": "fbb73c609f4f6f5c067b13248f7453cc",
+      "mime_type": "text/x-diff",
+      "file_type": "unified diff output, ASCII text, with very long lines",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [],
+      "license_expressions": [],
+      "copyrights": [],
+      "holders": [],
+      "authors": [
+        {
+          "value": "Philippe Troin <phil@fifi.org>",
+          "start_line": 163,
+          "end_line": 170
+        },
+        {
+          "value": "Philippe Troin <phil@fifi.org>",
+          "start_line": 163,
+          "end_line": 170
+        }
+      ],
+      "packages": [],
+      "emails": [
+        {
+          "email": "phil@fifi.org",
+          "start_line": 166,
+          "end_line": 166
+        }
+      ],
+      "urls": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2/1.0.5/bzip2-1.0.5/resource",
+      "type": "directory",
+      "name": "resource",
+      "base_name": "resource",
+      "extension": "",
+      "size": 0,
+      "date": null,
+      "sha1": null,
+      "md5": null,
+      "mime_type": null,
+      "file_type": null,
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": false,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [],
+      "license_expressions": [],
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "packages": [],
+      "emails": [],
+      "urls": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 7,
+      "dirs_count": 0,
+      "size_count": 32127,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2/1.0.5/bzip2-1.0.5/resource/bunzip2-res.rc",
+      "type": "file",
+      "name": "bunzip2-res.rc",
+      "base_name": "bunzip2-res",
+      "extension": ".rc",
+      "size": 5533,
+      "date": "2008-03-20",
+      "sha1": "c063516e0d42ceee8cc01a4c81b15051a082a47a",
+      "md5": "3b9035898a7eaf0d8145e139c51d63b6",
+      "mime_type": "text/x-c",
+      "file_type": "C source, ISO-8859 text, with very long lines",
+      "programming_language": "C",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "bzip2-libbzip-2010",
+          "score": 100.0,
+          "name": "bzip2 License 2010",
+          "short_name": "bzip2 License 2010",
+          "category": "Permissive",
+          "is_exception": false,
+          "owner": "bzip",
+          "homepage_url": "https://github.com/asimonov-im/bzip2/blob/master/LICENSE",
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:bzip2-libbzip-2010",
+          "spdx_license_key": "bzip2-1.0.6",
+          "spdx_url": "https://spdx.org/licenses/bzip2-1.0.6",
+          "start_line": 16,
+          "end_line": 16,
+          "matched_rule": {
+            "identifier": "bzip2-libbzip-2010.LICENSE",
+            "license_expression": "bzip2-libbzip-2010",
+            "licenses": [
+              "bzip2-libbzip-2010"
+            ],
+            "is_license_text": true,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 233,
+            "matched_length": 233,
+            "match_coverage": 100.0,
+            "rule_relevance": 100
+          },
+          "matched_text": "Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met: 1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer. 2. The origin of this software must not be misrepresented; you must not claim that you wrote the original software. If you use this software in a product, an acknowledgment in the product documentation would be appreciated but is not required. 3. Altered source versions must be plainly marked as such, and must not be misrepresented as being the original software. 4. The name of the author may not be used to endorse or promote products derived from this software without specific prior written permission. THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+        }
+      ],
+      "license_expressions": [
+        "bzip2-libbzip-2010"
+      ],
+      "copyrights": [
+        {
+          "value": "(c) 2008 Julian Seward <jseward@acm.org>",
+          "start_line": 8,
+          "end_line": 9
+        },
+        {
+          "value": "copyright (c) 1996-2002 Julian R Seward",
+          "start_line": 16,
+          "end_line": 17
+        }
+      ],
+      "holders": [
+        {
+          "value": "Julian Seward",
+          "start_line": 8,
+          "end_line": 9
+        },
+        {
+          "value": "Julian R Seward",
+          "start_line": 16,
+          "end_line": 17
+        }
+      ],
+      "authors": [],
+      "packages": [],
+      "emails": [
+        {
+          "email": "jseward@acm.org",
+          "start_line": 8,
+          "end_line": 8
+        }
+      ],
+      "urls": [
+        {
+          "url": "http://www.bzip.org/",
+          "start_line": 14,
+          "end_line": 14
+        },
+        {
+          "url": "http://gnuwin32.sourceforge.net/",
+          "start_line": 15,
+          "end_line": 15
+        }
+      ],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2/1.0.5/bzip2-1.0.5/resource/bzcat-res.rc",
+      "type": "file",
+      "name": "bzcat-res.rc",
+      "base_name": "bzcat-res",
+      "extension": ".rc",
+      "size": 5525,
+      "date": "2008-03-20",
+      "sha1": "77b06aff2b5ee3fff9603b4b9bbceeee84220fcb",
+      "md5": "5348862d22077f65e02458dd566f282d",
+      "mime_type": "text/x-c",
+      "file_type": "C source, ISO-8859 text, with very long lines",
+      "programming_language": "C",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "bzip2-libbzip-2010",
+          "score": 100.0,
+          "name": "bzip2 License 2010",
+          "short_name": "bzip2 License 2010",
+          "category": "Permissive",
+          "is_exception": false,
+          "owner": "bzip",
+          "homepage_url": "https://github.com/asimonov-im/bzip2/blob/master/LICENSE",
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:bzip2-libbzip-2010",
+          "spdx_license_key": "bzip2-1.0.6",
+          "spdx_url": "https://spdx.org/licenses/bzip2-1.0.6",
+          "start_line": 16,
+          "end_line": 16,
+          "matched_rule": {
+            "identifier": "bzip2-libbzip-2010.LICENSE",
+            "license_expression": "bzip2-libbzip-2010",
+            "licenses": [
+              "bzip2-libbzip-2010"
+            ],
+            "is_license_text": true,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 233,
+            "matched_length": 233,
+            "match_coverage": 100.0,
+            "rule_relevance": 100
+          },
+          "matched_text": "Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met: 1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer. 2. The origin of this software must not be misrepresented; you must not claim that you wrote the original software. If you use this software in a product, an acknowledgment in the product documentation would be appreciated but is not required. 3. Altered source versions must be plainly marked as such, and must not be misrepresented as being the original software. 4. The name of the author may not be used to endorse or promote products derived from this software without specific prior written permission. THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+        }
+      ],
+      "license_expressions": [
+        "bzip2-libbzip-2010"
+      ],
+      "copyrights": [
+        {
+          "value": "(c) 2008 Julian Seward <jseward@acm.org>",
+          "start_line": 8,
+          "end_line": 9
+        },
+        {
+          "value": "copyright (c) 1996-2002 Julian R Seward",
+          "start_line": 16,
+          "end_line": 17
+        }
+      ],
+      "holders": [
+        {
+          "value": "Julian Seward",
+          "start_line": 8,
+          "end_line": 9
+        },
+        {
+          "value": "Julian R Seward",
+          "start_line": 16,
+          "end_line": 17
+        }
+      ],
+      "authors": [],
+      "packages": [],
+      "emails": [
+        {
+          "email": "jseward@acm.org",
+          "start_line": 8,
+          "end_line": 8
+        }
+      ],
+      "urls": [
+        {
+          "url": "http://www.bzip.org/",
+          "start_line": 14,
+          "end_line": 14
+        },
+        {
+          "url": "http://gnuwin32.sourceforge.net/",
+          "start_line": 15,
+          "end_line": 15
+        }
+      ],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2/1.0.5/bzip2-1.0.5/resource/bzip-dll-res.rc",
+      "type": "file",
+      "name": "bzip-dll-res.rc",
+      "base_name": "bzip-dll-res",
+      "extension": ".rc",
+      "size": 5527,
+      "date": "2008-03-20",
+      "sha1": "4abf9411631adeec1b5eee8bc008ccc8e57c7c76",
+      "md5": "7d37aae321a5934d504d7af3147183c5",
+      "mime_type": "text/x-c",
+      "file_type": "C source, ISO-8859 text, with very long lines",
+      "programming_language": "C",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "bzip2-libbzip-2010",
+          "score": 100.0,
+          "name": "bzip2 License 2010",
+          "short_name": "bzip2 License 2010",
+          "category": "Permissive",
+          "is_exception": false,
+          "owner": "bzip",
+          "homepage_url": "https://github.com/asimonov-im/bzip2/blob/master/LICENSE",
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:bzip2-libbzip-2010",
+          "spdx_license_key": "bzip2-1.0.6",
+          "spdx_url": "https://spdx.org/licenses/bzip2-1.0.6",
+          "start_line": 16,
+          "end_line": 16,
+          "matched_rule": {
+            "identifier": "bzip2-libbzip-2010.LICENSE",
+            "license_expression": "bzip2-libbzip-2010",
+            "licenses": [
+              "bzip2-libbzip-2010"
+            ],
+            "is_license_text": true,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 233,
+            "matched_length": 233,
+            "match_coverage": 100.0,
+            "rule_relevance": 100
+          },
+          "matched_text": "Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met: 1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer. 2. The origin of this software must not be misrepresented; you must not claim that you wrote the original software. If you use this software in a product, an acknowledgment in the product documentation would be appreciated but is not required. 3. Altered source versions must be plainly marked as such, and must not be misrepresented as being the original software. 4. The name of the author may not be used to endorse or promote products derived from this software without specific prior written permission. THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+        }
+      ],
+      "license_expressions": [
+        "bzip2-libbzip-2010"
+      ],
+      "copyrights": [
+        {
+          "value": "(c) 2008 Julian Seward <jseward@acm.org>",
+          "start_line": 8,
+          "end_line": 9
+        },
+        {
+          "value": "copyright (c) 1996-2002 Julian R Seward",
+          "start_line": 16,
+          "end_line": 17
+        }
+      ],
+      "holders": [
+        {
+          "value": "Julian Seward",
+          "start_line": 8,
+          "end_line": 9
+        },
+        {
+          "value": "Julian R Seward",
+          "start_line": 16,
+          "end_line": 17
+        }
+      ],
+      "authors": [],
+      "packages": [],
+      "emails": [
+        {
+          "email": "jseward@acm.org",
+          "start_line": 8,
+          "end_line": 8
+        }
+      ],
+      "urls": [
+        {
+          "url": "http://www.bzip.org/",
+          "start_line": 14,
+          "end_line": 14
+        },
+        {
+          "url": "http://gnuwin32.sourceforge.net/",
+          "start_line": 15,
+          "end_line": 15
+        }
+      ],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2/1.0.5/bzip2-1.0.5/resource/bzip-dllversion.c",
+      "type": "file",
+      "name": "bzip-dllversion.c",
+      "base_name": "bzip-dllversion",
+      "extension": ".c",
+      "size": 684,
+      "date": "2008-03-20",
+      "sha1": "54ba3355621904dd33c4bfff1f95a31fdeb4b62f",
+      "md5": "c237e09b17c1ef49d0b34fecc202c3eb",
+      "mime_type": "text/x-c",
+      "file_type": "C source, ASCII text",
+      "programming_language": "C++",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": false,
+      "licenses": [],
+      "license_expressions": [],
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "packages": [],
+      "emails": [],
+      "urls": [
+        {
+          "url": "http://msdn.microsoft.com/library/en-us/shellcc/platform/shell/programmersguide/versions.asp",
+          "start_line": 1,
+          "end_line": 1
+        }
+      ],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2/1.0.5/bzip2-1.0.5/resource/bzip2-res.rc",
+      "type": "file",
+      "name": "bzip2-res.rc",
+      "base_name": "bzip2-res",
+      "extension": ".rc",
+      "size": 5528,
+      "date": "2008-03-20",
+      "sha1": "5d70df155b44a778fafc1c661f077ab856bc9ca2",
+      "md5": "5491dc722adfe2ce61b05d9c2ef7fb65",
+      "mime_type": "text/x-c",
+      "file_type": "C source, ISO-8859 text, with very long lines",
+      "programming_language": "C",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "bzip2-libbzip-2010",
+          "score": 100.0,
+          "name": "bzip2 License 2010",
+          "short_name": "bzip2 License 2010",
+          "category": "Permissive",
+          "is_exception": false,
+          "owner": "bzip",
+          "homepage_url": "https://github.com/asimonov-im/bzip2/blob/master/LICENSE",
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:bzip2-libbzip-2010",
+          "spdx_license_key": "bzip2-1.0.6",
+          "spdx_url": "https://spdx.org/licenses/bzip2-1.0.6",
+          "start_line": 16,
+          "end_line": 16,
+          "matched_rule": {
+            "identifier": "bzip2-libbzip-2010.LICENSE",
+            "license_expression": "bzip2-libbzip-2010",
+            "licenses": [
+              "bzip2-libbzip-2010"
+            ],
+            "is_license_text": true,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 233,
+            "matched_length": 233,
+            "match_coverage": 100.0,
+            "rule_relevance": 100
+          },
+          "matched_text": "Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met: 1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer. 2. The origin of this software must not be misrepresented; you must not claim that you wrote the original software. If you use this software in a product, an acknowledgment in the product documentation would be appreciated but is not required. 3. Altered source versions must be plainly marked as such, and must not be misrepresented as being the original software. 4. The name of the author may not be used to endorse or promote products derived from this software without specific prior written permission. THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+        }
+      ],
+      "license_expressions": [
+        "bzip2-libbzip-2010"
+      ],
+      "copyrights": [
+        {
+          "value": "(c) 2008 Julian Seward <jseward@acm.org>",
+          "start_line": 8,
+          "end_line": 9
+        },
+        {
+          "value": "copyright (c) 1996-2002 Julian R Seward",
+          "start_line": 16,
+          "end_line": 17
+        }
+      ],
+      "holders": [
+        {
+          "value": "Julian Seward",
+          "start_line": 8,
+          "end_line": 9
+        },
+        {
+          "value": "Julian R Seward",
+          "start_line": 16,
+          "end_line": 17
+        }
+      ],
+      "authors": [],
+      "packages": [],
+      "emails": [
+        {
+          "email": "jseward@acm.org",
+          "start_line": 8,
+          "end_line": 8
+        }
+      ],
+      "urls": [
+        {
+          "url": "http://www.bzip.org/",
+          "start_line": 14,
+          "end_line": 14
+        },
+        {
+          "url": "http://gnuwin32.sourceforge.net/",
+          "start_line": 15,
+          "end_line": 15
+        }
+      ],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2/1.0.5/bzip2-1.0.5/resource/bzip2.ico",
+      "type": "file",
+      "name": "bzip2.ico",
+      "base_name": "bzip2",
+      "extension": ".ico",
+      "size": 3774,
+      "date": "2003-10-25",
+      "sha1": "4590fa96dc88908263bb862bf33c534ad8881c05",
+      "md5": "4593630889446f38386dc91d7cfc313b",
+      "mime_type": "image/x-icon",
+      "file_type": "MS Windows icon resource - 1 icon, 48x48",
+      "programming_language": null,
+      "is_binary": true,
+      "is_text": false,
+      "is_archive": false,
+      "is_media": true,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [],
+      "license_expressions": [],
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "packages": [],
+      "emails": [],
+      "urls": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "src/bzip2/1.0.5/bzip2-1.0.5/resource/bzip2recover-res.rc",
+      "type": "file",
+      "name": "bzip2recover-res.rc",
+      "base_name": "bzip2recover-res",
+      "extension": ".rc",
+      "size": 5556,
+      "date": "2008-03-20",
+      "sha1": "bf1cf78d2f09882dea9876309e5fa59eba0e1b15",
+      "md5": "0799810906685f0313a990798002d95a",
+      "mime_type": "text/x-c",
+      "file_type": "C source, ISO-8859 text, with very long lines",
+      "programming_language": "C",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "bzip2-libbzip-2010",
+          "score": 100.0,
+          "name": "bzip2 License 2010",
+          "short_name": "bzip2 License 2010",
+          "category": "Permissive",
+          "is_exception": false,
+          "owner": "bzip",
+          "homepage_url": "https://github.com/asimonov-im/bzip2/blob/master/LICENSE",
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:bzip2-libbzip-2010",
+          "spdx_license_key": "bzip2-1.0.6",
+          "spdx_url": "https://spdx.org/licenses/bzip2-1.0.6",
+          "start_line": 16,
+          "end_line": 16,
+          "matched_rule": {
+            "identifier": "bzip2-libbzip-2010.LICENSE",
+            "license_expression": "bzip2-libbzip-2010",
+            "licenses": [
+              "bzip2-libbzip-2010"
+            ],
+            "is_license_text": true,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 233,
+            "matched_length": 233,
+            "match_coverage": 100.0,
+            "rule_relevance": 100
+          },
+          "matched_text": "Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met: 1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer. 2. The origin of this software must not be misrepresented; you must not claim that you wrote the original software. If you use this software in a product, an acknowledgment in the product documentation would be appreciated but is not required. 3. Altered source versions must be plainly marked as such, and must not be misrepresented as being the original software. 4. The name of the author may not be used to endorse or promote products derived from this software without specific prior written permission. THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+        }
+      ],
+      "license_expressions": [
+        "bzip2-libbzip-2010"
+      ],
+      "copyrights": [
+        {
+          "value": "(c) 2008 Julian Seward <jseward@acm.org>",
+          "start_line": 8,
+          "end_line": 9
+        },
+        {
+          "value": "copyright (c) 1996-2002 Julian R Seward",
+          "start_line": 16,
+          "end_line": 17
+        }
+      ],
+      "holders": [
+        {
+          "value": "Julian Seward",
+          "start_line": 8,
+          "end_line": 9
+        },
+        {
+          "value": "Julian R Seward",
+          "start_line": 16,
+          "end_line": 17
+        }
+      ],
+      "authors": [],
+      "packages": [],
+      "emails": [
+        {
+          "email": "jseward@acm.org",
+          "start_line": 8,
+          "end_line": 8
+        }
+      ],
+      "urls": [
+        {
+          "url": "http://www.bzip.org/",
+          "start_line": 14,
+          "end_line": 14
+        },
+        {
+          "url": "http://gnuwin32.sourceforge.net/",
+          "start_line": 15,
+          "end_line": 15
+        }
+      ],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    }
+  ]
+}

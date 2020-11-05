@@ -1,0 +1,819 @@
+{
+  "headers": [
+    {
+      "tool_name": "scancode-toolkit",
+      "tool_version": "3.1.1.post351.850399bc3",
+      "options": {
+        "input": [
+          "/home/ayan/Desktop/nexB/license-tests/february-pom-tests/Issues/1914-1915-linux2.6.39"
+        ],
+        "--classify": true,
+        "--copyright": true,
+        "--email": true,
+        "--generated": true,
+        "--info": true,
+        "--is-license-text": true,
+        "--json-pp": "results-test/rule/linux-2.6.39-partial.json",
+        "--license": true,
+        "--license-clarity-score": true,
+        "--license-text": true,
+        "--package": true,
+        "--processes": "8",
+        "--strip-root": true,
+        "--summary": true,
+        "--summary-key-files": true,
+        "--url": true
+      },
+      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "start_timestamp": "2020-07-15T100041.977642",
+      "end_timestamp": "2020-07-15T100049.568851",
+      "message": null,
+      "errors": [],
+      "extra_data": {
+        "files_count": 3
+      }
+    }
+  ],
+  "summary": {
+    "license_expressions": [
+      {
+        "value": "gpl-2.0",
+        "count": 3
+      },
+      {
+        "value": "gpl-1.0",
+        "count": 2
+      },
+      {
+        "value": "gpl-3.0",
+        "count": 2
+      },
+      {
+        "value": "gpl-3.0-plus",
+        "count": 2
+      },
+      {
+        "value": "gpl-1.0-plus",
+        "count": 1
+      },
+      {
+        "value": "gpl-2.0-plus",
+        "count": 1
+      },
+      {
+        "value": "gpl-2.0-plus AND bsd-new",
+        "count": 1
+      }
+    ],
+    "copyrights": [
+      {
+        "value": "(c) Benjamin Reed",
+        "count": 1
+      },
+      {
+        "value": "(c) David Hinds",
+        "count": 1
+      },
+      {
+        "value": "Copyright (c) Samsung Electronics Co., Ltd. http://www.samsung.com",
+        "count": 1
+      },
+      {
+        "value": "Copyright ATMEL Corporation",
+        "count": 1
+      },
+      {
+        "value": "Copyright Dan Williams and Red Hat, Inc.",
+        "count": 1
+      },
+      {
+        "value": "Copyright Samsung Electronics Co Kyungmin Park <kyungmin.park@samsung.com>",
+        "count": 1
+      },
+      {
+        "value": "Copyright Simon Kelley",
+        "count": 1
+      }
+    ],
+    "holders": [
+      {
+        "value": "ATMEL Corporation",
+        "count": 1
+      },
+      {
+        "value": "Benjamin Reed",
+        "count": 1
+      },
+      {
+        "value": "Dan Williams and Red Hat, Inc.",
+        "count": 1
+      },
+      {
+        "value": "David Hinds",
+        "count": 1
+      },
+      {
+        "value": "Samsung Electronics Co Kyungmin Park",
+        "count": 1
+      },
+      {
+        "value": "Samsung Electronics Co., Ltd.",
+        "count": 1
+      },
+      {
+        "value": "Simon Kelley",
+        "count": 1
+      }
+    ],
+    "authors": [
+      {
+        "value": null,
+        "count": 3
+      }
+    ],
+    "programming_language": [
+      {
+        "value": "C++",
+        "count": 3
+      }
+    ],
+    "packages": []
+  },
+  "license_clarity_score": {
+    "score": 16,
+    "declared": false,
+    "discovered": 0.67,
+    "consistency": false,
+    "spdx": false,
+    "license_texts": false
+  },
+  "summary_of_key_files": {
+    "license_expressions": [],
+    "copyrights": [],
+    "holders": [],
+    "authors": [],
+    "programming_language": []
+  },
+  "files": [
+    {
+      "path": "1914-gpiolib.c",
+      "type": "file",
+      "name": "1914-gpiolib.c",
+      "base_name": "1914-gpiolib",
+      "extension": ".c",
+      "size": 7436,
+      "date": "2011-03-29",
+      "sha1": "f6a36929fb4fab8b085c622546370a4383fb525b",
+      "md5": "d65d50417d40e75f9c7a6c4d4627eff9",
+      "mime_type": "text/x-c",
+      "file_type": "C source, ASCII text",
+      "programming_language": "C++",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "gpl-2.0",
+          "score": 100.0,
+          "name": "GNU General Public License 2.0",
+          "short_name": "GPL 2.0",
+          "category": "Copyleft",
+          "is_exception": false,
+          "owner": "Free Software Foundation (FSF)",
+          "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
+          "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0",
+          "spdx_license_key": "GPL-2.0-only",
+          "spdx_url": "https://spdx.org/licenses/GPL-2.0-only",
+          "start_line": 11,
+          "end_line": 13,
+          "matched_rule": {
+            "identifier": "gpl-2.0_8.RULE",
+            "license_expression": "gpl-2.0",
+            "licenses": [
+              "gpl-2.0"
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 31,
+            "matched_length": 31,
+            "match_coverage": 100.0,
+            "rule_relevance": 100
+          },
+          "matched_text": " * This program is free software; you can redistribute it and/or modify\n * it under the terms of the GNU General Public License version 2 as\n * published by the Free Software Foundation."
+        },
+        {
+          "key": "gpl-1.0",
+          "score": 100.0,
+          "name": "GNU General Public License 1.0",
+          "short_name": "GPL 1.0",
+          "category": "Copyleft",
+          "is_exception": false,
+          "owner": "Free Software Foundation (FSF)",
+          "homepage_url": "http://www.gnu.org/licenses/gpl-1.0.html",
+          "text_url": "http://www.gnu.org/licenses/gpl-1.0.txt",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-1.0",
+          "spdx_license_key": "GPL-1.0-only",
+          "spdx_url": "https://spdx.org/licenses/GPL-1.0-only",
+          "start_line": 266,
+          "end_line": 266,
+          "matched_rule": {
+            "identifier": "gpl-1.0_11.RULE",
+            "license_expression": "gpl-1.0",
+            "licenses": [
+              "gpl-1.0"
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": true,
+            "matcher": "2-aho",
+            "rule_length": 1,
+            "matched_length": 1,
+            "match_coverage": 100.0,
+            "rule_relevance": 100.0
+          },
+          "matched_text": "\t\t\t.base\t= S5PC100_GPL1(0),"
+        },
+        {
+          "key": "gpl-1.0",
+          "score": 100.0,
+          "name": "GNU General Public License 1.0",
+          "short_name": "GPL 1.0",
+          "category": "Copyleft",
+          "is_exception": false,
+          "owner": "Free Software Foundation (FSF)",
+          "homepage_url": "http://www.gnu.org/licenses/gpl-1.0.html",
+          "text_url": "http://www.gnu.org/licenses/gpl-1.0.txt",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-1.0",
+          "spdx_license_key": "GPL-1.0-only",
+          "spdx_url": "https://spdx.org/licenses/GPL-1.0-only",
+          "start_line": 268,
+          "end_line": 268,
+          "matched_rule": {
+            "identifier": "gpl-1.0_11.RULE",
+            "license_expression": "gpl-1.0",
+            "licenses": [
+              "gpl-1.0"
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": true,
+            "matcher": "2-aho",
+            "rule_length": 1,
+            "matched_length": 1,
+            "match_coverage": 100.0,
+            "rule_relevance": 100.0
+          },
+          "matched_text": "\t\t\t.label\t= \"GPL1\","
+        },
+        {
+          "key": "gpl-2.0",
+          "score": 100.0,
+          "name": "GNU General Public License 2.0",
+          "short_name": "GPL 2.0",
+          "category": "Copyleft",
+          "is_exception": false,
+          "owner": "Free Software Foundation (FSF)",
+          "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
+          "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0",
+          "spdx_license_key": "GPL-2.0-only",
+          "spdx_url": "https://spdx.org/licenses/GPL-2.0-only",
+          "start_line": 273,
+          "end_line": 273,
+          "matched_rule": {
+            "identifier": "gpl-2.0_690.RULE",
+            "license_expression": "gpl-2.0",
+            "licenses": [
+              "gpl-2.0"
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": true,
+            "matcher": "2-aho",
+            "rule_length": 1,
+            "matched_length": 1,
+            "match_coverage": 100.0,
+            "rule_relevance": 100.0
+          },
+          "matched_text": "\t\t\t.base\t= S5PC100_GPL2(0),"
+        },
+        {
+          "key": "gpl-2.0",
+          "score": 100.0,
+          "name": "GNU General Public License 2.0",
+          "short_name": "GPL 2.0",
+          "category": "Copyleft",
+          "is_exception": false,
+          "owner": "Free Software Foundation (FSF)",
+          "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
+          "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0",
+          "spdx_license_key": "GPL-2.0-only",
+          "spdx_url": "https://spdx.org/licenses/GPL-2.0-only",
+          "start_line": 275,
+          "end_line": 275,
+          "matched_rule": {
+            "identifier": "gpl-2.0_690.RULE",
+            "license_expression": "gpl-2.0",
+            "licenses": [
+              "gpl-2.0"
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": true,
+            "matcher": "2-aho",
+            "rule_length": 1,
+            "matched_length": 1,
+            "match_coverage": 100.0,
+            "rule_relevance": 100.0
+          },
+          "matched_text": "\t\t\t.label\t= \"GPL2\","
+        },
+        {
+          "key": "gpl-3.0",
+          "score": 100.0,
+          "name": "GNU General Public License 3.0",
+          "short_name": "GPL 3.0",
+          "category": "Copyleft",
+          "is_exception": false,
+          "owner": "Free Software Foundation (FSF)",
+          "homepage_url": "http://www.gnu.org/licenses/gpl-3.0.html",
+          "text_url": "http://www.gnu.org/licenses/gpl-3.0-standalone.html",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-3.0",
+          "spdx_license_key": "GPL-3.0-only",
+          "spdx_url": "https://spdx.org/licenses/GPL-3.0-only",
+          "start_line": 280,
+          "end_line": 280,
+          "matched_rule": {
+            "identifier": "gpl-3.0_123.RULE",
+            "license_expression": "gpl-3.0",
+            "licenses": [
+              "gpl-3.0"
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": true,
+            "matcher": "2-aho",
+            "rule_length": 1,
+            "matched_length": 1,
+            "match_coverage": 100.0,
+            "rule_relevance": 100.0
+          },
+          "matched_text": "\t\t\t.base\t= S5PC100_GPL3(0),"
+        },
+        {
+          "key": "gpl-3.0",
+          "score": 100.0,
+          "name": "GNU General Public License 3.0",
+          "short_name": "GPL 3.0",
+          "category": "Copyleft",
+          "is_exception": false,
+          "owner": "Free Software Foundation (FSF)",
+          "homepage_url": "http://www.gnu.org/licenses/gpl-3.0.html",
+          "text_url": "http://www.gnu.org/licenses/gpl-3.0-standalone.html",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-3.0",
+          "spdx_license_key": "GPL-3.0-only",
+          "spdx_url": "https://spdx.org/licenses/GPL-3.0-only",
+          "start_line": 282,
+          "end_line": 282,
+          "matched_rule": {
+            "identifier": "gpl-3.0_123.RULE",
+            "license_expression": "gpl-3.0",
+            "licenses": [
+              "gpl-3.0"
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": true,
+            "matcher": "2-aho",
+            "rule_length": 1,
+            "matched_length": 1,
+            "match_coverage": 100.0,
+            "rule_relevance": 100.0
+          },
+          "matched_text": "\t\t\t.label\t= \"GPL3\","
+        }
+      ],
+      "license_expressions": [
+        "gpl-2.0",
+        "gpl-1.0",
+        "gpl-1.0",
+        "gpl-2.0",
+        "gpl-2.0",
+        "gpl-3.0",
+        "gpl-3.0"
+      ],
+      "copyrights": [
+        {
+          "value": "Copyright (c) 2010 Samsung Electronics Co., Ltd. http://www.samsung.com",
+          "start_line": 3,
+          "end_line": 4
+        },
+        {
+          "value": "Copyright 2009 Samsung Electronics Co Kyungmin Park <kyungmin.park@samsung.com>",
+          "start_line": 6,
+          "end_line": 7
+        }
+      ],
+      "holders": [
+        {
+          "value": "Samsung Electronics Co., Ltd.",
+          "start_line": 3,
+          "end_line": 4
+        },
+        {
+          "value": "Samsung Electronics Co Kyungmin Park",
+          "start_line": 6,
+          "end_line": 7
+        }
+      ],
+      "authors": [],
+      "packages": [],
+      "emails": [
+        {
+          "email": "kyungmin.park@samsung.com",
+          "start_line": 7,
+          "end_line": 7
+        }
+      ],
+      "urls": [
+        {
+          "url": "http://www.samsung.com/",
+          "start_line": 4,
+          "end_line": 4
+        }
+      ],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "1915-atmel.h",
+      "type": "file",
+      "name": "1915-atmel.h",
+      "base_name": "1915-atmel",
+      "extension": ".h",
+      "size": 1533,
+      "date": "2020-03-01",
+      "sha1": "5b83135603dfdbaada6eddde846af1fb181557b4",
+      "md5": "ac30123f978028a5f07d826c3007b960",
+      "mime_type": "text/x-c",
+      "file_type": "C source, ASCII text",
+      "programming_language": "C++",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "gpl-3.0-plus",
+          "score": 96.46,
+          "name": "GNU General Public License 3.0 or later",
+          "short_name": "GPL 3.0 or later",
+          "category": "Copyleft",
+          "is_exception": false,
+          "owner": "Free Software Foundation (FSF)",
+          "homepage_url": "http://www.gnu.org/licenses/gpl-3.0-standalone.html",
+          "text_url": "http://www.gnu.org/licenses/gpl-3.0-standalone.html",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-3.0-plus",
+          "spdx_license_key": "GPL-3.0-or-later",
+          "spdx_url": "https://spdx.org/licenses/GPL-3.0-or-later",
+          "start_line": 7,
+          "end_line": 19,
+          "matched_rule": {
+            "identifier": "gpl-3.0-plus_103.RULE",
+            "license_expression": "gpl-3.0-plus",
+            "licenses": [
+              "gpl-3.0-plus"
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "3-seq",
+            "rule_length": 113,
+            "matched_length": 109,
+            "match_coverage": 96.46,
+            "rule_relevance": 100
+          },
+          "matched_text": "    This program is free software; you can redistribute it and/or modify\n    it under the terms of the GNU General Public License as published by\n    the Free Software Foundation; either version 2 of the License, or\n    (at your option) any later version.\n\n    This software is distributed in the hope that it will be useful,\n    but WITHOUT ANY WARRANTY; without even the implied warranty of\n    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n    GNU General Public License for more details.\n\n    You should have received a copy of the GNU General Public License\n    along with Atmel wireless lan drivers; if not, write to the Free Software\n    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA"
+        }
+      ],
+      "license_expressions": [
+        "gpl-3.0-plus"
+      ],
+      "copyrights": [
+        {
+          "value": "Copyright 2005 Dan Williams and Red Hat, Inc.",
+          "start_line": 5,
+          "end_line": 5
+        }
+      ],
+      "holders": [
+        {
+          "value": "Dan Williams and Red Hat, Inc.",
+          "start_line": 5,
+          "end_line": 5
+        }
+      ],
+      "authors": [],
+      "packages": [],
+      "emails": [],
+      "urls": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "1915-atmel_cs.c",
+      "type": "file",
+      "name": "1915-atmel_cs.c",
+      "base_name": "1915-atmel_cs",
+      "extension": ".c",
+      "size": 10259,
+      "date": "2011-03-29",
+      "sha1": "d6fe468acf99fecbf31446cef2078761430fd444",
+      "md5": "6c8e43ebebe4908d1324196b4ccfd993",
+      "mime_type": "text/x-c",
+      "file_type": "C source, ASCII text",
+      "programming_language": "C++",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "gpl-1.0-plus",
+          "score": 5.0,
+          "name": "GNU General Public License 1.0 or later",
+          "short_name": "GPL 1.0 or later",
+          "category": "Copyleft",
+          "is_exception": false,
+          "owner": "Free Software Foundation (FSF)",
+          "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html",
+          "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-1.0-plus",
+          "spdx_license_key": "GPL-1.0-or-later",
+          "spdx_url": "https://spdx.org/licenses/GPL-1.0-or-later",
+          "start_line": 9,
+          "end_line": 9,
+          "matched_rule": {
+            "identifier": "gpl_bare_word_only.RULE",
+            "license_expression": "gpl-1.0-plus",
+            "licenses": [
+              "gpl-1.0-plus"
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 1,
+            "matched_length": 1,
+            "match_coverage": 100.0,
+            "rule_relevance": 5
+          },
+          "matched_text": "    released by Atmel corp. under the GPL in December 2002. It also"
+        },
+        {
+          "key": "gpl-3.0-plus",
+          "score": 96.46,
+          "name": "GNU General Public License 3.0 or later",
+          "short_name": "GPL 3.0 or later",
+          "category": "Copyleft",
+          "is_exception": false,
+          "owner": "Free Software Foundation (FSF)",
+          "homepage_url": "http://www.gnu.org/licenses/gpl-3.0-standalone.html",
+          "text_url": "http://www.gnu.org/licenses/gpl-3.0-standalone.html",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-3.0-plus",
+          "spdx_license_key": "GPL-3.0-or-later",
+          "spdx_url": "https://spdx.org/licenses/GPL-3.0-or-later",
+          "start_line": 16,
+          "end_line": 28,
+          "matched_rule": {
+            "identifier": "gpl-3.0-plus_103.RULE",
+            "license_expression": "gpl-3.0-plus",
+            "licenses": [
+              "gpl-3.0-plus"
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "3-seq",
+            "rule_length": 113,
+            "matched_length": 109,
+            "match_coverage": 96.46,
+            "rule_relevance": 100
+          },
+          "matched_text": "    This program is free software; you can redistribute it and/or modify\n    it under the terms of the GNU General Public License as published by\n    the Free Software Foundation; either version 2 of the License, or\n    (at your option) any later version.\n\n    This software is distributed in the hope that it will be useful,\n    but WITHOUT ANY WARRANTY; without even the implied warranty of\n    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n    GNU General Public License for more details.\n\n    You should have received a copy of the GNU General Public License\n    along with Atmel wireless lan drivers; if not, write to the Free Software\n    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA"
+        },
+        {
+          "key": "gpl-2.0-plus",
+          "score": 100.0,
+          "name": "GNU General Public License 2.0 or later",
+          "short_name": "GPL 2.0 or later",
+          "category": "Copyleft",
+          "is_exception": false,
+          "owner": "Free Software Foundation (FSF)",
+          "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
+          "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0-plus",
+          "spdx_license_key": "GPL-2.0-or-later",
+          "spdx_url": "https://spdx.org/licenses/GPL-2.0-or-later",
+          "start_line": 61,
+          "end_line": 61,
+          "matched_rule": {
+            "identifier": "gpl-2.0-plus_module_license_2.RULE",
+            "license_expression": "gpl-2.0-plus",
+            "licenses": [
+              "gpl-2.0-plus"
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 3,
+            "matched_length": 3,
+            "match_coverage": 100.0,
+            "rule_relevance": 100.0
+          },
+          "matched_text": "MODULE_LICENSE(\"GPL\");"
+        },
+        {
+          "key": "gpl-2.0-plus",
+          "score": 100.0,
+          "name": "GNU General Public License 2.0 or later",
+          "short_name": "GPL 2.0 or later",
+          "category": "Copyleft",
+          "is_exception": false,
+          "owner": "Free Software Foundation (FSF)",
+          "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
+          "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0-plus",
+          "spdx_license_key": "GPL-2.0-or-later",
+          "spdx_url": "https://spdx.org/licenses/GPL-2.0-or-later",
+          "start_line": 262,
+          "end_line": 297,
+          "matched_rule": {
+            "identifier": "gpl-2.0-plus_or_bsd-new_10.RULE",
+            "license_expression": "gpl-2.0-plus AND bsd-new",
+            "licenses": [
+              "gpl-2.0-plus",
+              "bsd-new"
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 284,
+            "matched_length": 284,
+            "match_coverage": 100.0,
+            "rule_relevance": 100
+          },
+          "matched_text": "    This program is free software; you can redistribute it and/or\n    modify it under the terms of the GNU General Public License\n    as published by the Free Software Foundation; either version 2\n    of the License, or (at your option) any later version.\n\n    This program is distributed in the hope that it will be useful,\n    but WITHOUT ANY WARRANTY; without even the implied warranty of\n    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n    GNU General Public License for more details.\n\n    In addition:\n\n    Redistribution and use in source and binary forms, with or without\n    modification, are permitted provided that the following conditions\n    are met:\n\n    1. Redistributions of source code must retain the above copyright\n       notice, this list of conditions and the following disclaimer.\n    2. Redistributions in binary form must reproduce the above copyright\n       notice, this list of conditions and the following disclaimer in the\n       documentation and/or other materials provided with the distribution.\n    3. The name of the author may not be used to endorse or promote\n       products derived from this software without specific prior written\n       permission.\n\n    THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR\n    IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED\n    WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE\n    ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT,\n    INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES\n    (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR\n    SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\n    HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,\n    STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING\n    IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE\n    POSSIBILITY OF SUCH DAMAGE."
+        },
+        {
+          "key": "bsd-new",
+          "score": 100.0,
+          "name": "BSD-3-Clause",
+          "short_name": "BSD-3-Clause",
+          "category": "Permissive",
+          "is_exception": false,
+          "owner": "Regents of the University of California",
+          "homepage_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+          "text_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:bsd-new",
+          "spdx_license_key": "BSD-3-Clause",
+          "spdx_url": "https://spdx.org/licenses/BSD-3-Clause",
+          "start_line": 262,
+          "end_line": 297,
+          "matched_rule": {
+            "identifier": "gpl-2.0-plus_or_bsd-new_10.RULE",
+            "license_expression": "gpl-2.0-plus AND bsd-new",
+            "licenses": [
+              "gpl-2.0-plus",
+              "bsd-new"
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 284,
+            "matched_length": 284,
+            "match_coverage": 100.0,
+            "rule_relevance": 100
+          },
+          "matched_text": "    This program is free software; you can redistribute it and/or\n    modify it under the terms of the GNU General Public License\n    as published by the Free Software Foundation; either version 2\n    of the License, or (at your option) any later version.\n\n    This program is distributed in the hope that it will be useful,\n    but WITHOUT ANY WARRANTY; without even the implied warranty of\n    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n    GNU General Public License for more details.\n\n    In addition:\n\n    Redistribution and use in source and binary forms, with or without\n    modification, are permitted provided that the following conditions\n    are met:\n\n    1. Redistributions of source code must retain the above copyright\n       notice, this list of conditions and the following disclaimer.\n    2. Redistributions in binary form must reproduce the above copyright\n       notice, this list of conditions and the following disclaimer in the\n       documentation and/or other materials provided with the distribution.\n    3. The name of the author may not be used to endorse or promote\n       products derived from this software without specific prior written\n       permission.\n\n    THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR\n    IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED\n    WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE\n    ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT,\n    INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES\n    (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR\n    SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\n    HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,\n    STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING\n    IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE\n    POSSIBILITY OF SUCH DAMAGE."
+        }
+      ],
+      "license_expressions": [
+        "gpl-1.0-plus",
+        "gpl-3.0-plus",
+        "gpl-2.0-plus",
+        "gpl-2.0-plus AND bsd-new"
+      ],
+      "copyrights": [
+        {
+          "value": "Copyright 2000-2001 ATMEL Corporation",
+          "start_line": 5,
+          "end_line": 6
+        },
+        {
+          "value": "Copyright 2003 Simon Kelley",
+          "start_line": 5,
+          "end_line": 6
+        },
+        {
+          "value": "(c) Benjamin Reed",
+          "start_line": 8,
+          "end_line": 11
+        },
+        {
+          "value": "(c) David Hinds",
+          "start_line": 8,
+          "end_line": 11
+        }
+      ],
+      "holders": [
+        {
+          "value": "ATMEL Corporation",
+          "start_line": 5,
+          "end_line": 6
+        },
+        {
+          "value": "Simon Kelley",
+          "start_line": 5,
+          "end_line": 6
+        },
+        {
+          "value": "Benjamin Reed",
+          "start_line": 8,
+          "end_line": 11
+        },
+        {
+          "value": "David Hinds",
+          "start_line": 8,
+          "end_line": 11
+        }
+      ],
+      "authors": [],
+      "packages": [],
+      "emails": [
+        {
+          "email": "simon@thekelleys.org.uk",
+          "start_line": 14,
+          "end_line": 14
+        }
+      ],
+      "urls": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    }
+  ]
+}
