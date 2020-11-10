@@ -48,10 +48,6 @@ class DivideCases:
         self.license_class_bools = ["is_license_text_lic", "is_license_notice", "is_license_tag",
                                     "is_license_reference"]
 
-        # Rule Attributes that are relevant in Rule Creation/Review
-        self.craft_rule_fields = ["path", "key", "matched_length", "start_line", "end_line", "matched_text",
-                                  "match_class"]
-
         self.license_class_dict = {1: 'license_text',  2: 'license_notice', 3: 'license-tag', 4: 'license-reference'}
 
     # TODO: Add another threshold and grouping based on stats (near-perfect scores, maybe 85/90 to 100)
@@ -317,6 +313,74 @@ class DivideCases:
         dataframe.loc[unique_incorrect_scans_mask, "match_class"] = location_and_class_groups["match_class"].values
 
     @staticmethod
+    def get_possible_false_positives(dataframe):
+        """
+        Separate and mark cases which could be False Positives, in the DataFrame, inplace.
+        They are License Tags and most of them are erroneously matched with one-word rules.
+
+        :param dataframe:
+            DataFrame containing all the Scan Results.
+        """
+        possible_false_positives_mask = np.bitwise_and(dataframe.is_license_tag, dataframe.rule_length == 1)
+        dataframe.loc[possible_false_positives_mask, "match_class"] = 5
+
+    # TODO: Implement SubClasses in Match Classes
+    @staticmethod
+    def initialize_dataframe_rows(dataframe):
+        """
+         Initialize rows in the DataFrame for marking them into different cases. The new rows are:
+            - query_coverage_diff
+            - score_coverage_based_groups
+            - mask_unique
+            - match_group_number
+            - match_class
+
+         :param dataframe:
+             DataFrame containing all the Scan Results.
+         """
+        # Adding column `query_coverage_diff` with the difference between `match_coverage * rule_relevance` and `score`
+        # if this is positive, there are extra words
+        dataframe.loc[:, "query_coverage_diff"] = ((dataframe["match_coverage"] * dataframe["rule_relevance"]) / 100
+                                            - dataframe["score"]).values
+
+        # initialize row for for group by License Scores
+        dataframe.loc[:, "score_coverage_based_groups"] = 0
+
+        # initialize row for Unique/Non-unique (True/False) License Detection Errors
+        dataframe.loc[:, "mask_unique"] = False
+
+        # initialize rows for group by Location and License Type information
+        dataframe.loc[:, "match_group_number"] = 0
+        dataframe.loc[:, "match_class"] = 0
+
+    def divide_cases_in_groups(self, dataframe):
+        """
+        Separate and Group Wrong License Detections.
+
+        :param dataframe: pd.DataFrame
+            DataFrame containing all the Scan Results.
+        """
+        self.initialize_dataframe_rows(dataframe)
+
+        self.get_possible_false_positives(dataframe)
+
+        self.get_incorrect_scan_cases(dataframe)
+
+        # Only Select Files with Low Match Coverage or Matches with Low Score and Extra Words
+        self.set_unique_cases_files(dataframe)
+
+        self.group_matches_by_location_and_class(dataframe)
+
+
+class CraftRules:
+
+    def __init__(self):
+
+        # Rule Attributes that are relevant in Rule Creation/Review
+        self.craft_rule_fields = ["path", "key", "matched_length", "start_line", "end_line", "matched_text",
+                                  "match_class"]
+
+    @staticmethod
     def merge_string_without_overlap(s1, s2):
         """
         Merge two Strings that doesn't have any common substring.
@@ -477,62 +541,3 @@ class DivideCases:
         generated_rules = df.groupby(level="file_sha1").apply(self.get_rules_by_group)
 
         return generated_rules
-
-    @staticmethod
-    def get_possible_false_positives(dataframe):
-        """
-        Separate and mark cases which could be False Positives, in the DataFrame, inplace.
-        They are License Tags and most of them are erroneously matched with one-word rules.
-
-        :param dataframe:
-            DataFrame containing all the Scan Results.
-        """
-        possible_false_positives_mask = np.bitwise_and(dataframe.is_license_tag, dataframe.rule_length == 1)
-        dataframe.loc[possible_false_positives_mask, "match_class"] = 5
-
-    # TODO: Implement SubClasses in Match Classes
-    @staticmethod
-    def initialize_dataframe_rows(dataframe):
-        """
-         Initialize rows in the DataFrame for marking them into different cases. The new rows are:
-            - query_coverage_diff
-            - score_coverage_based_groups
-            - mask_unique
-            - match_group_number
-            - match_class
-
-         :param dataframe:
-             DataFrame containing all the Scan Results.
-         """
-        # Adding column `query_coverage_diff` with the difference between `match_coverage * rule_relevance` and `score`
-        # if this is positive, there are extra words
-        dataframe.loc[:, "query_coverage_diff"] = ((dataframe["match_coverage"] * dataframe["rule_relevance"]) / 100
-                                            - dataframe["score"]).values
-
-        # initialize row for for group by License Scores
-        dataframe.loc[:, "score_coverage_based_groups"] = 0
-
-        # initialize row for Unique/Non-unique (True/False) License Detection Errors
-        dataframe.loc[:, "mask_unique"] = False
-
-        # initialize rows for group by Location and License Type information
-        dataframe.loc[:, "match_group_number"] = 0
-        dataframe.loc[:, "match_class"] = 0
-
-    def divide_cases(self, dataframe):
-        """
-        Separate and Group Wrong License Detections.
-
-        :param dataframe: pd.DataFrame
-            DataFrame containing all the Scan Results.
-        """
-        self.initialize_dataframe_rows(dataframe)
-
-        self.get_possible_false_positives(dataframe)
-
-        self.get_incorrect_scan_cases(dataframe)
-
-        # Only Select Files with Low Match Coverage or Matches with Low Score and Extra Words
-        self.set_unique_cases_files(dataframe)
-
-        self.group_matches_by_location_and_class(dataframe)

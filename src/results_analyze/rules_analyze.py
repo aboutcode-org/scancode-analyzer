@@ -30,7 +30,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from wordcloud import WordCloud
 
-from results_analyze.df_file_io import DataFrameFileIO
+from results_analyze.df_file_io import DataFrameFileIO, TestDataIO
 
 # Format in which the Information DataFrames will be stored in hdf5 files
 HDF5_STORE_FORMAT = 'fixed'
@@ -70,10 +70,10 @@ class LicenseRulesInfo:
         Load License and Rule DataFrames and Conversion Dictionary DataFrames from hdf5 files.
         """
 
-        self.rule_df = self.df_io.load_dataframe_from_hdf5(self.hdf5_info_dfs, "rule")
-        self.lic_df = self.df_io.load_dataframe_from_hdf5(self.hdf5_info_dfs, "lic")
-        self.identifier_df = self.df_io.load_dataframe_from_hdf5(self.hdf5_info_dfs, "id")
-        self.key_df = self.df_io.load_dataframe_from_hdf5(self.hdf5_info_dfs, "key")
+        self.rule_df = TestDataIO.load_dataframe_from_hdf5(self.hdf5_info_dfs, "rule_df")
+        self.lic_df = TestDataIO.load_dataframe_from_hdf5(self.hdf5_info_dfs, "lic_df")
+        self.identifier_df = TestDataIO.load_dataframe_from_hdf5(self.hdf5_info_dfs, "id_df")
+        self.key_df = TestDataIO.load_dataframe_from_hdf5(self.hdf5_info_dfs, "key_df")
 
         self.identifier_dict = self.df_io.df_to_inv_dict(self.identifier_df)
         self.key_dict = self.df_io.df_to_inv_dict(self.key_df)

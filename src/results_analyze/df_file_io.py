@@ -180,3 +180,36 @@ class DataFrameFileIO:
         json_df = pd.DataFrame({"path": mock_path, "json_content": json_dict})
 
         return json_df
+
+
+class TestDataIO:
+
+    @staticmethod
+    def load_dataframe_from_hdf5(store_path, dataframe_name):
+
+        read_from_h5 = pd.HDFStore(store_path)
+        dataframe = read_from_h5[dataframe_name]
+        read_from_h5.close()
+
+        return dataframe
+
+    @staticmethod
+    def store_dataframe_to_hdf5(dataframe, store_path, dataframe_name):
+
+        store_at_h5 = pd.HDFStore(store_path)
+        store_at_h5[dataframe_name] = dataframe
+        store_at_h5.close()
+
+    @staticmethod
+    def load_list_from_txt(path):
+
+        with open(path, 'r') as filehandle:
+            listdata = json.load(filehandle)
+
+        return listdata
+
+    @staticmethod
+    def write_list_of_strings_to_txt(listdata, path):
+
+        with open(path, 'w') as filehandle:
+            json.dump(listdata, filehandle)

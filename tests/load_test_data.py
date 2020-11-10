@@ -28,7 +28,7 @@ import pandas as pd
 from results_analyze.df_file_io import DataFrameFileIO
 
 
-class TestData:
+class LoadScanDataJSON:
 
     def __init__(self):
 
@@ -40,6 +40,8 @@ class TestData:
 
         self.rule_scans = self.get_scans_from_folder("rule")
         self.lic_scans = self.get_scans_from_folder("lic")
+        self.after_rules_added = self.get_scans_from_folder("selective-after-rules-added")
+        self.before_rules_added = self.get_scans_from_folder("selective-before-rules-added")
 
     def get_scans_from_folder(self, folder_name):
 
