@@ -23,12 +23,13 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 import os
+import json
 import pandas as pd
 
 from results_analyze.df_file_io import DataFrameFileIO
 
 
-class TestData:
+class LoadScanDataJSON:
 
     def __init__(self):
 
@@ -40,6 +41,8 @@ class TestData:
 
         self.rule_scans = self.get_scans_from_folder("rule")
         self.lic_scans = self.get_scans_from_folder("lic")
+        self.after_rules_added = self.get_scans_from_folder("selective-after-rules-added")
+        self.before_rules_added = self.get_scans_from_folder("selective-before-rules-added")
 
     def get_scans_from_folder(self, folder_name):
 
@@ -68,3 +71,36 @@ class TestData:
         pkg_dataframe = pd.concat(packages_all)
 
         return pkg_dataframe
+
+
+class TestDataIO:
+
+    @staticmethod
+    def load_dataframe_from_hdf5(store_path, dataframe_name):
+
+        read_from_h5 = pd.HDFStore(store_path)
+        dataframe = read_from_h5[dataframe_name]
+        read_from_h5.close()
+
+        return dataframe
+
+    @staticmethod
+    def store_dataframe_to_hdf5(dataframe, store_path, dataframe_name):
+
+        store_at_h5 = pd.HDFStore(store_path)
+        store_at_h5[dataframe_name] = dataframe
+        store_at_h5.close()
+
+    @staticmethod
+    def load_list_from_txt(path):
+
+        with open(path, 'r') as filehandle:
+            listdata = json.load(filehandle)
+
+        return listdata
+
+    @staticmethod
+    def write_list_of_strings_to_txt(listdata, path):
+
+        with open(path, 'w') as filehandle:
+            json.dump(listdata, filehandle)
