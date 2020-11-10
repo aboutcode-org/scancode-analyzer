@@ -43,7 +43,7 @@ HDF5_STORE_FORMAT = 'table'
 
 class ResultsDataFramePackage:
 
-    def __init__(self, has_database=True):
+    def __init__(self, has_database=False):
         """
         Constructor for ResultsDataFramePackage, initialized PostgresFetch and ResultsDataFrameFile objects,
         and data paths and filenames used.
@@ -227,7 +227,8 @@ class ResultsDataFramePackage:
         file_path = os.path.join(self.df_io.get_hdf5_file_path(self.df_io.hdf_dir, self.df_io.metadata_filename))
         self.df_io.store_dataframe_to_hdf5(schema_df, file_path, df_key='schema', h5_format='table', is_append=True)
 
-    def assert_dataframe_schema(self, path_json_dataframe):
+    @staticmethod
+    def assert_dataframe_schema(path_json_dataframe):
         """
         This function takes a DataFrame containing columns 'path' and 'json_content', extracts info from path.
         uses schema info to only keep schemaVersion 3.2.2, and saves the schema count which are deleted.
