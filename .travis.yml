@@ -4,18 +4,49 @@
 #
 # See https://config.travis-ci.com/ for a full list of configuration options.
 
-os: linux
-
-dist: xenial
-
-language: python
-python:
-  - "3.6"
-  - "3.7"
-  - "3.8"
+matrix:
+  include:
+    - os: linux
+      dist: xenial
+      language: python
+      python:
+        - "3.6"
+      env: TEST_SUITE="tmp/bin/pytest -vvs"
+    - os: linux
+      dist: xenial
+      language: python
+      python:
+        - "3.7"
+      env: TEST_SUITE="tmp/bin/pytest -vvs"
+    - os: linux
+      dist: xenial
+      language: python
+      python:
+        - "3.8"
+      env: TEST_SUITE="tmp/bin/pytest -vvs"
+    - os: linux
+      sudo: required
+      script:
+        - source bin/activate
+        - cd docs
+        - pip install -r requirements-doc.txt
+        # Check Sphinx Documentation build minimally
+        - sphinx-build -E source build
+        # Check for documentation style errors
+        - ./scripts/doc8_style_check.sh
+      language: python
+      python: "3.6"
+      dist: bionic
 
 # Scripts to run at install stage
-install: ./configure
+before_install:
+  - chmod +x ./docs/scripts/sphinx_build_link_check.sh
+  - chmod +x ./docs/scripts/doc8_style_check.sh
+
+install:
+  - ./configure
+  - source tmp/bin/activate
 
 # Scripts to run at script stage
-script: tmp/bin/pytest
+script:
+  - $TEST_SUITE
