@@ -10,23 +10,27 @@ This is currently work-in-progress.
 
 3. Configure::
 
-	./configure
+    ./configure
 
 4. Activate the Virtual Environment Created
 
-	source tmp/bin/activate
+    source tmp/bin/activate
 
 5. Install as a scancode-toolkit plugin::
 
-	pip install -e .
+    pip install -e .
 
 6. Run scancode for the first time for setup::
 
-	scancode -h
+    scancode -h
 
 7. Run a scan using the ``--analyze-results`` command line options::
 
-	scancode -l --json-pp output.json /path/to/scan_files/ --license-text --analyze-results
+    scancode -l --json-pp output.json /path/to/scan_files/ --license-text --analyze-results
+
+8. OR, import a JSON scan result and run the plugin on that scan::
+
+    scancode --json-pp results.json --from-json tests/data/results-test/selective-before-rules-added/only_errors.json --analyze-results
 
 
 Quickstart - Conda
