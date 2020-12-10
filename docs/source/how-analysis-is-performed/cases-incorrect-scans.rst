@@ -1,12 +1,19 @@
-License Information Types
-=========================
+.. _lic_detection_issue_types:
 
-There are 4 types of license information as segregated by scancode-toolkit, i.e.
+License Detection Issue Types
+=============================
+
+There are 4 types of license information as segregated by scancode-toolkit, based on rule types.
 
 - text
 - notices
 - tags
 - references.
+
+Note that this is the order of precedence, as in in a file-region if there's one type higher in this
+order and other several types lower in the order, the issue in the file-region is likely in the
+former type. For example if one of the matches is matched to a `notice` rule and other matches
+to `reference` rules, then the file-region in question is likely a License Notice.
 
 These carry different importance of the license information present, and thus in case of license
 scan errors, there are fundamentally different types of problems which may require different
@@ -14,14 +21,86 @@ approaches to solve them.
 
 These are primarily segregated by the type of the rule matched, having the largest
 ``matched_length`` value, as a preliminary approach. It could also be determined by
-NLP Sentence Classifiers (BERT), trained on Scancode Rules.
+NLP Sentence Classifiers (BERT), fine-tuned on the Scancode Rules.
 
+Result Attributes
+-----------------
+
+In the results of the analysis, two of the attributes has this information:
+
+    1. ``region_license_error_case``
+    2. ``region_license_error_sub_case``
+
+Here, the ``region_license_error_case`` attribute represents the main issue types in terms of how
+clearly the license information is referred to. The 4 possible values of this are:
+
+- `text` - :ref:`case_lic_text`
+- `notice` - :ref:`case_lic_notice`
+- `tag` - :ref:`case_lic_tag`
+- `reference` - :ref:`case_lic_ref`
+
+The ``region_license_error_sub_case`` attribute represents further types of cases in these.
+
+.. _cases_sub_cases_table:
+
+All Cases and their Sub-cases Table
+-----------------------------------
+
+.. list-table::
+    :widths: 15 15
+    :header-rows: 1
+
+    * - ``region_license_error_case``
+      - ``region_license_error_sub_case``
+
+    * - ``text``
+      - ``legal-lic-files``
+
+    * - ``text``
+      - ``non-legal-lic-files``
+
+    * - ``text``
+      - ``lic-text-fragments``
+
+    * - ``notice``
+      - ``and-or-except-notice``
+
+    * - ``notice``
+      - ``single-key-notice``
+
+    * - ``tag``
+      - ``tag-coverage``
+
+    * - ``tag``
+      - ``other-tag-structures``
+
+    * - ``tag``
+      - ``false-positives``
+
+    * - ``reference``
+      - ``lead-in-refs``
+
+    * - ``reference``
+      - ``low-coverage-refs``
+
+    * - ``reference``
+      - ``unknown-refs``
+
+.. _case_lic_text:
 
 License Texts
 -------------
 
+.. note::
+
+    Value of ``region_license_error_case`` :- ``text``
+
 License Text Files
 ^^^^^^^^^^^^^^^^^^
+
+.. note::
+
+    Value of ``region_license_error_sub_case`` :- ``legal-lic-files``
 
 - [More Than 90% License Words/Legal File]
 
@@ -33,6 +112,10 @@ So, if the full text is there in the “matched_text” we can go ahead and craf
 
 License Texts in Files
 ^^^^^^^^^^^^^^^^^^^^^^
+
+.. note::
+
+    Value of ``region_license_error_sub_case`` :- ``non-legal-lic-files``
 
 - [with less than 90% License Words]
 
@@ -47,6 +130,10 @@ common mistakes.
 
 Full text doesn’t exist in matched_text
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. note::
+
+    Value of ``region_license_error_sub_case`` :- ``lic-text-fragments``
 
 Where the Full text doesn’t exist in matched_text and we have to go to/fetch the source file which
 was scanned.
@@ -86,12 +173,21 @@ Scan Result File has multiple partial matches
 
 Clearly the actual license has a lot more text, which we can only get by going to the source.
 
+.. _case_lic_notice:
 
 License Notices
 ---------------
 
+.. note::
+
+    Value of ``region_license_error_case`` :- ``notice``
+
 Exceptions, Rules with Keys having AND/OR
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. note::
+
+    Value of ``region_license_error_sub_case`` :- ``and-or-except-notice``
 
 Where there are multiple "notice" license detections, not of the same license name, in a single
 file. These are often:
@@ -102,10 +198,12 @@ file. These are often:
 These have multiple license detections and some times new combinations are detected, and has to be
 added to the Rules.
 
-
-
 Single key notices
 ^^^^^^^^^^^^^^^^^^
+
+.. note::
+
+    Value of ``region_license_error_sub_case`` :- ``single-key-notice``
 
 This is the general case of License Notice cases, so if it's a license notice case and doesn't fall
 into the other license notice cases detailed below, then it belongs in this category.
@@ -113,12 +211,21 @@ into the other license notice cases detailed below, then it belongs in this cate
 These are often detected as License Notices are often unique in projects, and for these rules can be
 crafted with fairly high confidence as almost always the entire text is present in "matched_text".
 
+.. _case_lic_tag:
 
 License Tags
 ------------
 
+.. note::
+
+    Value of ``region_license_error_case`` :- ``tag``
+
 Wrong License Tag Detections
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. note::
+
+    Value of ``region_license_error_sub_case`` :- ``tag-coverage``
 
 Among all  “is_license_tag” = True cases, if match_coverage is less than 100, then it is a wrong
 license detection, and as tags are small and matched_text almost always contains the whole tag, a
@@ -129,6 +236,10 @@ the other license tag cases detailed below, then it belongs in this category.
 
 Other common Structures of Tags
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. note::
+
+    Value of ``region_license_error_sub_case`` :- ``other-tag-structures``
 
 There exists specific Tags, for group of projects, and these are mostly found in source code files,
 in the code itself.
@@ -149,6 +260,11 @@ Related Issue - https://github.com/nexB/scancode-toolkit/issues/707
 
 Finding False Positives from License Tags Detections
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. note::
+
+    Value of ``region_license_error_sub_case`` :- ``false-positives``
+    In this case, value of ``license_scan_analysis_result`` :- ``false-positives``
 
 Now, the “is_license_tag” is obviously always true for these, but the “match_coverage” is always 100
 in these cases. These are almost always wrongly detected by some handful of rules which has only the
@@ -175,12 +291,21 @@ In some cases some more lines above and below are needed to be added to these fa
 as the ``matched_text`` can be too general for a false positive rule. This could require
 manual work.
 
+.. _case_lic_ref:
 
 License References
 ------------------
 
+.. note::
+
+    Value of ``region_license_error_case`` :- ``reference``
+
 Those with low match coverages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. note::
+
+    Value of ``region_license_error_sub_case`` :- ``low-coverage-refs``
 
 This is the most common type of license detection errors, as there exist a lot of
 license references, and they can be added. These are also highly fixable problems, as almost always
@@ -193,6 +318,10 @@ fall into the other license reference cases detailed below, then it belongs in t
 
 unknown file license references
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. note::
+
+    Value of ``region_license_error_sub_case`` :- ``unknown-refs``
 
 In many cases the license that is referred to is in another file, and only the filename is given,
 and not the license name. Example - "see license in file LICENSE.txt"
@@ -207,6 +336,10 @@ scancode where these links are followed and their license added.
 
 Introduction to a License Notice
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. note::
+
+    Value of ``region_license_error_sub_case`` :- ``lead-in-refs``
 
 There are cases where the RULE name begins with ``lead-in_unknown_``, i.e. these are known lead-ins
 to licenses, so even if the exact license isn't detected, it can be reported that there is a

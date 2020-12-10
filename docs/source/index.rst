@@ -15,7 +15,7 @@ Getting Started with `scancode-results-analyzer`
 ------------------------------------------------
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
 
    getting-started/index
 
@@ -31,7 +31,7 @@ API and Output Formats
 ----------------------
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
 
    api-and-outputs/index
 
@@ -39,7 +39,7 @@ Improving Scancode
 ------------------
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
 
    improving-scancode/index
 

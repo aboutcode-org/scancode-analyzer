@@ -1,10 +1,18 @@
+.. _resolving_issues:
+
 Crafting Rules From Fragments of Matched Text
 =============================================
+
+.. note::
+
+    This plugin is Work In Progress.
 
 The functions from stitching are implemented using the same algorithm mentioned above in Deleting
 Correct scans Location wise in File, because this is also done location wise, and wrt start and
 end line numbers. But the other rule/.yml generation is remaining according to different treatments
 for different classes of errors.
+
+.. _crafting_rule_text:
 
 Matched Text
 ------------
@@ -33,6 +41,8 @@ Now if they do not have a common boundary,
 - Less than or equal to 4 lines gap: They are joined as one Rule
 - More than 4 lines gap: They are made two separate rules
 
+.. _crafting_rule_yml:
+
 ``.yml`` file attributes
 ------------------------
 
@@ -47,9 +57,9 @@ Now if they do not have a common boundary,
 4. If the rule is a ``false_positive`` as determined from the class of problem, only the
    ``is_false_positive`` attribute is there.
 
+.. _crafted_rule_confidence:
+
 Rule Confidence
 ---------------
 
 Calculation of ``rule-confidence`` for manually checking only the low confidence errors.
-
-Note: [Work In Progress]
