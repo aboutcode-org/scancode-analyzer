@@ -1,31 +1,48 @@
-A Simple Python Project Skeleton
-================================
-This repo attempts to standardize our python repositories using modern python
-packaging and configuration techniques. Using this `blog post`_ as inspiration, this
-repository will serve as the base for all new python projects and will be adopted to all 
-our existing ones as well.
+scancode-results-analyzer
+=========================
 
-.. _blog post: https://blog.jaraco.com/a-project-skeleton-for-python-projects/
+.. what-is-scancode-results-analyzer
 
-Usage
-=====
-A brand new project
--------------------
-.. code-block:: bash
+What is Scancode-Results-Analyzer
+---------------------------------
 
-    git init my-new-repo
-    cd my-new-repo
-    git pull git@github.com:nexB/skeleton
+`ScanCode`_ detects licenses, copyrights, package manifests and direct dependencies and more both in source code and
+binary files.
 
-From here, you can make the appropriate changes to the files for your specific project.
+ScanCode license detection is using multiple techniques to accurately detect licenses based on automatons, inverted
+indexes and multiple sequence alignments. The detection is not always accurate enough. The goal of this project is to
+improve the accuracy of license detection leveraging the ClearlyDefined and other datasets, where ScanCode is used
+to massively scan millions of packages. It would also be available as a `ScanCode`_ ``post-scan`` plugin to use it
+in scans directly, or in `scancode.io`_ pipelines.
 
-Update an existing project
----------------------------
-.. code-block:: bash
+This project aims to:
 
-    cd my-existing-project
-    git remote add skeleton git@github.com:nexB/skeleton
-    git fetch skeleton
-    git merge skeleton/main --allow-unrelated-histories
+- Write tools and create models to massively analyze the accuracy of license detection
+- Detect areas where the accuracy could be improved.
+- Add this as a `scancode`_ post-scan plugin
+- Add to pipelines in `scancode.io`_
+- Write reusable tools and models to assist in the semi-automated reviews of scan results.
+- It will also create new license detection rules semi-automatically to fix the detected anomalies
 
-This is also the workflow to use when updating the skeleton files in any given repository.
+.. _ScanCode: https://github.com/nexB/scancode-toolkit
+.. _scancode.io: https://github.com/nexB/scancode.io
+
+.. from-github-links
+
+Getting Started
+---------------
+
+Refer to the installation instructions on `INSTALL.rst`_
+
+Documentation
+-------------
+
+Documentation: https://scancode-results-analyzer.readthedocs.io/en/latest/ [WIP]
+
+Project Board
+-------------
+
+`Project Board`_ for  ``scancode-results-analyzer`` : Analysing Scancode License Detection Results.
+
+.. _INSTALL.rst: https://github.com/nexB/scancode-results-analyzer/tree/master/INSTALL.rst
+.. _Project Board: https://github.com/nexB/scancode-results-analyzer/projects/1
