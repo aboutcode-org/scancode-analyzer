@@ -5,7 +5,8 @@ Crafting Rules From Fragments of Matched Text
 
 .. note::
 
-    This plugin is Work In Progress.
+    The rule/.yml file generation/other actions is Work In Progress.
+    Only reports with suggested rules with the rule text, license key, rule type is generated.
 
 The functions from stitching are implemented using the same algorithm mentioned above in Deleting
 Correct scans Location wise in File, because this is also done location wise, and wrt start and

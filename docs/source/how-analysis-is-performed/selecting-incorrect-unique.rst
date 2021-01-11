@@ -10,17 +10,21 @@ are:
 4. Getting rid of same issues across package - :ref:`ignoring_same_cases_in_package`
 5. Resolving issues based on groups - :ref:`resolving_issues`
 
-.. _location_region_number:
+.. _location_regions_division:
 
 Dividing Matches into Region Groups
 -----------------------------------
 
-The attribute ``location_region_number`` in the analysis results has information on which
-file-region the match is in.
+All the matches detected in a file, are grouped into file-regions,
+(i.e. one file would have multiple, or at least one file-region) and then the analysis is
+performed separately on all these file-regions as these are to be handled independently
+from each other.
 
-.. note::
+These 3 attributes in the analysis results has information on which file-region the matches are in.
 
-    The values of ``location_region_number`` are positive integers starting from 1.
+1. ``start_line_region`` - The line number where this current file region starts from, in the file.
+2. ``end_line_region`` - The line number where this current file region ends at, in the file.
+3. ``license_matches`` - All the matches detected by scancode that are in this file-region.
 
 .. _file_region:
 
@@ -75,13 +79,14 @@ File-Region Grouping Algorithm
 
 Algorithm as for Grouping based on Location -
 
-- Step 1: Start from the first match, and set it's start/end line as the group boundary.
-- Step 2: Go by every match executing these instructions :-
-    - If entirely inside the boundary, drop.
-    - If partly inside the boundary, extend boundaries to include this and then drop.
-    - If very close to boundary, i.e. less than a threshold, extend boundaries to include.
+- Step 1: Start from the first match, and assign it into the first group.
+- Step 2: Initialize boundaries to the start/end line of this match.
+- Step 3: Go by every match executing these instructions :-
+    - If entirely inside the boundary, include in the current group.
+    - If partly inside the boundary, extend boundaries and include in the current group.
+    - If very close to boundary, i.e. less than a threshold, extend boundaries and include in the current group.
     - Else, if outside boundary, go to step 1 making this match as a new group.
-- Repeat until there’s no groups left.
+- Repeat until there’s no matches left.
 
 As there’s never too many detections in a file, and there’s almost always detections which have
 almost all of the matched texts, and as the matches are sorted according to their start/end lines,
@@ -89,8 +94,8 @@ this is efficient enough, and passes through the list of matches once.
 
 .. _license_scan_analysis_result:
 
-Only Selecting Files with Incorrect Scans
------------------------------------------
+File-regions with Incorrect Scans
+---------------------------------
 
 The attribute ``license_scan_analysis_result`` in the analysis results has information on if the
 file-region has any license detection issue in it, bases on coverage values, presence of extra words
