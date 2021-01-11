@@ -20,6 +20,11 @@ IMPERFECT_MATCH_COVERAGE_THR = 95
 # (i.e. and therefore, different rule)
 LINES_THRESHOLD = 4
 
+# Threshold Values of start line and rule length for a match to likely be a false positive
+# (more than the start_line threshold and less than the rule_length threshold)
+FALSE_POSITIVE_START_LINE_THRESHOLD = 1000
+FALSE_POSITIVE_RULE_LENGTH_THRESHOLD = 3
+
 # Whether to Use the NLP BERT Models
 USE_LICENSE_CASE_BERT_MODEL = False
 USE_FALSE_POSITIVE_BERT_MODEL = False
@@ -140,9 +145,7 @@ class LicenseDetectionIssue:
         "notice-single-key-notice": IssueType(
             is_license_notice=True,
             classification_id="notice-single-key-notice",
-            classification_description=(
-                "A notice with a single license."
-            ),
+            classification_description="A notice with a single license.",
             analysis_confidence="high",
         ),
         "notice-has-unknown-match": IssueType(
@@ -153,12 +156,18 @@ class LicenseDetectionIssue:
             ),
             analysis_confidence="medium",
         ),
+        "notice-false-positive": IssueType(
+            is_license_notice=True,
+            classification_id="notice-has-unknown-match",
+            classification_description=(
+                "A piece of code/text is incorrectly detected as a license."
+            ),
+            analysis_confidence="medium",
+        ),
         "tag-tag-coverage": IssueType(
             is_license_tag=True,
             classification_id="tag-tag-coverage",
-            classification_description=(
-                "A part of a license tag is detected"
-            ),
+            classification_description="A part of a license tag is detected",
             analysis_confidence="high",
         ),
         "tag-other-tag-structures": IssueType(
@@ -190,9 +199,7 @@ class LicenseDetectionIssue:
         "reference-low-coverage-refs": IssueType(
             is_license_reference=True,
             classification_id="reference-low-coverage-refs",
-            classification_description=(
-                "License references with a incomplete match."
-            ),
+            classification_description="License references with a incomplete match.",
             analysis_confidence="medium",
         ),
         "reference-to-local-file": IssueType(
@@ -203,6 +210,14 @@ class LicenseDetectionIssue:
                 "another file, which is referred to in this matched piece of text."
             ),
             analysis_confidence="high",
+        ),
+        "reference-false-positive": IssueType(
+            is_license_reference=True,
+            classification_id="reference-false-positive",
+            classification_description=(
+                "A piece of code/text is incorrectly detected as a license"
+            ),
+            analysis_confidence="medium",
         ),
     }
 
@@ -356,9 +371,17 @@ def is_false_positive(license_matches):
     :param license_matches: list
         List of license matches in a file-region.
     """
-    match_rule_length_values = (
+    start_line_region = min(match["start_line"] for match in license_matches)
+    match_rule_length_values = [
         match["matched_rule"]["rule_length"] for match in license_matches
-    )
+    ]
+
+    if start_line_region > FALSE_POSITIVE_START_LINE_THRESHOLD and any(
+        match_rule_length_value <= FALSE_POSITIVE_RULE_LENGTH_THRESHOLD
+        for match_rule_length_value in match_rule_length_values
+    ):
+        return True
+
     match_is_license_tag_flags = (
         match["matched_rule"]["is_license_tag"] for match in license_matches
     )
@@ -475,7 +498,7 @@ def get_license_text_issue_type(is_license_text, is_legal):
         return "text-lic-text-fragments"
 
 
-def get_license_notice_issue_type(license_matches):
+def get_license_notice_issue_type(license_matches, issue_id):
     """
     Classifies the license detection issue into one of ISSUE_TYPES_BY_CLASSIFICATION,
     where it is a license notice.
@@ -486,7 +509,9 @@ def get_license_notice_issue_type(license_matches):
         match["matched_rule"]["license_expression"] for match in license_matches
     ]
 
-    if all(
+    if issue_id == "false-positive":
+        return "notice-false-positive"
+    elif all(
         any(
             license_expression_connector in license_expression
             for license_expression_connector in license_expression_connectors
@@ -514,7 +539,7 @@ def get_license_tag_issue_type(issue_id):
         return "tag-tag-coverage"
 
 
-def get_license_reference_issue_type(license_matches):
+def get_license_reference_issue_type(license_matches, issue_id):
     """
     Classifies the license detection issue into one of ISSUE_TYPES_BY_CLASSIFICATION,
     where it is a license reference.
@@ -523,7 +548,9 @@ def get_license_reference_issue_type(license_matches):
         match["matched_rule"]["identifier"] for match in license_matches
     ]
 
-    if any("lead" in identifier for identifier in match_rule_identifiers) or any(
+    if issue_id == "false-positive":
+        return "reference-false-positive"
+    elif any("lead" in identifier for identifier in match_rule_identifiers) or any(
         "unknown" in identifier for identifier in match_rule_identifiers
     ):
         return "reference-lead-in-or-unknown-refs"
@@ -540,11 +567,11 @@ def get_issue_type(
     if issue_rule_type == "text":
         return get_license_text_issue_type(is_license_text, is_legal)
     elif issue_rule_type == "notice":
-        return get_license_notice_issue_type(license_matches)
+        return get_license_notice_issue_type(license_matches, issue_id)
     elif issue_rule_type == "tag":
         return get_license_tag_issue_type(issue_id)
     elif issue_rule_type == "reference":
-        return get_license_reference_issue_type(license_matches)
+        return get_license_reference_issue_type(license_matches, issue_id)
 
 
 def get_issue_rule_type_using_bert(license_matches):
