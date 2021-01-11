@@ -1,0 +1,12 @@
+[
+      {
+        "matched_rule": {
+          "matcher": "1-hash"
+        }
+      },
+      {
+        "matched_rule": {
+          "matcher": "4-spdx-id"
+        }
+      }
+]

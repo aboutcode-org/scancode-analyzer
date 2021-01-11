@@ -1,0 +1,35 @@
+[
+	{
+      "key": "bzip2-libbzip-2010",
+      "score": 69.35,
+      "name": "bzip2 License 2010",
+      "short_name": "bzip2 License 2010",
+      "category": "Permissive",
+      "is_exception": false,
+      "owner": "bzip",
+      "homepage_url": "https://github.com/asimonov-im/bzip2/blob/master/LICENSE",
+      "text_url": "",
+      "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:bzip2-libbzip-2010",
+      "spdx_license_key": "bzip2-1.0.6",
+      "spdx_url": "https://spdx.org/licenses/bzip2-1.0.6",
+      "start_line": 8,
+      "end_line": 18,
+      "matched_rule": {
+        "identifier": "bzip2-libbzip-2010_5.RULE",
+        "license_expression": "bzip2-libbzip-2010",
+        "licenses": [
+          "bzip2-libbzip-2010"
+        ],
+        "is_license_text": false,
+        "is_license_notice": true,
+        "is_license_reference": false,
+        "is_license_tag": false,
+        "matcher": "3-seq",
+        "rule_length": 43,
+        "matched_length": 43,
+        "match_coverage": 100.0,
+        "rule_relevance": 100.0
+      },
+      "matched_text": "   This file is part of bzip2/libbzip2, a program and library for\n   lossless, block-sorting data compression.\n\n   bzip2/libbzip2 version 1.0.5 of 10 December 2007\n   Copyright (C) 1996-2007 Julian Seward <jseward@bzip.org>\n\n   Please read the WARNING, DISCLAIMER and PATENTS sections in the \n   README file.\n\n   This program is released under the terms of the license contained\n   in the file LICENSE."
+    }
+]

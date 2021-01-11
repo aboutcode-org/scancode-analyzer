@@ -1,0 +1,387 @@
+ {
+      "path": "Issues/1910-cmake-3.4.1/cmCommandArgumentParser.cxx",
+      "type": "file",
+      "name": "cmCommandArgumentParser.cxx",
+      "base_name": "cmCommandArgumentParser",
+      "extension": ".cxx",
+      "size": 53318,
+      "date": "2015-12-02",
+      "sha1": "a5a7ba78b9972bfddc0919e510b9abad879d6597",
+      "md5": "7d2947d3b87e369b58a4189705027dfc",
+      "mime_type": "text/x-c",
+      "file_type": "C source, ASCII text",
+      "programming_language": "C++",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "unknown",
+          "score": 11.0,
+          "name": "Unknown license detected but not recognized",
+          "short_name": "unknown",
+          "category": "Unstated License",
+          "is_exception": false,
+          "owner": "Unspecified",
+          "homepage_url": null,
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:unknown",
+          "spdx_license_key": null,
+          "spdx_url": "",
+          "start_line": 5,
+          "end_line": 5,
+          "matched_rule": {
+            "identifier": "lead-in_unknown_53.RULE",
+            "license_expression": "unknown",
+            "licenses": [
+              "unknown"
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 2,
+            "matched_length": 2,
+            "match_coverage": 100.0,
+            "rule_relevance": 11
+          },
+          "matched_text": "  Distributed under the OSI-approved BSD License (the \"License\");"
+        },
+        {
+          "key": "bsd-new",
+          "score": 90.0,
+          "name": "BSD-3-Clause",
+          "short_name": "BSD-3-Clause",
+          "category": "Permissive",
+          "is_exception": false,
+          "owner": "Regents of the University of California",
+          "homepage_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+          "text_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:bsd-new",
+          "spdx_license_key": "BSD-3-Clause",
+          "spdx_url": "https://spdx.org/licenses/BSD-3-Clause",
+          "start_line": 5,
+          "end_line": 5,
+          "matched_rule": {
+            "identifier": "bsd-new_26.RULE",
+            "license_expression": "bsd-new",
+            "licenses": [
+              "bsd-new"
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 2,
+            "matched_length": 2,
+            "match_coverage": 100.0,
+            "rule_relevance": 90.0
+          },
+          "matched_text": "  Distributed under the OSI-approved BSD License (the \"License\");"
+        },
+        {
+          "key": "agpl-3.0-plus",
+          "score": 25.88,
+          "name": "GNU Affero General Public License 3.0 or later",
+          "short_name": "AGPL 3.0 or later",
+          "category": "Copyleft",
+          "is_exception": false,
+          "owner": "Free Software Foundation (FSF)",
+          "homepage_url": "http://www.gnu.org/licenses/agpl-3.0.html",
+          "text_url": "http://www.gnu.org/licenses/agpl.txt",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:agpl-3.0-plus",
+          "spdx_license_key": "AGPL-3.0-or-later",
+          "spdx_url": "https://spdx.org/licenses/AGPL-3.0-or-later",
+          "start_line": 8,
+          "end_line": 10,
+          "matched_rule": {
+            "identifier": "agpl-3.0-plus_109.RULE",
+            "license_expression": "agpl-3.0-plus",
+            "licenses": [
+              "agpl-3.0-plus"
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "3-seq",
+            "rule_length": 85,
+            "matched_length": 22,
+            "match_coverage": 25.88,
+            "rule_relevance": 100.0
+          },
+          "matched_text": "  This software is distributed WITHOUT ANY WARRANTY; without even the\n  implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n  See the License for more information."
+        },
+        {
+          "key": "gpl-2.0-plus",
+          "score": 100.0,
+          "name": "GNU General Public License 2.0 or later",
+          "short_name": "GPL 2.0 or later",
+          "category": "Copyleft",
+          "is_exception": false,
+          "owner": "Free Software Foundation (FSF)",
+          "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
+          "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0-plus",
+          "spdx_license_key": "GPL-2.0-or-later",
+          "spdx_url": "https://spdx.org/licenses/GPL-2.0-or-later",
+          "start_line": 19,
+          "end_line": 45,
+          "matched_rule": {
+            "identifier": "gpl-2.0-plus_with_bison-exception-2.2_1.RULE",
+            "license_expression": "gpl-2.0-plus WITH bison-exception-2.2",
+            "licenses": [
+              "gpl-2.0-plus",
+              "bison-exception-2.2"
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 216,
+            "matched_length": 216,
+            "match_coverage": 100.0,
+            "rule_relevance": 100
+          },
+          "matched_text": "   This program is free software; you can redistribute it and/or modify\n   it under the terms of the GNU General Public License as published by\n   the Free Software Foundation; either version 2, or (at your option)\n   any later version.\n\n   This program is distributed in the hope that it will be useful,\n   but WITHOUT ANY WARRANTY; without even the implied warranty of\n   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n   GNU General Public License for more details.\n\n   You should have received a copy of the GNU General Public License\n   along with this program; if not, write to the Free Software\n   Foundation, Inc., 51 Franklin Street, Fifth Floor,\n   Boston, MA 02110-1301, USA.  */\n\n/* As a special exception, you may create a larger work that contains\n   part or all of the Bison parser skeleton and distribute that work\n   under terms of your choice, so long as that work isn't itself a\n   parser generator using the skeleton or a modified version thereof\n   as a parser skeleton.  Alternatively, if you modify or redistribute\n   the parser skeleton itself, you may (at your option) remove this\n   special exception, which will cause the skeleton and the resulting\n   Bison output files to be licensed under the GNU General Public\n   License without this special exception.\n\n   This special exception was added by the Free Software Foundation in\n   version 2.2 of Bison.  */"
+        },
+        {
+          "key": "bison-exception-2.2",
+          "score": 100.0,
+          "name": "Bison 2.2 exception to GPL 2.0 or later",
+          "short_name": "Bison 2.2 exception to GPL 2.0 or later",
+          "category": "Copyleft Limited",
+          "is_exception": true,
+          "owner": "Free Software Foundation (FSF)",
+          "homepage_url": null,
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:bison-exception-2.2",
+          "spdx_license_key": "Bison-exception-2.2",
+          "spdx_url": "https://spdx.org/licenses/Bison-exception-2.2",
+          "start_line": 19,
+          "end_line": 45,
+          "matched_rule": {
+            "identifier": "gpl-2.0-plus_with_bison-exception-2.2_1.RULE",
+            "license_expression": "gpl-2.0-plus WITH bison-exception-2.2",
+            "licenses": [
+              "gpl-2.0-plus",
+              "bison-exception-2.2"
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 216,
+            "matched_length": 216,
+            "match_coverage": 100.0,
+            "rule_relevance": 100
+          },
+          "matched_text": "   This program is free software; you can redistribute it and/or modify\n   it under the terms of the GNU General Public License as published by\n   the Free Software Foundation; either version 2, or (at your option)\n   any later version.\n\n   This program is distributed in the hope that it will be useful,\n   but WITHOUT ANY WARRANTY; without even the implied warranty of\n   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n   GNU General Public License for more details.\n\n   You should have received a copy of the GNU General Public License\n   along with this program; if not, write to the Free Software\n   Foundation, Inc., 51 Franklin Street, Fifth Floor,\n   Boston, MA 02110-1301, USA.  */\n\n/* As a special exception, you may create a larger work that contains\n   part or all of the Bison parser skeleton and distribute that work\n   under terms of your choice, so long as that work isn't itself a\n   parser generator using the skeleton or a modified version thereof\n   as a parser skeleton.  Alternatively, if you modify or redistribute\n   the parser skeleton itself, you may (at your option) remove this\n   special exception, which will cause the skeleton and the resulting\n   Bison output files to be licensed under the GNU General Public\n   License without this special exception.\n\n   This special exception was added by the Free Software Foundation in\n   version 2.2 of Bison.  */"
+        },
+        {
+          "key": "unknown",
+          "score": 11.0,
+          "name": "Unknown license detected but not recognized",
+          "short_name": "unknown",
+          "category": "Unstated License",
+          "is_exception": false,
+          "owner": "Unspecified",
+          "homepage_url": null,
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:unknown",
+          "spdx_license_key": null,
+          "spdx_url": "",
+          "start_line": 126,
+          "end_line": 126,
+          "matched_rule": {
+            "identifier": "lead-in_unknown_53.RULE",
+            "license_expression": "unknown",
+            "licenses": [
+              "unknown"
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 2,
+            "matched_length": 2,
+            "match_coverage": 100.0,
+            "rule_relevance": 11
+          },
+          "matched_text": "  Distributed under the OSI-approved BSD License (the \"License\");"
+        },
+        {
+          "key": "bsd-new",
+          "score": 90.0,
+          "name": "BSD-3-Clause",
+          "short_name": "BSD-3-Clause",
+          "category": "Permissive",
+          "is_exception": false,
+          "owner": "Regents of the University of California",
+          "homepage_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+          "text_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:bsd-new",
+          "spdx_license_key": "BSD-3-Clause",
+          "spdx_url": "https://spdx.org/licenses/BSD-3-Clause",
+          "start_line": 126,
+          "end_line": 126,
+          "matched_rule": {
+            "identifier": "bsd-new_26.RULE",
+            "license_expression": "bsd-new",
+            "licenses": [
+              "bsd-new"
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 2,
+            "matched_length": 2,
+            "match_coverage": 100.0,
+            "rule_relevance": 90.0
+          },
+          "matched_text": "  Distributed under the OSI-approved BSD License (the \"License\");"
+        },
+        {
+          "key": "lgpl-2.0-plus",
+          "score": 48.94,
+          "name": "GNU Library General Public License 2.0 or later",
+          "short_name": "LGPL 2.0 or later",
+          "category": "Copyleft Limited",
+          "is_exception": false,
+          "owner": "Free Software Foundation (FSF)",
+          "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.0.html",
+          "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.0-standalone.html",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:lgpl-2.0-plus",
+          "spdx_license_key": "LGPL-2.0-or-later",
+          "spdx_url": "https://spdx.org/licenses/LGPL-2.0-or-later",
+          "start_line": 126,
+          "end_line": 131,
+          "matched_rule": {
+            "identifier": "lgpl-2.0-plus_with_wxwindows-exception-3.1_6.RULE",
+            "license_expression": "lgpl-2.0-plus WITH wxwindows-exception-3.1",
+            "licenses": [
+              "lgpl-2.0-plus",
+              "wxwindows-exception-3.1"
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "3-seq",
+            "rule_length": 47,
+            "matched_length": 23,
+            "match_coverage": 48.94,
+            "rule_relevance": 100
+          },
+          "matched_text": "  Distributed under the OSI-approved BSD License (the \"License\");\n  see accompanying file Copyright.txt for details.\n\n  This software is distributed WITHOUT ANY WARRANTY; without even the\n  implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n  See the License for more information."
+        },
+        {
+          "key": "wxwindows-exception-3.1",
+          "score": 48.94,
+          "name": "WxWindows Library Exception to GPL 2.0 or later",
+          "short_name": "WxWindows Library Exception to GPL 2.0 or later",
+          "category": "Copyleft Limited",
+          "is_exception": true,
+          "owner": "wxWidgets",
+          "homepage_url": "http://www.wxwidgets.org/about/newlicen.htm",
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:wxwindows-exception-3.1",
+          "spdx_license_key": "WxWindows-exception-3.1",
+          "spdx_url": "https://spdx.org/licenses/WxWindows-exception-3.1",
+          "start_line": 126,
+          "end_line": 131,
+          "matched_rule": {
+            "identifier": "lgpl-2.0-plus_with_wxwindows-exception-3.1_6.RULE",
+            "license_expression": "lgpl-2.0-plus WITH wxwindows-exception-3.1",
+            "licenses": [
+              "lgpl-2.0-plus",
+              "wxwindows-exception-3.1"
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "3-seq",
+            "rule_length": 47,
+            "matched_length": 23,
+            "match_coverage": 48.94,
+            "rule_relevance": 100
+          },
+          "matched_text": "  Distributed under the OSI-approved BSD License (the \"License\");\n  see accompanying file Copyright.txt for details.\n\n  This software is distributed WITHOUT ANY WARRANTY; without even the\n  implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n  See the License for more information."
+        }
+      ],
+      "license_expressions": [
+        "unknown",
+        "bsd-new",
+        "agpl-3.0-plus",
+        "gpl-2.0-plus WITH bison-exception-2.2",
+        "unknown",
+        "bsd-new",
+        "lgpl-2.0-plus WITH wxwindows-exception-3.1"
+      ],
+      "copyrights": [
+        {
+          "value": "Copyright 2000-2009 Kitware, Inc., Insight Software Consortium",
+          "start_line": 3,
+          "end_line": 3
+        },
+        {
+          "value": "Copyright (c) 1984, 1989, 1990, 2000, 2001, 2002, 2003, 2004, 2005, 2006 Free Software Foundation, Inc.",
+          "start_line": 16,
+          "end_line": 17
+        },
+        {
+          "value": "Copyright 2000-2009 Kitware, Inc., Insight Software Consortium",
+          "start_line": 124,
+          "end_line": 124
+        }
+      ],
+      "holders": [
+        {
+          "value": "Kitware, Inc., Insight Software Consortium",
+          "start_line": 3,
+          "end_line": 3
+        },
+        {
+          "value": "Free Software Foundation, Inc.",
+          "start_line": 16,
+          "end_line": 17
+        },
+        {
+          "value": "Kitware, Inc., Insight Software Consortium",
+          "start_line": 124,
+          "end_line": 124
+        }
+      ],
+      "authors": [
+        {
+          "value": "Richard Stallman",
+          "start_line": 47,
+          "end_line": 48
+        }
+      ],
+      "packages": [],
+      "emails": [],
+      "urls": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_generated": false,
+      "is_license_text": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    }

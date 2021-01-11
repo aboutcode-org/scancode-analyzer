@@ -1,0 +1,35 @@
+[
+	{
+      "key": "lgpl-2.0-plus",
+      "score": 100.0,
+      "name": "GNU Library General Public License 2.0 or later",
+      "short_name": "LGPL 2.0 or later",
+      "category": "Copyleft Limited",
+      "is_exception": false,
+      "owner": "Free Software Foundation (FSF)",
+      "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.0.html",
+      "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.0-standalone.html",
+      "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:lgpl-2.0-plus",
+      "spdx_license_key": "LGPL-2.0-or-later",
+      "spdx_url": "https://spdx.org/licenses/LGPL-2.0-or-later",
+      "start_line": 7,
+      "end_line": 7,
+      "matched_rule": {
+        "identifier": "lgpl-2.0-plus_215.RULE",
+        "license_expression": "lgpl-2.0-plus",
+        "licenses": [
+          "lgpl-2.0-plus"
+        ],
+        "is_license_text": false,
+        "is_license_notice": false,
+        "is_license_reference": true,
+        "is_license_tag": false,
+        "matcher": "2-aho",
+        "rule_length": 6,
+        "matched_length": 6,
+        "match_coverage": 100.0,
+        "rule_relevance": 100.0
+      },
+      "matched_text": "modify it under the terms of the GNU Library General Public License as"
+    },
+]

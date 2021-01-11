@@ -1,0 +1,101 @@
+[
+      {
+        "key": "gpl-2.0",
+        "score": 32.35,
+        "name": "GNU General Public License 2.0",
+        "short_name": "GPL 2.0",
+        "category": "Copyleft",
+        "is_exception": false,
+        "owner": "Free Software Foundation (FSF)",
+        "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
+        "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
+        "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0",
+        "spdx_license_key": "GPL-2.0-only",
+        "spdx_url": "https://spdx.org/licenses/GPL-2.0-only",
+        "start_line": 6,
+        "end_line": 7,
+        "matched_rule": {
+          "identifier": "gpl-2.0_394.RULE",
+          "license_expression": "gpl-2.0",
+          "licenses": [
+            "gpl-2.0"
+          ],
+          "is_license_text": false,
+          "is_license_notice": true,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "matcher": "3-seq",
+          "rule_length": 34,
+          "matched_length": 11,
+          "match_coverage": 32.35,
+          "rule_relevance": 100
+        },
+        "matched_text": "/* This program is copyright (c) 2009 by Roderick W. Smith. It is distributed\n  under the terms of the GNU GPL version 2, as detailed in the COPYING file. */"
+      },
+      {
+        "key": "bsd-zero",
+        "score": 100.0,
+        "name": "BSD Zero Clause License",
+        "short_name": "BSD Zero Clause License",
+        "category": "Permissive",
+        "is_exception": false,
+        "owner": "Rob Landley",
+        "homepage_url": "http://landley.net/toybox/license.html",
+        "text_url": "",
+        "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:bsd-zero",
+        "spdx_license_key": "0BSD",
+        "spdx_url": "https://spdx.org/licenses/0BSD",
+        "start_line": 1,
+        "end_line": 3,
+        "matched_rule": {
+          "identifier": "bsd-zero.LICENSE",
+          "license_expression": "bsd-zero",
+          "licenses": [
+            "bsd-zero"
+          ],
+          "is_license_text": true,
+          "is_license_notice": false,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "matcher": "1-hash",
+          "rule_length": 98,
+          "matched_length": 98,
+          "match_coverage": 100.0,
+          "rule_relevance": 100
+        },
+        "matched_text": "Permission to use, copy, modify, and/or distribute this software for any purpose with or without fee is hereby granted.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE."
+      },
+      {
+        "key": "public-domain",
+        "score": 100.0,
+        "name": "Public Domain",
+        "short_name": "Public Domain",
+        "category": "Public Domain",
+        "is_exception": false,
+        "owner": "Unspecified",
+        "homepage_url": "http://www.linfo.org/publicdomain.html",
+        "text_url": "",
+        "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:public-domain",
+        "spdx_license_key": null,
+        "spdx_url": "",
+        "start_line": 15,
+        "end_line": 15,
+        "matched_rule": {
+          "identifier": "public-domain_apache_1.RULE",
+          "license_expression": "public-domain",
+          "licenses": [
+            "public-domain"
+          ],
+          "is_license_text": false,
+          "is_license_notice": true,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "matcher": "2-aho",
+          "rule_length": 24,
+          "matched_length": 24,
+          "match_coverage": 100.0,
+          "rule_relevance": 100
+        },
+        "matched_text": "Portions of this software are based upon public domain software originally written at the National Center for Supercomputing Applications, University of Illinois, Urbana-Champaign."
+      }
+]

@@ -1,0 +1,101 @@
+[
+      {
+        "key": "proprietary-license",
+        "score": 100.0,
+        "name": "Proprietary License",
+        "short_name": "Proprietary License",
+        "category": "Proprietary Free",
+        "is_exception": false,
+        "owner": "Unspecified",
+        "homepage_url": null,
+        "text_url": "",
+        "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:proprietary-license",
+        "spdx_license_key": null,
+        "spdx_url": "",
+        "start_line": 1,
+        "end_line": 144,
+        "matched_rule": {
+          "identifier": "proprietary-license_against-drm.RULE",
+          "license_expression": "proprietary-license",
+          "licenses": [
+            "proprietary-license"
+          ],
+          "is_license_text": true,
+          "is_license_notice": false,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "matcher": "1-hash",
+          "rule_length": 1268,
+          "matched_length": 1268,
+          "match_coverage": 100.0,
+          "rule_relevance": 100
+        },
+        "matched_text": "1. Definitions\n\nAccess control mechanism: a technological measure which, in the ordinary course of its operation, requires the application of information, or a process or a treatment, with the authority of the copyright owner or related rights owner, to gain access to the work.\n\nActs authorised by licensor: acts concerning granted rights (in particular, act of access, act of copy, act of modification, act of sharing).\n\nActs not authorised by licensor: acts concerning copyright or possible moral rights.\n\nAuthor/s: the creator/s of an original work or the creator/s of a derivative work.\n\nBroadcasting: the use of any means of distribution over a distance, such as telegraph, telephone, radio, television and other comparable media, including communication to the public by satellite and cable retransmission.\n\nCopy control mechanism: a technological measure which, in the ordinary course of its operation, prevents, restricts, or otherwise limits the exercise of a right of the copyright owner or related rights owner.\n\nDerivative work: a work based upon the copyrightable work released under the terms and the conditions of this license.\n\nDistribution: the marketing, the placing in circulation or the making available to the public, by whatever means and for whatever purpose, of a work or of copies thereof.\n\nElaboration: all forms of modification, adaptation and transformation of a work.\n\nLending: the making available for use of originals, of copies or of carriers of copyright works, for a limited period of time and for purposes other than those referred to in the paragraph 16.\n\nLicensee: the person acquiring rights under the terms and the conditions of this license.\n\nLicensor: the person offering the work under the terms and the conditions of this license.\n\nMoral rights: the author's right, recognized in some countries, to claim authorship of the work and to object to any distortion, mutilation or other modification of, or other derogatory action in relation to, the said work, which would be prejudicial to his honor or reputation; other author's rights recognized as moral rights in some countries.\n\nOriginal work: a work not based upon another work.\n\nRelated rights: the rights that belong to the performers, the producers of phonograms and broadcasting organizations in relation to their performances, phonograms and broadcasts respectively.\n\nRental: the making available for use of originals, of copies or of carriers of copyright works, for a limited period of time and for direct or indirect economic or commercial advantage.\n\nReproduction: the multiplication of copies of a work by any means, such as copying by hand, printing, lithography, engraving, photography, phonography, cinematography and any other process of reproduction.\n\nTranscription: the use of means suitable for transforming an oral work into a written work or into a work reproduced by one of the methods referred to in the preceding paragraph.\n\nTranslation: the translation of the work into another language or dialect.\n\nWork: the copyrightable work released under the terms and the conditions of this license.\n\n\n2. License's area of applicability\n\nThis license concerns copyright and related rights: this license does not treat any other right.\n\nNothing in this license is intended to prevent or restrict the exercise of rights not treated in this license, such as rights concerning privacy, private property, sale and other personal or private rights.\n\nNothing in this license is intended to prevent or restrict the private use of any lawful technological measure.\n\nNothing in this license is intended to prevent or restrict any limitation on the exclusive rights of the copyright owner or related rights owner under copyright law or other applicable law.\n\nThis license is applicable to the works of the mind having a creative character and belonging to literature, music, figurative arts, architecture, theater or cinematography, whatever their mode or form of expression.\n\n\n3. Object\n\nIn particular, this license is applicable to:\n\na. literary, dramatic, scientific, didactic and religious works, whether in written or oral form;\n\nb. musical works and compositions, with or without words, dramatico-musical works and musical variations that themselves constitute original works;\n\nc. choreographic works and works of dumb show, the form of which is fixed in writing or otherwise;\n\nd. works of sculpture, painting, drawing, engraving and similar figurative arts, including scenic art;\n\ne. architectural plans and works;\n\nf. works of cinematographic art, whether silent or with sound;\n\ng. works of photographic art and works expressed with processes analogous to photography;\n\nh. industrial design works that have creative character or inherent artistic character;\n\ni. collective works formed by the assembling of works, or parts of works, and possessing the character of a self-contained creation resulting from selection and coordination with a specific literary, scientific, didactic, religious, political or artistic aim, such as encyclopedias, dictionaries, anthologies, magazines and newspapers;\n\nj. works of a creative character derived from any such work, such as translations into another language, transformations into any other literary or artistic form, modifications and additions constituting a substantial remodeling of the original work, adaptations, arrangements, abridgments and variations which do not constitute an original work.\n\n\n4. Grant of rights\n\nLicensor authorizes licensee to exercise the following rights:\na. right of reproduction;\nb. right of distribution;\nc. right of publishing (also in a collection);\nd. right of public performance or recitation;\ne. right of broadcasting;\nf. right of modification;\ng. right of elaboration;\nh. right of transcription;\ni. right of translation;\nj. right of lending;\nk. right of rental;\nl. right of commercial use.\n\n\n5. Related rights and sublicensing\n\nLicensor declares to be related rights owner and he authorizes licensee to exercise them.\n\nIf the work is not object of related rights, preceding paragraph must be considered as void and having no legal effect.\n\nLicensee may not sublicense the work.\n\n\n6. No DRM\n\nThis license is incompatible with any technology, device or component that, in the normal course of its operation, is designed to prevent or restrict acts which are authorised or not authorised by licensor: this incompatibility causes the inapplicability of the license to the work.\n\nIn particular:\na. it is not possible to release validly under this license works or derivative works whose access control mechanism and/or copy control mechanism prevents or restricts quantitatively and/or qualitatively access to, fruition, copy, modification and/or sharing of them;\nb. in conformity with this license, it is not allowed to prevent or restrict quantitatively and/or qualitatively access to, fruition, copy, modification, and/or sharing of works or derivative works through an access control mechanism and/or a copy control mechanism;\nc. in conformity with this license, it is not allowed to prevent or restrict the exercise of a granted right through any digital, analog or physical method.\n\n\n7. Copyleft clause\n\nDerivative works, performances of the work, phonograms in which the work is fixed, broadcastings of the work must be released with a license that provides:\na. the renunciation to exclusive exercise of rights referred to in the articles 4 and 5;\nb. the same type of clause described in article 6;\nc. the same type of clause described in this article.\n\n\n8. Resolutory clause\n\nAny breach of this license (in particular, the breach of the articles 6 and 7) will automatically void this license, without the necessity of any communication from licensor.\n\n\n9. DISCLAIMER\n\nTO THE EXTENT PERMITTED BY APPLICABLE LAW, LICENSOR OFFERS THE WORK \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES ARE DISCLAIMED. TO THE EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT WILL LICENSOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY OR CONSEQUENTIAL DAMAGES HOWEVER CAUSED.\n\n\n10. Copyright notice\n\n[Original work] Copyright (C) [year/s] [name/s of author/s]\n[Work] Copyright (C) [year/s] [name/s of author/s]\n[Derivative work] Copyright (C) [year/s] [name/s of author/s]\n\nLicensee must keep intact copyright notice and all notices that refer to this license.\n\nLicensee must include a copy of this license with every copy of the work the licensee distributes, publicly demonstrates or publicly performs."
+      },
+      {
+        "key": "bsd-zero",
+        "score": 100.0,
+        "name": "BSD Zero Clause License",
+        "short_name": "BSD Zero Clause License",
+        "category": "Permissive",
+        "is_exception": false,
+        "owner": "Rob Landley",
+        "homepage_url": "http://landley.net/toybox/license.html",
+        "text_url": "",
+        "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:bsd-zero",
+        "spdx_license_key": "0BSD",
+        "spdx_url": "https://spdx.org/licenses/0BSD",
+        "start_line": 1,
+        "end_line": 3,
+        "matched_rule": {
+          "identifier": "bsd-zero.LICENSE",
+          "license_expression": "bsd-zero",
+          "licenses": [
+            "bsd-zero"
+          ],
+          "is_license_text": true,
+          "is_license_notice": false,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "matcher": "1-hash",
+          "rule_length": 98,
+          "matched_length": 98,
+          "match_coverage": 100.0,
+          "rule_relevance": 100
+        },
+        "matched_text": "Permission to use, copy, modify, and/or distribute this software for any purpose with or without fee is hereby granted.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE."
+      },
+      {
+        "key": "bsd-simplified",
+        "score": 100.0,
+        "name": "BSD-2-Clause",
+        "short_name": "BSD-2-Clause",
+        "category": "Permissive",
+        "is_exception": false,
+        "owner": "Regents of the University of California",
+        "homepage_url": "http://www.opensource.org/licenses/BSD-2-Clause",
+        "text_url": "http://opensource.org/licenses/bsd-license.php",
+        "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:bsd-simplified",
+        "spdx_license_key": "BSD-2-Clause",
+        "spdx_url": "https://spdx.org/licenses/BSD-2-Clause",
+        "start_line": 2,
+        "end_line": 5,
+        "matched_rule": {
+          "identifier": "bsd-simplified_16.RULE",
+          "license_expression": "bsd-simplified",
+          "licenses": [
+            "bsd-simplified"
+          ],
+          "is_license_text": true,
+          "is_license_notice": false,
+          "is_license_reference": false,
+          "is_license_tag": false,
+          "matcher": "1-hash",
+          "rule_length": 185,
+          "matched_length": 185,
+          "match_coverage": 100.0,
+          "rule_relevance": 100
+        },
+        "matched_text": "Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:\n1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.\n2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+      }
+]
