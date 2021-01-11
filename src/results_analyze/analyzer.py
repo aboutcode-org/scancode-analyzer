@@ -608,7 +608,7 @@ def get_license_match_suggestion(group_of_license_matches, issue_id, issue_type)
         All the license matches in a license detection issue.
     :param issue_id:
         One of LicenseDetectionIssue.ISSUE_CHOICES.
-    :param issue_type: 
+    :param issue_type:
         One of LicenseDetectionIssue.ISSUE_TYPES_BY_CLASSIFICATION
     :returns license_expression:
         A complete license expression from all the licenses matches.
