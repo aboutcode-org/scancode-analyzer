@@ -5,7 +5,7 @@ JSON Output Format
 running a scan, the scan results are then analyzed for scan errors, and that information is
 added to the scancode JSON results.
 
-Command Line Argument to use ``scancode-results-analyzer``: ``--analyze-results``
+Command Line Argument to use ``scancode-results-analyzer``: ``--analyze-license-results``
 
 Here's how example result-JSONs from `scancode-results-analyzer` could look like, post-analysis.
 
@@ -41,7 +41,7 @@ the match(es) in that file-region.
                 "input": [
                 "/path_to/downloaded_licenses/"
                 ],
-                "--analyze-results": true,
+                "--analyze-license-results": true,
             }
         ],
         "files": [
