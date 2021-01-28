@@ -1,17 +1,20 @@
 .. _resolving_issues:
 
-Crafting Rules From Fragments of Matched Text
-=============================================
+Suggesting New License Detection
+================================
+
+Firstly this analysis is then used to suggest new license matches in place of the matches with
+different license detection issues, to rectify those issues and provide a better license
+detection. This helps in quickly identifying issues when looking at a scan result or in
+larger use cases/audits.
+
+This can also help in sub-sequent rule addition in the scancode rules, to enhance the scancode
+data.
 
 .. note::
 
     The rule/.yml file generation/other actions is Work In Progress.
     Only reports with suggested rules with the rule text, license key, rule type is generated.
-
-The functions from stitching are implemented using the same algorithm mentioned above in Deleting
-Correct scans Location wise in File, because this is also done location wise, and wrt start and
-end line numbers. But the other rule/.yml generation is remaining according to different treatments
-for different classes of errors.
 
 .. _crafting_rule_text:
 
@@ -41,6 +44,26 @@ Now if they do not have a common boundary,
 
 - Less than or equal to 4 lines gap: They are joined as one Rule
 - More than 4 lines gap: They are made two separate rules
+
+
+.. _predict_license_expression:
+
+Predict License Expression
+--------------------------
+
+The steps are as follows:
+
+1. First from the list of `license expressions`, all the `license expressions` are sorted according
+   to their occurrences.
+
+2. Generic `license_expressions` like `unknown`, `warranty-disclaimer` are removed fro, this sorted
+   list.
+
+3. If there's only one `license_expression` with the most number of occurrences, then that is the
+   predicted `license_expression`.
+
+4. In case of same number of `license_expressions` for multiple matches, the `license_expression` of
+   the license match with the highest `matched_length` given as the prediction.
 
 .. _crafting_rule_yml:
 

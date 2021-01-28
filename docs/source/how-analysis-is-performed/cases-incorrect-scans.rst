@@ -26,81 +26,111 @@ NLP Sentence Classifiers (BERT), fine-tuned on the Scancode Rules.
 Result Attributes
 -----------------
 
-In the results of the analysis, two of the attributes has this information:
+In the results of the analysis, the attributes having this information is ``issue_type``.
 
-    1. ``region_license_error_case``
-    2. ``region_license_error_sub_case``
+This further has many attributes:
 
-Here, the ``region_license_error_case`` attribute represents the main issue types in terms of how
-clearly the license information is referred to. The 4 possible values of this are:
+    1. ``classification_id`` and ``classification_description``
+    2. 4 boolean fields ``is_license_text``, ``is_license_notice``, ``is_license_tag``, and
+       ``is_license_reference``.
+    3. ``is_suggested_matched_text_complete`` and ``analysis_confidence``
 
-- `text` - :ref:`case_lic_text`
-- `notice` - :ref:`case_lic_notice`
-- `tag` - :ref:`case_lic_tag`
-- `reference` - :ref:`case_lic_ref`
 
-The ``region_license_error_sub_case`` attribute represents further types of cases in these.
+Here, the ``classification_id`` attribute is a id which corresponds to a issue type from
+`all possible issue types <issue_types_table>`_, which the license detection issue is
+classified into. The ``classification_description`` describes the `issue_type` to provide
+more information and context about the analysis.
 
-.. _cases_sub_cases_table:
+There are 4 main types of issues in `issue_type` and these correspond to the 4 boolean flags in
+scancode rules:
 
-All Cases and their Sub-cases Table
------------------------------------
+- ``is_license_text`` - :ref:`case_lic_text`
+- ``is_license_notice`` - :ref:`case_lic_notice`
+- ``is_license_tag`` - :ref:`case_lic_tag`
+- ``is_license_reference`` - :ref:`case_lic_ref`
+
+Now the ``analysis_confidence`` is an approximate measure of how accurate the classification into
+these `issue_types` are (and not a measure of whether it is an issue or not). It has 3 values:
+
+    1. `high`, 2. `medium` and 3. `low`
+
+In many cases, and mostly in cases of a new license text, there are significant differences
+between already seen licenses and this new license. So as a consequence, all the matched fragments
+if stitched together, doesn't contain the whole text. This ``is_suggested_matched_text_complete``
+attribute has this information.
+
+.. note::
+
+    Now only issues with `is_license_text` as True has it's `is_suggested_matched_text_complete`
+    value as false.
+
+.. _issue_types_table:
+
+All Issue Types
+---------------
 
 .. list-table::
     :widths: 15 15
     :header-rows: 1
 
-    * - ``region_license_error_case``
-      - ``region_license_error_sub_case``
+    * - ``text/notice/tag/reference``
+      - ``issue_type::classification_id``
 
     * - ``text``
-      - ``legal-lic-files``
+      - ``text-legal-lic-files``
 
     * - ``text``
-      - ``non-legal-lic-files``
+      - ``text-non-legal-lic-files``
 
     * - ``text``
-      - ``lic-text-fragments``
+      - ``text-lic-text-fragments``
 
     * - ``notice``
-      - ``and-or-except-notice``
+      - ``notice-and-or-with-notice``
 
     * - ``notice``
-      - ``single-key-notice``
+      - ``notice-single-key-notice``
+
+    * - ``notice``
+      - ``notice-has-unknown-match``
+
+    * - ``notice``
+      - ``notice-false-positive``
 
     * - ``tag``
-      - ``tag-coverage``
+      - ``tag-tag-coverage``
 
     * - ``tag``
-      - ``other-tag-structures``
+      - ``tag-other-tag-structures``
 
     * - ``tag``
-      - ``false-positives``
+      - ``tag-false-positives``
 
     * - ``reference``
-      - ``lead-in-refs``
+      - ``reference-lead-in-or-unknown-refs``
 
     * - ``reference``
-      - ``low-coverage-refs``
+      - ``reference-low-coverage-refs``
 
     * - ``reference``
-      - ``unknown-refs``
+      - ``reference-to-local-file``
+
+    * - ``reference``
+      - ``reference-false-positive``
 
 .. _case_lic_text:
 
 License Texts
 -------------
 
-.. note::
-
-    Value of ``region_license_error_case`` :- ``text``
+All the `issue_types` with `is_license_text` as True.
 
 License Text Files
 ^^^^^^^^^^^^^^^^^^
 
 .. note::
 
-    Value of ``region_license_error_sub_case`` :- ``legal-lic-files``
+    Value of ``issue_type:classification_id`` :- ``text-legal-lic-files``
 
 - [More Than 90% License Words/Legal File]
 
@@ -115,7 +145,7 @@ License Texts in Files
 
 .. note::
 
-    Value of ``region_license_error_sub_case`` :- ``non-legal-lic-files``
+    Value of ``issue_type:classification_id`` :- ``text-non-legal-lic-files``
 
 - [with less than 90% License Words]
 
@@ -133,7 +163,7 @@ Full text doesn’t exist in matched_text
 
 .. note::
 
-    Value of ``region_license_error_sub_case`` :- ``lic-text-fragments``
+    Value of ``issue_type:classification_id`` :- ``text-lic-text-fragments``
 
 Where the Full text doesn’t exist in matched_text and we have to go to/fetch the source file which
 was scanned.
@@ -178,16 +208,14 @@ Clearly the actual license has a lot more text, which we can only get by going t
 License Notices
 ---------------
 
-.. note::
-
-    Value of ``region_license_error_case`` :- ``notice``
+All `issue_types` with their `is_license_notice` value as True.
 
 Exceptions, Rules with Keys having AND/OR
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. note::
 
-    Value of ``region_license_error_sub_case`` :- ``and-or-except-notice``
+    Value of ``issue_type:classification_id`` :- ``notice-and-or-with-notice``
 
 Where there are multiple "notice" license detections, not of the same license name, in a single
 file. These are often:
@@ -203,7 +231,7 @@ Single key notices
 
 .. note::
 
-    Value of ``region_license_error_sub_case`` :- ``single-key-notice``
+    Value of ``issue_type:classification_id`` :- ``notice-single-key-notice``
 
 This is the general case of License Notice cases, so if it's a license notice case and doesn't fall
 into the other license notice cases detailed below, then it belongs in this category.
@@ -216,16 +244,14 @@ crafted with fairly high confidence as almost always the entire text is present 
 License Tags
 ------------
 
-.. note::
-
-    Value of ``region_license_error_case`` :- ``tag``
+All `issue_types` with their `is_license_tag` value as True.
 
 Wrong License Tag Detections
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. note::
 
-    Value of ``region_license_error_sub_case`` :- ``tag-coverage``
+    Value of ``issue_type:classification_id`` :- ``tag-tag-coverage``
 
 Among all  “is_license_tag” = True cases, if match_coverage is less than 100, then it is a wrong
 license detection, and as tags are small and matched_text almost always contains the whole tag, a
@@ -239,7 +265,7 @@ Other common Structures of Tags
 
 .. note::
 
-    Value of ``region_license_error_sub_case`` :- ``other-tag-structures``
+    Value of ``issue_type:classification_id`` :- ``tag-other-tag-structures``
 
 There exists specific Tags, for group of projects, and these are mostly found in source code files,
 in the code itself.
@@ -263,13 +289,16 @@ Finding False Positives from License Tags Detections
 
 .. note::
 
-    Value of ``region_license_error_sub_case`` :- ``false-positives``
-    In this case, value of ``license_scan_analysis_result`` :- ``false-positives``
+    Value of ``issue_type:classification_id`` :- ``tag-false-positives``.
+    There also exists ``notice-false-positives`` and ``reference-false-positives``, similarly.
 
-Now, the “is_license_tag” is obviously always true for these, but the “match_coverage” is always 100
+    In these cases, value of ``issue_id`` :- ``false-positives``
+
+Now, the “is_license_tag” is mostly true for these, but the “match_coverage” is always 100
 in these cases. These are almost always wrongly detected by some handful of rules which has only the
-words gpl/lgpl or like that. So we further narrow our search down to only 1-word rules having
-is_license_tag = True.
+words gpl/lgpl or similar ones. So we further narrow our search down to only 1-3 word rules and
+and an additional criteria being if the license match occurs at line number more than a certain
+value, say 1000 or more.
 
 But this also includes a lot of correct detections, which are correctly detected.
 
@@ -285,27 +314,25 @@ The data needed to train that model, which we can get from two places:-
 
 We could make use of the classifier confidence scores to only look at ambigous cases only.
 
-Issue to be noted -
+.. note::
 
-In some cases some more lines above and below are needed to be added to these false_positive rules,
-as the ``matched_text`` can be too general for a false positive rule. This could require
-manual work.
+    In some cases some more lines above and below are needed to be added to these false_positive
+    rules, as the ``matched_text`` can be too general for a false positive rule. This could require
+    manual work.
 
 .. _case_lic_ref:
 
 License References
 ------------------
 
-.. note::
-
-    Value of ``region_license_error_case`` :- ``reference``
+All the `issue_types` with `is_license_reference` as True.
 
 Those with low match coverages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. note::
 
-    Value of ``region_license_error_sub_case`` :- ``low-coverage-refs``
+    Value of ``issue_type:classification_id`` :- ``reference-low-coverage-refs``
 
 This is the most common type of license detection errors, as there exist a lot of
 license references, and they can be added. These are also highly fixable problems, as almost always
@@ -321,7 +348,7 @@ unknown file license references
 
 .. note::
 
-    Value of ``region_license_error_sub_case`` :- ``unknown-refs``
+    Value of ``issue_type:classification_id`` :- ``reference-to-local-file``
 
 In many cases the license that is referred to is in another file, and only the filename is given,
 and not the license name. Example - "see license in file LICENSE.txt"
@@ -339,14 +366,14 @@ Introduction to a License Notice
 
 .. note::
 
-    Value of ``region_license_error_sub_case`` :- ``lead-in-refs``
+    Value of ``issue_type:classification_id`` :- ``reference-lead-in-or-unknown-refs``
 
 There are cases where the RULE name begins with ``lead-in_unknown_``, i.e. these are known lead-ins
 to licenses, so even if the exact license isn't detected, it can be reported that there is a
 license reference here.
 
-Here we could add to the Rulebase, the license reference, or as in the example case below, craft a
-new rule by joining the two existing ones
+Here we could add to the Scancode Rules, the license reference, or as in the example case below,
+craft a new rule by joining the two existing ones
 
 Example case:-
 
