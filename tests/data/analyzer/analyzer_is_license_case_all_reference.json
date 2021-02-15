@@ -1,0 +1,167 @@
+[
+    {
+      "key": "unknown",
+      "score": 16.0,
+      "name": "Unknown license detected but not recognized",
+      "short_name": "unknown",
+      "category": "Unstated License",
+      "is_exception": false,
+      "owner": "Unspecified",
+      "homepage_url": null,
+      "text_url": "",
+      "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:unknown",
+      "spdx_license_key": null,
+      "spdx_url": "",
+      "start_line": 14,
+      "end_line": 14,
+      "matched_rule": {
+        "identifier": "lead-in_unknown_11.RULE",
+        "license_expression": "unknown",
+        "licenses": [
+          "unknown"
+        ],
+        "is_license_text": false,
+        "is_license_notice": false,
+        "is_license_reference": true,
+        "is_license_tag": false,
+        "matcher": "2-aho",
+        "rule_length": 3,
+        "matched_length": 3,
+        "match_coverage": 100.0,
+        "rule_relevance": 16
+      },
+      "matched_text": "As a special exception to the GNU Lesser General Public License,"
+    },
+    {
+      "key": "lgpl-2.1-plus",
+      "score": 33.0,
+      "name": "GNU Lesser General Public License 2.1 or later",
+      "short_name": "LGPL 2.1 or later",
+      "category": "Copyleft Limited",
+      "is_exception": false,
+      "owner": "Free Software Foundation (FSF)",
+      "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
+      "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
+      "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:lgpl-2.1-plus",
+      "spdx_license_key": "LGPL-2.1-or-later",
+      "spdx_url": "https://spdx.org/licenses/LGPL-2.1-or-later",
+      "start_line": 21,
+      "end_line": 22,
+      "matched_rule": {
+        "identifier": "lgpl-2.1-plus_83_1.RULE",
+        "license_expression": "lgpl-2.1-plus",
+        "licenses": [
+          "lgpl-2.1-plus"
+        ],
+        "is_license_text": false,
+        "is_license_notice": false,
+        "is_license_reference": true,
+        "is_license_tag": false,
+        "matcher": "2-aho",
+        "rule_length": 6,
+        "matched_length": 6,
+        "match_coverage": 100.0,
+        "rule_relevance": 33
+      },
+      "matched_text": "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\nGNU Lesser General Public License for more details."
+    },
+    {
+      "key": "lgpl-2.1-plus",
+      "score": 33.0,
+      "name": "GNU Lesser General Public License 2.1 or later",
+      "short_name": "LGPL 2.1 or later",
+      "category": "Copyleft Limited",
+      "is_exception": false,
+      "owner": "Free Software Foundation (FSF)",
+      "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
+      "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
+      "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:lgpl-2.1-plus",
+      "spdx_license_key": "LGPL-2.1-or-later",
+      "spdx_url": "https://spdx.org/licenses/LGPL-2.1-or-later",
+      "start_line": 24,
+      "end_line": 25,
+      "matched_rule": {
+        "identifier": "lgpl-2.1-plus_83_1.RULE",
+        "license_expression": "lgpl-2.1-plus",
+        "licenses": [
+          "lgpl-2.1-plus"
+        ],
+        "is_license_text": false,
+        "is_license_notice": false,
+        "is_license_reference": true,
+        "is_license_tag": false,
+        "matcher": "2-aho",
+        "rule_length": 6,
+        "matched_length": 6,
+        "match_coverage": 100.0,
+        "rule_relevance": 33
+      },
+      "matched_text": "You should have received a copy of the GNU Lesser General Public\nLicense along with GNU Libltdl; see the file COPYING.LIB.  If not, a"
+    },
+    {
+      "key": "lgpl-2.0-plus",
+      "score": 38.0,
+      "name": "GNU Library General Public License 2.0 or later",
+      "short_name": "LGPL 2.0 or later",
+      "category": "Copyleft Limited",
+      "is_exception": false,
+      "owner": "Free Software Foundation (FSF)",
+      "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.0.html",
+      "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.0-standalone.html",
+      "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:lgpl-2.0-plus",
+      "spdx_license_key": "LGPL-2.0-or-later",
+      "spdx_url": "https://spdx.org/licenses/LGPL-2.0-or-later",
+      "start_line": 26,
+      "end_line": 26,
+      "matched_rule": {
+        "identifier": "lgpl_3.RULE",
+        "license_expression": "lgpl-2.0-plus",
+        "licenses": [
+          "lgpl-2.0-plus"
+        ],
+        "is_license_text": false,
+        "is_license_notice": false,
+        "is_license_reference": true,
+        "is_license_tag": false,
+        "matcher": "2-aho",
+        "rule_length": 7,
+        "matched_length": 7,
+        "match_coverage": 100.0,
+        "rule_relevance": 38
+      },
+      "matched_text": "copy can be downloaded from  http://www.gnu.org/licenses/lgpl.html,"
+    },
+    {
+      "key": "other-copyleft",
+      "score": 90.0,
+      "name": "Other Copyleft Licenses",
+      "short_name": "Other Copyleft Licenses",
+      "category": "Copyleft",
+      "is_exception": false,
+      "owner": "nexB",
+      "homepage_url": null,
+      "text_url": "",
+      "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:other-copyleft",
+      "spdx_license_key": null,
+      "spdx_url": "",
+      "start_line": 27,
+      "end_line": 28,
+      "matched_rule": {
+        "identifier": "other-copyleft_fsf_address_1.RULE",
+        "license_expression": "other-copyleft",
+        "licenses": [
+          "other-copyleft"
+        ],
+        "is_license_text": false,
+        "is_license_notice": false,
+        "is_license_reference": true,
+        "is_license_tag": false,
+        "matcher": "2-aho",
+        "rule_length": 14,
+        "matched_length": 14,
+        "match_coverage": 100.0,
+        "rule_relevance": 90.0
+      },
+      "matched_text": "or obtained by writing to the Free Software Foundation, Inc.,\n51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
+    }
+]

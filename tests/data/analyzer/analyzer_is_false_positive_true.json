@@ -1,0 +1,35 @@
+[
+        {
+          "key": "gpl-1.0",
+          "score": 100.0,
+          "name": "GNU General Public License 1.0",
+          "short_name": "GPL 1.0",
+          "category": "Copyleft",
+          "is_exception": false,
+          "owner": "Free Software Foundation (FSF)",
+          "homepage_url": "http://www.gnu.org/licenses/gpl-1.0.html",
+          "text_url": "http://www.gnu.org/licenses/gpl-1.0.txt",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-1.0",
+          "spdx_license_key": "GPL-1.0-only",
+          "spdx_url": "https://spdx.org/licenses/GPL-1.0-only",
+          "start_line": 125,
+          "end_line": 125,
+          "matched_rule": {
+            "identifier": "gpl-1.0_11.RULE",
+            "license_expression": "gpl-1.0",
+            "licenses": [
+              "gpl-1.0"
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": true,
+            "matcher": "2-aho",
+            "rule_length": 1,
+            "matched_length": 1,
+            "match_coverage": 100.0,
+            "rule_relevance": 100.0
+          },
+          "matched_text": "#define GPL1_0000\t0x00000000"
+        }
+]

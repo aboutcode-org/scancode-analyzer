@@ -1,0 +1,35 @@
+[
+  {
+      "key": "unknown",
+      "score": 27.0,
+      "name": "Unknown license detected but not recognized",
+      "short_name": "unknown",
+      "category": "Unstated License",
+      "is_exception": false,
+      "owner": "Unspecified",
+      "homepage_url": null,
+      "text_url": "",
+      "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:unknown",
+      "spdx_license_key": null,
+      "spdx_url": "",
+      "start_line": 19,
+      "end_line": 19,
+      "matched_rule": {
+        "identifier": "lead-in_unknown_77.RULE",
+        "license_expression": "unknown",
+        "licenses": [
+          "unknown"
+        ],
+        "is_license_text": false,
+        "is_license_notice": false,
+        "is_license_reference": true,
+        "is_license_tag": false,
+        "matcher": "2-aho",
+        "rule_length": 5,
+        "matched_length": 5,
+        "match_coverage": 100.0,
+        "rule_relevance": 27
+      },
+      "matched_text": " * This source file is copyrighted and licensed under the following terms:"
+  }
+]

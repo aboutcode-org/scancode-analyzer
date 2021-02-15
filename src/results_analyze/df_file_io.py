@@ -180,3 +180,18 @@ class DataFrameFileIO:
         json_df = pd.DataFrame({"path": mock_path, "json_content": json_dict})
 
         return json_df
+
+
+class DataIOJSON:
+
+    @staticmethod
+    def load_json(path):
+        with open(path, 'r') as file_handler:
+            listdata = json.load(file_handler)
+
+        return listdata
+
+    @staticmethod
+    def write_json(listdata, path):
+        with open(path, 'w') as file_handler:
+            json.dump(listdata, file_handler)

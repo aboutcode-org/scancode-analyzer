@@ -1,0 +1,134 @@
+[
+        {
+          "key": "lgpl-2.0-plus",
+          "score": 100.0,
+          "name": "GNU Library General Public License 2.0 or later",
+          "short_name": "LGPL 2.0 or later",
+          "category": "Copyleft Limited",
+          "is_exception": false,
+          "owner": "Free Software Foundation (FSF)",
+          "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.0.html",
+          "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.0-standalone.html",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:lgpl-2.0-plus",
+          "spdx_license_key": "LGPL-2.0-or-later",
+          "spdx_url": "https://spdx.org/licenses/LGPL-2.0-or-later",
+          "start_line": 7,
+          "end_line": 7,
+          "matched_rule": {
+            "identifier": "lgpl-2.0-plus_215.RULE",
+            "license_expression": "lgpl-2.0-plus",
+            "licenses": [
+              "lgpl-2.0-plus"
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 6,
+            "matched_length": 6,
+            "match_coverage": 100.0,
+            "rule_relevance": 100.0
+          },
+          "matched_text": "modify it under the terms of the GNU Library General Public License as"
+        },
+        {
+          "key": "gpl-2.0-plus",
+          "score": 69.23,
+          "name": "GNU General Public License 2.0 or later",
+          "short_name": "GPL 2.0 or later",
+          "category": "Copyleft",
+          "is_exception": false,
+          "owner": "Free Software Foundation (FSF)",
+          "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
+          "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0-plus",
+          "spdx_license_key": "GPL-2.0-or-later",
+          "spdx_url": "https://spdx.org/licenses/GPL-2.0-or-later",
+          "start_line": 7,
+          "end_line": 14,
+          "matched_rule": {
+            "identifier": "gpl-2.0-plus_283.RULE",
+            "license_expression": "gpl-2.0-plus",
+            "licenses": [
+              "gpl-2.0-plus"
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "3-seq",
+            "rule_length": 78,
+            "matched_length": 54,
+            "match_coverage": 69.23,
+            "rule_relevance": 100
+          },
+          "matched_text": "modify it under the terms of the GNU Library General Public License as\npublished by the Free Software Foundation; either version 2 of the\nLicense, or (at your option) any later version.\n\nThe GNU C Library is distributed in the hope that it will be useful,\nbut WITHOUT ANY WARRANTY; without even the implied warranty of\nMERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU\nLibrary General Public License for more details."
+        },
+        {
+          "key": "lgpl-2.0-plus",
+          "score": 9.59,
+          "name": "GNU Library General Public License 2.0 or later",
+          "short_name": "LGPL 2.0 or later",
+          "category": "Copyleft Limited",
+          "is_exception": false,
+          "owner": "Free Software Foundation (FSF)",
+          "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.0.html",
+          "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.0-standalone.html",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:lgpl-2.0-plus",
+          "spdx_license_key": "LGPL-2.0-or-later",
+          "spdx_url": "https://spdx.org/licenses/LGPL-2.0-or-later",
+          "start_line": 16,
+          "end_line": 17,
+          "matched_rule": {
+            "identifier": "lgpl-2.0-plus_20.RULE",
+            "license_expression": "lgpl-2.0-plus",
+            "licenses": [
+              "lgpl-2.0-plus"
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "3-seq",
+            "rule_length": 73,
+            "matched_length": 7,
+            "match_coverage": 9.59,
+            "rule_relevance": 100
+          },
+          "matched_text": "You should have received a copy of the GNU Library General Public\nLicense along with the GNU C Library; see the file COPYING.LIB.  If"
+        },
+        {
+          "key": "other-copyleft",
+          "score": 90.0,
+          "name": "Other Copyleft Licenses",
+          "short_name": "Other Copyleft Licenses",
+          "category": "Copyleft",
+          "is_exception": false,
+          "owner": "nexB",
+          "homepage_url": null,
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:other-copyleft",
+          "spdx_license_key": null,
+          "spdx_url": "",
+          "start_line": 18,
+          "end_line": 19,
+          "matched_rule": {
+            "identifier": "other-copyleft_fsf_address_2.RULE",
+            "license_expression": "other-copyleft",
+            "licenses": [
+              "other-copyleft"
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 11,
+            "matched_length": 11,
+            "match_coverage": 100.0,
+            "rule_relevance": 90.0
+          },
+          "matched_text": "not, write to the Free Software Foundation, Inc., 675 Mass Ave,\nCambridge, MA 02139, USA.  */"
+        }
+]

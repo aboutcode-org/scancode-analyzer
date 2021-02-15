@@ -1,0 +1,101 @@
+[
+        {
+          "key": "gpl-3.0-plus",
+          "score": 96.46,
+          "name": "GNU General Public License 3.0 or later",
+          "short_name": "GPL 3.0 or later",
+          "category": "Copyleft",
+          "is_exception": false,
+          "owner": "Free Software Foundation (FSF)",
+          "homepage_url": "http://www.gnu.org/licenses/gpl-3.0-standalone.html",
+          "text_url": "http://www.gnu.org/licenses/gpl-3.0-standalone.html",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-3.0-plus",
+          "spdx_license_key": "GPL-3.0-or-later",
+          "spdx_url": "https://spdx.org/licenses/GPL-3.0-or-later",
+          "start_line": 16,
+          "end_line": 28,
+          "matched_rule": {
+            "identifier": "gpl-3.0-plus_103.RULE",
+            "license_expression": "gpl-3.0-plus",
+            "licenses": [
+              "gpl-3.0-plus"
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "3-seq",
+            "rule_length": 113,
+            "matched_length": 109,
+            "match_coverage": 96.46,
+            "rule_relevance": 100
+          },
+          "matched_text": "    This program is free software; you can redistribute it and/or modify\n    it under the terms of the GNU General Public License as published by\n    the Free Software Foundation; either version 2 of the License, or\n    (at your option) any later version.\n\n    This software is distributed in the hope that it will be useful,\n    but WITHOUT ANY WARRANTY; without even the implied warranty of\n    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n    GNU General Public License for more details.\n\n    You should have received a copy of the GNU General Public License\n    along with Atmel wireless lan drivers; if not, write to the Free Software\n    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA"
+        },
+        {
+          "key": "gpl-3.0-plus",
+          "score": 96.46,
+          "name": "GNU General Public License 3.0 or later",
+          "short_name": "GPL 3.0 or later",
+          "category": "Copyleft",
+          "is_exception": false,
+          "owner": "Free Software Foundation (FSF)",
+          "homepage_url": "http://www.gnu.org/licenses/gpl-3.0-standalone.html",
+          "text_url": "http://www.gnu.org/licenses/gpl-3.0-standalone.html",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-3.0-plus",
+          "spdx_license_key": "GPL-3.0-or-later",
+          "spdx_url": "https://spdx.org/licenses/GPL-3.0-or-later",
+          "start_line": 7,
+          "end_line": 19,
+          "matched_rule": {
+            "identifier": "gpl-3.0-plus_103.RULE",
+            "license_expression": "gpl-3.0-plus",
+            "licenses": [
+              "gpl-3.0-plus"
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "3-seq",
+            "rule_length": 113,
+            "matched_length": 109,
+            "match_coverage": 96.46,
+            "rule_relevance": 100
+          },
+          "matched_text": "    This program is free software; you can redistribute it and/or modify\n    it under the terms of the GNU General Public License as published by\n    the Free Software Foundation; either version 2 of the License, or\n    (at your option) any later version.\n\n    This software is distributed in the hope that it will be useful,\n    but WITHOUT ANY WARRANTY; without even the implied warranty of\n    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n    GNU General Public License for more details.\n\n    You should have received a copy of the GNU General Public License\n    along with Atmel wireless lan drivers; if not, write to the Free Software\n    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA"
+        },
+        {
+          "key": "gpl-2.0",
+          "score": 95.0,
+          "name": "GNU General Public License 2.0",
+          "short_name": "GPL 2.0",
+          "category": "Copyleft",
+          "is_exception": false,
+          "owner": "Free Software Foundation (FSF)",
+          "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
+          "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0",
+          "spdx_license_key": "GPL-2.0-only",
+          "spdx_url": "https://spdx.org/licenses/GPL-2.0-only",
+          "start_line": 4,
+          "end_line": 4,
+          "matched_rule": {
+            "identifier": "gpl-2.0_183.RULE",
+            "license_expression": "gpl-2.0",
+            "licenses": [
+              "gpl-2.0"
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 3,
+            "matched_length": 3,
+            "match_coverage": 100.0,
+            "rule_relevance": 95.0
+          },
+          "matched_text": "# Licensed under the GPL version 2"
+        }
+]

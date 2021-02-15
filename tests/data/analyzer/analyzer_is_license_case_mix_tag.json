@@ -1,0 +1,68 @@
+[
+        {
+          "key": "unknown",
+          "score": 11.0,
+          "name": "Unknown license detected but not recognized",
+          "short_name": "unknown",
+          "category": "Unstated License",
+          "is_exception": false,
+          "owner": "Unspecified",
+          "homepage_url": null,
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:unknown",
+          "spdx_license_key": null,
+          "spdx_url": "",
+          "start_line": 257,
+          "end_line": 257,
+          "matched_rule": {
+            "identifier": "lead-in_unknown_28.RULE",
+            "license_expression": "unknown",
+            "licenses": [
+              "unknown"
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 2,
+            "matched_length": 2,
+            "match_coverage": 100.0,
+            "rule_relevance": 11
+          },
+          "matched_text": "\t(C) Copyright 2010-2011 Andy Green <andy@warmcat.com> licensed under LGPL2.1"
+        },
+        {
+          "key": "lgpl-2.0",
+          "score": 100.0,
+          "name": "GNU Library General Public License 2.0",
+          "short_name": "LGPL 2.0",
+          "category": "Copyleft Limited",
+          "is_exception": false,
+          "owner": "Free Software Foundation (FSF)",
+          "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.0.html",
+          "text_url": "http://www.gnu.org/licenses/lgpl-2.0.html",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:lgpl-2.0",
+          "spdx_license_key": "LGPL-2.0-only",
+          "spdx_url": "https://spdx.org/licenses/LGPL-2.0-only",
+          "start_line": 257,
+          "end_line": 257,
+          "matched_rule": {
+            "identifier": "lgpl-2.0_33.RULE",
+            "license_expression": "lgpl-2.0",
+            "licenses": [
+              "lgpl-2.0"
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": true,
+            "matcher": "2-aho",
+            "rule_length": 1,
+            "matched_length": 1,
+            "match_coverage": 100.0,
+            "rule_relevance": 100.0
+          },
+          "matched_text": "\t(C) Copyright 2010-2011 Andy Green <andy@warmcat.com> licensed under LGPL2.1"
+        }
+]

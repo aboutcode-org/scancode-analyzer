@@ -1,0 +1,35 @@
+[
+  {
+    "key": "gpl-1.0-plus",
+    "score": 100.0,
+    "name": "GNU General Public License 1.0 or later",
+    "short_name": "GPL 1.0 or later",
+    "category": "Copyleft",
+    "is_exception": false,
+    "owner": "Free Software Foundation (FSF)",
+    "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html",
+    "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-1.0-standalone.html",
+    "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-1.0-plus",
+    "spdx_license_key": "GPL-1.0-or-later",
+    "spdx_url": "https://spdx.org/licenses/GPL-1.0-or-later",
+    "start_line": 8818,
+    "end_line": 8820,
+    "matched_rule": {
+      "identifier": "gpl_234.RULE",
+      "license_expression": "gpl-1.0-plus",
+      "licenses": [
+        "gpl-1.0-plus"
+      ],
+      "is_license_text": false,
+      "is_license_notice": true,
+      "is_license_reference": false,
+      "is_license_tag": false,
+      "matcher": "2-aho",
+      "rule_length": 3,
+      "matched_length": 3,
+      "match_coverage": 100.0,
+      "rule_relevance": 100.0
+    },
+    "matched_text": "- target audience: general public\n\nLicense Changes"
+  }
+]

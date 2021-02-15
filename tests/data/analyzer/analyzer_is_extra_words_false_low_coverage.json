@@ -1,0 +1,35 @@
+[
+	{
+	    "key": "gpl-2.0",
+	    "score": 32.35,
+	    "name": "GNU General Public License 2.0",
+	    "short_name": "GPL 2.0",
+	    "category": "Copyleft",
+	    "is_exception": false,
+	    "owner": "Free Software Foundation (FSF)",
+	    "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
+	    "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
+	    "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0",
+	    "spdx_license_key": "GPL-2.0-only",
+	    "spdx_url": "https://spdx.org/licenses/GPL-2.0-only",
+	    "start_line": 6,
+	    "end_line": 7,
+	    "matched_rule": {
+	      "identifier": "gpl-2.0_394.RULE",
+	      "license_expression": "gpl-2.0",
+	      "licenses": [
+	        "gpl-2.0"
+	      ],
+	      "is_license_text": false,
+	      "is_license_notice": true,
+	      "is_license_reference": false,
+	      "is_license_tag": false,
+	      "matcher": "3-seq",
+	      "rule_length": 34,
+	      "matched_length": 11,
+	      "match_coverage": 32.35,
+	      "rule_relevance": 100
+	    },
+	    "matched_text": "/* This program is copyright (c) 2009 by Roderick W. Smith. It is distributed\n  under the terms of the GNU GPL version 2, as detailed in the COPYING file. */"
+	}
+]

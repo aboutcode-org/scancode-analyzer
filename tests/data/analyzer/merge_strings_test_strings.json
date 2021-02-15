@@ -1,0 +1,8 @@
+{
+  "merge_with_overlap_string_1": "When you publish or redistribute any data created with ScanCode or any ScanCode derivative work",
+  "merge_with_overlap_string_2": "any ScanCode derivative work, you must accompany this data with the following acknowledgment",
+  "merge_with_overlap": "When you publish or redistribute any data created with ScanCode or any ScanCode derivative work, you must accompany this data with the following acknowledgment",
+  "merge_without_overlap_string_1":  "When you publish or redistribute any data created with ScanCode or any ScanCode derivative work,",
+  "merge_without_overlap_string_2": "you must accompany this data with the following acknowledgment",
+  "merge_without_overlap": "When you publish or redistribute any data created with ScanCode or any ScanCode derivative work,\nyou must accompany this data with the following acknowledgment"
+}

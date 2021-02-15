@@ -1,0 +1,35 @@
+[
+  {
+    "key": "free-unknown",
+    "score": 100.0,
+    "name": "Free unknown license detected but not recognized",
+    "short_name": "Free unknown",
+    "category": "Unstated License",
+    "is_exception": false,
+    "owner": "Unspecified",
+    "homepage_url": null,
+    "text_url": "",
+    "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:free-unknown",
+    "spdx_license_key": null,
+    "spdx_url": "",
+    "start_line": 349,
+    "end_line": 350,
+    "matched_rule": {
+      "identifier": "free-unknown_1.RULE",
+      "license_expression": "free-unknown",
+      "licenses": [
+        "free-unknown"
+      ],
+      "is_license_text": false,
+      "is_license_notice": true,
+      "is_license_reference": false,
+      "is_license_tag": false,
+      "matcher": "2-aho",
+      "rule_length": 23,
+      "matched_length": 23,
+      "match_coverage": 100.0,
+      "rule_relevance": 100
+    },
+    "matched_text": "This is free software; see the source for copying conditions.  There is NO \\\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. \\"
+  }
+]
