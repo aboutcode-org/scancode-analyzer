@@ -35,17 +35,15 @@ API and Output Formats
 
    api-and-outputs/index
 
-Improving Scancode
-------------------
+Using this Analysis
+-------------------
 
 .. toctree::
    :maxdepth: 3
 
-   improving-scancode/index
+   analysis-use-case/index
 
 Indices and tables
 ==================
 
-* :ref:`genindex`
-* :ref:`modindex`
 * :ref:`search`
