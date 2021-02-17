@@ -8,6 +8,7 @@
 #
 
 import attr
+from collections import Counter
 
 # All values of match_coverage less than this value are taken as
 # `near-perfect-match-coverage` cases
@@ -609,19 +610,47 @@ def get_start_end_line(group_of_license_matches):
     return start_line, end_line
 
 
-def predict_license_expression(group_of_license_matches):
+def predict_license_expression(license_matches):
     """
-    Return the License Key of the match with the highest "matched_length".
-    This cannot always predict the correct license key, but is a reasonable prediction
-    which comes true in most cases.
+    Return the best-effort predicted license expression given a list of LicenseMatch
+    objects.
     """
-    # TODO: Aggregate all keys, and key with most occurrences could be the prediction
-    max_match_length = max(
-        [match["matched_rule"]["matched_length"] for match in group_of_license_matches]
+    unknown_expressions = ['unknown', 'warranty-disclaimer']
+    
+    license_expressions = (
+        match["matched_rule"]["license_expression"] for match in license_matches
     )
+    known_expressions = [
+        le for le in license_expressions if le not in unknown_expressions
+    ]
+    if not known_expressions:
+        return "unknown"
+    
+    license_expressions_counts = dict(Counter(known_expressions).most_common())
+    highest_count = list(license_expressions_counts.values())[0]
+    
+    top_license_expressions = [
+        expression
+        for expression, count in license_expressions_counts.items()
+        if count == highest_count
+    ]
+
+    if len(top_license_expressions) == 1:
+        return top_license_expressions[0]
+
+    top_license_matches = [
+        match
+        for match in license_matches
+        if match["matched_rule"]["license_expression"] in top_license_expressions
+    ]
+
+    max_match_length = max([
+        match["matched_rule"]["matched_length"]
+        for match in top_license_matches
+    ])
     license_expression_prediction = next(
-        match["key"]
-        for match in group_of_license_matches
+        match["matched_rule"]["license_expression"]
+        for match in top_license_matches
         if match["matched_rule"]["matched_length"] is max_match_length
     )
     return license_expression_prediction
