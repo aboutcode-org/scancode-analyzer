@@ -28,7 +28,7 @@ jobs:
         run:  cd docs && pip install -r requirements.txt	
 
       - name: Check Sphinx Documentation build minimally
-        run: sphinx-build -E source build
+        run: sphinx-build -E ./source ./build
 
       - name: Check for documentation style errors
         run: ./scripts/doc8_style_check.sh

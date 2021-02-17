@@ -98,20 +98,21 @@ this is efficient enough, and passes through the list of matches once.
 File-regions with Incorrect Scans
 ---------------------------------
 
-The attribute ``license_scan_analysis_result`` in the analysis results has information on if the
+The attribute ``issue_id`` in the analysis results has information on if the
 file-region has any license detection issue in it, bases on coverage values, presence of extra words
 or false positive tags.
 
 .. note::
 
-    The 6 possible values of ``license_scan_analysis_result`` are:
+    The 5 possible values of ``issue_id`` are:
 
-    1. ``correct-license-detection``
-    2. ``imperfect-match-coverage``
-    3. ``near-perfect-match-coverage``
-    4. ``extra-words``
-    5. ``false-positive``
-    6. ``unknown-match``
+    1. ``imperfect-match-coverage``
+    2. ``near-perfect-match-coverage``
+    3. ``extra-words``
+    4. ``false-positive``
+    5. ``unknown-match``
+
+    If we do not have an issue, it is a correct license detection.
 
 Scancode detects most licenses accurately, so our focus is only on the parts where the detection has
 issues, and so primarily in the first step we separate this from the Correct Scans.
@@ -126,7 +127,7 @@ So in ``Step 1``::
     are wrong detections, and also detections where all the matches have a perfect
     ``match_coverage``, i.e. 100.
 
-These fall into the first category::
+These fall into the first category:
 
     1. ``correct-license-detection``
 
@@ -151,7 +152,7 @@ There is also another case where ``score != matched_coverage * rule_relevance``,
 some extra words, i.e. the entire rule was matched, but there were some extra words which caused the
 decrease in score.
 
-So the 3 category of issues as classified in this step are::
+So the 3 category of issues as classified in this step are:
 
     2. ``imperfect-match-coverage``
     3. ``near-perfect-match-coverage``
@@ -165,12 +166,12 @@ less than a threshold (i.e. say less than 4 words) and the start-line of the mat
 be more than a threshold (i.e. say more than 1000) for it to be considered a false positive.
 
 This is the ``Step 3`` and here a NLP sentence Classifier could be used to improve accuracy.
-The issue class is called::
+The issue class is called:
 
     5. ``false-positives``
 
 Even if all the matches has perfect `match_coverage`, if there are `unknown` license
-matches there, there's likely a license detection issue. This issue is a::
+matches there, there's likely a license detection issue. This issue is a:
 
     6. ``unknown-match``
 
@@ -212,8 +213,6 @@ I.e. the policy is::
     “matched_rule_identifier” and “match_coverage” across these multiple files, we keep only
     one file among them and discard the others.
 
-This is performed in the summary plugin, where all the unique license detection issues are
-reported in the summary together, each with a list of their occurrences.
 
 For example, in `scancode-toolkit#1920 <https://github.com/nexB/scancode-toolkit/issues/1920>`_, socat-2.0.0 has
 multiple (6) files with each file having the same 3 matched rules and match_coverage sets, i.e. -
@@ -226,5 +225,5 @@ So, we need to keep only one of these files, as the others have the same license
 
 .. note::
 
-    This isn't followed in the ``scancode`` ``post-scan plugin`` as the processing is per-file,
-    and this is a codebase-level operation.
+    This is performed in the summary plugin, where all the unique license detection issues are
+    reported in the summary together, each with a list of their occurrences.

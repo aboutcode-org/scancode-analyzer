@@ -1,12 +1,11 @@
 Quickstart - Scancode Plugin
 ----------------------------
 
-``scancode-results-analyzer`` can be installed as a scancode post-scan plugin,
-using ``pip``.
+``scancode-results-analyzer`` can be installed as a scancode post-scan plugin.
 
 1. Clone the Repository and navigate to the ``scancode-results-analyzer`` directory.
 
-2. Configure::
+2. Configure (Installs the requirements, and scancode-toolkit with the plugin)::
 
     ./configure
 
