@@ -23,11 +23,51 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 import os
-import json
 import pandas as pd
 
-# 'table' (A bit slower, On-Disk Search/Query Enabled) or 'fixed' (Fast, No On-Disk Search/Query)
-HDF5_STORE_FORMAT = 'table'
+from results_analyze.df_file_io import DataFrameFileIO
+
+
+class TestData:
+
+    def __init__(self):
+
+        self.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+        self.test_data_json_dir = os.path.join(os.path.dirname(__file__), 'data/results-test')
+        self.mock_metadata_filename = 'sample_metadata.json'
+        self.mock_metadata_filepath = os.path.join(self.test_data_dir, self.mock_metadata_filename)
+        self.json_dict_metadata = DataFrameFileIO.import_data_from_json(self.mock_metadata_filepath)
+
+        self.rule_scans = self.get_scans_from_folder("rule")
+        self.lic_scans = self.get_scans_from_folder("lic")
+
+    def get_scans_from_folder(self, folder_name):
+
+        data_path = os.path.join(self.test_data_json_dir, folder_name)
+
+        files_all = []
+
+        for (dirpath, dirnames, filenames) in os.walk(data_path):
+            filenames.sort()
+            files_all.extend(filenames)
+
+        json_dict_metadata = DataFrameFileIO.import_data_from_json(self.mock_metadata_filepath)
+        mock_path = pd.Series(["mock/data/-/multiple-packages/random/1.0.0/tool/scancode/3.2.2.json"])
+
+        packages_all = []
+
+        for file in files_all:
+            json_filepath = os.path.join(data_path, file)
+            json_dict_content = DataFrameFileIO.import_data_from_json(json_filepath)
+
+            json_dict = pd.Series([{"_metadata": json_dict_metadata, "content": json_dict_content}])
+            json_df = pd.DataFrame({"path": mock_path, "json_content": json_dict})
+
+            packages_all.append(json_df)
+
+        pkg_dataframe = pd.concat(packages_all)
+
+        return pkg_dataframe
 
 
 class DataFrameFileIO:
@@ -180,18 +220,3 @@ class DataFrameFileIO:
         json_df = pd.DataFrame({"path": mock_path, "json_content": json_dict})
 
         return json_df
-
-
-class DataIOJSON:
-
-    @staticmethod
-    def load_json(path):
-        with open(path, 'r') as file_handler:
-            listdata = json.load(file_handler)
-
-        return listdata
-
-    @staticmethod
-    def write_json(listdata, path):
-        with open(path, 'w') as file_handler:
-            json.dump(listdata, file_handler)

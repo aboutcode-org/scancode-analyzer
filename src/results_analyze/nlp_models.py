@@ -33,7 +33,7 @@ import numpy as np
 import torch
 import os
 
-from results_analyze.rules_analyze import LicenseRulesInfo
+from results_analyze.load_scancode_data import LicenseRulesInfo
 
 # Device has a NVIDIA GPU with CUDA Compute Score > 2.
 HAS_CUDA_GPU = True
