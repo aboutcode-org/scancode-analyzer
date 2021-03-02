@@ -1,7 +1,11 @@
 [
         {
-          "start_line": 5,
-          "end_line": 10,
+          "file_regions": [
+            {
+              "start_line": 5,
+              "end_line": 10
+            }
+          ],
           "original_licenses": [
             {
               "key": "unknown",
@@ -121,8 +125,12 @@
           }
         },
         {
-          "start_line": 126,
-          "end_line": 131,
+          "file_regions": [
+            {
+              "start_line": 126,
+              "end_line": 131
+            }
+          ],
           "original_licenses": [
             {
               "key": "unknown",

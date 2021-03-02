@@ -56,6 +56,9 @@ class ResultsAnalyzer(PostScanPlugin):
             "required attributes are missing. " + MISSING_OPTIONS_MESSAGE,
         )
 
+        all_license_issues = []
+        count_has_license = 0
+
         for resource in codebase.walk():
             if not resource.is_file:
                 continue
@@ -75,13 +78,17 @@ class ResultsAnalyzer(PostScanPlugin):
                 codebase.errors.append(msg)
                 break
 
+            count_has_license += 1
             try:
-                ars = analyzer.LicenseDetectionIssue.from_license_matches(
+                ars = list(analyzer.LicenseDetectionIssue.from_license_matches(
                     license_matches=license_matches,
                     is_license_text=getattr(resource, "is_license_text", False),
                     is_legal=getattr(resource, "is_legal", False),
-                )
-                resource.license_detection_issues = [attr.asdict(ar) for ar in ars]
+                    path=getattr(resource, "path"),
+                ))
+                all_license_issues.extend(ars)
+                resource.license_detection_issues = [ar.to_dict() for ar in ars]
+
             except Exception as e:
                 msg = f"Cannot analyze scan for license scan errors: {str(e)}"
                 resource.scan_errors.append(msg)

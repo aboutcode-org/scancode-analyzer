@@ -146,8 +146,12 @@
       "is_license_text": false,
       "license_detection_issues": [
         {
-          "start_line": 3,
-          "end_line": 3,
+          "file_regions": [
+            {
+              "start_line": 3,
+              "end_line": 3
+            }
+          ],
           "issue_id": "imperfect-match-coverage",
           "issue_description": "The license detection is inconclusive with high confidence, because only a small part of the rule text is matched.",
           "issue_type": {
@@ -582,8 +586,12 @@
       "is_license_text": false,
       "license_detection_issues": [
         {
-          "start_line": 14,
-          "end_line": 34,
+          "file_regions": [
+            {
+              "start_line": 14,
+              "end_line": 34
+            }
+          ],
           "issue_id": "imperfect-match-coverage",
           "issue_description": "The license detection is inconclusive with high confidence, because only a small part of the rule text is matched.",
           "issue_type": {
@@ -835,8 +843,12 @@
           ]
         },
         {
-          "start_line": 54,
-          "end_line": 62,
+          "file_regions": [
+            {
+              "start_line": 54,
+              "end_line": 62
+            }
+          ],
           "issue_id": "extra-words",
           "issue_description": "The license detection is conclusive with high confidence because all the rule text is matched, but some unknown extra words have been inserted in the text.",
           "issue_type": {

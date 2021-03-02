@@ -65,6 +65,18 @@ class SuggestedLicenseMatch:
 
 
 @attr.s
+class FileRegion:
+    """
+    A file has one or more file-regions, which are separate regions of the file
+    containing some license information (separated by code/text/others in between),
+    and identified by a start line and an end line.
+    """
+    path = attr.ib(type=str)
+    start_line = attr.ib(type=int)
+    end_line = attr.ib(type=int)
+
+
+@attr.s
 class LicenseDetectionIssue:
     """
     An LicenseDetectionIssue object corresponds to a license detection issue for a
@@ -215,14 +227,11 @@ class LicenseDetectionIssue:
             is_license_reference=True,
             classification_id="reference-false-positive",
             classification_description=(
-                "A piece of code/text is incorrectly detected as a license"
+                "A piece of code/text is incorrectly detected as a license."
             ),
             analysis_confidence="medium",
         ),
     }
-
-    start_line = attr.ib(type=int)
-    end_line = attr.ib(type=int)
 
     issue_id = attr.ib(type=str, validator=attr.validators.in_(ISSUE_CHOICES))
     issue_description = attr.ib(type=str)
@@ -232,8 +241,31 @@ class LicenseDetectionIssue:
     suggested_license = attr.ib()
     original_licenses = attr.ib(factory=list)
 
+    file_regions = attr.ib(default=attr.Factory(list))
+    
+    def to_dict(self):
+        return attr.asdict(
+            self,
+            filter=lambda attr, value: attr.name
+            not in ["path"],
+        )
+
+    @property
+    def identifier(self):
+        """
+        This is an identifier for a issue, based on it's underlying license matches.
+        """
+        data = []
+        for license in self.original_licenses:
+            rule_id = license["matched_rule"]["identifier"]
+            match_coverage = license["matched_rule"]["match_coverage"]
+            identifier = (rule_id, match_coverage,)
+            data.append(identifier)
+
+        return tuple(data)
+
     @staticmethod
-    def format_analysis_result(issue_id, issue_type, grouped_matches):
+    def format_analysis_result(issue_id, issue_type, grouped_matches, path):
         """
         Format the analysis result to generate an LicenseDetectionIssue object for
         this license detection issue.
@@ -244,6 +276,8 @@ class LicenseDetectionIssue:
             One of ISSUE_TYPES_BY_CLASSIFICATION.
         :param grouped_matches: list
             All matches for a license detection issue (for a file-region).
+        :param path: str
+            Path of the resource where the license issue exists
         """
         # Don't generate LicenseDetectionIssue objects for correct License Detections.
         if issue_id == "correct-license-detection":
@@ -255,8 +289,6 @@ class LicenseDetectionIssue:
         )
 
         license_detection_issue = LicenseDetectionIssue(
-            start_line=start_line,
-            end_line=end_line,
             issue_id=issue_id,
             issue_description=LicenseDetectionIssue.ISSUE_CHOICES[issue_id],
             issue_type=LicenseDetectionIssue.ISSUE_TYPES_BY_CLASSIFICATION[issue_type],
@@ -264,6 +296,11 @@ class LicenseDetectionIssue:
                 license_expression=license_expression, matched_text=matched_text
             ),
             original_licenses=grouped_matches,
+            file_regions=[FileRegion(
+                path=path,
+                start_line=start_line,
+                end_line=end_line,
+            )],
         )
 
         modify_analysis_confidence(license_detection_issue)
@@ -272,7 +309,7 @@ class LicenseDetectionIssue:
 
     @staticmethod
     def from_license_matches(
-        license_matches, is_license_text=False, is_legal=False
+        license_matches, path=None, is_license_text=False, is_legal=False,
     ):
         """
         Group `license_matches` into file-regions and for each license detection issue,
@@ -281,6 +318,8 @@ class LicenseDetectionIssue:
 
         :param license_matches: list
             A list of all matches in a file.
+        :param path: str
+            Path of the resource where the license issue exists
         :param is_license_text: bool
             True if most of a file is license text.
         :param is_legal: bool
@@ -291,7 +330,7 @@ class LicenseDetectionIssue:
 
         groups_of_license_matches = group_matches(license_matches)
         return analyze_matches(
-            groups_of_license_matches, is_license_text, is_legal
+            groups_of_license_matches, path, is_license_text, is_legal
         )
 
 
@@ -798,12 +837,14 @@ def group_matches(license_matches, lines_threshold=LINES_THRESHOLD):
     yield group_of_license_matches
 
 
-def analyze_matches(all_groups_of_license_matches, is_license_text, is_legal):
+def analyze_matches(all_groups_of_license_matches, path, is_license_text, is_legal):
     """
     Analyze all license detection issues in a file, for license detection issues.
 
     :param all_groups_of_license_matches: list generator
         A list of groups, where each group is a list of matches (in a file-region).
+    :param path: str
+        Path of the resource where the license issue exists
     :param is_license_text: bool
     :param is_legal: bool
     :returns: list generator
@@ -817,7 +858,7 @@ def analyze_matches(all_groups_of_license_matches, is_license_text, is_legal):
             is_legal=is_legal,
         )
         license_detection_issue = LicenseDetectionIssue.format_analysis_result(
-            issue_id, issue_type, group_of_license_matches
+            issue_id, issue_type, group_of_license_matches, path
         )
         if license_detection_issue:
             yield license_detection_issue

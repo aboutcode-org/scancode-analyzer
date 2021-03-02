@@ -163,8 +163,12 @@
       "is_key_file": false,
       "license_detection_issues": [
         {
-          "start_line": 9,
-          "end_line": 28,
+          "file_regions": [
+            {
+              "start_line": 9,
+              "end_line": 28
+            }
+          ],
           "issue_id": "extra-words",
           "issue_description": "The license detection is conclusive with high confidence because all the rule text is matched, but some unknown extra words have been inserted in the text.",
           "issue_type": {
@@ -560,8 +564,12 @@
       "is_key_file": false,
       "license_detection_issues": [
         {
-          "start_line": 11,
-          "end_line": 34,
+          "file_regions": [
+            {
+              "start_line": 11,
+              "end_line": 34
+            }
+          ],
           "issue_id": "near-perfect-match-coverage",
           "issue_description": "The license detection is conclusive with a medium confidence because because most, but not all of the rule text is matched.",
           "issue_type": {
