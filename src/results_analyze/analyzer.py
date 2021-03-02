@@ -393,6 +393,28 @@ def is_false_positive(license_matches):
     )
 
 
+def has_unknown_matches(license_matches):
+    """
+    Return True if any on the license matches has a license match with an
+    `unknown` rule identifier.
+
+    :param license_matches: list
+        List of license matches in a file-region.
+    """
+    match_rule_identifiers = (
+        match["matched_rule"]["identifier"] for match in license_matches
+    )
+    match_rule_license_expressions = (
+        match["matched_rule"]["license_expression"] for match in license_matches
+    )
+    return any(
+        "unknown" in identifier for identifier in match_rule_identifiers
+    ) or any(
+        "unknown" in license_expression
+        for license_expression in match_rule_license_expressions
+    )
+
+
 def get_analysis_for_region(license_matches):
     """
     Analyse license matches from a file-region, and determine if the license detection
@@ -424,6 +446,11 @@ def get_analysis_for_region(license_matches):
     elif is_extra_words(license_matches):
         return "extra-words"
 
+    # Case where even though the matches have perfect coverage, they have
+    # matches with `unknown` rule identifiers
+    elif has_unknown_matches(license_matches):
+        return "unknown-match"
+    
     # Case where the match is a false positive
     elif is_false_positive(license_matches):
         if not USE_FALSE_POSITIVE_BERT_MODEL:
@@ -511,6 +538,8 @@ def get_license_notice_issue_type(license_matches, issue_id):
 
     if issue_id == "false-positive":
         return "notice-false-positive"
+    elif issue_id == "unknown-match":
+        return "notice-has-unknown-match"
     elif all(
         any(
             license_expression_connector in license_expression
@@ -552,7 +581,7 @@ def get_license_reference_issue_type(license_matches, issue_id):
         return "reference-false-positive"
     elif any("lead" in identifier for identifier in match_rule_identifiers) or any(
         "unknown" in identifier for identifier in match_rule_identifiers
-    ):
+    ) or issue_id == "unknown-match":
         return "reference-lead-in-or-unknown-refs"
     else:
         return "reference-low-coverage-refs"
@@ -764,7 +793,11 @@ def modify_analysis_confidence(license_detection_issue):
         or license_detection_issue.issue_id == "near-perfect-match-coverage"
     ):
         license_detection_issue.issue_type.analysis_confidence = "high"
-
+    elif (
+        license_detection_issue.issue_id == "false-positive"
+        or license_detection_issue.issue_id == "unknown-match"
+    ):
+        license_detection_issue.issue_type.analysis_confidence = "low"
 
 def group_matches(license_matches, lines_threshold=LINES_THRESHOLD):
     """

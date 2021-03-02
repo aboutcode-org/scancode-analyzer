@@ -145,6 +145,22 @@ class TestAnalyzer(FileBasedTesting):
         license_matches = DataIOJSON.load_json(test_file)
 
         assert not analyzer.is_false_positive(license_matches)
+        
+    def test_analyzer_has_unknown_matches_1(self):
+        test_file = self.get_test_loc("analyzer_has_unknown_matches_1.json")
+        license_matches = DataIOJSON.load_json(test_file)
+        assert analyzer.has_unknown_matches(license_matches)
+        
+    def test_analyzer_has_unknown_matches_2(self):
+        test_file = self.get_test_loc("analyzer_has_unknown_matches_2.json")
+        license_matches = DataIOJSON.load_json(test_file)
+        assert analyzer.has_unknown_matches(license_matches)
+        
+    def test_analyzer_get_analysis_for_region_case_unknown_match(self):
+        test_file = self.get_test_loc("analyzer_has_unknown_matches_2.json")
+        license_matches = DataIOJSON.load_json(test_file)
+        issue_id = analyzer.get_analysis_for_region(license_matches)
+        assert issue_id == "unknown-match"
 
     def test_analyzer_get_analysis_for_region_case_correct_hash(self):
 
