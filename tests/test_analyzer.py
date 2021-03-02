@@ -529,5 +529,5 @@ class TestLicenseMatchErrorResult(FileBasedTesting):
             is_license_text=is_license_text,
             is_legal=is_legal,
         )
-        results = [ar.to_dict() for ar in ars]
+        results = [ar.to_dict(is_summary=False) for ar in ars]
         assert results == expected

@@ -7,6 +7,8 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
+import traceback
+
 import attr
 
 from commoncode.cliutils import PluggableCommandLineOption
@@ -15,6 +17,8 @@ from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
 
 from results_analyze import analyzer
+from results_analyze import analyzer_summary
+
 
 MISSING_OPTIONS_MESSAGE = (
     "The scan must be run with these options: "
@@ -25,9 +29,12 @@ MISSING_OPTIONS_MESSAGE = (
 @post_scan_impl
 class ResultsAnalyzer(PostScanPlugin):
     """
-    Add the "license_detection_issues" list which has the analysis, type information
-    and suggested license match for each license match issue.
+    Analyze license detections for potential issues.
     """
+
+    codebase_attributes = {
+        "license_detection_issues_summary": attr.ib(default=attr.Factory(dict))
+    }
 
     resource_attributes = {
         "license_detection_issues": attr.ib(default=attr.Factory(list))
@@ -56,8 +63,9 @@ class ResultsAnalyzer(PostScanPlugin):
             "required attributes are missing. " + MISSING_OPTIONS_MESSAGE,
         )
 
-        all_license_issues = []
+        license_issues = []
         count_has_license = 0
+        count_files_with_issues = 0
 
         for resource in codebase.walk():
             if not resource.is_file:
@@ -86,13 +94,36 @@ class ResultsAnalyzer(PostScanPlugin):
                     is_legal=getattr(resource, "is_legal", False),
                     path=getattr(resource, "path"),
                 ))
-                all_license_issues.extend(ars)
-                resource.license_detection_issues = [ar.to_dict() for ar in ars]
+                if ars:
+                    count_files_with_issues += 1
+                license_issues.extend(ars)
+                resource.license_detection_issues = [
+                    ar.to_dict(is_summary=False)
+                    for ar in ars
+                ]
 
             except Exception as e:
-                msg = f"Cannot analyze scan for license scan errors: {str(e)}"
+                trace = traceback.format_exc()
+                msg = f"Cannot analyze scan for license scan errors: {e}\n{trace}"
                 resource.scan_errors.append(msg)
             codebase.save_resource(resource)
+            
+
+        try:
+            summary = analyzer_summary.SummaryLicenseIssues.summarize(
+                license_issues,
+                count_has_license,
+                count_files_with_issues,
+            )
+            codebase.attributes.license_detection_issues_summary.update(
+                summary.to_dict(),
+            )
+
+        except Exception as e:
+            trace = traceback.format_exc()
+            msg = f"Cannot summarize license detection issues: {e}\n{trace}"
+            resource.scan_errors.append(msg)
+        codebase.save_resource(resource)
 
 
 def is_analyzable(resource):

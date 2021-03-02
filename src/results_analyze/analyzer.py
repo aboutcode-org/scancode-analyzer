@@ -243,12 +243,15 @@ class LicenseDetectionIssue:
 
     file_regions = attr.ib(default=attr.Factory(list))
     
-    def to_dict(self):
-        return attr.asdict(
-            self,
-            filter=lambda attr, value: attr.name
-            not in ["path"],
-        )
+    def to_dict(self, is_summary=True):
+        if is_summary:
+            return attr.asdict(
+                self, filter=lambda attr, value: attr.name not in ["file_regions"],
+            )
+        else:
+            return attr.asdict(
+                self, filter=lambda attr, value: attr.name not in ["path"],
+            )
 
     @property
     def identifier(self):
