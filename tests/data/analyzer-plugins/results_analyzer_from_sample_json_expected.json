@@ -4,13 +4,11 @@
       "tool_name": "scancode-toolkit",
       "tool_version": "3.2.3",
       "options": {
-        "input": [
-          "scancode-results-analyzer/tests/data/analyzer-plugins/scan-files/"
-        ],
+        "input": "<path>",
         "--classify": true,
         "--info": true,
         "--is-license-text": true,
-        "--json-pp": "scancode-results-analyzer/tests/data/analyzer-plugins/sample_files_result_2.json",
+        "--json-pp": "<file>",
         "--license": true,
         "--license-text": true
       },
@@ -907,5 +905,416 @@
       "size_count": 0,
       "scan_errors": []
     }
-  ]
+  ],
+  "license_detection_issues_summary": {
+    "statistics": {
+        "total_files_with_license": 3,
+        "total_files_with_license_detection_issues": 2,
+        "total_unique_license_detection_issues": 3,
+        "issue_counts": {
+            "imperfect-match-coverage": 2,
+            "extra-words": 1
+        },
+        "issue_type_counts": {
+            "notice-single-key-notice": 2,
+            "notice-has-unknown-match": 1
+        }, 
+        "analysis_confidence_counts": {
+            "high": 2,
+            "medium": 1
+        },
+        "license_info_type_counts": {
+            "license_notice": 3
+        }
+    },
+    "unique_license_detection_issues": [
+      {
+          "unique_identifier": 1,
+          "files": [
+            {
+              "path": "scan-files/1921-socat-2.0.0-error.h",
+              "start_line": 3,
+              "end_line": 3
+            }
+          ],
+          "license_detection_issue": {
+            "issue_id": "imperfect-match-coverage",
+            "issue_description": "The license detection is inconclusive with high confidence, because only a small part of the rule text is matched.",
+            "issue_type": {
+              "classification_id": "notice-single-key-notice",
+              "classification_description": "A notice with a single license.",
+              "is_license_text": false,
+              "is_license_notice": true,
+              "is_license_tag": false,
+              "is_license_reference": false,
+              "analysis_confidence": "high",
+              "is_suggested_matched_text_complete": true
+            },
+            "suggested_license": {
+              "license_expression": "gpl-2.0",
+              "matched_text": "/* Published under the GNU General Public License V.2, see file COPYING */"
+            },
+            "original_licenses": [
+              {
+                "key": "gpl-2.0",
+                "score": 20.59,
+                "name": "GNU General Public License 2.0",
+                "short_name": "GPL 2.0",
+                "category": "Copyleft",
+                "is_exception": false,
+                "owner": "Free Software Foundation (FSF)",
+                "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
+                "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
+                "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0",
+                "spdx_license_key": "GPL-2.0-only",
+                "spdx_url": "https://spdx.org/licenses/GPL-2.0-only",
+                "start_line": 3,
+                "end_line": 3,
+                "matched_rule": {
+                  "identifier": "gpl-2.0_394.RULE",
+                  "license_expression": "gpl-2.0",
+                  "licenses": [
+                    "gpl-2.0"
+                  ],
+                  "is_license_text": false,
+                  "is_license_notice": true,
+                  "is_license_reference": false,
+                  "is_license_tag": false,
+                  "matcher": "3-seq",
+                  "rule_length": 34,
+                  "matched_length": 7,
+                  "match_coverage": 20.59,
+                  "rule_relevance": 100
+                },
+                "matched_text": "/* Published under the GNU General Public License V.2, see file COPYING */"
+              }
+            ]
+          }
+      },
+      {
+        "unique_identifier": 2,
+        "files": [
+          {
+            "path": "scan-files/genshell.c",
+            "start_line": 14,
+            "end_line": 34
+          }
+        ],
+        "license_detection_issue": {
+          "issue_id": "imperfect-match-coverage",
+          "issue_description": "The license detection is inconclusive with high confidence, because only a small part of the rule text is matched.",
+          "issue_type": {
+            "classification_id": "notice-has-unknown-match",
+            "classification_description": "License notices with unknown licenses detected.",
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_tag": false,
+            "is_license_reference": false,
+            "analysis_confidence": "medium",
+            "is_suggested_matched_text_complete": true
+          },
+          "suggested_license": {
+            "license_expression": "agpl-3.0-plus",
+            "matched_text": " *  licensed under the terms of the LGPL.  The redistributable library\n *  (``libopts'') is licensed under the terms of either the LGPL or, at the\n *  users discretion, the BSD license.  See the AutoOpts and/or libopts sources\n *  for details.\n *\n * This source file is copyrighted and licensed under the following terms:\n *\n * genshellopt copyright (c) 1999-2009 Bruce Korb - all rights reserved\n *\n * genshellopt is free software: you can redistribute it and/or modify it\n * under the terms of the GNU General Public License as published by the\n * Free Software Foundation, either version 3 of the License, or\n * (at your option) any later version.\n * \n * genshellopt is distributed in the hope that it will be useful, but\n * WITHOUT ANY WARRANTY; without even the implied warranty of\n * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n * See the GNU General Public License for more details.\n * \n * You should have received a copy of the GNU General Public License along\n * with this program.  If not, see <http://www.gnu.org/licenses/>."
+          },
+          "original_licenses": [
+            {
+              "key": "unknown",
+              "score": 27.0,
+              "name": "Unknown license detected but not recognized",
+              "short_name": "unknown",
+              "category": "Unstated License",
+              "is_exception": false,
+              "owner": "Unspecified",
+              "homepage_url": null,
+              "text_url": "",
+              "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:unknown",
+              "spdx_license_key": null,
+              "spdx_url": "",
+              "start_line": 14,
+              "end_line": 14,
+              "matched_rule": {
+                "identifier": "lead-in_unknown_67.RULE",
+                "license_expression": "unknown",
+                "licenses": [
+                  "unknown"
+                ],
+                "is_license_text": false,
+                "is_license_notice": false,
+                "is_license_reference": true,
+                "is_license_tag": false,
+                "matcher": "2-aho",
+                "rule_length": 5,
+                "matched_length": 5,
+                "match_coverage": 100.0,
+                "rule_relevance": 27
+              },
+              "matched_text": " *  licensed under the terms of the LGPL.  The redistributable library"
+            },
+            {
+              "key": "lgpl-2.0-plus",
+              "score": 5.0,
+              "name": "GNU Library General Public License 2.0 or later",
+              "short_name": "LGPL 2.0 or later",
+              "category": "Copyleft Limited",
+              "is_exception": false,
+              "owner": "Free Software Foundation (FSF)",
+              "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.0.html",
+              "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.0-standalone.html",
+              "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:lgpl-2.0-plus",
+              "spdx_license_key": "LGPL-2.0-or-later",
+              "spdx_url": "https://spdx.org/licenses/LGPL-2.0-or-later",
+              "start_line": 14,
+              "end_line": 14,
+              "matched_rule": {
+                "identifier": "lgpl_bare_single_word.RULE",
+                "license_expression": "lgpl-2.0-plus",
+                "licenses": [
+                  "lgpl-2.0-plus"
+                ],
+                "is_license_text": false,
+                "is_license_notice": false,
+                "is_license_reference": true,
+                "is_license_tag": false,
+                "matcher": "2-aho",
+                "rule_length": 1,
+                "matched_length": 1,
+                "match_coverage": 100.0,
+                "rule_relevance": 5
+              },
+              "matched_text": " *  licensed under the terms of the LGPL.  The redistributable library"
+            },
+            {
+              "key": "unknown",
+              "score": 27.0,
+              "name": "Unknown license detected but not recognized",
+              "short_name": "unknown",
+              "category": "Unstated License",
+              "is_exception": false,
+              "owner": "Unspecified",
+              "homepage_url": null,
+              "text_url": "",
+              "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:unknown",
+              "spdx_license_key": null,
+              "spdx_url": "",
+              "start_line": 15,
+              "end_line": 15,
+              "matched_rule": {
+                "identifier": "lead-in_unknown_67.RULE",
+                "license_expression": "unknown",
+                "licenses": [
+                  "unknown"
+                ],
+                "is_license_text": false,
+                "is_license_notice": false,
+                "is_license_reference": true,
+                "is_license_tag": false,
+                "matcher": "2-aho",
+                "rule_length": 5,
+                "matched_length": 5,
+                "match_coverage": 100.0,
+                "rule_relevance": 27
+              },
+              "matched_text": " *  (``libopts'') is licensed under the terms of either the LGPL or, at the"
+            },
+            {
+              "key": "lgpl-2.0-plus",
+              "score": 5.0,
+              "name": "GNU Library General Public License 2.0 or later",
+              "short_name": "LGPL 2.0 or later",
+              "category": "Copyleft Limited",
+              "is_exception": false,
+              "owner": "Free Software Foundation (FSF)",
+              "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.0.html",
+              "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.0-standalone.html",
+              "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:lgpl-2.0-plus",
+              "spdx_license_key": "LGPL-2.0-or-later",
+              "spdx_url": "https://spdx.org/licenses/LGPL-2.0-or-later",
+              "start_line": 15,
+              "end_line": 15,
+              "matched_rule": {
+                "identifier": "lgpl_bare_single_word.RULE",
+                "license_expression": "lgpl-2.0-plus",
+                "licenses": [
+                  "lgpl-2.0-plus"
+                ],
+                "is_license_text": false,
+                "is_license_notice": false,
+                "is_license_reference": true,
+                "is_license_tag": false,
+                "matcher": "2-aho",
+                "rule_length": 1,
+                "matched_length": 1,
+                "match_coverage": 100.0,
+                "rule_relevance": 5
+              },
+              "matched_text": " *  (``libopts'') is licensed under the terms of either the LGPL or, at the"
+            },
+            {
+              "key": "bsd-new",
+              "score": 99.0,
+              "name": "BSD-3-Clause",
+              "short_name": "BSD-3-Clause",
+              "category": "Permissive",
+              "is_exception": false,
+              "owner": "Regents of the University of California",
+              "homepage_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+              "text_url": "http://www.opensource.org/licenses/BSD-3-Clause",
+              "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:bsd-new",
+              "spdx_license_key": "BSD-3-Clause",
+              "spdx_url": "https://spdx.org/licenses/BSD-3-Clause",
+              "start_line": 16,
+              "end_line": 16,
+              "matched_rule": {
+                "identifier": "bsd-new_145.RULE",
+                "license_expression": "bsd-new",
+                "licenses": [
+                  "bsd-new"
+                ],
+                "is_license_text": false,
+                "is_license_notice": false,
+                "is_license_reference": true,
+                "is_license_tag": false,
+                "matcher": "2-aho",
+                "rule_length": 3,
+                "matched_length": 3,
+                "match_coverage": 100.0,
+                "rule_relevance": 99.0
+              },
+              "matched_text": " *  users discretion, the BSD license.  See the AutoOpts and/or libopts sources"
+            },
+            {
+              "key": "agpl-3.0-plus",
+              "score": 90.83,
+              "name": "GNU Affero General Public License 3.0 or later",
+              "short_name": "AGPL 3.0 or later",
+              "category": "Copyleft",
+              "is_exception": false,
+              "owner": "Free Software Foundation (FSF)",
+              "homepage_url": "http://www.gnu.org/licenses/agpl-3.0.html",
+              "text_url": "http://www.gnu.org/licenses/agpl.txt",
+              "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:agpl-3.0-plus",
+              "spdx_license_key": "AGPL-3.0-or-later",
+              "spdx_url": "https://spdx.org/licenses/AGPL-3.0-or-later",
+              "start_line": 16,
+              "end_line": 34,
+              "matched_rule": {
+                "identifier": "agpl-3.0-plus_112.RULE",
+                "license_expression": "agpl-3.0-plus",
+                "licenses": [
+                  "agpl-3.0-plus"
+                ],
+                "is_license_text": false,
+                "is_license_notice": true,
+                "is_license_reference": false,
+                "is_license_tag": false,
+                "matcher": "3-seq",
+                "rule_length": 109,
+                "matched_length": 99,
+                "match_coverage": 90.83,
+                "rule_relevance": 100.0
+              },
+              "matched_text": " *  users discretion, the BSD license.  See the AutoOpts and/or libopts sources\n *  for details.\n *\n * This source file is copyrighted and licensed under the following terms:\n *\n * genshellopt copyright (c) 1999-2009 Bruce Korb - all rights reserved\n *\n * genshellopt is free software: you can redistribute it and/or modify it\n * under the terms of the GNU General Public License as published by the\n * Free Software Foundation, either version 3 of the License, or\n * (at your option) any later version.\n * \n * genshellopt is distributed in the hope that it will be useful, but\n * WITHOUT ANY WARRANTY; without even the implied warranty of\n * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n * See the GNU General Public License for more details.\n * \n * You should have received a copy of the GNU General Public License along\n * with this program.  If not, see <http://www.gnu.org/licenses/>."
+            },
+            {
+              "key": "unknown",
+              "score": 27.0,
+              "name": "Unknown license detected but not recognized",
+              "short_name": "unknown",
+              "category": "Unstated License",
+              "is_exception": false,
+              "owner": "Unspecified",
+              "homepage_url": null,
+              "text_url": "",
+              "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:unknown",
+              "spdx_license_key": null,
+              "spdx_url": "",
+              "start_line": 19,
+              "end_line": 19,
+              "matched_rule": {
+                "identifier": "lead-in_unknown_77.RULE",
+                "license_expression": "unknown",
+                "licenses": [
+                  "unknown"
+                ],
+                "is_license_text": false,
+                "is_license_notice": false,
+                "is_license_reference": true,
+                "is_license_tag": false,
+                "matcher": "2-aho",
+                "rule_length": 5,
+                "matched_length": 5,
+                "match_coverage": 100.0,
+                "rule_relevance": 27
+              },
+              "matched_text": " * This source file is copyrighted and licensed under the following terms:"
+            }
+          ]
+        }
+      },
+      {
+        "unique_identifier": 3,
+        "files": [
+          {
+            "path": "scan-files/genshell.c",
+            "start_line": 54,
+            "end_line": 62
+          }
+        ],
+        "license_detection_issue": {
+          "issue_id": "extra-words",
+          "issue_description": "The license detection is conclusive with high confidence because all the rule text is matched, but some unknown extra words have been inserted in the text.",
+          "issue_type": {
+            "classification_id": "notice-single-key-notice",
+            "classification_description":  "A notice with a single license.",
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_tag": false,
+            "is_license_reference": false,
+            "analysis_confidence": "high",
+            "is_suggested_matched_text_complete": true
+          },
+          "suggested_license": {
+            "license_expression": "gpl-3.0-plus",
+            "matched_text": "\"genshellopt is free software: you can redistribute it and/or modify it under \\\nthe terms of the GNU General Public License as published by the Free Software \\\nFoundation, either version 3 of the License, or (at your option) any later \\\nversion.  \\\ngenshellopt is distributed in the hope that it will be useful, but WITHOUT ANY \\\nWARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A \\\nPARTICULAR PURPOSE.  See the GNU General Public License for more details.  \\\nYou should have received a copy of the GNU General Public License along with \\\nthis program.  If not, see <http://www.gnu.org/licenses/>.\";"
+          },
+          "original_licenses": [
+            {
+              "key": "gpl-3.0-plus",
+              "score": 98.99,
+              "name": "GNU General Public License 3.0 or later",
+              "short_name": "GPL 3.0 or later",
+              "category": "Copyleft",
+              "is_exception": false,
+              "owner": "Free Software Foundation (FSF)",
+              "homepage_url": "http://www.gnu.org/licenses/gpl-3.0-standalone.html",
+              "text_url": "http://www.gnu.org/licenses/gpl-3.0-standalone.html",
+              "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-3.0-plus",
+              "spdx_license_key": "GPL-3.0-or-later",
+              "spdx_url": "https://spdx.org/licenses/GPL-3.0-or-later",
+              "start_line": 54,
+              "end_line": 62,
+              "matched_rule": {
+                "identifier": "gpl-3.0-plus_27.RULE",
+                "license_expression": "gpl-3.0-plus",
+                "licenses": [
+                  "gpl-3.0-plus"
+                ],
+                "is_license_text": false,
+                "is_license_notice": true,
+                "is_license_reference": false,
+                "is_license_tag": false,
+                "matcher": "3-seq",
+                "rule_length": 98,
+                "matched_length": 98,
+                "match_coverage": 100.0,
+                "rule_relevance": 100
+              },
+              "matched_text": "\"genshellopt is free software: you can redistribute it and/or modify it under \\\nthe terms of the GNU General Public License as published by the Free Software \\\nFoundation, either version 3 of the License, or (at your option) any later \\\nversion.  \\\ngenshellopt is distributed in the hope that it will be useful, but WITHOUT ANY \\\nWARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A \\\nPARTICULAR PURPOSE.  See the GNU General Public License for more details.  \\\nYou should have received a copy of the GNU General Public License along with \\\nthis program.  If not, see <http://www.gnu.org/licenses/>.\";"
+            }
+          ]
+        }
+      }
+    ]
+  }
 }
