@@ -170,6 +170,7 @@
           "issue_type": {
             "classification_id": "notice-and-or-with-notice",
             "classification_description": "A notice with a complex license expression (i.e. exceptions, choices or combinations).",
+            "is_license_intro": false,
             "is_license_notice": true,
             "is_license_reference": false,
             "is_license_tag": false,
@@ -567,6 +568,7 @@
           "issue_type": {
             "classification_id": "notice-single-key-notice",
             "classification_description": "A notice with a single license.",
+            "is_license_intro": false,
             "is_license_notice": true,
             "is_license_reference": false,
             "is_license_tag": false,

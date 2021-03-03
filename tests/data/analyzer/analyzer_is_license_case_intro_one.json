@@ -1,0 +1,38 @@
+[
+    {
+      "key": "unknown-license-reference",
+      "score": 16.0,
+      "name": "Unknown License file reference",
+      "short_name": "Unknown License reference",
+      "category": "Unstated License",
+      "is_exception": false,
+      "owner": "Unspecified",
+      "homepage_url": null,
+      "text_url": "",
+      "reference_url": "https://scancode-licensedb.aboutcode.org/unknown-license-reference",
+      "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE",
+      "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.yml",
+      "spdx_license_key": "LicenseRef-scancode-unknown-license-reference",
+      "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE",
+      "start_line": 2,
+      "end_line": 2,
+      "matched_rule": {
+        "identifier": "license-intro_26.RULE",
+        "license_expression": "unknown-license-reference",
+        "licenses": [
+          "unknown-license-reference"
+        ],
+        "is_license_text": false,
+        "is_license_notice": false,
+        "is_license_reference": false,
+        "is_license_tag": false,
+        "is_license_intro": true,
+        "matcher": "2-aho",
+        "rule_length": 3,
+        "matched_length": 3,
+        "match_coverage": 100.0,
+        "rule_relevance": 16
+      },
+      "matched_text": " * This file and its contents are licensed under the Timescale License."
+    }
+  ]

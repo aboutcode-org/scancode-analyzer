@@ -153,6 +153,7 @@
           "issue_type": {
             "classification_id": "notice-single-key-notice",
             "classification_description": "A notice with a single license.",
+            "is_license_intro": false,
             "is_license_text": false,
             "is_license_notice": true,
             "is_license_tag": false,
@@ -589,6 +590,7 @@
           "issue_type": {
             "classification_id": "notice-has-unknown-match",
             "classification_description": "License notices with unknown licenses detected.",
+            "is_license_intro": false,
             "is_license_text": false,
             "is_license_notice": true,
             "is_license_tag": false,
@@ -842,6 +844,7 @@
           "issue_type": {
             "classification_id": "notice-single-key-notice",
             "classification_description":  "A notice with a single license.",
+            "is_license_intro": false,
             "is_license_text": false,
             "is_license_notice": true,
             "is_license_tag": false,

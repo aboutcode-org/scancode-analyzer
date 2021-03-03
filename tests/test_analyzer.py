@@ -230,6 +230,21 @@ class TestAnalyzer(FileBasedTesting):
         test_file = self.get_test_loc("analyzer_is_license_case_all_reference.json")
         license_matches = DataIOJSON.load_json(test_file)
         assert analyzer.is_license_case(license_matches, "is_license_reference")
+        
+    def test_analyzer_is_license_case_intro(self):
+        test_file = self.get_test_loc("analyzer_is_license_case_intro_one.json")
+        license_matches = DataIOJSON.load_json(test_file)
+        assert analyzer.is_license_case(license_matches, "is_license_intro")
+        
+    def test_analyzer_get_error_rule_type_case_notice(self):
+        test_file = self.get_test_loc("analyzer_is_license_case_intro_one.json")
+        license_matches = DataIOJSON.load_json(test_file)
+        issue_rule_type = analyzer.get_issue_rule_type(
+            license_matches,
+            is_license_text=False,
+            is_legal=False,
+        )
+        assert issue_rule_type == "intro"
 
     def test_analyzer_get_error_rule_type_case_notice(self):
         test_file = self.get_test_loc(
@@ -367,7 +382,7 @@ class TestAnalyzer(FileBasedTesting):
         matched_text = analyzer.consolidate_matches(license_matches)
         assert matched_text == expected_match["matched_text"]
 
-    def test_analyzer_analyze_region_for_license_scan_issues(self):
+    def test_analyzer_analyze_region_for_license_scan_issues_notice(self):
         test_file = self.get_test_loc(
             "analyzer_group_matches_notice_reference_fragments.json"
         )
@@ -376,6 +391,17 @@ class TestAnalyzer(FileBasedTesting):
             license_matches, is_license_text=False, is_legal=False
         )
         assert issue_type == "notice-has-unknown-match"
+
+    def test_analyzer_analyze_region_for_license_scan_issues_intro(self):
+        test_file = self.get_test_loc(
+            "analyzer_is_license_case_intro_many.json"
+        )
+        license_matches = DataIOJSON.load_json(test_file)
+        issue_id, issue_type = analyzer.analyze_region_for_license_scan_issues(
+            license_matches, is_license_text=False, is_legal=False
+        )
+        assert issue_id == "unknown-match"
+        assert issue_type == "intro-unknown-match"
 
     def test_analyzer_group_matches_boundary_case_lines_threshold(self):
         test_file = self.get_test_loc(
