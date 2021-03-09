@@ -153,9 +153,9 @@ class TestAnalyzer(FileBasedTesting):
         )
         license_matches = DataIOJSON.load_json(test_file)
 
-        issue_id = analyzer.get_analysis_for_region(license_matches)
+        issue_category = analyzer.get_analysis_for_region(license_matches)
 
-        assert issue_id == "correct-license-detection"
+        assert issue_category == "correct-license-detection"
 
     def test_analyzer_get_analysis_for_region_case_correct_aho(self):
 
@@ -164,9 +164,9 @@ class TestAnalyzer(FileBasedTesting):
         )
         license_matches = DataIOJSON.load_json(test_file)
 
-        issue_id = analyzer.get_analysis_for_region(license_matches)
+        issue_category = analyzer.get_analysis_for_region(license_matches)
 
-        assert issue_id == "correct-license-detection"
+        assert issue_category == "correct-license-detection"
 
     def test_analyzer_get_analysis_for_region_case_incorrect_low_coverage(self):
 
@@ -175,9 +175,9 @@ class TestAnalyzer(FileBasedTesting):
         )
         license_matches = DataIOJSON.load_json(test_file)
 
-        issue_id = analyzer.get_analysis_for_region(license_matches)
+        issue_category = analyzer.get_analysis_for_region(license_matches)
 
-        assert issue_id == "imperfect-match-coverage"
+        assert issue_category == "imperfect-match-coverage"
 
     def test_analyzer_get_analysis_for_region_case_incorrect_near_perfect_coverage(
         self,
@@ -188,45 +188,45 @@ class TestAnalyzer(FileBasedTesting):
         )
         license_matches = DataIOJSON.load_json(test_file)
 
-        issue_id = analyzer.get_analysis_for_region(license_matches)
+        issue_category = analyzer.get_analysis_for_region(license_matches)
 
-        assert issue_id == "near-perfect-match-coverage"
+        assert issue_category == "near-perfect-match-coverage"
 
     def test_analyzer_get_analysis_for_region_case_incorrect_extra_words(self):
 
         test_file = self.get_test_loc("analyzer_is_extra_words_true.json")
         license_matches = DataIOJSON.load_json(test_file)
 
-        issue_id = analyzer.get_analysis_for_region(license_matches)
+        issue_category = analyzer.get_analysis_for_region(license_matches)
 
-        assert issue_id == "extra-words"
+        assert issue_category == "extra-words"
 
     def test_analyzer_get_analysis_for_region_case_incorrect_false_positives(self):
 
         test_file = self.get_test_loc("analyzer_is_false_positive_true.json")
         license_matches = DataIOJSON.load_json(test_file)
 
-        issue_id = analyzer.get_analysis_for_region(license_matches)
+        issue_category = analyzer.get_analysis_for_region(license_matches)
 
-        assert issue_id == "false-positive"
+        assert issue_category == "false-positive"
 
     def test_analyzer_get_analysis_for_region_case_false_positive_true_1(self):
 
         test_file = self.get_test_loc("analyze_for_scan_errors_false_positive_1.json")
         license_matches = DataIOJSON.load_json(test_file)
 
-        issue_id = analyzer.get_analysis_for_region(license_matches)
+        issue_category = analyzer.get_analysis_for_region(license_matches)
 
-        assert issue_id == "false-positive"
+        assert issue_category == "false-positive"
 
     def test_analyzer_get_analysis_for_region_case_false_positive_true_2(self):
 
         test_file = self.get_test_loc("analyze_for_scan_errors_false_positive_2.json")
         license_matches = DataIOJSON.load_json(test_file)
 
-        issue_id = analyzer.get_analysis_for_region(license_matches)
+        issue_category = analyzer.get_analysis_for_region(license_matches)
 
-        assert issue_id == "false-positive"
+        assert issue_category == "false-positive"
 
     def test_analyzer_is_license_case_mixed_text(self):
         test_file = self.get_test_loc("analyzer_is_license_case_mix_text.json")
@@ -293,7 +293,7 @@ class TestAnalyzer(FileBasedTesting):
             license_matches=matches,
             is_license_text=False,
             is_legal=False,
-            issue_id="imperfect-match-coverage",
+            issue_category="imperfect-match-coverage",
             issue_rule_type="notice",
         )
         assert issue_type == "notice-and-or-with-notice"
@@ -308,7 +308,7 @@ class TestAnalyzer(FileBasedTesting):
             license_matches=matches,
             is_license_text=False,
             is_legal=False,
-            issue_id="imperfect-match-coverage",
+            issue_category="imperfect-match-coverage",
             issue_rule_type="notice",
         )
         assert issue_type == "notice-single-key-notice"
@@ -320,7 +320,7 @@ class TestAnalyzer(FileBasedTesting):
         matches = DataIOJSON.load_json(test_file)
 
         issue_type = analyzer.get_license_notice_issue_type(
-            license_matches=matches, issue_id="imperfect-match-coverage"
+            license_matches=matches, issue_category="imperfect-match-coverage"
         )
         assert issue_type == "notice-has-unknown-match"
 
@@ -332,7 +332,7 @@ class TestAnalyzer(FileBasedTesting):
             license_matches=matches,
             is_license_text=False,
             is_legal=False,
-            issue_id="imperfect-match-coverage",
+            issue_category="imperfect-match-coverage",
             issue_rule_type="reference",
         )
         assert issue_type == "reference-lead-in-or-unknown-refs"
@@ -345,7 +345,7 @@ class TestAnalyzer(FileBasedTesting):
             license_matches=matches,
             is_license_text=False,
             is_legal=False,
-            issue_id="imperfect-match-coverage",
+            issue_category="imperfect-match-coverage",
             issue_rule_type="reference",
         )
         assert issue_type == "reference-lead-in-or-unknown-refs"
@@ -403,7 +403,7 @@ class TestAnalyzer(FileBasedTesting):
         expected_match = DataIOJSON.load_json(expectation_file)
 
         license_expression, matched_text = analyzer.get_license_match_suggestion(
-            license_matches, issue_id="imperfect-match-coverage", issue_type="__"
+            license_matches, issue_category="imperfect-match-coverage", issue_type="__"
         )
 
         assert matched_text == expected_match["matched_text"]
@@ -450,7 +450,7 @@ class TestAnalyzer(FileBasedTesting):
         )
         license_matches = DataIOJSON.load_json(test_file)
 
-        issue_id, issue_type = analyzer.analyze_region_for_license_scan_issues(
+        issue_category, issue_type = analyzer.analyze_region_for_license_scan_issues(
             license_matches, is_license_text=False, is_legal=False
         )
 

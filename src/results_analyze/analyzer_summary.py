@@ -19,7 +19,7 @@ codebase_level:
     - license_detection_issues_summary: SummaryLicenseIssues
 
         - unique_license_detection_issues: list of UniqueIssue
-            - issue_identifier: 1
+            - issue_categoryentifier: 1
             - files: list of FileRegions
                 - path: "path/to/occurrence"
                 - start_line: 1
@@ -31,11 +31,11 @@ codebase_level:
             - total_files_with_license_detection_issues: 17
             - total_unique_license_detection_issues: 3
 
-            - issue_counts:
+            - issue_category_counts:
                 - imperfect-match-coverage: 2
                 - unknown-match: 1
 
-            - issue_type_counts:
+            - issue_classification_id_counts:
                 - text-lic-text-fragments: 1
                 - notice-has-unknown-match: 1
                 - reference-low-coverage-refs: 1
@@ -92,10 +92,10 @@ class StatisticsLicenseIssues:
     total_files_with_license_detection_issues = attr.ib(type=int)
     total_unique_license_detection_issues = attr.ib(type=int, default=0)
 
-    # Stats on analyzer.LicenseDetectionIssue.issue_id
-    issue_counts = attr.ib(factory=dict)
+    # Stats on analyzer.LicenseDetectionIssue.issue_category
+    issue_category_counts = attr.ib(factory=dict)
     # Stats on analyzer.LicenseDetectionIssue.issue_type.classification_id
-    issue_type_counts = attr.ib(factory=dict)
+    issue_classification_id_counts = attr.ib(factory=dict)
 
     # Stats on analyzer.LicenseDetectionIssue.issue_type.analysis_confidence
     analysis_confidence_counts = attr.ib(factory=dict)
@@ -121,7 +121,7 @@ class StatisticsLicenseIssues:
         :returns UniqueLicenseIssues: list of UniqueIssue
         """
         issue_statistics = dict(Counter((
-            issue.issue_id for issue in license_issues
+            issue.issue_category for issue in license_issues
         )))
         issue_type_statistics = dict(Counter((
             issue.issue_type.classification_id
@@ -161,8 +161,8 @@ class StatisticsLicenseIssues:
             total_files_with_license=count_has_license,
             total_files_with_license_detection_issues=count_files_with_issues,
             total_unique_license_detection_issues=count_unique_issues,
-            issue_counts=issue_statistics,
-            issue_type_counts=issue_type_statistics,
+            issue_category_counts=issue_statistics,
+            issue_classification_id_counts=issue_type_statistics,
             license_info_type_counts=license_info_type_statistics,
             analysis_confidence_counts=analysis_confidence_statistics,
         )
@@ -198,21 +198,21 @@ class UniqueIssue:
         :returns UniqueLicenseIssues: list of UniqueIssue
         """
         all_identifiers = (issue.identifier for issue in license_issues)
-        unique_issue_counts = dict(Counter(all_identifiers))
+        unique_issue_category_counts = dict(Counter(all_identifiers))
 
         unique_license_issues = []
-        for issue_number, (unique_issue_identifier, counts) in enumerate(
-            unique_issue_counts.items(), start=1,
+        for issue_number, (unique_issue_categoryentifier, counts) in enumerate(
+            unique_issue_category_counts.items(), start=1,
         ):
             file_regions = (
                 issue.file_regions.pop()
                 for issue in license_issues
-                if issue.identifier == unique_issue_identifier
+                if issue.identifier == unique_issue_categoryentifier
             )
             all_issues = (
                 issue
                 for issue in license_issues
-                if issue.identifier == unique_issue_identifier
+                if issue.identifier == unique_issue_categoryentifier
             )
             unique_license_issues.append(
                 UniqueIssue.get_formatted_unique_issue(

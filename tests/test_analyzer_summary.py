@@ -60,7 +60,7 @@ class TestSummaryLicenseIssues(FileBasedTesting):
     def test_analyzer_summary_empty_list():
         summary = SummaryLicenseIssues.summarize([], 0, 0)
         assert summary.statistics.total_files_with_license_detection_issues == 0
-        assert summary.statistics.issue_counts == {}
+        assert summary.statistics.issue_category_counts == {}
         assert summary.statistics.license_info_type_counts == {}
         assert summary.statistics.analysis_confidence_counts == {}
         assert summary.unique_license_detection_issues == []
@@ -86,7 +86,7 @@ class TestStatisticsLicenseIssues(FileBasedTesting):
     def test_analyzer_summary_statistics_empty_list():
         stats = StatisticsLicenseIssues.generate_statistics([], 0, 0, 0)
         assert stats.total_files_with_license_detection_issues == 0
-        assert stats.issue_counts == {}
+        assert stats.issue_category_counts == {}
         assert stats.license_info_type_counts == {}
         assert stats.analysis_confidence_counts == {}
 

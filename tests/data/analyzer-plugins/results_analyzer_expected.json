@@ -168,7 +168,7 @@
               "end_line": 28
             }
           ],
-          "issue_id": "near-perfect-match-coverage",
+          "issue_category": "near-perfect-match-coverage",
           "issue_description": "The license detection is conclusive with a medium confidence because because most, but not all of the rule text is matched.",
           "issue_type": {
             "classification_id": "notice-and-or-with-notice",
@@ -567,7 +567,7 @@
               "end_line": 34
             }
           ],
-          "issue_id": "near-perfect-match-coverage",
+          "issue_category": "near-perfect-match-coverage",
           "issue_description": "The license detection is conclusive with a medium confidence because because most, but not all of the rule text is matched.",
           "issue_type": {
             "classification_id": "notice-single-key-notice",
@@ -635,10 +635,10 @@
         "total_files_with_license": 3,
         "total_files_with_license_detection_issues": 2,
         "total_unique_license_detection_issues": 2,
-        "issue_counts": {
+        "issue_category_counts": {
             "near-perfect-match-coverage": 2
         },
-        "issue_type_counts": {
+        "issue_classification_id_counts": {
             "notice-single-key-notice": 1,
             "notice-and-or-with-notice": 1
         }, 
@@ -660,7 +660,7 @@
             }
           ],
           "license_detection_issue": {
-            "issue_id": "near-perfect-match-coverage",
+            "issue_category": "near-perfect-match-coverage",
             "issue_description": "The license detection is conclusive with a medium confidence because because most, but not all of the rule text is matched.",
             "issue_type": {
               "classification_id": "notice-and-or-with-notice",
@@ -764,7 +764,7 @@
           }
         ],
         "license_detection_issue": {
-          "issue_id": "near-perfect-match-coverage",
+          "issue_category": "near-perfect-match-coverage",
           "issue_description": "The license detection is conclusive with a medium confidence because because most, but not all of the rule text is matched.",
           "issue_type": {
             "classification_id": "notice-single-key-notice",

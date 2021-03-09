@@ -3,10 +3,10 @@
         "total_files_with_license": 1,
         "total_files_with_license_detection_issues": 1,
         "total_unique_license_detection_issues": 1,
-        "issue_counts": {
+        "issue_category_counts": {
             "imperfect-match-coverage": 1
         },
-        "issue_type_counts": {
+        "issue_classification_id_counts": {
             "notice-single-key-notice": 1
         }, 
         "analysis_confidence_counts": {
@@ -27,7 +27,7 @@
                 }
             ],
             "license_detection_issue": {
-                "issue_id": "imperfect-match-coverage",
+                "issue_category": "imperfect-match-coverage",
                 "issue_description": "The license detection is inconclusive with high confidence, because only a small part of the rule text is matched.",
                 "issue_type": {
                     "classification_id": "notice-single-key-notice",

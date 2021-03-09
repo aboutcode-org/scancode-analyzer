@@ -46,10 +46,10 @@
       "total_files_with_license": 5,
       "total_files_with_license_detection_issues": 5,
       "total_unique_license_detection_issues": 2,
-      "issue_counts": {
+      "issue_category_counts": {
         "imperfect-match-coverage": 5
       },
-      "issue_type_counts": {
+      "issue_classification_id_counts": {
         "notice-single-key-notice": 5
       },
       "analysis_confidence_counts": {
@@ -80,7 +80,7 @@
           }
         ],
         "license_detection_issue": {
-          "issue_id": "imperfect-match-coverage",
+          "issue_category": "imperfect-match-coverage",
           "issue_description": "The license detection is inconclusive with high confidence, because only a small part of the rule text is matched.",
           "issue_type": {
             "classification_id": "notice-single-key-notice",
@@ -216,7 +216,7 @@
           }
         ],
         "license_detection_issue": {
-          "issue_id": "imperfect-match-coverage",
+          "issue_category": "imperfect-match-coverage",
           "issue_description": "The license detection is inconclusive with high confidence, because only a small part of the rule text is matched.",
           "issue_type": {
             "classification_id": "notice-single-key-notice",
@@ -482,7 +482,7 @@
               "end_line": 4
             }
           ],
-          "issue_id": "imperfect-match-coverage",
+          "issue_category": "imperfect-match-coverage",
           "issue_description": "The license detection is inconclusive with high confidence, because only a small part of the rule text is matched.",
           "issue_type": {
             "classification_id": "notice-single-key-notice",
@@ -715,7 +715,7 @@
               "end_line": 8
             }
           ],
-          "issue_id": "imperfect-match-coverage",
+          "issue_category": "imperfect-match-coverage",
           "issue_description": "The license detection is inconclusive with high confidence, because only a small part of the rule text is matched.",
           "issue_type": {
             "classification_id": "notice-single-key-notice",
@@ -913,7 +913,7 @@
               "end_line": 6
             }
           ],
-          "issue_id": "imperfect-match-coverage",
+          "issue_category": "imperfect-match-coverage",
           "issue_description": "The license detection is inconclusive with high confidence, because only a small part of the rule text is matched.",
           "issue_type": {
             "classification_id": "notice-single-key-notice",
@@ -1146,7 +1146,7 @@
               "end_line": 3
             }
           ],
-          "issue_id": "imperfect-match-coverage",
+          "issue_category": "imperfect-match-coverage",
           "issue_description": "The license detection is inconclusive with high confidence, because only a small part of the rule text is matched.",
           "issue_type": {
             "classification_id": "notice-single-key-notice",
@@ -1414,7 +1414,7 @@
               "end_line": 3
             }
           ],
-          "issue_id": "imperfect-match-coverage",
+          "issue_category": "imperfect-match-coverage",
           "issue_description": "The license detection is inconclusive with high confidence, because only a small part of the rule text is matched.",
           "issue_type": {
             "classification_id": "notice-single-key-notice",
