@@ -1,0 +1,110 @@
+[
+    {
+      "key": "apache-2.0",
+      "score": 100.0,
+      "name": "Apache License 2.0",
+      "short_name": "Apache 2.0",
+      "category": "Permissive",
+      "is_exception": false,
+      "owner": "Apache Software Foundation",
+      "homepage_url": "http://www.apache.org/licenses/",
+      "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+      "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
+      "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+      "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml",
+      "spdx_license_key": "Apache-2.0",
+      "spdx_url": "https://spdx.org/licenses/Apache-2.0",
+      "start_line": 7,
+      "end_line": 8,
+      "matched_rule": {
+        "identifier": "apache-2.0_152.RULE",
+        "license_expression": "apache-2.0",
+        "licenses": [
+          "apache-2.0"
+        ],
+        "is_license_text": false,
+        "is_license_notice": true,
+        "is_license_reference": false,
+        "is_license_tag": false,
+        "is_license_intro": false,
+        "matcher": "2-aho",
+        "rule_length": 9,
+        "matched_length": 9,
+        "match_coverage": 100.0,
+        "rule_relevance": 100
+      },
+      "matched_text": "* Outside of the \"tsl\" directory, source code in a given file is licensed\n  under the Apache License Version 2.0, unless otherwise noted (e.g., an"
+    },
+    {
+      "key": "unknown-license-reference",
+      "score": 16.0,
+      "name": "Unknown License file reference",
+      "short_name": "Unknown License reference",
+      "category": "Unstated License",
+      "is_exception": false,
+      "owner": "Unspecified",
+      "homepage_url": null,
+      "text_url": "",
+      "reference_url": "https://scancode-licensedb.aboutcode.org/unknown-license-reference",
+      "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE",
+      "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.yml",
+      "spdx_license_key": "LicenseRef-scancode-unknown-license-reference",
+      "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE",
+      "start_line": 11,
+      "end_line": 11,
+      "matched_rule": {
+        "identifier": "license-intro_26.RULE",
+        "license_expression": "unknown-license-reference",
+        "licenses": [
+          "unknown-license-reference"
+        ],
+        "is_license_text": false,
+        "is_license_notice": false,
+        "is_license_reference": false,
+        "is_license_tag": false,
+        "is_license_intro": true,
+        "matcher": "2-aho",
+        "rule_length": 3,
+        "matched_length": 3,
+        "match_coverage": 100.0,
+        "rule_relevance": 16
+      },
+      "matched_text": "* Within the \"tsl\" folder, source code in a given file is licensed under the"
+    },
+    {
+      "key": "unknown-license-reference",
+      "score": 16.0,
+      "name": "Unknown License file reference",
+      "short_name": "Unknown License reference",
+      "category": "Unstated License",
+      "is_exception": false,
+      "owner": "Unspecified",
+      "homepage_url": null,
+      "text_url": "",
+      "reference_url": "https://scancode-licensedb.aboutcode.org/unknown-license-reference",
+      "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE",
+      "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.yml",
+      "spdx_license_key": "LicenseRef-scancode-unknown-license-reference",
+      "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE",
+      "start_line": 16,
+      "end_line": 16,
+      "matched_rule": {
+        "identifier": "license-intro_26.RULE",
+        "license_expression": "unknown-license-reference",
+        "licenses": [
+          "unknown-license-reference"
+        ],
+        "is_license_text": false,
+        "is_license_notice": false,
+        "is_license_reference": false,
+        "is_license_tag": false,
+        "is_license_intro": true,
+        "matcher": "2-aho",
+        "rule_length": 3,
+        "matched_length": 3,
+        "match_coverage": 100.0,
+        "rule_relevance": 16
+      },
+      "matched_text": "that contain `-tsl` in their name are licensed under the Timescale License."
+    }
+  ]

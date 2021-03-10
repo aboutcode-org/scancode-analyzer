@@ -76,6 +76,7 @@ class IssueType:
     is_license_notice = attr.ib(default=False)
     is_license_tag = attr.ib(default=False)
     is_license_reference = attr.ib(default=False)
+    is_license_intro = attr.ib(default=False)
 
     is_suggested_matched_text_complete = attr.ib(default=True)
 
@@ -433,6 +434,28 @@ def is_false_positive(license_matches):
     )
 
 
+def has_unknown_matches(license_matches):
+    """
+    Return True if any on the license matches has a license match with an
+    `unknown` rule identifier.
+
+    :param license_matches: list
+        List of license matches in a file-region.
+    """
+    match_rule_identifiers = (
+        match["matched_rule"]["identifier"] for match in license_matches
+    )
+    match_rule_license_expressions = (
+        match["matched_rule"]["license_expression"] for match in license_matches
+    )
+    return any(
+        "unknown" in identifier for identifier in match_rule_identifiers
+    ) or any(
+        "unknown" in license_expression
+        for license_expression in match_rule_license_expressions
+    )
+
+
 def get_analysis_for_region(license_matches):
     """
     Analyse license matches from a file-region, and determine if the license detection
@@ -463,6 +486,11 @@ def get_analysis_for_region(license_matches):
     # Case where at least one of the match have extra words
     elif is_extra_words(license_matches):
         return "extra-words"
+
+    # Case where even though the matches have perfect coverage, they have
+    # matches with `unknown` rule identifiers
+    elif has_unknown_matches(license_matches):
+        return "unknown-match"
 
     # Case where the match is a false positive
     elif is_false_positive(license_matches):
@@ -503,7 +531,7 @@ def get_issue_rule_type(license_matches, is_license_text, is_legal):
     :param is_license_text: bool
     :param is_legal: bool
     """
-    # Case where at least one of the matches is matched to a `text` rule.
+    # Case where at least one of the matches is matched to a license `text` rule.
     if (
         is_license_text
         or is_legal
@@ -511,17 +539,21 @@ def get_issue_rule_type(license_matches, is_license_text, is_legal):
     ):
         return "text"
 
-    # Case where at least one of the matches is matched to a `notice` rule.
+    # Case where at least one of the matches is matched to a license `notice` rule.
     elif is_license_case(license_matches, "is_license_notice"):
         return "notice"
 
-    # Case where at least one of the matches is matched to a `tag` rule.
+    # Case where at least one of the matches is matched to a license `tag` rule.
     elif is_license_case(license_matches, "is_license_tag"):
         return "tag"
 
-    # Case where at least one of the matches is matched to a `reference` rule.
+    # Case where at least one of the matches is matched to a license `reference` rule.
     elif is_license_case(license_matches, "is_license_reference"):
         return "reference"
+
+    # Case where the matches are matched to a license `intro` rule.
+    elif is_license_case(license_matches, "is_license_intro"):
+        return "intro"
 
 
 def get_license_text_issue_type(is_license_text, is_legal):
@@ -551,6 +583,8 @@ def get_license_notice_issue_type(license_matches, issue_category):
 
     if issue_category == "false-positive":
         return "notice-false-positive"
+    elif issue_category == "unknown-match":
+        return "notice-has-unknown-match"
     elif all(
         any(
             license_expression_connector in license_expression
@@ -592,7 +626,7 @@ def get_license_reference_issue_type(license_matches, issue_category):
         return "reference-false-positive"
     elif any("lead" in identifier for identifier in match_rule_identifiers) or any(
         "unknown" in identifier for identifier in match_rule_identifiers
-    ):
+    ) or issue_category == "unknown-match":
         return "reference-lead-in-or-unknown-refs"
     else:
         return "reference-low-coverage-refs"
@@ -612,6 +646,8 @@ def get_issue_type(
         return get_license_tag_issue_type(issue_category)
     elif issue_rule_type == "reference":
         return get_license_reference_issue_type(license_matches, issue_category)
+    elif issue_rule_type == "intro":
+        return "intro-unknown-match"
 
 
 def get_issue_rule_type_using_bert(license_matches):
@@ -832,7 +868,11 @@ def modify_analysis_confidence(license_detection_issue):
         or license_detection_issue.issue_category == "near-perfect-match-coverage"
     ):
         license_detection_issue.issue_type.analysis_confidence = "high"
-
+    elif (
+        license_detection_issue.issue_category == "false-positive"
+        or license_detection_issue.issue_category == "unknown-match"
+    ):
+        license_detection_issue.issue_type.analysis_confidence = "low"
 
 def group_matches(license_matches, lines_threshold=LINES_THRESHOLD):
     """
