@@ -1,0 +1,22 @@
+[
+    {
+        "path": "Issues/1911-iptables1.4.10/ip6tables-restore.c",
+        "start_line": 8,
+        "end_line": 8
+    },
+    {
+        "path": "Issues/1911-iptables1.4.10/ip6tables-save.c",
+        "start_line": 6,
+        "end_line": 6
+    },
+    {
+        "path": "Issues/1911-iptables1.4.10/iptables-xml.c",
+        "start_line": 6,
+        "end_line": 6
+    },
+    {
+        "path":  "Issues/1911-iptables1.4.10/libipt_ECN.c",
+        "start_line": 5,
+        "end_line": 5
+    }
+]

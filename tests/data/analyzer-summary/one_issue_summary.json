@@ -1,0 +1,84 @@
+{
+    "statistics": {
+        "total_files_with_license": 1,
+        "total_files_with_license_detection_issues": 1,
+        "total_unique_license_detection_issues": 1,
+        "issue_category_counts": {
+            "imperfect-match-coverage": 1
+        },
+        "issue_classification_id_counts": {
+            "notice-single-key-notice": 1
+        }, 
+        "analysis_confidence_counts": {
+            "high": 1
+        },
+        "license_info_type_counts": {
+            "license_notice": 1
+        }
+    },
+    "unique_license_detection_issues": [
+        {
+            "unique_identifier": 1,
+            "files": [
+                {
+                    "path": "1921-socat-2.0.0-error.h",
+                    "start_line": 3,
+                    "end_line": 3
+                }
+            ],
+            "license_detection_issue": {
+                "issue_category": "imperfect-match-coverage",
+                "issue_description": "The license detection is inconclusive with high confidence, because only a small part of the rule text is matched.",
+                "issue_type": {
+                    "classification_id": "notice-single-key-notice",
+                    "classification_description": "A notice with a single license.",
+                    "is_license_text": false,
+                    "is_license_notice": true,
+                    "is_license_tag": false,
+                    "is_license_reference": false,
+                    "analysis_confidence": "high",
+                    "is_suggested_matched_text_complete": true
+                },
+                "suggested_license": {
+                    "license_expression": "gpl-2.0",
+                    "matched_text": "/* Published under the GNU General Public License V.2, see file COPYING */"
+                },
+                "original_licenses": [
+                    {
+                        "key": "gpl-2.0",
+                        "score": 20.59,
+                        "name": "GNU General Public License 2.0",
+                        "short_name": "GPL 2.0",
+                        "category": "Copyleft",
+                        "is_exception": false,
+                        "owner": "Free Software Foundation (FSF)",
+                        "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
+                        "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
+                        "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0",
+                        "spdx_license_key": "GPL-2.0-only",
+                        "spdx_url": "https://spdx.org/licenses/GPL-2.0-only",
+                        "start_line": 3,
+                        "end_line": 3,
+                        "matched_rule": {
+                            "identifier": "gpl-2.0_394.RULE",
+                            "license_expression": "gpl-2.0",
+                            "licenses": [
+                            "gpl-2.0"
+                            ],
+                            "is_license_text": false,
+                            "is_license_notice": true,
+                            "is_license_reference": false,
+                            "is_license_tag": false,
+                            "matcher": "3-seq",
+                            "rule_length": 34,
+                            "matched_length": 7,
+                            "match_coverage": 20.59,
+                            "rule_relevance": 100
+                        },
+                        "matched_text": "/* Published under the GNU General Public License V.2, see file COPYING */"
+                    }
+                ]
+            }
+        }
+    ]
+}

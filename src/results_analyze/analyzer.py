@@ -32,6 +32,31 @@ USE_FALSE_POSITIVE_BERT_MODEL = False
 ISSUE_CASES_VERSION = 0.1
 
 
+ISSUE_CATEGORIES = {
+    "imperfect-match-coverage": (
+        "The license detection is inconclusive with high confidence, because only "
+        "a small part of the rule text is matched."
+    ),
+    "near-perfect-match-coverage": (
+        "The license detection is conclusive with a medium confidence because "
+        "because most, but not all of the rule text is matched."
+    ),
+    "extra-words": (
+        "The license detection is conclusive with high confidence because all the "
+        "rule text is matched, but some unknown extra words have been inserted in "
+        "the text."
+    ),
+    "false-positive": (
+        "The license detection is inconclusive, and is unlikely to be about a "
+        "license as a piece of code/text is detected.",
+    ),
+    "unknown-match": (
+        "The license detection is inconclusive, as the license matches have "
+        "been matched to rules having unknown as their license key"
+    ),
+}
+
+
 @attr.s
 class IssueType:
     ANALYSIS_CONFIDENCES = {
@@ -54,6 +79,125 @@ class IssueType:
     is_suggested_matched_text_complete = attr.ib(default=True)
 
 
+ISSUE_TYPES_BY_CLASSIFICATION = {
+    "text-legal-lic-files": IssueType(
+        is_license_text=True,
+        classification_id="text-legal-lic-files",
+        classification_description=(
+            "The matched text is present in a file whose name is a known "
+            "legal filename."
+        ),
+        analysis_confidence="high",
+        is_suggested_matched_text_complete=False,
+    ),
+    "text-non-legal-lic-files": IssueType(
+        is_license_text=True,
+        classification_id="text-non-legal-lic-files",
+        classification_description=(
+            "The matched license text is present in a file whose name is not "
+            "a known legal filename."
+        ),
+        analysis_confidence="medium",
+        is_suggested_matched_text_complete=False,
+    ),
+    "text-lic-text-fragments": IssueType(
+        is_license_text=True,
+        classification_id="text-lic-text-fragments",
+        classification_description=(
+            "Only parts of a larger license text are detected."
+        ),
+        analysis_confidence="low",
+        is_suggested_matched_text_complete=False,
+    ),
+    "notice-and-or-with-notice": IssueType(
+        is_license_notice=True,
+        classification_id="notice-and-or-with-notice",
+        classification_description=(
+            "A notice with a complex license expression "
+            "(i.e. exceptions, choices or combinations)."
+        ),
+        analysis_confidence="medium",
+    ),
+    "notice-single-key-notice": IssueType(
+        is_license_notice=True,
+        classification_id="notice-single-key-notice",
+        classification_description="A notice with a single license.",
+        analysis_confidence="high",
+    ),
+    "notice-has-unknown-match": IssueType(
+        is_license_notice=True,
+        classification_id="notice-has-unknown-match",
+        classification_description=(
+            "License notices with unknown licenses detected."
+        ),
+        analysis_confidence="medium",
+    ),
+    "notice-false-positive": IssueType(
+        is_license_notice=True,
+        classification_id="notice-has-unknown-match",
+        classification_description=(
+            "A piece of code/text is incorrectly detected as a license."
+        ),
+        analysis_confidence="medium",
+    ),
+    "tag-tag-coverage": IssueType(
+        is_license_tag=True,
+        classification_id="tag-tag-coverage",
+        classification_description="A part of a license tag is detected",
+        analysis_confidence="high",
+    ),
+    "tag-other-tag-structures": IssueType(
+        is_license_tag=True,
+        classification_id="tag-other-tag-structures",
+        classification_description=(
+            "A new/common structure of tags are detected with scope for being "
+            "handled differently."
+        ),
+        analysis_confidence="high",
+    ),
+    "tag-false-positive": IssueType(
+        is_license_tag=True,
+        classification_id="tag-other-tag-structures",
+        classification_description=(
+            "A piece of code/text is incorrectly detected as a license."
+        ),
+        analysis_confidence="medium",
+    ),
+    # `reference` sub-cases
+    "reference-lead-in-or-unknown-refs": IssueType(
+        is_license_reference=True,
+        classification_id="reference-lead-in-or-unknown-refs",
+        classification_description=(
+            "Lead-ins to known license references are detected."
+        ),
+        analysis_confidence="medium",
+    ),
+    "reference-low-coverage-refs": IssueType(
+        is_license_reference=True,
+        classification_id="reference-low-coverage-refs",
+        classification_description="License references with a incomplete match.",
+        analysis_confidence="medium",
+    ),
+    "reference-to-local-file": IssueType(
+        is_license_reference=True,
+        classification_id="reference-to-local-file",
+        classification_description=(
+            "Matched to an unknown rule as the license information is present in "
+            "another file, which is referred to in this matched piece of text."
+        ),
+        analysis_confidence="high",
+    ),
+    "reference-false-positive": IssueType(
+        is_license_reference=True,
+        classification_id="reference-false-positive",
+        classification_description=(
+            "A piece of code/text is incorrectly detected as a license."
+        ),
+        analysis_confidence="medium",
+    ),
+}
+
+
 @attr.s
 class SuggestedLicenseMatch:
     """
@@ -62,6 +206,18 @@ class SuggestedLicenseMatch:
     """
     license_expression = attr.ib(type=str)
     matched_text = attr.ib(type=str)
+
+
+@attr.s
+class FileRegion:
+    """
+    A file has one or more file-regions, which are separate regions of the file
+    containing some license information (separated by code/text/others in between),
+    and identified by a start line and an end line.
+    """
+    path = attr.ib(type=str)
+    start_line = attr.ib(type=int)
+    end_line = attr.ib(type=int)
 
 
 @attr.s
@@ -74,157 +230,7 @@ class LicenseDetectionIssue:
     and identified by a start line and an end line.
     """
 
-    ISSUE_CHOICES = {
-        # Correct License Detection isn't reported as output, only issues are.
-        # i.e. this is only used internally.
-        "correct-license-detection": (
-            "The license detection is correct."
-        ),
-        "imperfect-match-coverage": (
-            "The license detection is inconclusive with high confidence, because only "
-            "a small part of the rule text is matched."
-        ),
-        "near-perfect-match-coverage": (
-            "The license detection is conclusive with a medium confidence because "
-            "because most, but not all of the rule text is matched."
-        ),
-        "extra-words": (
-            "The license detection is conclusive with high confidence because all the "
-            "rule text is matched, but some unknown extra words have been inserted in "
-            "the text."
-        ),
-        "false-positive": (
-            "The license detection is inconclusive, and is unlikely to be about a "
-            "license as a piece of code/text is detected.",
-        ),
-        "unknown-match": (
-            "The license detection is inconclusive, as the license matches have "
-            "been matched to rules having unknown as their license key"
-        ),
-    }
-
-    ISSUE_TYPES_BY_CLASSIFICATION = {
-        "text-legal-lic-files": IssueType(
-            is_license_text=True,
-            classification_id="text-legal-lic-files",
-            classification_description=(
-                "The matched text is present in a file whose name is a known "
-                "legal filename."
-            ),
-            analysis_confidence="high",
-            is_suggested_matched_text_complete=False,
-        ),
-        "text-non-legal-lic-files": IssueType(
-            is_license_text=True,
-            classification_id="text-non-legal-lic-files",
-            classification_description=(
-                "The matched license text is present in a file whose name is not "
-                "a known legal filename."
-            ),
-            analysis_confidence="medium",
-            is_suggested_matched_text_complete=False,
-        ),
-        "text-lic-text-fragments": IssueType(
-            is_license_text=True,
-            classification_id="text-lic-text-fragments",
-            classification_description=(
-                "Only parts of a larger license text are detected."
-            ),
-            analysis_confidence="low",
-            is_suggested_matched_text_complete=False,
-        ),
-        "notice-and-or-with-notice": IssueType(
-            is_license_notice=True,
-            classification_id="notice-and-or-with-notice",
-            classification_description=(
-                "A notice with a complex license expression "
-                "(i.e. exceptions, choices or combinations)."
-            ),
-            analysis_confidence="medium",
-        ),
-        "notice-single-key-notice": IssueType(
-            is_license_notice=True,
-            classification_id="notice-single-key-notice",
-            classification_description="A notice with a single license.",
-            analysis_confidence="high",
-        ),
-        "notice-has-unknown-match": IssueType(
-            is_license_notice=True,
-            classification_id="notice-has-unknown-match",
-            classification_description=(
-                "License notices with unknown licenses detected."
-            ),
-            analysis_confidence="medium",
-        ),
-        "notice-false-positive": IssueType(
-            is_license_notice=True,
-            classification_id="notice-has-unknown-match",
-            classification_description=(
-                "A piece of code/text is incorrectly detected as a license."
-            ),
-            analysis_confidence="medium",
-        ),
-        "tag-tag-coverage": IssueType(
-            is_license_tag=True,
-            classification_id="tag-tag-coverage",
-            classification_description="A part of a license tag is detected",
-            analysis_confidence="high",
-        ),
-        "tag-other-tag-structures": IssueType(
-            is_license_tag=True,
-            classification_id="tag-other-tag-structures",
-            classification_description=(
-                "A new/common structure of tags are detected with scope for being "
-                "handled differently."
-            ),
-            analysis_confidence="high",
-        ),
-        "tag-false-positive": IssueType(
-            is_license_tag=True,
-            classification_id="tag-other-tag-structures",
-            classification_description=(
-                "A piece of code/text is incorrectly detected as a license."
-            ),
-            analysis_confidence="medium",
-        ),
-        # `reference` sub-cases
-        "reference-lead-in-or-unknown-refs": IssueType(
-            is_license_reference=True,
-            classification_id="reference-lead-in-or-unknown-refs",
-            classification_description=(
-                "Lead-ins to known license references are detected."
-            ),
-            analysis_confidence="medium",
-        ),
-        "reference-low-coverage-refs": IssueType(
-            is_license_reference=True,
-            classification_id="reference-low-coverage-refs",
-            classification_description="License references with a incomplete match.",
-            analysis_confidence="medium",
-        ),
-        "reference-to-local-file": IssueType(
-            is_license_reference=True,
-            classification_id="reference-to-local-file",
-            classification_description=(
-                "Matched to an unknown rule as the license information is present in "
-                "another file, which is referred to in this matched piece of text."
-            ),
-            analysis_confidence="high",
-        ),
-        "reference-false-positive": IssueType(
-            is_license_reference=True,
-            classification_id="reference-false-positive",
-            classification_description=(
-                "A piece of code/text is incorrectly detected as a license"
-            ),
-            analysis_confidence="medium",
-        ),
-    }
-
-    start_line = attr.ib(type=int)
-    end_line = attr.ib(type=int)
-
-    issue_id = attr.ib(type=str, validator=attr.validators.in_(ISSUE_CHOICES))
+    issue_category = attr.ib(type=str, validator=attr.validators.in_(ISSUE_CATEGORIES))
     issue_description = attr.ib(type=str)
 
     issue_type = attr.ib()
@@ -232,38 +238,69 @@ class LicenseDetectionIssue:
     suggested_license = attr.ib()
     original_licenses = attr.ib(factory=list)
 
+    file_regions = attr.ib(default=attr.Factory(list))
+    
+    def to_dict(self, is_summary=True):
+        if is_summary:
+            return attr.asdict(
+                self, filter=lambda attr, value: attr.name not in ["file_regions"],
+            )
+        else:
+            return attr.asdict(
+                self, filter=lambda attr, value: attr.name not in ["path"],
+            )
+
+    @property
+    def identifier(self):
+        """
+        This is an identifier for a issue, based on it's underlying license matches.
+        """
+        data = []
+        for license in self.original_licenses:
+            rule_id = license["matched_rule"]["identifier"]
+            match_coverage = license["matched_rule"]["match_coverage"]
+            identifier = (rule_id, match_coverage,)
+            data.append(identifier)
+
+        return tuple(data)
+
     @staticmethod
-    def format_analysis_result(issue_id, issue_type, grouped_matches):
+    def format_analysis_result(issue_category, issue_type, grouped_matches, path):
         """
         Format the analysis result to generate an LicenseDetectionIssue object for
         this license detection issue.
 
-        :param issue_id: str
-            One of ISSUE_CHOICES.
+        :param issue_category: str
+            One of ISSUE_CATEGORIES.
         :param issue_type: str
             One of ISSUE_TYPES_BY_CLASSIFICATION.
         :param grouped_matches: list
             All matches for a license detection issue (for a file-region).
+        :param path: str
+            Path of the resource where the license issue exists
         """
         # Don't generate LicenseDetectionIssue objects for correct License Detections.
-        if issue_id == "correct-license-detection":
+        if issue_category == "correct-license-detection":
             return None
 
         start_line, end_line = get_start_end_line(grouped_matches)
         license_expression, matched_text = get_license_match_suggestion(
-            grouped_matches, issue_id, issue_type
+            grouped_matches, issue_category, issue_type
         )
 
         license_detection_issue = LicenseDetectionIssue(
-            start_line=start_line,
-            end_line=end_line,
-            issue_id=issue_id,
-            issue_description=LicenseDetectionIssue.ISSUE_CHOICES[issue_id],
-            issue_type=LicenseDetectionIssue.ISSUE_TYPES_BY_CLASSIFICATION[issue_type],
+            issue_category=issue_category,
+            issue_description=ISSUE_CATEGORIES[issue_category],
+            issue_type=ISSUE_TYPES_BY_CLASSIFICATION[issue_type],
             suggested_license=SuggestedLicenseMatch(
                 license_expression=license_expression, matched_text=matched_text
             ),
             original_licenses=grouped_matches,
+            file_regions=[FileRegion(
+                path=path,
+                start_line=start_line,
+                end_line=end_line,
+            )],
         )
 
         modify_analysis_confidence(license_detection_issue)
@@ -272,7 +309,7 @@ class LicenseDetectionIssue:
 
     @staticmethod
     def from_license_matches(
-        license_matches, is_license_text=False, is_legal=False
+        license_matches, path=None, is_license_text=False, is_legal=False,
     ):
         """
         Group `license_matches` into file-regions and for each license detection issue,
@@ -281,6 +318,8 @@ class LicenseDetectionIssue:
 
         :param license_matches: list
             A list of all matches in a file.
+        :param path: str
+            Path of the resource where the license issue exists
         :param is_license_text: bool
             True if most of a file is license text.
         :param is_legal: bool
@@ -291,7 +330,7 @@ class LicenseDetectionIssue:
 
         groups_of_license_matches = group_matches(license_matches)
         return analyze_matches(
-            groups_of_license_matches, is_license_text, is_legal
+            groups_of_license_matches, path, is_license_text, is_legal
         )
 
 
@@ -498,7 +537,7 @@ def get_license_text_issue_type(is_license_text, is_legal):
         return "text-lic-text-fragments"
 
 
-def get_license_notice_issue_type(license_matches, issue_id):
+def get_license_notice_issue_type(license_matches, issue_category):
     """
     Classifies the license detection issue into one of ISSUE_TYPES_BY_CLASSIFICATION,
     where it is a license notice.
@@ -509,7 +548,7 @@ def get_license_notice_issue_type(license_matches, issue_id):
         match["matched_rule"]["license_expression"] for match in license_matches
     ]
 
-    if issue_id == "false-positive":
+    if issue_category == "false-positive":
         return "notice-false-positive"
     elif all(
         any(
@@ -528,18 +567,18 @@ def get_license_notice_issue_type(license_matches, issue_id):
         return "notice-single-key-notice"
 
 
-def get_license_tag_issue_type(issue_id):
+def get_license_tag_issue_type(issue_category):
     """
     Classifies the license detection issue into one of ISSUE_TYPES_BY_CLASSIFICATION,
     where it is a license tag.
     """
-    if issue_id == "false-positive":
+    if issue_category == "false-positive":
         return "tag-false-positive"
     else:
         return "tag-tag-coverage"
 
 
-def get_license_reference_issue_type(license_matches, issue_id):
+def get_license_reference_issue_type(license_matches, issue_category):
     """
     Classifies the license detection issue into one of ISSUE_TYPES_BY_CLASSIFICATION,
     where it is a license reference.
@@ -548,7 +587,7 @@ def get_license_reference_issue_type(license_matches, issue_id):
         match["matched_rule"]["identifier"] for match in license_matches
     ]
 
-    if issue_id == "false-positive":
+    if issue_category == "false-positive":
         return "reference-false-positive"
     elif any("lead" in identifier for identifier in match_rule_identifiers) or any(
         "unknown" in identifier for identifier in match_rule_identifiers
@@ -559,7 +598,7 @@ def get_license_reference_issue_type(license_matches, issue_id):
 
 
 def get_issue_type(
-    license_matches, is_license_text, is_legal, issue_id, issue_rule_type
+    license_matches, is_license_text, is_legal, issue_category, issue_rule_type
 ):
     """
     Classifies the license detection issue into one of ISSUE_TYPES_BY_CLASSIFICATION
@@ -567,11 +606,11 @@ def get_issue_type(
     if issue_rule_type == "text":
         return get_license_text_issue_type(is_license_text, is_legal)
     elif issue_rule_type == "notice":
-        return get_license_notice_issue_type(license_matches, issue_id)
+        return get_license_notice_issue_type(license_matches, issue_category)
     elif issue_rule_type == "tag":
-        return get_license_tag_issue_type(issue_id)
+        return get_license_tag_issue_type(issue_category)
     elif issue_rule_type == "reference":
-        return get_license_reference_issue_type(license_matches, issue_id)
+        return get_license_reference_issue_type(license_matches, issue_category)
 
 
 def get_issue_rule_type_using_bert(license_matches):
@@ -627,14 +666,14 @@ def predict_license_expression(group_of_license_matches):
     return license_expression_prediction
 
 
-def get_license_match_suggestion(group_of_license_matches, issue_id, issue_type):
+def get_license_match_suggestion(group_of_license_matches, issue_category, issue_type):
     """
     Suggest a license match rectifying the license detection issue.
 
     :param group_of_license_matches:
         All the license matches in a license detection issue.
-    :param issue_id:
-        One of LicenseDetectionIssue.ISSUE_CHOICES.
+    :param issue_category:
+        One of LicenseDetectionIssue.ISSUE_CATEGORIES.
     :param issue_type:
         One of LicenseDetectionIssue.ISSUE_TYPES_BY_CLASSIFICATION
     :returns license_expression:
@@ -645,7 +684,7 @@ def get_license_match_suggestion(group_of_license_matches, issue_id, issue_type)
     license_expression = None
     matched_text = None
 
-    if issue_id != "correct-license-detection":
+    if issue_category != "correct-license-detection":
         if len(group_of_license_matches) == 1:
             [match] = group_of_license_matches
             license_expression = match["key"]
@@ -718,17 +757,17 @@ def analyze_region_for_license_scan_issues(
         A list of all matches in a file-region.
     :param is_license_text: bool
     :param is_legal: bool
-    :return issue_id: str
-        One of LicenseDetectionIssue.ISSUE_CHOICES.
+    :return issue_category: str
+        One of LicenseDetectionIssue.ISSUE_CATEGORIES.
     :returns issue_type: str
         One of LicenseDetectionIssue.ISSUE_TYPES_BY_CLASSIFICATION
     """
-    issue_id = get_analysis_for_region(group_of_license_matches)
+    issue_category = get_analysis_for_region(group_of_license_matches)
     issue_type = None
 
     # If one of the matches in the file-region has issues, classify the type of issue
     # into further types of issues
-    if issue_id != "correct-license-detection":
+    if issue_category != "correct-license-detection":
 
         if not USE_LICENSE_CASE_BERT_MODEL:
             issue_rule_type = get_issue_rule_type(
@@ -743,11 +782,11 @@ def analyze_region_for_license_scan_issues(
             group_of_license_matches,
             is_license_text,
             is_legal,
-            issue_id,
+            issue_category,
             issue_rule_type,
         )
 
-    return issue_id, issue_type
+    return issue_category, issue_type
 
 
 def modify_analysis_confidence(license_detection_issue):
@@ -760,8 +799,8 @@ def modify_analysis_confidence(license_detection_issue):
         A LicenseDetectionIssue object.
     """
     if (
-        license_detection_issue.issue_id == "extra-words"
-        or license_detection_issue.issue_id == "near-perfect-match-coverage"
+        license_detection_issue.issue_category == "extra-words"
+        or license_detection_issue.issue_category == "near-perfect-match-coverage"
     ):
         license_detection_issue.issue_type.analysis_confidence = "high"
 
@@ -798,12 +837,14 @@ def group_matches(license_matches, lines_threshold=LINES_THRESHOLD):
     yield group_of_license_matches
 
 
-def analyze_matches(all_groups_of_license_matches, is_license_text, is_legal):
+def analyze_matches(all_groups_of_license_matches, path, is_license_text, is_legal):
     """
     Analyze all license detection issues in a file, for license detection issues.
 
     :param all_groups_of_license_matches: list generator
         A list of groups, where each group is a list of matches (in a file-region).
+    :param path: str
+        Path of the resource where the license issue exists
     :param is_license_text: bool
     :param is_legal: bool
     :returns: list generator
@@ -811,13 +852,13 @@ def analyze_matches(all_groups_of_license_matches, is_license_text, is_legal):
         issue.
     """
     for group_of_license_matches in all_groups_of_license_matches:
-        issue_id, issue_type = analyze_region_for_license_scan_issues(
+        issue_category, issue_type = analyze_region_for_license_scan_issues(
             group_of_license_matches=group_of_license_matches,
             is_license_text=is_license_text,
             is_legal=is_legal,
         )
         license_detection_issue = LicenseDetectionIssue.format_analysis_result(
-            issue_id, issue_type, group_of_license_matches
+            issue_category, issue_type, group_of_license_matches, path
         )
         if license_detection_issue:
             yield license_detection_issue
