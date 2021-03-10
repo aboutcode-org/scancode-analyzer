@@ -56,7 +56,7 @@ the match(es) in that file-region.
               ],
               "license_detection_issues": [
                   {
-                    "issue_id": "correct-detection"
+                    "issue_category": "correct-detection"
                   }
               ]
           },
@@ -69,7 +69,7 @@ the match(es) in that file-region.
               ],
               "license_detection_issues": [
                   {
-                      "issue_id": "false-positive"
+                      "issue_category": "false-positive"
                   }
               ]
           }
@@ -95,9 +95,13 @@ a file-region, and containing analysis results for all the license matches in a 
         ],
         "license_detection_issues": [
             {
-                "start_line": 3,
-                "end_line": 3,
-                "issue_id": "imperfect-match-coverage",
+                "file_regions": [
+                    {
+                        "start_line": 3,
+                        "end_line": 3
+                    }
+                ],
+                "issue_category": "imperfect-match-coverage",
                 "issue_description": "The license detection is incorrect, a large variation is present from the matched rule(s) and is matched to only one part of the whole text",
                 "issue_type": {
                     "classification_id": "notice-single-key-notice",
@@ -126,8 +130,8 @@ The attributes containing the analysis results are:
 
 These 3 attributes in the analysis results has information on which file-region the matches are in.
 
-    1. ``start_line`` and ``end_line`` marking the issue location in file
-    2. ``issue_id`` and ``issue_description`` is what kind of issue it is and it's description.
+    1. ``start_line`` and ``end_line`` marking the file-region.
+    2. ``issue_category`` and ``issue_description`` is what kind of issue it is and it's description.
     3. ``issue_type`` has further types of issues and their related attributes, listed below.
     4. ``original_license`` having the license matches with issues.
 
@@ -157,11 +161,11 @@ location.
                     "key": "lgpl-2.0"
                   }
                 ],
-                "licence_detection_analysis": [
+                "licence_detection_issues": [
                     {
                         "start_line": 14,
                         "end_line": 34,
-                        "issue_id": "imperfect-match-coverage",
+                        "issue_category": "imperfect-match-coverage",
                         "issue_description": "The license detection is inconclusive with high confidence, because only a small part of the rule text is matched.",
                         "issue_type": {
                             "classification_id": "notice-has-unknown-match",
@@ -181,7 +185,7 @@ location.
                     {
                         "start_line": 54,
                         "end_line": 62,
-                        "issue_id": "extra-words",
+                        "issue_category": "extra-words",
                         "issue_description": "The license detection is conclusive with high confidence because all the rule text is matched, but some unknown extra words have been inserted in the text.",
                         "issue_type": {
                             "classification_id": "notice-single-key-notice",
@@ -241,9 +245,13 @@ it is an empty list.
     {
         "license_detection_analysis": [
             {
-                "start_line": 14,
-                "end_line": 34,
-                "issue_id": "imperfect-match-coverage",
+                "file_regions": [
+                    {
+                        "start_line": 14,
+                        "end_line": 34,
+                    }
+                ],
+                "issue_category": "imperfect-match-coverage",
                 "issue_description": "The license detection is inconclusive with high confidence, because only a small part of the rule text is matched.",
                 "issue_type": {
                     "classification_id": "notice-has-unknown-match",
@@ -281,9 +289,13 @@ it is an empty list.
     {
         "license_detection_analysis": [
             {
-                "start_line": 14,
-                "end_line": 34,
-                "issue_id": "imperfect-match-coverage",
+                "file_regions": [
+                    {
+                        "start_line": 14,
+                        "end_line": 34,
+                    }
+                ],
+                "issue_category": "imperfect-match-coverage",
                 "issue_description": "The license detection is inconclusive with high confidence, because only a small part of the rule text is matched.",
                 "issue_type": {
                     "classification_id": "notice-has-unknown-match",
@@ -305,91 +317,67 @@ it is an empty list.
 
 .. _json_package_level_stats:
 
+License Detection Issues Summary
+--------------------------------
+
+Along with a resource level attribute with the respectice license detection issues for a
+file (file-wise approach), there's also a codebase level attribute having the summary,
+which contains two main parts:
+
+1. All unique license detection issues (and their occurances)
+2. Statistics on license detection and their issues
+
+This provides a different view, i.e. issue wise view, which is easier to review and
+if applicable, resolve.
+
+
+All Unique License Detection Issues
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: json
+
+    "unique_license_detection_issues": [
+        {
+            "unique_identifier": 1,
+            "files": [
+                {
+                    "path": "1921-socat-2.0.0-error.h",
+                    "start_line": 3,
+                    "end_line": 3
+                }
+            ],
+            "license_detection_issue": {
+                "issue_category": "imperfect-match-coverage",
+                "issue_description": "The license detection is inconclusive with high confidence, because only a small part of the rule text is matched."
+            }
+        }
+    ]
+
+
 Basic Statistics
-----------------
-
-.. note::
-
-    This is Work In Progress.
-
-These are some basic statistics on the scan license info in files, and their errors detected for
-quick glances into as a summary. This is also a codebase-level optional dict, that could be added.
-
-This would be a separate ``summary`` plugin: ``--results-analyzer-summary``.
+^^^^^^^^^^^^^^^^
 
 .. code-block:: json
 
     {
-        "basic_stats": {
-            "total_files_scanned": 9795,
-            "total-scan_issues": 7048,
-            "total_scan_issues_unique": {
-                "file-regions": 345,
-                "total-matches": 1067
-            },
-            "license_issue_types": {
-                "correct-license-detection": 289,
-                "extra-words": 4,
-                "imperfect-match-coverage": 34,
-                "near-perfect-match-coverage": 0,
-                "false-positive": 8,
-                "unknown-matched": 4
-            },
-            "unique_issues_by_license_classes": {
-                "license-text": {
-                    "total": 3,
-                    "text-legal-lic-files": 0,
-                    "text-non-legal-lic-files": 0,
-                    "text-lic-text-fragments": 3
-                },
-                "license-notice": {
-                    "total": 45,
-                    "notice-and-or-except-notice": 6,
-                    "notice-single-key-notice": 11,
-                    "notice-has-unknown-match": 28,
-                    "notice-false-positive": 0
-                },
-                "license-tag": {
-                    "total": 14,
-                    "tag-tag-coverage": 6,
-                    "tag-other-tag-structures": 0,
-                    "tag-false-positives": 8
-                },
-                "license-reference": {
-                    "total": 37,
-                    "reference-lead-in-or-unknown-refs": 7,
-                    "reference-to-local-file": 21,
-                    "reference-false-positive": 9
-                }
-            },
-            "analysis_confidence": {
-                "high": 18,
-                "medium": 12,
-                "low": 4
-            },
-            "is_suggested_matched_text_complete": {
-                "True": 24,
-                "False": 3
-            },
-            "all_unique_issues": [
-                {
-                    "suggested_licenses": {
-                        "license_expression": "apache-2.0",
-                        "matched_text": "This is licensed under the Apache 2.0 License."
-                    },
-                    "match_coverage_matched_rule": [23, "apache2_23.RULE"],
-                    "all_occurrences": [
-                        "path/to/analyzer.py",
-                        "path/to/analyzer_plugin.py"
-                    ],
-                    "original_licenses": {
-                        "score": 23,
-                        "matched_text": "This is licensed under the Apache 2.0 License."
-                    }
-                }
-            ]
+    "statistics": {
+        "total_files_with_license": 1,
+        "total_files_with_license_detection_issues": 1,
+        "total_unique_license_detection_issues": 1,
+        "issue_category_counts": {
+            "imperfect-match-coverage": 1
+        },
+        "issue_classification_id_counts": {
+            "notice-single-key-notice": 1
+        }, 
+        "analysis_confidence_counts": {
+            "high": 1
+        },
+        "license_info_type_counts": {
+            "license_notice": 1
         }
     }
+
 
 .. _json_header_analyzer:
 
