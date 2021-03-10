@@ -280,7 +280,7 @@
             "is_suggested_matched_text_complete": true
           },
           "suggested_license": {
-            "license_expression": "lgpl-2.0-plus",
+            "license_expression": "lgpl-2.0-plus WITH wxwindows-exception-3.1",
             "matched_text": "  Distributed under the OSI-approved BSD License (the \"License\");\n  see accompanying file Copyright.txt for details.\n\n  This software is distributed WITHOUT ANY WARRANTY; without even the\n  implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n  See the License for more information."
           }
         }
