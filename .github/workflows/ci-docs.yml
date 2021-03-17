@@ -25,11 +25,14 @@ jobs:
         run: chmod +x ./docs/scripts/doc8_style_check.sh
 
       - name: Install Dependencies
-        run:  cd docs && pip install -r requirements.txt	
+        working-directory: ./docs
+        run:  pip install -r requirements.txt
 
       - name: Check Sphinx Documentation build minimally
-        run: sphinx-build -E ./source ./build
+        working-directory: ./docs
+        run: sphinx-build -E source build
 
       - name: Check for documentation style errors
+        working-directory: ./docs
         run: ./scripts/doc8_style_check.sh
 
