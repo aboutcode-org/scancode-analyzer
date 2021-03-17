@@ -17,9 +17,12 @@ from commoncode.resource import build_attributes_defs
 from scancode.cli_test_utils import check_json_scan
 from scancode.cli_test_utils import run_scan_click
 
+from file_io import load_json
 from results_analyze.analyzer_plugin import is_analyzable
 from results_analyze.analyzer_plugin import ResultsAnalyzer
 from results_analyze.analyzer_plugin import MISSING_OPTIONS_MESSAGE
+from results_analyze.analyzer_plugin import LicenseMatch
+
 
 
 class AnalyzerPlugin(FileBasedTesting):
@@ -184,3 +187,71 @@ def initialize_and_analyze_mock_codebase(input_json):
     analyzer_plugin = ResultsAnalyzer()
     analyzer_plugin.process_codebase(codebase=codebase)
     return codebase
+
+
+class TestLicenseMatch(FileBasedTesting):
+    test_data_dir = os.path.join(os.path.dirname(__file__), "data/analyzer-plugins/")
+    
+    def test_from_files_license_empty_list(self):
+
+        license_matches = LicenseMatch.from_files_licenses([])
+        assert license_matches == []
+        
+    def test_from_files_license_one_match(self):
+        test_file = self.get_test_loc("from_files_license_one_match.json")
+        license_matches_serialized = load_json(test_file)
+        [license_match_serialized] = license_matches_serialized
+        license_rule_serialized = license_match_serialized["matched_rule"]
+        license_matches = LicenseMatch.from_files_licenses(license_matches_serialized)
+        [license_match] = license_matches
+        
+        assert len(license_matches) == 1
+        assert license_match.license_expression == license_rule_serialized[
+            "license_expression"
+        ]
+        assert license_match.is_license_intro == license_rule_serialized[
+            "is_license_intro"
+        ]
+        assert license_match.start_line == license_match_serialized["start_line"]
+        assert license_match.matcher == license_rule_serialized["matcher"]
+        assert license_match.match_coverage == license_rule_serialized["match_coverage"]
+        assert license_match.matched_length == license_rule_serialized["matched_length"]
+        assert license_match.matched_text == license_match_serialized["matched_text"]
+        assert license_match.matched_length == license_rule_serialized["matched_length"]
+
+    def test_from_files_license_multiple_match_simple_few(self):
+        test_file = self.get_test_loc(
+            "from_files_license_multiple_match_simple_few.json"
+        )
+        license_matches_serialized = load_json(test_file)
+        license_matches = LicenseMatch.from_files_licenses(license_matches_serialized)
+        assert len(license_matches) == 2
+        
+    def test_from_files_license_multiple_match_simple_many(self):
+        test_file = self.get_test_loc(
+            "from_files_license_multiple_match_simple_many.json"
+        )
+        license_matches_serialized = load_json(test_file)
+        license_matches = LicenseMatch.from_files_licenses(license_matches_serialized)
+        assert len(license_matches) == 7
+
+    def test_from_files_license_two_match_complex(self):
+        test_file = self.get_test_loc("from_files_license_two_match_complex.json")
+        license_matches_serialized = load_json(test_file)
+        license_matches = LicenseMatch.from_files_licenses(license_matches_serialized)
+        assert len(license_matches) == 1
+        
+    def test_from_files_license_three_match_complex(self):
+        test_file = self.get_test_loc("from_files_license_three_match_complex.json")
+        license_matches_serialized = load_json(test_file)
+        license_matches = LicenseMatch.from_files_licenses(license_matches_serialized)
+        assert len(license_matches) == 1
+        
+    def test_from_files_license_match_simple_and_complex(self):
+        test_file = self.get_test_loc(
+            "from_files_license_match_simple_and_complex.json"
+        )
+        license_matches_serialized = load_json(test_file)
+        license_matches = LicenseMatch.from_files_licenses(license_matches_serialized)
+        assert len(license_matches) == 4
+
