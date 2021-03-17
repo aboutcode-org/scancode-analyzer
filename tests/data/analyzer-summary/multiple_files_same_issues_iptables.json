@@ -1,0 +1,546 @@
+{
+    "files": [
+        {
+            "path": "Issues/1911-iptables1.4.10/libipt_ECN.c",
+            "type": "file",
+            "name": "libipt_ECN.c",
+            "base_name": "libipt_ECN",
+            "extension": ".c",
+            "size": 4637,
+            "date": "2010-10-29",
+            "sha1": "29caa29a50aadc2479295ed557859d0ab8c8140b",
+            "md5": "605ebc2f5ada9ef56c960a9c3b82e6ba",
+            "mime_type": "text/x-c",
+            "file_type": "C source, ASCII text",
+            "programming_language": "C++",
+            "is_binary": false,
+            "is_text": true,
+            "is_archive": false,
+            "is_media": false,
+            "is_source": true,
+            "is_script": false,
+            "licenses": [
+              {
+                "key": "gpl-2.0-plus",
+                "score": 23.53,
+                "name": "GNU General Public License 2.0 or later",
+                "short_name": "GPL 2.0 or later",
+                "category": "Copyleft",
+                "is_exception": false,
+                "owner": "Free Software Foundation (FSF)",
+                "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
+                "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
+                "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0-plus",
+                "spdx_license_key": "GPL-2.0-or-later",
+                "spdx_url": "https://spdx.org/licenses/GPL-2.0-or-later",
+                "start_line": 5,
+                "end_line": 5,
+                "matched_rule": {
+                  "identifier": "gpl-2.0-plus_180.RULE",
+                  "license_expression": "gpl-2.0-plus",
+                  "licenses": [
+                    "gpl-2.0-plus"
+                  ],
+                  "is_license_text": false,
+                  "is_license_notice": true,
+                  "is_license_reference": false,
+                  "is_license_tag": false,
+                  "matcher": "3-seq",
+                  "rule_length": 34,
+                  "matched_length": 8,
+                  "match_coverage": 23.53,
+                  "rule_relevance": 100
+                },
+                "matched_text": " * This program is distributed under the terms of GNU GPL v2, 1991"
+              },
+              {
+                "key": "gpl-2.0",
+                "score": 90.0,
+                "name": "GNU General Public License 2.0",
+                "short_name": "GPL 2.0",
+                "category": "Copyleft",
+                "is_exception": false,
+                "owner": "Free Software Foundation (FSF)",
+                "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
+                "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
+                "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0",
+                "spdx_license_key": "GPL-2.0-only",
+                "spdx_url": "https://spdx.org/licenses/GPL-2.0-only",
+                "start_line": 5,
+                "end_line": 5,
+                "matched_rule": {
+                  "identifier": "gpl-2.0_223.RULE",
+                  "license_expression": "gpl-2.0",
+                  "licenses": [
+                    "gpl-2.0"
+                  ],
+                  "is_license_text": false,
+                  "is_license_notice": true,
+                  "is_license_reference": false,
+                  "is_license_tag": false,
+                  "matcher": "2-aho",
+                  "rule_length": 3,
+                  "matched_length": 3,
+                  "match_coverage": 100.0,
+                  "rule_relevance": 90.0
+                },
+                "matched_text": " * This program is distributed under the terms of GNU GPL v2, 1991"
+              }
+            ],
+            "license_expressions": [
+              "gpl-2.0-plus",
+              "gpl-2.0"
+            ],
+            "copyrights": [
+              {
+                "value": "(c) 2002 by Harald Welte <laforge@gnumonks.org>",
+                "start_line": 3,
+                "end_line": 3
+              }
+            ],
+            "holders": [
+              {
+                "value": "Harald Welte",
+                "start_line": 3,
+                "end_line": 3
+              }
+            ],
+            "authors": [],
+            "packages": [],
+            "emails": [
+              {
+                "email": "laforge@gnumonks.org",
+                "start_line": 3,
+                "end_line": 3
+              }
+            ],
+            "urls": [],
+            "is_legal": false,
+            "is_manifest": false,
+            "is_readme": false,
+            "is_top_level": false,
+            "is_key_file": false,
+            "is_generated": false,
+            "is_license_text": false,
+            "files_count": 0,
+            "dirs_count": 0,
+            "size_count": 0,
+            "scan_errors": []
+        },
+        {
+            "path": "Issues/1911-iptables1.4.10/ip6tables-save.c",
+            "type": "file",
+            "name": "ip6tables-save.c",
+            "base_name": "ip6tables-save",
+            "extension": ".c",
+            "size": 4139,
+            "date": "2010-10-29",
+            "sha1": "53b44383c602544292ff4fed97a40d8d6c005fe4",
+            "md5": "ebc0f44bc2d1c505bd0bd9cfa365f28b",
+            "mime_type": "text/x-c",
+            "file_type": "C source, ASCII text",
+            "programming_language": "C++",
+            "is_binary": false,
+            "is_text": true,
+            "is_archive": false,
+            "is_media": false,
+            "is_source": true,
+            "is_script": false,
+            "licenses": [
+              {
+                "key": "gpl-2.0-plus",
+                "score": 23.53,
+                "name": "GNU General Public License 2.0 or later",
+                "short_name": "GPL 2.0 or later",
+                "category": "Copyleft",
+                "is_exception": false,
+                "owner": "Free Software Foundation (FSF)",
+                "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
+                "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
+                "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0-plus",
+                "spdx_license_key": "GPL-2.0-or-later",
+                "spdx_url": "https://spdx.org/licenses/GPL-2.0-or-later",
+                "start_line": 6,
+                "end_line": 6,
+                "matched_rule": {
+                  "identifier": "gpl-2.0-plus_180.RULE",
+                  "license_expression": "gpl-2.0-plus",
+                  "licenses": [
+                    "gpl-2.0-plus"
+                  ],
+                  "is_license_text": false,
+                  "is_license_notice": true,
+                  "is_license_reference": false,
+                  "is_license_tag": false,
+                  "matcher": "3-seq",
+                  "rule_length": 34,
+                  "matched_length": 8,
+                  "match_coverage": 23.53,
+                  "rule_relevance": 100
+                },
+                "matched_text": " * This code is distributed under the terms of GNU GPL v2"
+              },
+              {
+                "key": "gpl-2.0",
+                "score": 90.0,
+                "name": "GNU General Public License 2.0",
+                "short_name": "GPL 2.0",
+                "category": "Copyleft",
+                "is_exception": false,
+                "owner": "Free Software Foundation (FSF)",
+                "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
+                "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
+                "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0",
+                "spdx_license_key": "GPL-2.0-only",
+                "spdx_url": "https://spdx.org/licenses/GPL-2.0-only",
+                "start_line": 6,
+                "end_line": 6,
+                "matched_rule": {
+                  "identifier": "gpl-2.0_223.RULE",
+                  "license_expression": "gpl-2.0",
+                  "licenses": [
+                    "gpl-2.0"
+                  ],
+                  "is_license_text": false,
+                  "is_license_notice": true,
+                  "is_license_reference": false,
+                  "is_license_tag": false,
+                  "matcher": "2-aho",
+                  "rule_length": 3,
+                  "matched_length": 3,
+                  "match_coverage": 100.0,
+                  "rule_relevance": 90.0
+                },
+                "matched_text": " * This code is distributed under the terms of GNU GPL v2"
+              }
+            ],
+            "license_expressions": [
+              "gpl-2.0-plus",
+              "gpl-2.0"
+            ],
+            "copyrights": [],
+            "holders": [],
+            "authors": [
+              {
+                "value": "Andras Kis-Szabo <kisza@sch.bme.hu>",
+                "start_line": 2,
+                "end_line": 6
+              },
+              {
+                "value": "Paul Rusty Russel <rusty@linuxcare.com.au> and Harald Welte <laforge@gnumonks.org>",
+                "start_line": 2,
+                "end_line": 6
+              }
+            ],
+            "packages": [],
+            "emails": [
+              {
+                "email": "kisza@sch.bme.hu",
+                "start_line": 2,
+                "end_line": 2
+              },
+              {
+                "email": "rusty@linuxcare.com.au",
+                "start_line": 4,
+                "end_line": 4
+              },
+              {
+                "email": "laforge@gnumonks.org",
+                "start_line": 5,
+                "end_line": 5
+              }
+            ],
+            "urls": [],
+            "is_legal": false,
+            "is_manifest": false,
+            "is_readme": false,
+            "is_top_level": false,
+            "is_key_file": false,
+            "is_generated": true,
+            "is_license_text": false,
+            "files_count": 0,
+            "dirs_count": 0,
+            "size_count": 0,
+            "scan_errors": []
+        },
+        {
+          "path": "Issues/1911-iptables1.4.10/ip6tables-restore.c",
+          "type": "file",
+          "name": "ip6tables-restore.c",
+          "base_name": "ip6tables-restore",
+          "extension": ".c",
+          "size": 10879,
+          "date": "2010-10-29",
+          "sha1": "5f2a5ebe3ff3c8f6ed69fd423a747dd0442a6ea7",
+          "md5": "a2e1a2e51b6b8fab02759cec023f4062",
+          "mime_type": "text/x-c",
+          "file_type": "C source, ASCII text",
+          "programming_language": "C++",
+          "is_binary": false,
+          "is_text": true,
+          "is_archive": false,
+          "is_media": false,
+          "is_source": true,
+          "is_script": false,
+          "licenses": [
+            {
+              "key": "gpl-2.0-plus",
+              "score": 23.53,
+              "name": "GNU General Public License 2.0 or later",
+              "short_name": "GPL 2.0 or later",
+              "category": "Copyleft",
+              "is_exception": false,
+              "owner": "Free Software Foundation (FSF)",
+              "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
+              "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
+              "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0-plus",
+              "spdx_license_key": "GPL-2.0-or-later",
+              "spdx_url": "https://spdx.org/licenses/GPL-2.0-or-later",
+              "start_line": 8,
+              "end_line": 8,
+              "matched_rule": {
+                "identifier": "gpl-2.0-plus_180.RULE",
+                "license_expression": "gpl-2.0-plus",
+                "licenses": [
+                  "gpl-2.0-plus"
+                ],
+                "is_license_text": false,
+                "is_license_notice": true,
+                "is_license_reference": false,
+                "is_license_tag": false,
+                "matcher": "3-seq",
+                "rule_length": 34,
+                "matched_length": 8,
+                "match_coverage": 23.53,
+                "rule_relevance": 100
+              },
+              "matched_text": " * This code is distributed under the terms of GNU GPL v2"
+            },
+            {
+              "key": "gpl-2.0",
+              "score": 90.0,
+              "name": "GNU General Public License 2.0",
+              "short_name": "GPL 2.0",
+              "category": "Copyleft",
+              "is_exception": false,
+              "owner": "Free Software Foundation (FSF)",
+              "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
+              "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
+              "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0",
+              "spdx_license_key": "GPL-2.0-only",
+              "spdx_url": "https://spdx.org/licenses/GPL-2.0-only",
+              "start_line": 8,
+              "end_line": 8,
+              "matched_rule": {
+                "identifier": "gpl-2.0_223.RULE",
+                "license_expression": "gpl-2.0",
+                "licenses": [
+                  "gpl-2.0"
+                ],
+                "is_license_text": false,
+                "is_license_notice": true,
+                "is_license_reference": false,
+                "is_license_tag": false,
+                "matcher": "2-aho",
+                "rule_length": 3,
+                "matched_length": 3,
+                "match_coverage": 100.0,
+                "rule_relevance": 90.0
+              },
+              "matched_text": " * This code is distributed under the terms of GNU GPL v2"
+            }
+          ],
+          "license_expressions": [
+            "gpl-2.0-plus",
+            "gpl-2.0"
+          ],
+          "copyrights": [],
+          "holders": [],
+          "authors": [
+            {
+              "value": "Harald Welte <laforge@gnumonks.org> Rusty Russell <rusty@linuxcare.com.au>",
+              "start_line": 5,
+              "end_line": 7
+            }
+          ],
+          "packages": [],
+          "emails": [
+            {
+              "email": "kisza@sch.bme.hu",
+              "start_line": 2,
+              "end_line": 2
+            },
+            {
+              "email": "laforge@gnumonks.org",
+              "start_line": 6,
+              "end_line": 6
+            },
+            {
+              "email": "rusty@linuxcare.com.au",
+              "start_line": 7,
+              "end_line": 7
+            }
+          ],
+          "urls": [],
+          "is_legal": false,
+          "is_manifest": false,
+          "is_readme": false,
+          "is_top_level": false,
+          "is_key_file": false,
+          "is_generated": false,
+          "is_license_text": false,
+          "files_count": 0,
+          "dirs_count": 0,
+          "size_count": 0,
+          "scan_errors": []
+        },
+        {
+          "path": "Issues/1911-iptables1.4.10/iptables-xml.c",
+          "type": "file",
+          "name": "iptables-xml.c",
+          "base_name": "iptables-xml",
+          "extension": ".c",
+          "size": 20302,
+          "date": "2010-10-29",
+          "sha1": "6c574556090271b9802c6e10ee1163fbf157bcb5",
+          "md5": "266a65603e63fb1678e926f6adf48d64",
+          "mime_type": "text/x-c",
+          "file_type": "C source, ASCII text",
+          "programming_language": "C++",
+          "is_binary": false,
+          "is_text": true,
+          "is_archive": false,
+          "is_media": false,
+          "is_source": true,
+          "is_script": false,
+          "licenses": [
+            {
+              "key": "gpl-2.0-plus",
+              "score": 23.53,
+              "name": "GNU General Public License 2.0 or later",
+              "short_name": "GPL 2.0 or later",
+              "category": "Copyleft",
+              "is_exception": false,
+              "owner": "Free Software Foundation (FSF)",
+              "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
+              "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
+              "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0-plus",
+              "spdx_license_key": "GPL-2.0-or-later",
+              "spdx_url": "https://spdx.org/licenses/GPL-2.0-or-later",
+              "start_line": 6,
+              "end_line": 6,
+              "matched_rule": {
+                "identifier": "gpl-2.0-plus_180.RULE",
+                "license_expression": "gpl-2.0-plus",
+                "licenses": [
+                  "gpl-2.0-plus"
+                ],
+                "is_license_text": false,
+                "is_license_notice": true,
+                "is_license_reference": false,
+                "is_license_tag": false,
+                "matcher": "3-seq",
+                "rule_length": 34,
+                "matched_length": 8,
+                "match_coverage": 23.53,
+                "rule_relevance": 100
+              },
+              "matched_text": " * This code is distributed under the terms of GNU GPL v2"
+            },
+            {
+              "key": "gpl-2.0",
+              "score": 90.0,
+              "name": "GNU General Public License 2.0",
+              "short_name": "GPL 2.0",
+              "category": "Copyleft",
+              "is_exception": false,
+              "owner": "Free Software Foundation (FSF)",
+              "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
+              "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
+              "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0",
+              "spdx_license_key": "GPL-2.0-only",
+              "spdx_url": "https://spdx.org/licenses/GPL-2.0-only",
+              "start_line": 6,
+              "end_line": 6,
+              "matched_rule": {
+                "identifier": "gpl-2.0_223.RULE",
+                "license_expression": "gpl-2.0",
+                "licenses": [
+                  "gpl-2.0"
+                ],
+                "is_license_text": false,
+                "is_license_notice": true,
+                "is_license_reference": false,
+                "is_license_tag": false,
+                "matcher": "2-aho",
+                "rule_length": 3,
+                "matched_length": 3,
+                "match_coverage": 100.0,
+                "rule_relevance": 90.0
+              },
+              "matched_text": " * This code is distributed under the terms of GNU GPL v2"
+            }
+          ],
+          "license_expressions": [
+            "gpl-2.0-plus",
+            "gpl-2.0"
+          ],
+          "copyrights": [
+            {
+              "value": "(c) 2006 Ufo Mechanic <azez@ufomechanic.net>",
+              "start_line": 2,
+              "end_line": 4
+            },
+            {
+              "value": "(c) 2000-2002 by Harald Welte <laforge@gnumonks.org>",
+              "start_line": 2,
+              "end_line": 4
+            }
+          ],
+          "holders": [
+            {
+              "value": "Ufo Mechanic",
+              "start_line": 2,
+              "end_line": 4
+            },
+            {
+              "value": "Harald Welte",
+              "start_line": 2,
+              "end_line": 4
+            }
+          ],
+          "authors": [],
+          "packages": [],
+          "emails": [
+            {
+              "email": "azez@ufomechanic.net",
+              "start_line": 2,
+              "end_line": 2
+            },
+            {
+              "email": "laforge@gnumonks.org",
+              "start_line": 3,
+              "end_line": 3
+            },
+            {
+              "email": "rusty@linuxcare.com.au",
+              "start_line": 4,
+              "end_line": 4
+            }
+          ],
+          "urls": [],
+          "is_legal": false,
+          "is_manifest": false,
+          "is_readme": false,
+          "is_top_level": false,
+          "is_key_file": false,
+          "is_generated": false,
+          "is_license_text": false,
+          "files_count": 0,
+          "dirs_count": 0,
+          "size_count": 0,
+          "scan_errors": []
+        }
+    ]
+}
+  

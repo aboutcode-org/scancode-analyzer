@@ -1,0 +1,1551 @@
+{
+  "headers": [
+    {
+      "tool_name": "scancode-toolkit",
+      "tool_version": "3.2.3",
+      "options": {
+        "input": "<path>",
+        "--classify": true,
+        "--info": true,
+        "--is-license-text": true,
+        "--json-pp": "<file>",
+        "--license": true,
+        "--license-text": true
+      },
+      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "start_timestamp": null,
+      "end_timestamp": null,
+      "duration": null,
+      "message": null,
+      "errors": [],
+      "extra_data": {
+        "files_count": 5
+      }
+    },
+    {
+      "tool_name": "scancode-toolkit",
+      "tool_version": "21.2.9",
+      "options": {
+        "input": "<path>",
+        "--analyze-license-results": true,
+        "--from-json": [
+          true
+        ],
+        "--json-pp": "<file>"
+      },
+      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "message": null,
+      "errors": [],
+      "extra_data": {
+        "files_count": 5
+      }
+    }
+  ],
+  "license_detection_issues_summary": {
+    "statistics": {
+      "total_files_with_license": 5,
+      "total_files_with_license_detection_issues": 5,
+      "total_unique_license_detection_issues": 2,
+      "issue_category_counts": {
+        "imperfect-match-coverage": 5
+      },
+      "issue_classification_id_counts": {
+        "notice-single-key-notice": 5
+      },
+      "analysis_confidence_counts": {
+        "high": 5
+      },
+      "license_info_type_counts": {
+        "license_notice": 5
+      }
+    },
+    "unique_license_detection_issues": [
+      {
+        "unique_identifier": 1,
+        "files": [
+          {
+            "path": "issues-files/socat-2.0.0-gatherinfo.sh",
+            "start_line": 4,
+            "end_line": 4
+          },
+          {
+            "path": "issues-files/socat-2.0.0-sslcls.h",
+            "start_line": 3,
+            "end_line": 3
+          },
+          {
+            "path": "issues-files/socat-2.0.0-xio-ascii.c",
+            "start_line": 3,
+            "end_line": 3
+          }
+        ],
+        "license_detection_issue": {
+          "issue_category": "imperfect-match-coverage",
+          "issue_description": "The license detection is inconclusive with high confidence, because only a small part of the rule text is matched.",
+          "issue_type": {
+            "classification_id": "notice-single-key-notice",
+            "classification_description": "A notice with a single license.",
+            "analysis_confidence": "high",
+            "is_license_intro": false,
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_tag": false,
+            "is_license_reference": false,
+            "is_suggested_matched_text_complete": true
+          },
+          "suggested_license": {
+            "license_expression": "gpl-3.0-plus WITH tex-exception",
+            "matched_text": "# Published under the GNU General Public License V.2, see file COPYING"
+          },
+          "original_licenses": [
+            {
+              "key": "gpl-3.0-plus",
+              "score": 13.21,
+              "name": "GNU General Public License 3.0 or later",
+              "short_name": "GPL 3.0 or later",
+              "category": "Copyleft",
+              "is_exception": false,
+              "owner": "Free Software Foundation (FSF)",
+              "homepage_url": "http://www.gnu.org/licenses/gpl-3.0-standalone.html",
+              "text_url": "http://www.gnu.org/licenses/gpl-3.0-standalone.html",
+              "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-3.0-plus",
+              "spdx_license_key": "GPL-3.0-or-later",
+              "spdx_url": "https://spdx.org/licenses/GPL-3.0-or-later",
+              "start_line": 4,
+              "end_line": 4,
+              "matched_rule": {
+                "identifier": "gpl-3.0-plus_with_tex-exception_4.RULE",
+                "license_expression": "gpl-3.0-plus WITH tex-exception",
+                "licenses": [
+                  "gpl-3.0-plus",
+                  "tex-exception"
+                ],
+                "is_license_text": false,
+                "is_license_notice": true,
+                "is_license_reference": false,
+                "is_license_tag": false,
+                "matcher": "3-seq",
+                "rule_length": 53,
+                "matched_length": 7,
+                "match_coverage": 13.21,
+                "rule_relevance": 100
+              },
+              "matched_text": "# Published under the GNU General Public License V.2, see file COPYING"
+            },
+            {
+              "key": "tex-exception",
+              "score": 13.21,
+              "name": "TeX exception to GPL 3.0",
+              "short_name": "TeX exception to GPL 3.0",
+              "category": "Copyleft Limited",
+              "is_exception": true,
+              "owner": "Unspecified",
+              "homepage_url": null,
+              "text_url": "",
+              "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:tex-exception",
+              "spdx_license_key": null,
+              "spdx_url": "",
+              "start_line": 4,
+              "end_line": 4,
+              "matched_rule": {
+                "identifier": "gpl-3.0-plus_with_tex-exception_4.RULE",
+                "license_expression": "gpl-3.0-plus WITH tex-exception",
+                "licenses": [
+                  "gpl-3.0-plus",
+                  "tex-exception"
+                ],
+                "is_license_text": false,
+                "is_license_notice": true,
+                "is_license_reference": false,
+                "is_license_tag": false,
+                "matcher": "3-seq",
+                "rule_length": 53,
+                "matched_length": 7,
+                "match_coverage": 13.21,
+                "rule_relevance": 100
+              },
+              "matched_text": "# Published under the GNU General Public License V.2, see file COPYING"
+            },
+            {
+              "key": "gpl-2.0",
+              "score": 100.0,
+              "name": "GNU General Public License 2.0",
+              "short_name": "GPL 2.0",
+              "category": "Copyleft",
+              "is_exception": false,
+              "owner": "Free Software Foundation (FSF)",
+              "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
+              "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
+              "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0",
+              "spdx_license_key": "GPL-2.0-only",
+              "spdx_url": "https://spdx.org/licenses/GPL-2.0-only",
+              "start_line": 4,
+              "end_line": 4,
+              "matched_rule": {
+                "identifier": "gpl-2.0_756.RULE",
+                "license_expression": "gpl-2.0",
+                "licenses": [
+                  "gpl-2.0"
+                ],
+                "is_license_text": false,
+                "is_license_notice": false,
+                "is_license_reference": true,
+                "is_license_tag": false,
+                "matcher": "2-aho",
+                "rule_length": 6,
+                "matched_length": 6,
+                "match_coverage": 100.0,
+                "rule_relevance": 100.0
+              },
+              "matched_text": "# Published under the GNU General Public License V.2, see file COPYING"
+            }
+          ]
+        }
+      },
+      {
+        "unique_identifier": 2,
+        "files": [
+          {
+            "path": "issues-files/iptables1.4.10-ip6tables-restore.c",
+            "start_line": 8,
+            "end_line": 8
+          },
+          {
+            "path": "issues-files/iptables1.4.10-iptables-xml.c",
+            "start_line": 6,
+            "end_line": 6
+          }
+        ],
+        "license_detection_issue": {
+          "issue_category": "imperfect-match-coverage",
+          "issue_description": "The license detection is inconclusive with high confidence, because only a small part of the rule text is matched.",
+          "issue_type": {
+            "classification_id": "notice-single-key-notice",
+            "classification_description": "A notice with a single license.",
+            "analysis_confidence": "high",
+            "is_license_intro": false,
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_tag": false,
+            "is_license_reference": false,
+            "is_suggested_matched_text_complete": true
+          },
+          "suggested_license": {
+            "license_expression": "gpl-2.0-plus",
+            "matched_text": " * This code is distributed under the terms of GNU GPL v2"
+          },
+          "original_licenses": [
+            {
+              "key": "gpl-2.0-plus",
+              "score": 23.53,
+              "name": "GNU General Public License 2.0 or later",
+              "short_name": "GPL 2.0 or later",
+              "category": "Copyleft",
+              "is_exception": false,
+              "owner": "Free Software Foundation (FSF)",
+              "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
+              "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
+              "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0-plus",
+              "spdx_license_key": "GPL-2.0-or-later",
+              "spdx_url": "https://spdx.org/licenses/GPL-2.0-or-later",
+              "start_line": 8,
+              "end_line": 8,
+              "matched_rule": {
+                "identifier": "gpl-2.0-plus_180.RULE",
+                "license_expression": "gpl-2.0-plus",
+                "licenses": [
+                  "gpl-2.0-plus"
+                ],
+                "is_license_text": false,
+                "is_license_notice": true,
+                "is_license_reference": false,
+                "is_license_tag": false,
+                "matcher": "3-seq",
+                "rule_length": 34,
+                "matched_length": 8,
+                "match_coverage": 23.53,
+                "rule_relevance": 100
+              },
+              "matched_text": " * This code is distributed under the terms of GNU GPL v2"
+            },
+            {
+              "key": "gpl-2.0",
+              "score": 90.0,
+              "name": "GNU General Public License 2.0",
+              "short_name": "GPL 2.0",
+              "category": "Copyleft",
+              "is_exception": false,
+              "owner": "Free Software Foundation (FSF)",
+              "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
+              "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
+              "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0",
+              "spdx_license_key": "GPL-2.0-only",
+              "spdx_url": "https://spdx.org/licenses/GPL-2.0-only",
+              "start_line": 8,
+              "end_line": 8,
+              "matched_rule": {
+                "identifier": "gpl-2.0_223.RULE",
+                "license_expression": "gpl-2.0",
+                "licenses": [
+                  "gpl-2.0"
+                ],
+                "is_license_text": false,
+                "is_license_notice": true,
+                "is_license_reference": false,
+                "is_license_tag": false,
+                "matcher": "2-aho",
+                "rule_length": 3,
+                "matched_length": 3,
+                "match_coverage": 100.0,
+                "rule_relevance": 90.0
+              },
+              "matched_text": " * This code is distributed under the terms of GNU GPL v2"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "files": [
+    {
+      "path": "issues-files",
+      "type": "directory",
+      "name": "issues-files",
+      "base_name": "issues-files",
+      "extension": "",
+      "size": 0,
+      "date": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "mime_type": null,
+      "file_type": null,
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": false,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [],
+      "license_expressions": [],
+      "percentage_of_license_text": 0,
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": false,
+      "is_license_text": false,
+      "license_detection_issues": [],
+      "files_count": 5,
+      "dirs_count": 0,
+      "size_count": 44088,
+      "scan_errors": []
+    },
+    {
+      "path": "issues-files/socat-2.0.0-gatherinfo.sh",
+      "type": "file",
+      "name": "gatherinfo.sh",
+      "base_name": "gatherinfo",
+      "extension": ".sh",
+      "size": 4097,
+      "date": "2010-06-20",
+      "sha1": "d3e3a7f9b9e146bedd30c4de2963994e5323ce2c",
+      "md5": "9433b1c30dfd3a2dbadf7df9e19e3a3a",
+      "sha256": null,
+      "mime_type": "text/x-shellscript",
+      "file_type": "POSIX shell script, ASCII text executable",
+      "programming_language": "Bash",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": true,
+      "licenses": [
+        {
+          "key": "gpl-3.0-plus",
+          "score": 13.21,
+          "name": "GNU General Public License 3.0 or later",
+          "short_name": "GPL 3.0 or later",
+          "category": "Copyleft",
+          "is_exception": false,
+          "owner": "Free Software Foundation (FSF)",
+          "homepage_url": "http://www.gnu.org/licenses/gpl-3.0-standalone.html",
+          "text_url": "http://www.gnu.org/licenses/gpl-3.0-standalone.html",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-3.0-plus",
+          "spdx_license_key": "GPL-3.0-or-later",
+          "spdx_url": "https://spdx.org/licenses/GPL-3.0-or-later",
+          "start_line": 4,
+          "end_line": 4,
+          "matched_rule": {
+            "identifier": "gpl-3.0-plus_with_tex-exception_4.RULE",
+            "license_expression": "gpl-3.0-plus WITH tex-exception",
+            "licenses": [
+              "gpl-3.0-plus",
+              "tex-exception"
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "3-seq",
+            "rule_length": 53,
+            "matched_length": 7,
+            "match_coverage": 13.21,
+            "rule_relevance": 100
+          },
+          "matched_text": "# Published under the GNU General Public License V.2, see file COPYING"
+        },
+        {
+          "key": "tex-exception",
+          "score": 13.21,
+          "name": "TeX exception to GPL 3.0",
+          "short_name": "TeX exception to GPL 3.0",
+          "category": "Copyleft Limited",
+          "is_exception": true,
+          "owner": "Unspecified",
+          "homepage_url": null,
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:tex-exception",
+          "spdx_license_key": null,
+          "spdx_url": "",
+          "start_line": 4,
+          "end_line": 4,
+          "matched_rule": {
+            "identifier": "gpl-3.0-plus_with_tex-exception_4.RULE",
+            "license_expression": "gpl-3.0-plus WITH tex-exception",
+            "licenses": [
+              "gpl-3.0-plus",
+              "tex-exception"
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "3-seq",
+            "rule_length": 53,
+            "matched_length": 7,
+            "match_coverage": 13.21,
+            "rule_relevance": 100
+          },
+          "matched_text": "# Published under the GNU General Public License V.2, see file COPYING"
+        },
+        {
+          "key": "gpl-2.0",
+          "score": 100.0,
+          "name": "GNU General Public License 2.0",
+          "short_name": "GPL 2.0",
+          "category": "Copyleft",
+          "is_exception": false,
+          "owner": "Free Software Foundation (FSF)",
+          "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
+          "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0",
+          "spdx_license_key": "GPL-2.0-only",
+          "spdx_url": "https://spdx.org/licenses/GPL-2.0-only",
+          "start_line": 4,
+          "end_line": 4,
+          "matched_rule": {
+            "identifier": "gpl-2.0_756.RULE",
+            "license_expression": "gpl-2.0",
+            "licenses": [
+              "gpl-2.0"
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 6,
+            "matched_length": 6,
+            "match_coverage": 100.0,
+            "rule_relevance": 100.0
+          },
+          "matched_text": "# Published under the GNU General Public License V.2, see file COPYING"
+        }
+      ],
+      "license_expressions": [
+        "gpl-3.0-plus WITH tex-exception",
+        "gpl-2.0"
+      ],
+      "percentage_of_license_text": null,
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_license_text": false,
+      "license_detection_issues": [
+        {
+          "file_regions": [
+            {
+              "start_line": 4,
+              "end_line": 4
+            }
+          ],
+          "issue_category": "imperfect-match-coverage",
+          "issue_description": "The license detection is inconclusive with high confidence, because only a small part of the rule text is matched.",
+          "issue_type": {
+            "classification_id": "notice-single-key-notice",
+            "classification_description": "A notice with a single license.",
+            "analysis_confidence": "high",
+            "is_license_intro": false,
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_tag": false,
+            "is_license_reference": false,
+            "is_suggested_matched_text_complete": true
+          },
+          "suggested_license": {
+            "license_expression": "gpl-3.0-plus WITH tex-exception",
+            "matched_text": "# Published under the GNU General Public License V.2, see file COPYING"
+          },
+          "original_licenses": [
+            {
+              "key": "gpl-3.0-plus",
+              "score": 13.21,
+              "name": "GNU General Public License 3.0 or later",
+              "short_name": "GPL 3.0 or later",
+              "category": "Copyleft",
+              "is_exception": false,
+              "owner": "Free Software Foundation (FSF)",
+              "homepage_url": "http://www.gnu.org/licenses/gpl-3.0-standalone.html",
+              "text_url": "http://www.gnu.org/licenses/gpl-3.0-standalone.html",
+              "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-3.0-plus",
+              "spdx_license_key": "GPL-3.0-or-later",
+              "spdx_url": "https://spdx.org/licenses/GPL-3.0-or-later",
+              "start_line": 4,
+              "end_line": 4,
+              "matched_rule": {
+                "identifier": "gpl-3.0-plus_with_tex-exception_4.RULE",
+                "license_expression": "gpl-3.0-plus WITH tex-exception",
+                "licenses": [
+                  "gpl-3.0-plus",
+                  "tex-exception"
+                ],
+                "is_license_text": false,
+                "is_license_notice": true,
+                "is_license_reference": false,
+                "is_license_tag": false,
+                "matcher": "3-seq",
+                "rule_length": 53,
+                "matched_length": 7,
+                "match_coverage": 13.21,
+                "rule_relevance": 100
+              },
+              "matched_text": "# Published under the GNU General Public License V.2, see file COPYING"
+            },
+            {
+              "key": "tex-exception",
+              "score": 13.21,
+              "name": "TeX exception to GPL 3.0",
+              "short_name": "TeX exception to GPL 3.0",
+              "category": "Copyleft Limited",
+              "is_exception": true,
+              "owner": "Unspecified",
+              "homepage_url": null,
+              "text_url": "",
+              "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:tex-exception",
+              "spdx_license_key": null,
+              "spdx_url": "",
+              "start_line": 4,
+              "end_line": 4,
+              "matched_rule": {
+                "identifier": "gpl-3.0-plus_with_tex-exception_4.RULE",
+                "license_expression": "gpl-3.0-plus WITH tex-exception",
+                "licenses": [
+                  "gpl-3.0-plus",
+                  "tex-exception"
+                ],
+                "is_license_text": false,
+                "is_license_notice": true,
+                "is_license_reference": false,
+                "is_license_tag": false,
+                "matcher": "3-seq",
+                "rule_length": 53,
+                "matched_length": 7,
+                "match_coverage": 13.21,
+                "rule_relevance": 100
+              },
+              "matched_text": "# Published under the GNU General Public License V.2, see file COPYING"
+            },
+            {
+              "key": "gpl-2.0",
+              "score": 100.0,
+              "name": "GNU General Public License 2.0",
+              "short_name": "GPL 2.0",
+              "category": "Copyleft",
+              "is_exception": false,
+              "owner": "Free Software Foundation (FSF)",
+              "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
+              "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
+              "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0",
+              "spdx_license_key": "GPL-2.0-only",
+              "spdx_url": "https://spdx.org/licenses/GPL-2.0-only",
+              "start_line": 4,
+              "end_line": 4,
+              "matched_rule": {
+                "identifier": "gpl-2.0_756.RULE",
+                "license_expression": "gpl-2.0",
+                "licenses": [
+                  "gpl-2.0"
+                ],
+                "is_license_text": false,
+                "is_license_notice": false,
+                "is_license_reference": true,
+                "is_license_tag": false,
+                "matcher": "2-aho",
+                "rule_length": 6,
+                "matched_length": 6,
+                "match_coverage": 100.0,
+                "rule_relevance": 100.0
+              },
+              "matched_text": "# Published under the GNU General Public License V.2, see file COPYING"
+            }
+          ]
+        }
+      ],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "issues-files/iptables1.4.10-ip6tables-restore.c",
+      "type": "file",
+      "name": "ip6tables-restore.c",
+      "base_name": "ip6tables-restore",
+      "extension": ".c",
+      "size": 10879,
+      "date": "2010-10-29",
+      "sha1": "5f2a5ebe3ff3c8f6ed69fd423a747dd0442a6ea7",
+      "md5": "a2e1a2e51b6b8fab02759cec023f4062",
+      "sha256": null,
+      "mime_type": "text/x-c",
+      "file_type": "C source, ASCII text",
+      "programming_language": "C++",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "gpl-2.0-plus",
+          "score": 23.53,
+          "name": "GNU General Public License 2.0 or later",
+          "short_name": "GPL 2.0 or later",
+          "category": "Copyleft",
+          "is_exception": false,
+          "owner": "Free Software Foundation (FSF)",
+          "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
+          "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0-plus",
+          "spdx_license_key": "GPL-2.0-or-later",
+          "spdx_url": "https://spdx.org/licenses/GPL-2.0-or-later",
+          "start_line": 8,
+          "end_line": 8,
+          "matched_rule": {
+            "identifier": "gpl-2.0-plus_180.RULE",
+            "license_expression": "gpl-2.0-plus",
+            "licenses": [
+              "gpl-2.0-plus"
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "3-seq",
+            "rule_length": 34,
+            "matched_length": 8,
+            "match_coverage": 23.53,
+            "rule_relevance": 100
+          },
+          "matched_text": " * This code is distributed under the terms of GNU GPL v2"
+        },
+        {
+          "key": "gpl-2.0",
+          "score": 90.0,
+          "name": "GNU General Public License 2.0",
+          "short_name": "GPL 2.0",
+          "category": "Copyleft",
+          "is_exception": false,
+          "owner": "Free Software Foundation (FSF)",
+          "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
+          "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0",
+          "spdx_license_key": "GPL-2.0-only",
+          "spdx_url": "https://spdx.org/licenses/GPL-2.0-only",
+          "start_line": 8,
+          "end_line": 8,
+          "matched_rule": {
+            "identifier": "gpl-2.0_223.RULE",
+            "license_expression": "gpl-2.0",
+            "licenses": [
+              "gpl-2.0"
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 3,
+            "matched_length": 3,
+            "match_coverage": 100.0,
+            "rule_relevance": 90.0
+          },
+          "matched_text": " * This code is distributed under the terms of GNU GPL v2"
+        }
+      ],
+      "license_expressions": [
+        "gpl-2.0-plus",
+        "gpl-2.0"
+      ],
+      "percentage_of_license_text": null,
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_license_text": false,
+      "license_detection_issues": [
+        {
+          "file_regions": [
+            {
+              "start_line": 8,
+              "end_line": 8
+            }
+          ],
+          "issue_category": "imperfect-match-coverage",
+          "issue_description": "The license detection is inconclusive with high confidence, because only a small part of the rule text is matched.",
+          "issue_type": {
+            "classification_id": "notice-single-key-notice",
+            "classification_description": "A notice with a single license.",
+            "analysis_confidence": "high",
+            "is_license_intro": false,
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_tag": false,
+            "is_license_reference": false,
+            "is_suggested_matched_text_complete": true
+          },
+          "suggested_license": {
+            "license_expression": "gpl-2.0-plus",
+            "matched_text": " * This code is distributed under the terms of GNU GPL v2"
+          },
+          "original_licenses": [
+            {
+              "key": "gpl-2.0-plus",
+              "score": 23.53,
+              "name": "GNU General Public License 2.0 or later",
+              "short_name": "GPL 2.0 or later",
+              "category": "Copyleft",
+              "is_exception": false,
+              "owner": "Free Software Foundation (FSF)",
+              "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
+              "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
+              "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0-plus",
+              "spdx_license_key": "GPL-2.0-or-later",
+              "spdx_url": "https://spdx.org/licenses/GPL-2.0-or-later",
+              "start_line": 8,
+              "end_line": 8,
+              "matched_rule": {
+                "identifier": "gpl-2.0-plus_180.RULE",
+                "license_expression": "gpl-2.0-plus",
+                "licenses": [
+                  "gpl-2.0-plus"
+                ],
+                "is_license_text": false,
+                "is_license_notice": true,
+                "is_license_reference": false,
+                "is_license_tag": false,
+                "matcher": "3-seq",
+                "rule_length": 34,
+                "matched_length": 8,
+                "match_coverage": 23.53,
+                "rule_relevance": 100
+              },
+              "matched_text": " * This code is distributed under the terms of GNU GPL v2"
+            },
+            {
+              "key": "gpl-2.0",
+              "score": 90.0,
+              "name": "GNU General Public License 2.0",
+              "short_name": "GPL 2.0",
+              "category": "Copyleft",
+              "is_exception": false,
+              "owner": "Free Software Foundation (FSF)",
+              "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
+              "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
+              "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0",
+              "spdx_license_key": "GPL-2.0-only",
+              "spdx_url": "https://spdx.org/licenses/GPL-2.0-only",
+              "start_line": 8,
+              "end_line": 8,
+              "matched_rule": {
+                "identifier": "gpl-2.0_223.RULE",
+                "license_expression": "gpl-2.0",
+                "licenses": [
+                  "gpl-2.0"
+                ],
+                "is_license_text": false,
+                "is_license_notice": true,
+                "is_license_reference": false,
+                "is_license_tag": false,
+                "matcher": "2-aho",
+                "rule_length": 3,
+                "matched_length": 3,
+                "match_coverage": 100.0,
+                "rule_relevance": 90.0
+              },
+              "matched_text": " * This code is distributed under the terms of GNU GPL v2"
+            }
+          ]
+        }
+      ],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "issues-files/iptables1.4.10-iptables-xml.c",
+      "type": "file",
+      "name": "iptables-xml.c",
+      "base_name": "iptables-xml",
+      "extension": ".c",
+      "size": 20302,
+      "date": "2010-10-29",
+      "sha1": "6c574556090271b9802c6e10ee1163fbf157bcb5",
+      "md5": "266a65603e63fb1678e926f6adf48d64",
+      "sha256": null,
+      "mime_type": "text/x-c",
+      "file_type": "C source, ASCII text",
+      "programming_language": "C++",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "gpl-2.0-plus",
+          "score": 23.53,
+          "name": "GNU General Public License 2.0 or later",
+          "short_name": "GPL 2.0 or later",
+          "category": "Copyleft",
+          "is_exception": false,
+          "owner": "Free Software Foundation (FSF)",
+          "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
+          "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0-plus",
+          "spdx_license_key": "GPL-2.0-or-later",
+          "spdx_url": "https://spdx.org/licenses/GPL-2.0-or-later",
+          "start_line": 6,
+          "end_line": 6,
+          "matched_rule": {
+            "identifier": "gpl-2.0-plus_180.RULE",
+            "license_expression": "gpl-2.0-plus",
+            "licenses": [
+              "gpl-2.0-plus"
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "3-seq",
+            "rule_length": 34,
+            "matched_length": 8,
+            "match_coverage": 23.53,
+            "rule_relevance": 100
+          },
+          "matched_text": " * This code is distributed under the terms of GNU GPL v2"
+        },
+        {
+          "key": "gpl-2.0",
+          "score": 90.0,
+          "name": "GNU General Public License 2.0",
+          "short_name": "GPL 2.0",
+          "category": "Copyleft",
+          "is_exception": false,
+          "owner": "Free Software Foundation (FSF)",
+          "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
+          "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0",
+          "spdx_license_key": "GPL-2.0-only",
+          "spdx_url": "https://spdx.org/licenses/GPL-2.0-only",
+          "start_line": 6,
+          "end_line": 6,
+          "matched_rule": {
+            "identifier": "gpl-2.0_223.RULE",
+            "license_expression": "gpl-2.0",
+            "licenses": [
+              "gpl-2.0"
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 3,
+            "matched_length": 3,
+            "match_coverage": 100.0,
+            "rule_relevance": 90.0
+          },
+          "matched_text": " * This code is distributed under the terms of GNU GPL v2"
+        }
+      ],
+      "license_expressions": [
+        "gpl-2.0-plus",
+        "gpl-2.0"
+      ],
+      "percentage_of_license_text": null,
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_license_text": false,
+      "license_detection_issues": [
+        {
+          "file_regions": [
+            {
+              "start_line": 6,
+              "end_line": 6
+            }
+          ],
+          "issue_category": "imperfect-match-coverage",
+          "issue_description": "The license detection is inconclusive with high confidence, because only a small part of the rule text is matched.",
+          "issue_type": {
+            "classification_id": "notice-single-key-notice",
+            "classification_description": "A notice with a single license.",
+            "analysis_confidence": "high",
+            "is_license_intro": false,
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_tag": false,
+            "is_license_reference": false,
+            "is_suggested_matched_text_complete": true
+          },
+          "suggested_license": {
+            "license_expression": "gpl-2.0-plus",
+            "matched_text": " * This code is distributed under the terms of GNU GPL v2"
+          },
+          "original_licenses": [
+            {
+              "key": "gpl-2.0-plus",
+              "score": 23.53,
+              "name": "GNU General Public License 2.0 or later",
+              "short_name": "GPL 2.0 or later",
+              "category": "Copyleft",
+              "is_exception": false,
+              "owner": "Free Software Foundation (FSF)",
+              "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
+              "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
+              "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0-plus",
+              "spdx_license_key": "GPL-2.0-or-later",
+              "spdx_url": "https://spdx.org/licenses/GPL-2.0-or-later",
+              "start_line": 6,
+              "end_line": 6,
+              "matched_rule": {
+                "identifier": "gpl-2.0-plus_180.RULE",
+                "license_expression": "gpl-2.0-plus",
+                "licenses": [
+                  "gpl-2.0-plus"
+                ],
+                "is_license_text": false,
+                "is_license_notice": true,
+                "is_license_reference": false,
+                "is_license_tag": false,
+                "matcher": "3-seq",
+                "rule_length": 34,
+                "matched_length": 8,
+                "match_coverage": 23.53,
+                "rule_relevance": 100
+              },
+              "matched_text": " * This code is distributed under the terms of GNU GPL v2"
+            },
+            {
+              "key": "gpl-2.0",
+              "score": 90.0,
+              "name": "GNU General Public License 2.0",
+              "short_name": "GPL 2.0",
+              "category": "Copyleft",
+              "is_exception": false,
+              "owner": "Free Software Foundation (FSF)",
+              "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
+              "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
+              "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0",
+              "spdx_license_key": "GPL-2.0-only",
+              "spdx_url": "https://spdx.org/licenses/GPL-2.0-only",
+              "start_line": 6,
+              "end_line": 6,
+              "matched_rule": {
+                "identifier": "gpl-2.0_223.RULE",
+                "license_expression": "gpl-2.0",
+                "licenses": [
+                  "gpl-2.0"
+                ],
+                "is_license_text": false,
+                "is_license_notice": true,
+                "is_license_reference": false,
+                "is_license_tag": false,
+                "matcher": "2-aho",
+                "rule_length": 3,
+                "matched_length": 3,
+                "match_coverage": 100.0,
+                "rule_relevance": 90.0
+              },
+              "matched_text": " * This code is distributed under the terms of GNU GPL v2"
+            }
+          ]
+        }
+      ],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "issues-files/socat-2.0.0-sslcls.h",
+      "type": "file",
+      "name": "sslcls.h",
+      "base_name": "sslcls",
+      "extension": ".h",
+      "size": 4197,
+      "date": "2010-06-20",
+      "sha1": "cf0acd039541327f2331ea452ffbad5d2accd723",
+      "md5": "619d2d775c2b2a49bd9abda2ce51a673",
+      "sha256": null,
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": "C++",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "gpl-3.0-plus",
+          "score": 13.21,
+          "name": "GNU General Public License 3.0 or later",
+          "short_name": "GPL 3.0 or later",
+          "category": "Copyleft",
+          "is_exception": false,
+          "owner": "Free Software Foundation (FSF)",
+          "homepage_url": "http://www.gnu.org/licenses/gpl-3.0-standalone.html",
+          "text_url": "http://www.gnu.org/licenses/gpl-3.0-standalone.html",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-3.0-plus",
+          "spdx_license_key": "GPL-3.0-or-later",
+          "spdx_url": "https://spdx.org/licenses/GPL-3.0-or-later",
+          "start_line": 3,
+          "end_line": 3,
+          "matched_rule": {
+            "identifier": "gpl-3.0-plus_with_tex-exception_4.RULE",
+            "license_expression": "gpl-3.0-plus WITH tex-exception",
+            "licenses": [
+              "gpl-3.0-plus",
+              "tex-exception"
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "3-seq",
+            "rule_length": 53,
+            "matched_length": 7,
+            "match_coverage": 13.21,
+            "rule_relevance": 100
+          },
+          "matched_text": "/* Published under the GNU General Public License V.2, see file COPYING */"
+        },
+        {
+          "key": "tex-exception",
+          "score": 13.21,
+          "name": "TeX exception to GPL 3.0",
+          "short_name": "TeX exception to GPL 3.0",
+          "category": "Copyleft Limited",
+          "is_exception": true,
+          "owner": "Unspecified",
+          "homepage_url": null,
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:tex-exception",
+          "spdx_license_key": null,
+          "spdx_url": "",
+          "start_line": 3,
+          "end_line": 3,
+          "matched_rule": {
+            "identifier": "gpl-3.0-plus_with_tex-exception_4.RULE",
+            "license_expression": "gpl-3.0-plus WITH tex-exception",
+            "licenses": [
+              "gpl-3.0-plus",
+              "tex-exception"
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "3-seq",
+            "rule_length": 53,
+            "matched_length": 7,
+            "match_coverage": 13.21,
+            "rule_relevance": 100
+          },
+          "matched_text": "/* Published under the GNU General Public License V.2, see file COPYING */"
+        },
+        {
+          "key": "gpl-2.0",
+          "score": 100.0,
+          "name": "GNU General Public License 2.0",
+          "short_name": "GPL 2.0",
+          "category": "Copyleft",
+          "is_exception": false,
+          "owner": "Free Software Foundation (FSF)",
+          "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
+          "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0",
+          "spdx_license_key": "GPL-2.0-only",
+          "spdx_url": "https://spdx.org/licenses/GPL-2.0-only",
+          "start_line": 3,
+          "end_line": 3,
+          "matched_rule": {
+            "identifier": "gpl-2.0_756.RULE",
+            "license_expression": "gpl-2.0",
+            "licenses": [
+              "gpl-2.0"
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 6,
+            "matched_length": 6,
+            "match_coverage": 100.0,
+            "rule_relevance": 100.0
+          },
+          "matched_text": "/* Published under the GNU General Public License V.2, see file COPYING */"
+        }
+      ],
+      "license_expressions": [
+        "gpl-3.0-plus WITH tex-exception",
+        "gpl-2.0"
+      ],
+      "percentage_of_license_text": null,
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_license_text": false,
+      "license_detection_issues": [
+        {
+          "file_regions": [
+            {
+              "start_line": 3,
+              "end_line": 3
+            }
+          ],
+          "issue_category": "imperfect-match-coverage",
+          "issue_description": "The license detection is inconclusive with high confidence, because only a small part of the rule text is matched.",
+          "issue_type": {
+            "classification_id": "notice-single-key-notice",
+            "classification_description": "A notice with a single license.",
+            "analysis_confidence": "high",
+            "is_license_intro": false,
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_tag": false,
+            "is_license_reference": false,
+            "is_suggested_matched_text_complete": true
+          },
+          "suggested_license": {
+            "license_expression": "gpl-3.0-plus WITH tex-exception",
+            "matched_text": "/* Published under the GNU General Public License V.2, see file COPYING */"
+          },
+          "original_licenses": [
+            {
+              "key": "gpl-3.0-plus",
+              "score": 13.21,
+              "name": "GNU General Public License 3.0 or later",
+              "short_name": "GPL 3.0 or later",
+              "category": "Copyleft",
+              "is_exception": false,
+              "owner": "Free Software Foundation (FSF)",
+              "homepage_url": "http://www.gnu.org/licenses/gpl-3.0-standalone.html",
+              "text_url": "http://www.gnu.org/licenses/gpl-3.0-standalone.html",
+              "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-3.0-plus",
+              "spdx_license_key": "GPL-3.0-or-later",
+              "spdx_url": "https://spdx.org/licenses/GPL-3.0-or-later",
+              "start_line": 3,
+              "end_line": 3,
+              "matched_rule": {
+                "identifier": "gpl-3.0-plus_with_tex-exception_4.RULE",
+                "license_expression": "gpl-3.0-plus WITH tex-exception",
+                "licenses": [
+                  "gpl-3.0-plus",
+                  "tex-exception"
+                ],
+                "is_license_text": false,
+                "is_license_notice": true,
+                "is_license_reference": false,
+                "is_license_tag": false,
+                "matcher": "3-seq",
+                "rule_length": 53,
+                "matched_length": 7,
+                "match_coverage": 13.21,
+                "rule_relevance": 100
+              },
+              "matched_text": "/* Published under the GNU General Public License V.2, see file COPYING */"
+            },
+            {
+              "key": "tex-exception",
+              "score": 13.21,
+              "name": "TeX exception to GPL 3.0",
+              "short_name": "TeX exception to GPL 3.0",
+              "category": "Copyleft Limited",
+              "is_exception": true,
+              "owner": "Unspecified",
+              "homepage_url": null,
+              "text_url": "",
+              "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:tex-exception",
+              "spdx_license_key": null,
+              "spdx_url": "",
+              "start_line": 3,
+              "end_line": 3,
+              "matched_rule": {
+                "identifier": "gpl-3.0-plus_with_tex-exception_4.RULE",
+                "license_expression": "gpl-3.0-plus WITH tex-exception",
+                "licenses": [
+                  "gpl-3.0-plus",
+                  "tex-exception"
+                ],
+                "is_license_text": false,
+                "is_license_notice": true,
+                "is_license_reference": false,
+                "is_license_tag": false,
+                "matcher": "3-seq",
+                "rule_length": 53,
+                "matched_length": 7,
+                "match_coverage": 13.21,
+                "rule_relevance": 100
+              },
+              "matched_text": "/* Published under the GNU General Public License V.2, see file COPYING */"
+            },
+            {
+              "key": "gpl-2.0",
+              "score": 100.0,
+              "name": "GNU General Public License 2.0",
+              "short_name": "GPL 2.0",
+              "category": "Copyleft",
+              "is_exception": false,
+              "owner": "Free Software Foundation (FSF)",
+              "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
+              "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
+              "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0",
+              "spdx_license_key": "GPL-2.0-only",
+              "spdx_url": "https://spdx.org/licenses/GPL-2.0-only",
+              "start_line": 3,
+              "end_line": 3,
+              "matched_rule": {
+                "identifier": "gpl-2.0_756.RULE",
+                "license_expression": "gpl-2.0",
+                "licenses": [
+                  "gpl-2.0"
+                ],
+                "is_license_text": false,
+                "is_license_notice": false,
+                "is_license_reference": true,
+                "is_license_tag": false,
+                "matcher": "2-aho",
+                "rule_length": 6,
+                "matched_length": 6,
+                "match_coverage": 100.0,
+                "rule_relevance": 100.0
+              },
+              "matched_text": "/* Published under the GNU General Public License V.2, see file COPYING */"
+            }
+          ]
+        }
+      ],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "issues-files/socat-2.0.0-xio-ascii.c",
+      "type": "file",
+      "name": "xio-ascii.c",
+      "base_name": "xio-ascii",
+      "extension": ".c",
+      "size": 4613,
+      "date": "2010-06-20",
+      "sha1": "c5e58748bbadad5c004012c90eea0ea90bb375b0",
+      "md5": "b719bb96f3b714555cc66e5c668897df",
+      "sha256": null,
+      "mime_type": "text/x-c",
+      "file_type": "C source, ASCII text",
+      "programming_language": "C++",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "gpl-3.0-plus",
+          "score": 13.21,
+          "name": "GNU General Public License 3.0 or later",
+          "short_name": "GPL 3.0 or later",
+          "category": "Copyleft",
+          "is_exception": false,
+          "owner": "Free Software Foundation (FSF)",
+          "homepage_url": "http://www.gnu.org/licenses/gpl-3.0-standalone.html",
+          "text_url": "http://www.gnu.org/licenses/gpl-3.0-standalone.html",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-3.0-plus",
+          "spdx_license_key": "GPL-3.0-or-later",
+          "spdx_url": "https://spdx.org/licenses/GPL-3.0-or-later",
+          "start_line": 3,
+          "end_line": 3,
+          "matched_rule": {
+            "identifier": "gpl-3.0-plus_with_tex-exception_4.RULE",
+            "license_expression": "gpl-3.0-plus WITH tex-exception",
+            "licenses": [
+              "gpl-3.0-plus",
+              "tex-exception"
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "3-seq",
+            "rule_length": 53,
+            "matched_length": 7,
+            "match_coverage": 13.21,
+            "rule_relevance": 100
+          },
+          "matched_text": "/* Published under the GNU General Public License V.2, see file COPYING */"
+        },
+        {
+          "key": "tex-exception",
+          "score": 13.21,
+          "name": "TeX exception to GPL 3.0",
+          "short_name": "TeX exception to GPL 3.0",
+          "category": "Copyleft Limited",
+          "is_exception": true,
+          "owner": "Unspecified",
+          "homepage_url": null,
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:tex-exception",
+          "spdx_license_key": null,
+          "spdx_url": "",
+          "start_line": 3,
+          "end_line": 3,
+          "matched_rule": {
+            "identifier": "gpl-3.0-plus_with_tex-exception_4.RULE",
+            "license_expression": "gpl-3.0-plus WITH tex-exception",
+            "licenses": [
+              "gpl-3.0-plus",
+              "tex-exception"
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "matcher": "3-seq",
+            "rule_length": 53,
+            "matched_length": 7,
+            "match_coverage": 13.21,
+            "rule_relevance": 100
+          },
+          "matched_text": "/* Published under the GNU General Public License V.2, see file COPYING */"
+        },
+        {
+          "key": "gpl-2.0",
+          "score": 100.0,
+          "name": "GNU General Public License 2.0",
+          "short_name": "GPL 2.0",
+          "category": "Copyleft",
+          "is_exception": false,
+          "owner": "Free Software Foundation (FSF)",
+          "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
+          "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0",
+          "spdx_license_key": "GPL-2.0-only",
+          "spdx_url": "https://spdx.org/licenses/GPL-2.0-only",
+          "start_line": 3,
+          "end_line": 3,
+          "matched_rule": {
+            "identifier": "gpl-2.0_756.RULE",
+            "license_expression": "gpl-2.0",
+            "licenses": [
+              "gpl-2.0"
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
+            "matcher": "2-aho",
+            "rule_length": 6,
+            "matched_length": 6,
+            "match_coverage": 100.0,
+            "rule_relevance": 100.0
+          },
+          "matched_text": "/* Published under the GNU General Public License V.2, see file COPYING */"
+        }
+      ],
+      "license_expressions": [
+        "gpl-3.0-plus WITH tex-exception",
+        "gpl-2.0"
+      ],
+      "percentage_of_license_text": null,
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_license_text": false,
+      "license_detection_issues": [
+        {
+          "file_regions": [
+            {
+              "start_line": 3,
+              "end_line": 3
+            }
+          ],
+          "issue_category": "imperfect-match-coverage",
+          "issue_description": "The license detection is inconclusive with high confidence, because only a small part of the rule text is matched.",
+          "issue_type": {
+            "classification_id": "notice-single-key-notice",
+            "classification_description": "A notice with a single license.",
+            "analysis_confidence": "high",
+            "is_license_intro": false,
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_tag": false,
+            "is_license_reference": false,
+            "is_suggested_matched_text_complete": true
+          },
+          "suggested_license": {
+            "license_expression": "gpl-3.0-plus WITH tex-exception",
+            "matched_text": "/* Published under the GNU General Public License V.2, see file COPYING */"
+          },
+          "original_licenses": [
+            {
+              "key": "gpl-3.0-plus",
+              "score": 13.21,
+              "name": "GNU General Public License 3.0 or later",
+              "short_name": "GPL 3.0 or later",
+              "category": "Copyleft",
+              "is_exception": false,
+              "owner": "Free Software Foundation (FSF)",
+              "homepage_url": "http://www.gnu.org/licenses/gpl-3.0-standalone.html",
+              "text_url": "http://www.gnu.org/licenses/gpl-3.0-standalone.html",
+              "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-3.0-plus",
+              "spdx_license_key": "GPL-3.0-or-later",
+              "spdx_url": "https://spdx.org/licenses/GPL-3.0-or-later",
+              "start_line": 3,
+              "end_line": 3,
+              "matched_rule": {
+                "identifier": "gpl-3.0-plus_with_tex-exception_4.RULE",
+                "license_expression": "gpl-3.0-plus WITH tex-exception",
+                "licenses": [
+                  "gpl-3.0-plus",
+                  "tex-exception"
+                ],
+                "is_license_text": false,
+                "is_license_notice": true,
+                "is_license_reference": false,
+                "is_license_tag": false,
+                "matcher": "3-seq",
+                "rule_length": 53,
+                "matched_length": 7,
+                "match_coverage": 13.21,
+                "rule_relevance": 100
+              },
+              "matched_text": "/* Published under the GNU General Public License V.2, see file COPYING */"
+            },
+            {
+              "key": "tex-exception",
+              "score": 13.21,
+              "name": "TeX exception to GPL 3.0",
+              "short_name": "TeX exception to GPL 3.0",
+              "category": "Copyleft Limited",
+              "is_exception": true,
+              "owner": "Unspecified",
+              "homepage_url": null,
+              "text_url": "",
+              "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:tex-exception",
+              "spdx_license_key": null,
+              "spdx_url": "",
+              "start_line": 3,
+              "end_line": 3,
+              "matched_rule": {
+                "identifier": "gpl-3.0-plus_with_tex-exception_4.RULE",
+                "license_expression": "gpl-3.0-plus WITH tex-exception",
+                "licenses": [
+                  "gpl-3.0-plus",
+                  "tex-exception"
+                ],
+                "is_license_text": false,
+                "is_license_notice": true,
+                "is_license_reference": false,
+                "is_license_tag": false,
+                "matcher": "3-seq",
+                "rule_length": 53,
+                "matched_length": 7,
+                "match_coverage": 13.21,
+                "rule_relevance": 100
+              },
+              "matched_text": "/* Published under the GNU General Public License V.2, see file COPYING */"
+            },
+            {
+              "key": "gpl-2.0",
+              "score": 100.0,
+              "name": "GNU General Public License 2.0",
+              "short_name": "GPL 2.0",
+              "category": "Copyleft",
+              "is_exception": false,
+              "owner": "Free Software Foundation (FSF)",
+              "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
+              "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
+              "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0",
+              "spdx_license_key": "GPL-2.0-only",
+              "spdx_url": "https://spdx.org/licenses/GPL-2.0-only",
+              "start_line": 3,
+              "end_line": 3,
+              "matched_rule": {
+                "identifier": "gpl-2.0_756.RULE",
+                "license_expression": "gpl-2.0",
+                "licenses": [
+                  "gpl-2.0"
+                ],
+                "is_license_text": false,
+                "is_license_notice": false,
+                "is_license_reference": true,
+                "is_license_tag": false,
+                "matcher": "2-aho",
+                "rule_length": 6,
+                "matched_length": 6,
+                "match_coverage": 100.0,
+                "rule_relevance": 100.0
+              },
+              "matched_text": "/* Published under the GNU General Public License V.2, see file COPYING */"
+            }
+          ]
+        }
+      ],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    }
+  ]
+}
