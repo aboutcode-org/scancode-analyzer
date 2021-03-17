@@ -26,16 +26,13 @@ import os
 import json
 
 
-class DataIOJSON:
+def load_json(path):
+    with open(path, 'r') as file_handler:
+        listdata = json.load(file_handler)
 
-    @staticmethod
-    def load_json(path):
-        with open(path, 'r') as file_handler:
-            listdata = json.load(file_handler)
+    return listdata
 
-        return listdata
 
-    @staticmethod
-    def write_json(listdata, path):
-        with open(path, 'w') as file_handler:
-            json.dump(listdata, file_handler)
+def write_json(listdata, path):
+    with open(path, 'w') as file_handler:
+        json.dump(listdata, file_handler)
