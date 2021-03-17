@@ -70,53 +70,69 @@ All Issue Types
 ---------------
 
 .. list-table::
-    :widths: 15 15
+    :widths: 5 15 15
     :header-rows: 1
 
-    * - ``text/notice/tag/reference``
+    * - ``license``
       - ``issue_type::classification_id``
+      - ``Description``
 
     * - ``text``
       - ``text-legal-lic-files``
+      - The matched text is present in a file whose name is a known legal filename.
 
     * - ``text``
       - ``text-non-legal-lic-files``
+      - The matched license text is present in a file whose name is not a known legal filename.
 
     * - ``text``
-      - ``text-lic-text-fragments``
+      - ``lic-text-fragments``
+      - Only parts of a larger license text are detected.
 
     * - ``notice``
-      - ``notice-and-or-with-notice``
+      - ``and-or-with-notice``
+      - A notice with a complex license expression (i.e. exceptions, choices or combinations).
 
     * - ``notice``
-      - ``notice-single-key-notice``
+      - ``single-key-notice``
+      - A notice with a single license.
 
     * - ``notice``
       - ``notice-has-unknown-match``
+      - License notices with unknown licenses detected.
 
     * - ``notice``
       - ``notice-false-positive``
+      - A piece of code/text is incorrectly detected as a license.
 
     * - ``tag``
-      - ``tag-tag-coverage``
+      - ``tag-low-coverage``
+      - A part of a license tag is detected
 
     * - ``tag``
-      - ``tag-other-tag-structures``
+      - ``other-tag-structures``
+      - A new/common structure of tags are detected with scope for being handled differently.
 
     * - ``tag``
       - ``tag-false-positives``
+      - A piece of code/text is incorrectly detected as a license.
 
     * - ``reference``
-      - ``reference-lead-in-or-unknown-refs``
+      - ``lead-in-or-unknown-reference``
+      - Lead-ins to known license references are detected.
 
     * - ``reference``
-      - ``reference-low-coverage-refs``
+      - ``low-coverage-reference``
+      - License references with a incomplete match.
 
     * - ``reference``
       - ``reference-to-local-file``
+      - Matched to an unknown rule as the license information is present in another file,
+        which is referred to in this matched piece of text.
 
     * - ``reference``
       - ``reference-false-positive``
+      - A piece of code/text is incorrectly detected as a license.
 
 .. _case_lic_text:
 

@@ -16,7 +16,7 @@ from scancode.cli_test_utils import check_json_scan
 from scancode.cli_test_utils import run_scan_click
 
 from results_analyze import analyzer
-from results_analyze.df_file_io import DataIOJSON
+from file_io import load_json
 from results_analyze.analyzer_summary import SummaryLicenseIssues
 from results_analyze.analyzer_summary import StatisticsLicenseIssues
 from results_analyze.analyzer_summary import UniqueIssue
@@ -72,7 +72,7 @@ class TestSummaryLicenseIssues(FileBasedTesting):
             SummaryLicenseIssues.summarize(all_issues, 1, 1)
         )
         expected_file = self.get_test_loc("one_issue_summary.json")
-        expected_summary = DataIOJSON.load_json(expected_file)
+        expected_summary = load_json(expected_file)
         assert summary == expected_summary
 
 
@@ -97,7 +97,7 @@ class TestStatisticsLicenseIssues(FileBasedTesting):
             StatisticsLicenseIssues.generate_statistics(all_issues, 1, 1, 1)
         )
         expected_file = self.get_test_loc("one_issue_summary.json")
-        expected_summary = DataIOJSON.load_json(expected_file)
+        expected_summary = load_json(expected_file)
         assert stats == expected_summary["statistics"]
 
 
@@ -138,7 +138,7 @@ class TestUniqueIssue(FileBasedTesting):
             attr.asdict(file_region)
             for file_region in file_regions
         ]
-        expected_file_regions = DataIOJSON.load_json(expected_file)
+        expected_file_regions = load_json(expected_file)
         assert unique_issue_file_regions == expected_file_regions
         
     def test_analyzer_summary_get_unique_issues_iptables_count(self):
@@ -158,7 +158,7 @@ class TestUniqueIssue(FileBasedTesting):
         expected_file = self.get_test_loc(
             "multiple_files_same_issues_iptables_file_regions.json"
         )
-        expected_file_regions = DataIOJSON.load_json(expected_file)
+        expected_file_regions = load_json(expected_file)
         all_issues = get_all_license_issues_in_codebase(input_json)
         unique_issues = UniqueIssue.get_unique_issues(all_issues)
         unique_issue = unique_issues.pop()

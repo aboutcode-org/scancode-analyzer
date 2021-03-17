@@ -1,30 +1,18 @@
 #
 # Copyright (c) nexB Inc. and others. All rights reserved.
-# http://nexb.com and https://github.com/nexB/scancode-toolkit/
-# The ScanCode software is licensed under the Apache License version 2.0.
-# Data generated with ScanCode require an acknowledgment.
 # ScanCode is a trademark of nexB Inc.
+# SPDX-License-Identifier: Apache-2.0
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
 #
-# You may not use this software except in compliance with the License.
-# You may obtain a copy of the License at: http://apache.org/licenses/LICENSE-2.0
-# Unless required by applicable law or agreed to in writing, software distributed
-# under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-# CONDITIONS OF ANY KIND, either express or implied. See the License for the
-# specific language governing permissions and limitations under the License.
-#
-# When you publish or redistribute any data created with ScanCode or any ScanCode
-# derivative work, you must accompany this data with the following acknowledgment:
-#
-#  Generated with ScanCode and provided on an "AS IS" BASIS, WITHOUT WARRANTIES
-#  OR CONDITIONS OF ANY KIND, either express or implied. No content created from
-#  ScanCode should be considered or used as legal advice. Consult an Attorney
-#  for any legal advice.
-#  ScanCode is a free software code scanning tool from nexB Inc. and others.
-#  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 import pandas as pd
 import numpy as np
-pd.options.mode.chained_assignment = None  # default='warn'
+
+# Raise Error in case of Chained Assignment as that has unpredictable consequences
+# Docs - https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+pd.options.mode.chained_assignment = 'raise'  # default='warn'
 
 # All values of match_coverage less than this value is taken as incorrect scans
 MATCH_COVERAGE_THR = 100
@@ -45,14 +33,13 @@ class DivideCases:
         self.license_class_bools = ["is_license_text_lic", "is_license_notice", "is_license_tag",
                                     "is_license_reference"]
 
-        # Rule Attributes that are relevant in Rule Creation/Review
-        self.craft_rule_fields = ["path", "key", "matched_length", "start_line", "end_line", "matched_text",
-                                  "match_class"]
+        self.license_class_dict = {1: 'license_text',  2: 'license_notice', 3: 'license-tag', 4: 'license-reference'}
 
+    # TODO: Add another threshold and grouping based on stats (near-perfect scores, maybe 85/90 to 100)
     @staticmethod
     def get_values_low_match_coverages_or_score(df):
         """
-        There are two cases where scans are likely to be wrong and needs a seperate Rule:-
+        There are two cases where scans are likely to be wrong and needs a separate Rule:-
         1. Low Match Coverage in one of the Matches in a File/Location
         2. `score != match_coverage * rule_relevance` because even though the rule is entirely matched,
         there's some extra words in the `matched_text`
@@ -86,7 +73,7 @@ class DivideCases:
         return mask_series
 
     @staticmethod
-    def select_2_aho_3_seq_scans(dataframe):
+    def get_mask_2_aho_3_seq_scans(dataframe):
         """
         Only select `matcher` values 2 (`2-aho`) and 3 (`3-seq`) because other values, 1 (`1-hash) and 4 (`4-spdx-id`)
         means that there was an exact match. We only need the incorrect matches, which are present in the
@@ -96,35 +83,27 @@ class DivideCases:
         :return: dataframe.query(): pd.DataFrame
             Return rows of `dataframe` where the query is True
         """
-        return dataframe.query("matcher == 2 and matcher == 3")
+        return np.bitwise_or(dataframe.matcher == 2, dataframe.matcher == 3)
 
     def get_incorrect_scan_cases(self, all_scans_df):
         """
         Combines the two functions `get_values_low_match_coverages_or_score` and `select_2_aho_3_seq_scans` to select
-        all incorrect scans. `select_2_aho_3_seq_scans` is an initial faster cleaning step,
-        and `get_values_low_match_coverages_or_score`
+        all incorrect scans. `select_2_aho_3_seq_scans` is an initial faster cleaning step, that removes scans with
+        `1-hash` and `4-spdx-id` as matchers. Then `get_values_low_match_coverages_or_score` selects files which
+        contain at least one incorrect scan. These incorrect scans are also grouped into two classes, the ones with
+        low (<100) match coverage, and the ones where `score != match_coverage * rule_relevance`
 
         :param all_scans_df: pd.DataFrame
         :return: all_incorrect_scans_df: pd.DataFrame
             Return rows of `all_scans_df` where there are Incorrect Scans.
         """
-
-        # Adding column `query_coverage_diff` with the difference between `match_coverage * rule_relevance` and `score`
-        # if this is positive, there are extra words
-        all_scans_df["query_coverage_diff"] = ((all_scans_df["match_coverage"] * all_scans_df["rule_relevance"]) / 100
-                                               - all_scans_df["score"]).values
-
         # Select only scans with matcher value `2-aho` and `3-seq` i.e. remove scans that are surely correct
-        scans_2_aho_3_seq = self.select_2_aho_3_seq_scans(all_scans_df)
+        mask_2_aho_3_seq_scans = self.get_mask_2_aho_3_seq_scans(all_scans_df)
+        scans_2_aho_3_seq = all_scans_df[mask_2_aho_3_seq_scans]
 
         # Apply `get_values_low_match_coverages_or_score` File Wise, and results are stacked in mask_values
         mask_values = scans_2_aho_3_seq.groupby(level="file_sha1").apply(self.get_values_low_match_coverages_or_score)
-        scans_2_aho_3_seq["score_coverage_based_groups"] = mask_values.values
-
-        # Only Select Files with Low Match Coverage or Matches with Low Score and Extra Words
-        all_incorrect_scans_df = scans_2_aho_3_seq.query("score_coverage_based_groups != 0")
-
-        return all_incorrect_scans_df
+        all_scans_df.loc[mask_2_aho_3_seq_scans, "score_coverage_based_groups"] = mask_values.values
 
     @staticmethod
     def get_id_match_cov_tuples(df):
@@ -140,15 +119,15 @@ class DivideCases:
 
         return list_tuples
 
-    def get_unique_cases_files(self, non_unique_df):
+    def get_unique_cases_mask(self, non_unique_df):
         """
-        In a Project, a lot of License Texts/Notices/Referances/Tags are reused, so if all of them are detected wrongly,
-        We need only one unique instance of those cases, to craft a Rule.
+        In a DataFrame, makes tuples for each file, containing "identifier" and "match_coverage" value pairs, so that
+        if any file has the same tuples, they have the same case of license detection inaccuracy.
 
         :param non_unique_df: pd.DataFrame
-            DataFrame with all cases
-        :return non_unique_df.query(): pd.DataFrame
-            Only those rows of DataFrame which are unique cases i.e. where the query is True
+            DataFrame with all incorrect cases i.e. where at least one match has an imperfect match coverage
+        :return mask_df: pd.DataFrame
+            Dataframe with value True on only those rows of DataFrame which are unique cases.
         """
 
         # Data Frame with only "identifier" and "match_coverage" columns. A set of these two would ideally be unique
@@ -166,15 +145,29 @@ class DivideCases:
         series_unique = file_tuples["tuples"].drop_duplicates(keep='first')
 
         # Create a Mask with the Unique Files having Value True
-        file_tuples["mask"] = pd.Series(False, index=file_tuples.index)
+        file_tuples.loc[:, "mask"] = pd.Series(False, index=file_tuples.index)
         file_tuples.loc[series_unique.index, "mask"] = True
 
         # Keep all Matches of a Unique File, i.e. here a list of Tuples Column is expanded so each tuple will have
         # A new row, with mask value True if the File was marked as a Unique File
         mask_df = file_tuples.explode("tuples")
-        non_unique_df.loc[:, ["mask_unique"]] = mask_df["mask"].values
 
-        return non_unique_df.query("mask_unique == True")
+        return mask_df
+
+    def set_unique_cases_files(self, dataframe):
+        """
+        In a Project, a lot of License Texts/Notices/References/Tags are reused, so if all of them are detected wrongly,
+        We need only one unique instance of those cases, to craft a Rule. This function selects only one instance of
+        those unique incorrect scans, and discards all other repetitions.
+
+        :param dataframe: pd.DataFrame
+            DataFrame with all cases
+        """
+        mask_incorrect_scans = (dataframe.score_coverage_based_groups != 0)
+        incorrect_scans_df = dataframe[mask_incorrect_scans]
+
+        mask_df = self.get_unique_cases_mask(incorrect_scans_df)
+        dataframe.loc[mask_incorrect_scans, "mask_unique"] = mask_df["mask"].values
 
     @staticmethod
     def get_match_class(df):
@@ -284,21 +277,93 @@ class DivideCases:
 
     def group_matches_by_location_and_class(self, dataframe):
         """
-        Apply `get_groups_by_location_and_class` to Every File, to group them by Location and then determine the
-        type of License of those particular groups.
+        Selects all unique incorrect scans by creating a boolean mask.
+        Then applies `get_groups_by_location_and_class` to Every File, to group them by Location and then determine the
+        type of License of those particular groups. Then uses the mask to make write the location/license class
+        information to the respective DataFrame rows.
 
         :param dataframe: pd.DataFrame
-        :return dataframe: pd.DataFrame
-            Same instance of DataFrame which was the input, With two more columns `match_group_number` and `match_class`
+            Dataframe containing all unique incorrect license detections.
         """
         # Stacks output DataFrames from all Files into One DataFrame `grouped_by_location_class`
-        grouped_by_location_class = dataframe.groupby(level="file_sha1").apply(self.get_groups_by_location_and_class)
+        unique_incorrect_scans_mask = np.bitwise_and(dataframe.score_coverage_based_groups != 2, dataframe.mask_unique)
+        unique_incorrect_scans_df = dataframe[unique_incorrect_scans_mask]
+
+        location_and_class_groups = unique_incorrect_scans_df.groupby(level="file_sha1").apply(
+                                                                                self.get_groups_by_location_and_class)
 
         # Add Group by Location and License Type information to main Dataframe
-        dataframe["match_group_number"] = grouped_by_location_class["match_group_number"].values
-        dataframe["match_class"] = grouped_by_location_class["match_class"].values
+        dataframe.loc[unique_incorrect_scans_mask, "match_group_number"] = location_and_class_groups[
+                                                                                        "match_group_number"].values
+        dataframe.loc[unique_incorrect_scans_mask, "match_class"] = location_and_class_groups["match_class"].values
 
-        return dataframe
+    @staticmethod
+    def get_possible_false_positives(dataframe):
+        """
+        Separate and mark cases which could be False Positives, in the DataFrame, inplace.
+        They are License Tags and most of them are erroneously matched with one-word rules.
+
+        :param dataframe:
+            DataFrame containing all the Scan Results.
+        """
+        possible_false_positives_mask = np.bitwise_and(dataframe.is_license_tag, dataframe.rule_length == 1)
+        dataframe.loc[possible_false_positives_mask, "match_class"] = 5
+
+    # TODO: Implement SubClasses in Match Classes
+    @staticmethod
+    def initialize_dataframe_rows(dataframe):
+        """
+         Initialize rows in the DataFrame for marking them into different cases. The new rows are:
+            - query_coverage_diff
+            - score_coverage_based_groups
+            - mask_unique
+            - match_group_number
+            - match_class
+
+         :param dataframe:
+             DataFrame containing all the Scan Results.
+         """
+        # Adding column `query_coverage_diff` with the difference between `match_coverage * rule_relevance` and `score`
+        # if this is positive, there are extra words
+        dataframe.loc[:, "query_coverage_diff"] = ((dataframe["match_coverage"] * dataframe["rule_relevance"]) / 100
+                                            - dataframe["score"]).values
+
+        # initialize row for for group by License Scores
+        dataframe.loc[:, "score_coverage_based_groups"] = 0
+
+        # initialize row for Unique/Non-unique (True/False) License Detection Errors
+        dataframe.loc[:, "mask_unique"] = False
+
+        # initialize rows for group by Location and License Type information
+        dataframe.loc[:, "match_group_number"] = 0
+        dataframe.loc[:, "match_class"] = 0
+
+    def divide_cases_in_groups(self, dataframe):
+        """
+        Separate and Group Wrong License Detections.
+
+        :param dataframe: pd.DataFrame
+            DataFrame containing all the Scan Results.
+        """
+        self.initialize_dataframe_rows(dataframe)
+
+        self.get_possible_false_positives(dataframe)
+
+        self.get_incorrect_scan_cases(dataframe)
+
+        # Only Select Files with Low Match Coverage or Matches with Low Score and Extra Words
+        self.set_unique_cases_files(dataframe)
+
+        self.group_matches_by_location_and_class(dataframe)
+
+
+class CraftRules:
+
+    def __init__(self):
+
+        # Rule Attributes that are relevant in Rule Creation/Review
+        self.craft_rule_fields = ["path", "key", "matched_length", "start_line", "end_line", "matched_text",
+                                  "match_class"]
 
     @staticmethod
     def merge_string_without_overlap(s1, s2):
@@ -341,7 +406,7 @@ class DivideCases:
 
     def craft_rule_text(self, df, group_number):
         """
-        Craft Rule from a group of Matches.
+        Craft Rule from a group of Matches, which are in the same location group.
 
         :param df: pd.DataFrame
             Rows are Matches from the same location wise group.
@@ -361,7 +426,7 @@ class DivideCases:
             present_start_line, present_end_line, present_text = list(
                 df.loc[df.index[match], ["start_line", "end_line", "matched_text"]].values)
 
-            # If String Bounderies Overlap
+            # If String Boundaries Overlap
             if string_end_line == present_start_line:
 
                 rule_text = self.merge_string_with_overlap(rule_text, present_text)
@@ -453,7 +518,7 @@ class DivideCases:
 
     def craft_rules_by_group(self, df):
         """
-        Apply `get_rules_by_group` to matches in each Files, to craft rules.
+        Apply `get_rules_by_group` to matches in each File, to craft rules for each location based group, for all files.
 
         :param df:
         :return generated_rules:
@@ -461,40 +526,3 @@ class DivideCases:
         generated_rules = df.groupby(level="file_sha1").apply(self.get_rules_by_group)
 
         return generated_rules
-
-    @staticmethod
-    def get_possible_false_positives(df):
-        """
-        Separate and return cases which could be False Positives.
-        They are License Tags and most of them are erroneously matched with one-word rules.
-
-        :param df:
-        :return df.query():
-            Rows from `df` which has possible False Positive Cases
-        """
-        return df.query("is_license_tag == True and rule_length == 1")
-
-    def divide_cases(self, dataframe):
-        """
-        Separate and Group Wrong License Detections.
-
-        :param dataframe: pd.DataFrame
-        :return all_dataframes: list
-            List of Separate Grouped DataFrames
-        """
-        possible_false_positives_df = self.get_possible_false_positives(dataframe)
-
-        incorrect_scans_df = self.get_incorrect_scan_cases(dataframe)
-
-        unique_incorrect_scans_df = self.get_unique_cases_files(incorrect_scans_df)
-
-        grouped_df = self.group_matches_by_location_and_class(unique_incorrect_scans_df)
-
-        lic_text_df = grouped_df.query("is_license_text_file == True or is_legal == True or match_class == 1")
-        lic_tag_df = grouped_df.query("match_class == 3")
-        lic_notice_df = grouped_df.query("match_class == 2")
-        lic_ref_df = grouped_df.query("match_class == 4")
-
-        all_dataframes = [lic_text_df, lic_tag_df, lic_notice_df, lic_ref_df, possible_false_positives_df]
-
-        return all_dataframes

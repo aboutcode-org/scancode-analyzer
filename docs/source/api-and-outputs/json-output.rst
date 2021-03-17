@@ -131,7 +131,7 @@ The attributes containing the analysis results are:
 These 3 attributes in the analysis results has information on which file-region the matches are in.
 
     1. ``start_line`` and ``end_line`` marking the file-region.
-    2. ``issue_category`` and ``issue_description`` is what kind of issue it is and it's description.
+    2. ``issue_category`` and ``issue_description`` categorizes and describes the issue.
     3. ``issue_type`` has further types of issues and their related attributes, listed below.
     4. ``original_license`` having the license matches with issues.
 
@@ -369,7 +369,7 @@ Basic Statistics
         },
         "issue_classification_id_counts": {
             "notice-single-key-notice": 1
-        }, 
+        },
         "analysis_confidence_counts": {
             "high": 1
         },
