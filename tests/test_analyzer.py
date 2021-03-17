@@ -12,7 +12,7 @@ import os
 
 from commoncode.testcase import FileBasedTesting
 
-from results_analyze.file_io import load_json
+from file_io import load_json
 
 from results_analyze import analyzer
 

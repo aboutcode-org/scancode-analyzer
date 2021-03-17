@@ -16,7 +16,7 @@ from scancode.cli_test_utils import check_json_scan
 from scancode.cli_test_utils import run_scan_click
 
 from results_analyze import analyzer
-from results_analyze.file_io import load_json
+from file_io import load_json
 from results_analyze.analyzer_summary import SummaryLicenseIssues
 from results_analyze.analyzer_summary import StatisticsLicenseIssues
 from results_analyze.analyzer_summary import UniqueIssue
