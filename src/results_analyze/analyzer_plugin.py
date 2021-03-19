@@ -88,11 +88,18 @@ class ResultsAnalyzer(PostScanPlugin):
                 break
 
             count_has_license += 1
+            
             try:
                 license_matches = LicenseMatch.from_files_licenses(
                     license_matches_serialized
                 )
-
+            except KeyError as e:
+                trace = traceback.format_exc()
+                msg = f"Cannot convert scancode data to LicenseMatch class: {e}\n{trace}"
+                codebase.errors.append(msg)
+                raise ScancodeDataChangedError(msg)
+            
+            try:
                 ars = list(analyzer.LicenseDetectionIssue.from_license_matches(
                     license_matches=license_matches,
                     is_license_text=getattr(resource, "is_license_text", False),
@@ -130,6 +137,10 @@ class ResultsAnalyzer(PostScanPlugin):
             resource.scan_errors.append(msg)
         codebase.save_resource(resource)
 
+
+class ScancodeDataChangedError(Exception):
+    pass
+    
 
 @attr.s
 class LicenseMatch:

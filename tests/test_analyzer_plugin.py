@@ -24,7 +24,7 @@ from results_analyze.analyzer_plugin import is_analyzable
 from results_analyze.analyzer_plugin import ResultsAnalyzer
 from results_analyze.analyzer_plugin import MISSING_OPTIONS_MESSAGE
 from results_analyze.analyzer_plugin import LicenseMatch
-from results_analyze.analyzer_plugin import ScancodeDataChangedException
+from results_analyze.analyzer_plugin import ScancodeDataChangedError
 
 
 
@@ -158,6 +158,17 @@ class TestAnalyzerPlugin(FileBasedTesting):
             analyzer_plugin.process_codebase(codebase=codebase)
             self.fail(msg="Exception not raised")
         except Exception:
+            pass
+        
+    def test_scancode_data_changed_exception(self):
+        input_json = self.get_test_loc("sample_file_make_data_deserealize_fail.json")
+        codebase = VirtualCodebase(input_json)
+        analyzer_plugin = ResultsAnalyzer()
+
+        try:
+            analyzer_plugin.process_codebase(codebase=codebase)
+            self.fail(msg="Exception not raised")
+        except ScancodeDataChangedError:
             pass
 
 
