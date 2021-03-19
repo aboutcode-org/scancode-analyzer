@@ -8,6 +8,8 @@
 #
 
 import os
+import json
+
 import attr
 
 from commoncode.testcase import FileBasedTesting
@@ -22,10 +24,11 @@ from results_analyze.analyzer_plugin import is_analyzable
 from results_analyze.analyzer_plugin import ResultsAnalyzer
 from results_analyze.analyzer_plugin import MISSING_OPTIONS_MESSAGE
 from results_analyze.analyzer_plugin import LicenseMatch
+from results_analyze.analyzer_plugin import ScancodeDataChangedException
 
 
 
-class AnalyzerPlugin(FileBasedTesting):
+class TestAnalyzerPlugin(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), "data/analyzer-plugins/")
     missing_options_full_msg = (
         "Cannot analyze scan for license detection errors, because "
@@ -193,31 +196,26 @@ class TestLicenseMatch(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), "data/analyzer-plugins/")
     
     def test_from_files_license_empty_list(self):
-
         license_matches = LicenseMatch.from_files_licenses([])
         assert license_matches == []
-        
-    def test_from_files_license_one_match(self):
-        test_file = self.get_test_loc("from_files_license_one_match.json")
+
+    def check_from_files_license(self, test_file, regen=False):
+        test_file = self.get_test_loc(test_file)
         license_matches_serialized = load_json(test_file)
-        [license_match_serialized] = license_matches_serialized
-        license_rule_serialized = license_match_serialized["matched_rule"]
         license_matches = LicenseMatch.from_files_licenses(license_matches_serialized)
-        [license_match] = license_matches
+        results = list(map(attr.asdict, license_matches))
+        expected_file = test_file + "-expected"
+        if regen:
+            expected = results
+            with open(expected_file, "w") as out:
+                json.dump(expected, out, indent=2)
+        else:
+            expected = load_json(expected_file)
         
-        assert len(license_matches) == 1
-        assert license_match.license_expression == license_rule_serialized[
-            "license_expression"
-        ]
-        assert license_match.is_license_intro == license_rule_serialized[
-            "is_license_intro"
-        ]
-        assert license_match.start_line == license_match_serialized["start_line"]
-        assert license_match.matcher == license_rule_serialized["matcher"]
-        assert license_match.match_coverage == license_rule_serialized["match_coverage"]
-        assert license_match.matched_length == license_rule_serialized["matched_length"]
-        assert license_match.matched_text == license_match_serialized["matched_text"]
-        assert license_match.matched_length == license_rule_serialized["matched_length"]
+        assert results == expected
+
+    def test_from_files_license_one_match(self):
+        self.check_from_files_license("from_files_license_one_match.json")
 
     def test_from_files_license_multiple_match_simple_few(self):
         test_file = self.get_test_loc(
@@ -254,4 +252,3 @@ class TestLicenseMatch(FileBasedTesting):
         license_matches_serialized = load_json(test_file)
         license_matches = LicenseMatch.from_files_licenses(license_matches_serialized)
         assert len(license_matches) == 4
-

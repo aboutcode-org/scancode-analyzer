@@ -78,8 +78,8 @@ class ResultsAnalyzer(PostScanPlugin):
                 break
 
             # Where the resource does not have any detected license
-            license_matches = getattr(resource, "licenses", [])
-            if not license_matches:
+            license_matches_serialized = getattr(resource, "licenses", [])
+            if not license_matches_serialized:
                 continue
 
             # Case where any attribute essential for analysis is missing
@@ -89,6 +89,10 @@ class ResultsAnalyzer(PostScanPlugin):
 
             count_has_license += 1
             try:
+                license_matches = LicenseMatch.from_files_licenses(
+                    license_matches_serialized
+                )
+
                 ars = list(analyzer.LicenseDetectionIssue.from_license_matches(
                     license_matches=license_matches,
                     is_license_text=getattr(resource, "is_license_text", False),

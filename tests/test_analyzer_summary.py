@@ -17,12 +17,13 @@ from scancode.cli_test_utils import run_scan_click
 
 from results_analyze import analyzer
 from file_io import load_json
+from results_analyze.analyzer_plugin import LicenseMatch
 from results_analyze.analyzer_summary import SummaryLicenseIssues
 from results_analyze.analyzer_summary import StatisticsLicenseIssues
 from results_analyze.analyzer_summary import UniqueIssue
 
 
-class AnalyzerPluginSummary(FileBasedTesting):
+class TestAnalyzerPluginSummary(FileBasedTesting):
     test_data_dir = os.path.join(
         os.path.dirname(__file__), 
         "data/analyzer-plugins/"
@@ -205,8 +206,11 @@ def get_all_license_issues_in_codebase(input_json):
 
     for resource in codebase.walk():
 
+        license_matches = LicenseMatch.from_files_licenses(
+            getattr(resource, "licenses", [])
+        )
         ars = list(analyzer.LicenseDetectionIssue.from_license_matches(
-            license_matches=getattr(resource, "licenses", []),
+            license_matches=license_matches,
             is_license_text=getattr(resource, "is_license_text", False),
             is_legal=getattr(resource, "is_legal", False),
             path=getattr(resource, "path"),
