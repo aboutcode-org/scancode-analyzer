@@ -1,12 +1,66 @@
 [
-      {
-        "matched_rule": {
-          "matcher": "1-hash"
-        }
-      },
-      {
-        "matched_rule": {
-          "matcher": "4-spdx-id"
-        }
-      }
+  {
+    "key": null,
+    "score": null,
+    "name": null,
+    "short_name": null,
+    "category": null,
+    "is_exception": null,
+    "owner": null,
+    "homepage_url": null,
+    "text_url": null,
+    "reference_url": null,
+    "spdx_license_key": null,
+    "spdx_url": null,
+    "start_line": null,
+    "end_line": null,
+    "matched_rule": {
+      "identifier": null,
+      "license_expression": null,
+      "licenses": null,
+      "is_license_text": null,
+      "is_license_notice": null,
+      "is_license_reference": null,
+      "is_license_tag": null,
+      "is_license_intro": null,
+      "matcher": "1-hash",
+      "rule_length": null,
+      "matched_length": null,
+      "match_coverage": null,
+      "rule_relevance": null
+    },
+    "matched_text": null
+  },
+  {
+    "key": null,
+    "score": null,
+    "name": null,
+    "short_name": null,
+    "category": null,
+    "is_exception": null,
+    "owner": null,
+    "homepage_url": null,
+    "text_url": null,
+    "reference_url": null,
+    "spdx_license_key": null,
+    "spdx_url": null,
+    "start_line": null,
+    "end_line": null,
+    "matched_rule": {
+      "identifier": null,
+      "license_expression": null,
+      "licenses": null,
+      "is_license_text": null,
+      "is_license_notice": null,
+      "is_license_reference": null,
+      "is_license_tag": null,
+      "is_license_intro": null,
+      "matcher": "4-spdx-id",
+      "rule_length": null,
+      "matched_length": null,
+      "match_coverage": null,
+      "rule_relevance": null
+    },
+    "matched_text": null
+  }
 ]

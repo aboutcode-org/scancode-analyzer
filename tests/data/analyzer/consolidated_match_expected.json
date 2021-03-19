@@ -1,4 +1,34 @@
-{
-    "key": "lgpl-2.0-plus",
-    "matched_text": " *  licensed under the terms of the LGPL.  The redistributable library\n *  (``libopts'') is licensed under the terms of either the LGPL or, at the\n *  users discretion, the BSD license.  See the AutoOpts and/or libopts sources\n *  for details.\n *\n * This source file is copyrighted and licensed under the following terms:\n *\n * genshellopt copyright (c) 1999-2009 Bruce Korb - all rights reserved\n *\n * genshellopt is free software: you can redistribute it and/or modify it\n * under the terms of the GNU General Public License as published by the\n * Free Software Foundation, either version 3 of the License, or\n * (at your option) any later version.\n * \n * genshellopt is distributed in the hope that it will be useful, but\n * WITHOUT ANY WARRANTY; without even the implied warranty of\n * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n * See the GNU General Public License for more details.\n * \n * You should have received a copy of the GNU General Public License along\n * with this program.  If not, see <http://www.gnu.org/licenses/>."
-}
+[
+    {
+        "key": null,
+        "score": null,
+        "name": null,
+        "short_name": null,
+        "category": null,
+        "is_exception": null,
+        "owner": null,
+        "homepage_url": null,
+        "text_url": null,
+        "reference_url": null,
+        "spdx_license_key": null,
+        "spdx_url": null,
+        "start_line": null,
+        "end_line": null,
+        "matched_rule": {
+            "identifier": null,
+            "license_expression": "lgpl-2.0-plus",
+            "licenses": null,
+            "is_license_text": null,
+            "is_license_notice": null,
+            "is_license_reference": null,
+            "is_license_tag": null,
+            "is_license_intro": null,
+            "matcher": "1-hash",
+            "rule_length": null,
+            "matched_length": null,
+            "match_coverage": null,
+            "rule_relevance": null
+        },
+        "matched_text": " *  licensed under the terms of the LGPL.  The redistributable library\n *  (``libopts'') is licensed under the terms of either the LGPL or, at the\n *  users discretion, the BSD license.  See the AutoOpts and/or libopts sources\n *  for details.\n *\n * This source file is copyrighted and licensed under the following terms:\n *\n * genshellopt copyright (c) 1999-2009 Bruce Korb - all rights reserved\n *\n * genshellopt is free software: you can redistribute it and/or modify it\n * under the terms of the GNU General Public License as published by the\n * Free Software Foundation, either version 3 of the License, or\n * (at your option) any later version.\n * \n * genshellopt is distributed in the hope that it will be useful, but\n * WITHOUT ANY WARRANTY; without even the implied warranty of\n * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n * See the GNU General Public License for more details.\n * \n * You should have received a copy of the GNU General Public License along\n * with this program.  If not, see <http://www.gnu.org/licenses/>."
+    }
+]
