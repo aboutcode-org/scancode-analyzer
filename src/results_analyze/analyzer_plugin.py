@@ -139,13 +139,16 @@ class ResultsAnalyzer(PostScanPlugin):
 
 
 class ScancodeDataChangedError(Exception):
+    """
+    Raised when the scan results data format does not match what we expect.
+    """
     pass
     
 
 @attr.s
 class LicenseMatch:
     """
-    Represents a license match to a rule.
+    Represent a license match to a rule.
     """
     license_expression = attr.ib()
     score = attr.ib()
