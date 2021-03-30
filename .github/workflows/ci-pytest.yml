@@ -25,5 +25,5 @@ jobs:
         run:  ./configure
 
       - name: Run tests
-        run: tmp/bin/pytest -vvs
+        run: tmp/bin/pytest -vvs tests
 
