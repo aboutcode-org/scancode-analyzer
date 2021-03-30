@@ -238,7 +238,7 @@ class LicenseDetectionIssue:
     issue_type = attr.ib()
 
     suggested_license = attr.ib()
-    original_licenses = attr.ib(factory=list)
+    original_licenses = attr.ib()
 
     file_regions = attr.ib(default=attr.Factory(list))
     
@@ -258,16 +258,14 @@ class LicenseDetectionIssue:
         This is an identifier for a issue, based on it's underlying license matches.
         """
         data = []
-        for license in self.original_licenses:
-            rule_id = license["matched_rule"]["identifier"]
-            match_coverage = license["matched_rule"]["match_coverage"]
-            identifier = (rule_id, match_coverage,)
+        for license_match in self.original_licenses:
+            identifier = (license_match.rule_identifier, license_match.match_coverage,)
             data.append(identifier)
 
         return tuple(data)
 
     @staticmethod
-    def format_analysis_result(issue_category, issue_type, grouped_matches, path):
+    def format_analysis_result(issue_category, issue_type, license_matches, path):
         """
         Format the analysis result to generate an LicenseDetectionIssue object for
         this license detection issue.
@@ -276,8 +274,9 @@ class LicenseDetectionIssue:
             One of ISSUE_CATEGORIES.
         :param issue_type: str
             One of ISSUE_TYPES_BY_CLASSIFICATION.
-        :param grouped_matches: list
-            All matches for a license detection issue (for a file-region).
+        :param license_matches: list
+            All matches for a license detection issue (for a file-region), each a
+            LicenseMatch object.
         :param path: str
             Path of the resource where the license issue exists
         """
@@ -285,9 +284,9 @@ class LicenseDetectionIssue:
         if issue_category == "correct-license-detection":
             return None
 
-        start_line, end_line = get_start_end_line(grouped_matches)
+        start_line, end_line = get_start_end_line(license_matches)
         license_expression, matched_text = get_license_match_suggestion(
-            grouped_matches, issue_category, issue_type
+            license_matches, issue_category, issue_type
         )
 
         license_detection_issue = LicenseDetectionIssue(
@@ -297,7 +296,7 @@ class LicenseDetectionIssue:
             suggested_license=SuggestedLicenseMatch(
                 license_expression=license_expression, matched_text=matched_text
             ),
-            original_licenses=grouped_matches,
+            original_licenses=license_matches,
             file_regions=[FileRegion(
                 path=path,
                 start_line=start_line,
@@ -319,7 +318,7 @@ class LicenseDetectionIssue:
         suggested license match, with the original reported matches.
 
         :param license_matches: list
-            A list of all matches in a file.
+            List of LicenseMatch.
         :param path: str
             Path of the resource where the license issue exists
         :param is_license_text: bool
@@ -343,9 +342,9 @@ def is_correct_detection(license_matches):
     a exact match with a license hash.
 
     :param license_matches: list
-        List of license matches in a file-region.
+        List of LicenseMatch.
     """
-    matchers = (match["matched_rule"]["matcher"] for match in license_matches)
+    matchers = (license_match.matcher for license_match in license_matches)
     return all(matcher in ("1-hash", "4-spdx-id") for matcher in matchers)
 
 
@@ -355,17 +354,17 @@ def is_match_coverage_less_than_threshold(license_matches, threshold):
     value below the threshold.
 
     :param license_matches: list
-        List of license matches in a file-region.
+        List of LicenseMatch.
     :param threshold: int
         A `match_coverage` threshold value in between 0-100
     """
     coverage_values = (
-        match["matched_rule"]["match_coverage"] for match in license_matches
+        license_match.match_coverage for license_match in license_matches
     )
     return any(coverage_value < threshold for coverage_value in coverage_values)
 
 
-def calculate_query_coverage_coefficient(matched_license):
+def calculate_query_coverage_coefficient(license_match):
     """
     Calculates a `query_coverage_coefficient` value for that match. For a match:
     1. If this value is 0, i.e. `score`==`match_coverage`*`rule_Relevance`, then
@@ -373,15 +372,13 @@ def calculate_query_coverage_coefficient(matched_license):
     2. If this value is a +ve number, i.e. `score`!=`match_coverage`*`rule_Relevance`,
        then there are extra words in that match.
 
-    :param matched_license: dict
-        A license match dictionary containing all the match attributes.
+    :param matched_license: LicenseMatch.
     """
-    matched_rule = matched_license["matched_rule"]
     score_coverage_relevance = (
-        matched_rule["match_coverage"] * matched_rule["rule_relevance"]
+        license_match.match_coverage * license_match.rule_relevance
     ) / 100
 
-    return score_coverage_relevance - matched_license["score"]
+    return score_coverage_relevance - license_match.score
 
 
 def is_extra_words(license_matches):
@@ -391,10 +388,11 @@ def is_extra_words(license_matches):
     extra words in addition to the matched text.
 
     :param license_matches: list
-        List of license matches in a file-region.
+        List of LicenseMatch.
     """
     match_query_coverage_diff_values = (
-        calculate_query_coverage_coefficient(match) for match in license_matches
+        calculate_query_coverage_coefficient(license_match)
+        for license_match in license_matches
     )
     return any(
         match_query_coverage_diff_value > 0
@@ -410,11 +408,13 @@ def is_false_positive(license_matches):
     True. Note: Usually if it's a false positive, there's only one match in that region.
 
     :param license_matches: list
-        List of license matches in a file-region.
+        List of LicenseMatch.
     """
-    start_line_region = min(match["start_line"] for match in license_matches)
+    start_line_region = min(
+        license_match.start_line for license_match in license_matches
+    )
     match_rule_length_values = [
-        match["matched_rule"]["rule_length"] for match in license_matches
+        license_match.rule_length for license_match in license_matches
     ]
 
     if start_line_region > FALSE_POSITIVE_START_LINE_THRESHOLD and any(
@@ -424,7 +424,7 @@ def is_false_positive(license_matches):
         return True
 
     match_is_license_tag_flags = (
-        match["matched_rule"]["is_license_tag"] for match in license_matches
+        license_match.is_license_tag for license_match in license_matches
     )
     return all(
         (is_license_tag_flag and match_rule_length == 1)
@@ -440,13 +440,13 @@ def has_unknown_matches(license_matches):
     `unknown` rule identifier.
 
     :param license_matches: list
-        List of license matches in a file-region.
+        List of LicenseMatch.
     """
     match_rule_identifiers = (
-        match["matched_rule"]["identifier"] for match in license_matches
+        license_match.rule_identifier for license_match in license_matches
     )
     match_rule_license_expressions = (
-        match["matched_rule"]["license_expression"] for match in license_matches
+        license_match.license_expression for license_match in license_matches
     )
     return any(
         "unknown" in identifier for identifier in match_rule_identifiers
@@ -463,7 +463,7 @@ def get_analysis_for_region(license_matches):
     has extra words.
 
     :param license_matches: list
-        List of matched licenses in a file-region.
+        List of LicenseMatch.
     """
     # Case where all matches have `matcher` as `1-hash` or `4-spdx-id`
     if is_correct_detection(license_matches):
@@ -509,12 +509,12 @@ def is_license_case(license_matches, license_case):
     Get the type of license_match_case for a group of license matches in a file-region.
 
     :param license_matches: list
-        List of matched licenses in a file-region
+        List of LicenseMatch.
     :param license_case: string
         One of the 4 boolean flag attributes of a match, i.e. is it text/notice/tag/ref
     """
     match_is_license_case_flags = (
-        match["matched_rule"][license_case] for match in license_matches
+        getattr(license_match, license_case) for license_match in license_matches
     )
     return any(
         match_is_license_case for match_is_license_case in match_is_license_case_flags
@@ -527,7 +527,7 @@ def get_issue_rule_type(license_matches, is_license_text, is_legal):
     groups according to their potential license rule type (text/notice/tag/reference).
 
     :param license_matches: list
-        A list of all matches in a file-region.
+        List of LicenseMatch.
     :param is_license_text: bool
     :param is_legal: bool
     """
@@ -578,7 +578,7 @@ def get_license_notice_issue_type(license_matches, issue_category):
     license_expression_connectors = ["AND", "OR", "WITH"]
 
     match_rule_license_expressions = [
-        match["matched_rule"]["license_expression"] for match in license_matches
+        license_match.license_expression for license_match in license_matches
     ]
 
     if issue_category == "false-positive":
@@ -619,7 +619,7 @@ def get_license_reference_issue_type(license_matches, issue_category):
     where it is a license reference.
     """
     match_rule_identifiers = [
-        match["matched_rule"]["identifier"] for match in license_matches
+        license_match.rule_identifier for license_match in license_matches
     ]
 
     if issue_category == "false-positive":
@@ -675,13 +675,13 @@ def merge_string_with_overlap(string1, string2):
     return string1[:idx] + string2
 
 
-def get_start_end_line(group_of_license_matches):
+def get_start_end_line(license_matches):
     """
     Returns start and end line for a license detection issue, from the
     license match(es).
     """
-    start_line = min([match["start_line"] for match in group_of_license_matches])
-    end_line = max([match["end_line"] for match in group_of_license_matches])
+    start_line = min([license_match.start_line for license_match in license_matches])
+    end_line = max([license_match.end_line for license_match in license_matches])
     return start_line, end_line
 
 
@@ -693,7 +693,7 @@ def predict_license_expression(license_matches):
     unknown_expressions = ['unknown', 'warranty-disclaimer']
     
     license_expressions = (
-        match["matched_rule"]["license_expression"] for match in license_matches
+        license_match.license_expression for license_match in license_matches
     )
     known_expressions = [
         le for le in license_expressions if le not in unknown_expressions
@@ -714,29 +714,29 @@ def predict_license_expression(license_matches):
         return top_license_expressions[0]
 
     top_license_matches = [
-        match
-        for match in license_matches
-        if match["matched_rule"]["license_expression"] in top_license_expressions
+        license_match
+        for license_match in license_matches
+        if license_match.license_expression in top_license_expressions
     ]
 
     max_match_length = max([
-        match["matched_rule"]["matched_length"]
-        for match in top_license_matches
+        license_match.matched_length
+        for license_match in top_license_matches
     ])
     license_expression_prediction = next(
-        match["matched_rule"]["license_expression"]
-        for match in top_license_matches
-        if match["matched_rule"]["matched_length"] is max_match_length
+        license_match.license_expression
+        for license_match in top_license_matches
+        if license_match.matched_length is max_match_length
     )
     return license_expression_prediction
 
 
-def get_license_match_suggestion(group_of_license_matches, issue_category, issue_type):
+def get_license_match_suggestion(license_matches, issue_category, issue_type):
     """
     Suggest a license match rectifying the license detection issue.
 
-    :param group_of_license_matches:
-        All the license matches in a license detection issue.
+    :param license_matches:
+        List of LicenseMatch.
     :param issue_category:
         One of LicenseDetectionIssue.ISSUE_CATEGORIES.
     :param issue_type:
@@ -750,25 +750,23 @@ def get_license_match_suggestion(group_of_license_matches, issue_category, issue
     matched_text = None
 
     if issue_category != "correct-license-detection":
-        if len(group_of_license_matches) == 1:
-            [match] = group_of_license_matches
-            license_expression = match["key"]
-            matched_text = match["matched_text"]
+        if len(license_matches) == 1:
+            [match] = license_matches
+            license_expression = match.license_expression
+            matched_text = match.matched_text
         else:
             if issue_type == "notice-and-or-with-notice":
-                match = group_of_license_matches[0]
-                license_expression = match["matched_rule"]["license_expression"]
-                matched_text = match["matched_text"]
+                match = license_matches[0]
+                license_expression = match.license_expression
+                matched_text = match.matched_text
             else:
-                license_expression = predict_license_expression(
-                    group_of_license_matches
-                )
-                matched_text = consolidate_matches(group_of_license_matches)
+                license_expression = predict_license_expression(license_matches)
+                matched_text = consolidate_matches(license_matches)
 
     return license_expression, matched_text
 
 
-def consolidate_matches(group_of_license_matches):
+def consolidate_matches(license_matches):
     """
     Create a complete matched_text from a group of Matches, which are in the same
     license detection issue, i.e. in the same file-region.
@@ -779,16 +777,16 @@ def consolidate_matches(group_of_license_matches):
     string_end_line = None
     is_first_group = True
 
-    for match in group_of_license_matches:
+    for license_match in license_matches:
         if is_first_group:
-            string_end_line = match["end_line"]
-            matched_text = match["matched_text"]
+            string_end_line = license_match.end_line
+            matched_text = license_match.matched_text
             is_first_group = False
             continue
         else:
-            present_start_line = match["start_line"]
-            present_end_line = match["end_line"]
-            present_text = match["matched_text"]
+            present_start_line = license_match.start_line
+            present_end_line = license_match.end_line
+            present_text = license_match.matched_text
 
         # Case: Has a line-overlap
         if string_end_line == present_start_line:
@@ -809,17 +807,15 @@ def consolidate_matches(group_of_license_matches):
     return matched_text
 
 
-def analyze_region_for_license_scan_issues(
-    group_of_license_matches, is_license_text, is_legal
-):
+def analyze_region_for_license_scan_issues(license_matches, is_license_text, is_legal):
     """
     On a group of license matches (grouped on the basis of location in file),
     perform steps of analysis to determine if the license match is correct or if it has
     any issues. In case of issues, divide the issues into groups of commonly occurring
     license detection issues.
 
-    :param group_of_license_matches: list
-        A list of all matches in a file-region.
+    :param license_matches: list
+        List of LicenseMatch.
     :param is_license_text: bool
     :param is_legal: bool
     :return issue_category: str
@@ -827,7 +823,7 @@ def analyze_region_for_license_scan_issues(
     :returns issue_type: str
         One of LicenseDetectionIssue.ISSUE_TYPES_BY_CLASSIFICATION
     """
-    issue_category = get_analysis_for_region(group_of_license_matches)
+    issue_category = get_analysis_for_region(license_matches)
     issue_type = None
 
     # If one of the matches in the file-region has issues, classify the type of issue
@@ -836,15 +832,15 @@ def analyze_region_for_license_scan_issues(
 
         if not USE_LICENSE_CASE_BERT_MODEL:
             issue_rule_type = get_issue_rule_type(
-                group_of_license_matches,
+                license_matches,
                 is_license_text,
                 is_legal,
             )
         else:
-            issue_rule_type = get_issue_rule_type_using_bert(group_of_license_matches)
+            issue_rule_type = get_issue_rule_type_using_bert(license_matches)
 
         issue_type = get_issue_type(
-            group_of_license_matches,
+            license_matches,
             is_license_text,
             is_legal,
             issue_category,
@@ -882,7 +878,7 @@ def group_matches(license_matches, lines_threshold=LINES_THRESHOLD):
     that is found in the JSON scan results.
 
     :param license_matches: list
-        List of license matches in a file, which are to be grouped.
+        List of LicenseMatch.
     :param lines_threshold: int
         The maximum space that can exist between two matches for them to be
         considered in the same file-region.
@@ -890,23 +886,23 @@ def group_matches(license_matches, lines_threshold=LINES_THRESHOLD):
         A list of groups, where each group is a list of matches in the same file-region.
     """
     group_of_license_matches = []
-    for match in license_matches:
+    for license_match in license_matches:
         if not group_of_license_matches:
-            group_of_license_matches.append(match)
+            group_of_license_matches.append(license_match)
             continue
-        previous = group_of_license_matches[-1]
-        is_in_group = match["start_line"] <= previous["end_line"] + lines_threshold
+        previous_match = group_of_license_matches[-1]
+        is_in_group = license_match.start_line <= previous_match.end_line + lines_threshold
         if is_in_group:
-            group_of_license_matches.append(match)
+            group_of_license_matches.append(license_match)
             continue
         else:
             yield group_of_license_matches
-            group_of_license_matches = [match]
+            group_of_license_matches = [license_match]
 
     yield group_of_license_matches
 
 
-def analyze_matches(all_groups_of_license_matches, path, is_license_text, is_legal):
+def analyze_matches(groups_of_license_matches, path, is_license_text, is_legal):
     """
     Analyze all license detection issues in a file, for license detection issues.
 
@@ -920,9 +916,9 @@ def analyze_matches(all_groups_of_license_matches, path, is_license_text, is_leg
         A list of LicenseDetectionIssue objects one for each license detection
         issue.
     """
-    for group_of_license_matches in all_groups_of_license_matches:
+    for group_of_license_matches in groups_of_license_matches:
         issue_category, issue_type = analyze_region_for_license_scan_issues(
-            group_of_license_matches=group_of_license_matches,
+            license_matches=group_of_license_matches,
             is_license_text=is_license_text,
             is_legal=is_legal,
         )

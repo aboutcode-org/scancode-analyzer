@@ -1,0 +1,72 @@
+[
+    {
+        "key": "apache-2.0",
+        "score": 20.0,
+        "name": "Apache License 2.0",
+        "short_name": "Apache 2.0",
+        "category": "Permissive",
+        "is_exception": false,
+        "owner": "Apache Software Foundation",
+        "homepage_url": "http://www.apache.org/licenses/",
+        "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
+        "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:apache-2.0",
+        "spdx_license_key": "Apache-2.0",
+        "spdx_url": "https://spdx.org/licenses/Apache-2.0",
+        "start_line": 5,
+        "end_line": 6,
+        "matched_rule": {
+        "identifier": "apache-2.0_or_gpl-2.0_2.RULE",
+        "license_expression": "apache-2.0 OR gpl-2.0",
+        "licenses": [
+            "apache-2.0",
+            "gpl-2.0"
+        ],
+        "is_license_text": false,
+        "is_license_notice": true,
+        "is_license_reference": false,
+        "is_license_tag": false,
+        "is_license_intro": false,
+        "matcher": "3-seq",
+        "rule_length": 30,
+        "matched_length": 6,
+        "match_coverage": 20.0,
+        "rule_relevance": 100
+        },
+        "matched_text": " * BSD-style license that accompanies tcpdump or the GNU General\n * Public License"
+    },
+    {
+        "key": "gpl-2.0",
+        "score": 20.0,
+        "name": "GNU General Public License 2.0",
+        "short_name": "GPL 2.0",
+        "category": "Copyleft",
+        "is_exception": false,
+        "owner": "Free Software Foundation (FSF)",
+        "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
+        "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
+        "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0",
+        "spdx_license_key": "GPL-2.0-only",
+        "spdx_url": "https://spdx.org/licenses/GPL-2.0-only",
+        "start_line": 5,
+        "end_line": 6,
+        "matched_rule": {
+        "identifier": "apache-2.0_or_gpl-2.0_2.RULE",
+        "license_expression": "apache-2.0 OR gpl-2.0",
+        "licenses": [
+            "apache-2.0",
+            "gpl-2.0"
+        ],
+        "is_license_text": false,
+        "is_license_notice": true,
+        "is_license_reference": false,
+        "is_license_tag": false,
+        "is_license_intro": false,
+        "matcher": "3-seq",
+        "rule_length": 30,
+        "matched_length": 6,
+        "match_coverage": 20.0,
+        "rule_relevance": 100
+        },
+        "matched_text": " * BSD-style license that accompanies tcpdump or the GNU General\n * Public License"
+    }
+]

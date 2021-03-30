@@ -22,17 +22,15 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-import os
 import json
 
 
 def load_json(path):
     with open(path, 'r') as file_handler:
-        listdata = json.load(file_handler)
+        data = json.load(file_handler)
+    return data
 
-    return listdata
 
-
-def write_json(listdata, path):
+def write_json(data, path):
     with open(path, 'w') as file_handler:
-        json.dump(listdata, file_handler)
+        json.dump(data, file_handler)

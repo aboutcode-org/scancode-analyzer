@@ -10,6 +10,7 @@
 import traceback
 
 import attr
+from license_expression import Licensing
 
 from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.cliutils import POST_SCAN_GROUP
@@ -77,8 +78,8 @@ class ResultsAnalyzer(PostScanPlugin):
                 break
 
             # Where the resource does not have any detected license
-            license_matches = getattr(resource, "licenses", [])
-            if not license_matches:
+            license_matches_serialized = getattr(resource, "licenses", [])
+            if not license_matches_serialized:
                 continue
 
             # Case where any attribute essential for analysis is missing
@@ -87,6 +88,17 @@ class ResultsAnalyzer(PostScanPlugin):
                 break
 
             count_has_license += 1
+            
+            try:
+                license_matches = LicenseMatch.from_files_licenses(
+                    license_matches_serialized
+                )
+            except KeyError as e:
+                trace = traceback.format_exc()
+                msg = f"Cannot convert scancode data to LicenseMatch class: {e}\n{trace}"
+                codebase.errors.append(msg)
+                raise ScancodeDataChangedError(msg)
+            
             try:
                 ars = list(analyzer.LicenseDetectionIssue.from_license_matches(
                     license_matches=license_matches,
@@ -124,6 +136,86 @@ class ResultsAnalyzer(PostScanPlugin):
             msg = f"Cannot summarize license detection issues: {e}\n{trace}"
             resource.scan_errors.append(msg)
         codebase.save_resource(resource)
+
+
+class ScancodeDataChangedError(Exception):
+    """
+    Raised when the scan results data format does not match what we expect.
+    """
+    pass
+    
+
+@attr.s
+class LicenseMatch:
+    """
+    Represent a license match to a rule.
+    """
+    license_expression = attr.ib()
+    score = attr.ib()
+    start_line = attr.ib()
+    end_line = attr.ib()
+    rule_identifier = attr.ib()
+    is_license_text = attr.ib()
+    is_license_notice = attr.ib()
+    is_license_reference = attr.ib()
+    is_license_tag = attr.ib()
+    is_license_intro = attr.ib()
+    matcher = attr.ib()
+    matched_length = attr.ib()
+    rule_length = attr.ib()
+    match_coverage = attr.ib()
+    rule_relevance = attr.ib()
+    matched_text = attr.ib()
+    
+    @classmethod
+    def from_files_licenses(cls, license_matches):
+        """
+        Return LicenseMatch built from the scancode files.licenses data structure.
+        """
+        matches = []
+        licensing = Licensing()
+        # Whenever we have multiple matches with the same expression, we want to only
+        # keep the first and skip the secondary matches
+        skip_secondary_matches = 0
+        
+        for license_match in license_matches:
+            if skip_secondary_matches:
+                skip_secondary_matches -= 1
+                continue
+            
+            matched_rule = license_match["matched_rule"]
+            # key = license_match["key"]
+            license_expression = matched_rule["license_expression"]
+            expression_keys = licensing.license_keys(license_expression)
+            
+            if len(expression_keys) != 1:
+                skip_secondary_matches = len(expression_keys) - 1                
+            
+            matches.append(
+                cls(
+                    license_expression = license_expression,
+                    score = license_match["score"],
+                    start_line = license_match["start_line"],
+                    end_line = license_match["end_line"],
+                    rule_identifier = matched_rule["identifier"],
+                    is_license_text = matched_rule["is_license_text"],
+                    is_license_notice = matched_rule["is_license_notice"],
+                    is_license_reference = matched_rule["is_license_reference"],
+                    is_license_tag = matched_rule["is_license_tag"],
+                    is_license_intro = matched_rule["is_license_intro"],
+                    matcher = matched_rule["matcher"],
+                    matched_length = matched_rule["matched_length"],
+                    rule_length = matched_rule["rule_length"],
+                    match_coverage = matched_rule["match_coverage"],
+                    rule_relevance = matched_rule["rule_relevance"],
+                    matched_text = license_match["matched_text"],
+                )
+            )
+        
+        return matches
+
+    def to_dict(self):
+        return attr.asdict(self)
 
 
 def is_analyzable(resource):

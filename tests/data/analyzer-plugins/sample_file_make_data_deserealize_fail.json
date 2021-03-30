@@ -1,0 +1,95 @@
+{
+    "files": [
+      {
+        "path": "scan-files",
+        "type": "directory",
+        "name": "scan-files",
+        "base_name": "scan-files",
+        "extension": "",
+        "size": 0,
+        "date": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "mime_type": null,
+        "file_type": null,
+        "programming_language": null,
+        "is_binary": false,
+        "is_text": false,
+        "is_archive": false,
+        "is_media": false,
+        "is_source": false,
+        "is_script": false,
+        "licenses": [],
+        "license_expressions": [],
+        "percentage_of_license_text": 0,
+        "is_legal": false,
+        "is_manifest": false,
+        "is_readme": false,
+        "is_top_level": true,
+        "is_key_file": false,
+        "is_license_text": false,
+        "files_count": 4,
+        "dirs_count": 0,
+        "size_count": 78046,
+        "scan_errors": []
+      },
+      {
+        "path": "scan-files/1930-which-2.20-getopt.c",
+        "type": "file",
+        "name": "1930-which-2.20-getopt.c",
+        "base_name": "1930-which-2.20-getopt",
+        "extension": ".c",
+        "size": 30245,
+        "date": "2007-05-25",
+        "sha1": "1122bffdf476e2eda2821c8d32c98a17160a9f73",
+        "md5": "1fd652e360299e5ac45771bd2b225a05",
+        "mime_type": "text/x-c",
+        "file_type": "C source, ASCII text",
+        "programming_language": "C++",
+        "is_binary": false,
+        "is_text": true,
+        "is_archive": false,
+        "is_media": false,
+        "is_source": true,
+        "is_script": false,
+        "licenses": [
+          {
+            "score": 100.0,
+            "start_line": 9,
+            "end_line": 22,
+            "matched_rule": {
+              "identifier": "lgpl-2.0-plus_234.RULE",
+              "license_expression": "lgpl-2.0-plus",
+              "is_license_text": false,
+              "is_license_notice": true,
+              "is_license_reference": false,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "rule_length": 127,
+              "rule_relevance": 100.0
+            },
+            "matcher": "2-aho",
+            "matched_length": 127,
+            "match_coverage": 100.0,
+            "matched_text": "   The GNU C Library is free software; you can redistribute it and/or\n   modify it under the terms of the GNU Library General Public License as\n   published by the Free Software Foundation; either version 2 of the\n   License, or (at your option) any later version.\n\n   The GNU C Library is distributed in the hope that it will be useful,\n   but WITHOUT ANY WARRANTY; without even the implied warranty of\n   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU\n   Library General Public License for more details.\n\n   You should have received a copy of the GNU Library General Public\n   License along with the GNU C Library; see the file COPYING.LIB.  If not,\n   write to the Free Software Foundation, Inc., 59 Temple Place - Suite 330,\n   Boston, MA 02110-1301, USA.  */"
+          }
+        ],
+        "license_expressions": [
+          "lgpl-2.0-plus"
+        ],
+        "percentage_of_license_text": 20.31,
+        "is_legal": false,
+        "is_manifest": false,
+        "is_readme": false,
+        "is_top_level": true,
+        "is_key_file": false,
+        "is_license_text": false,
+        "files_count": 0,
+        "dirs_count": 0,
+        "size_count": 0,
+        "scan_errors": []
+      }
+    ]
+}
+  
