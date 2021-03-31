@@ -21,6 +21,7 @@ from results_analyze.analyzer_plugin import LicenseMatch
 from results_analyze.analyzer_summary import SummaryLicenseIssues
 from results_analyze.analyzer_summary import StatisticsLicenseIssues
 from results_analyze.analyzer_summary import UniqueIssue
+from results_analyze.analyzer_summary import get_identifiers
 
 
 class TestAnalyzerPluginSummary(FileBasedTesting):
@@ -182,6 +183,13 @@ class TestUniqueIssue(FileBasedTesting):
         all_issues = get_all_license_issues_in_codebase(input_json)
         unique_issues = UniqueIssue.get_unique_issues(all_issues)
         assert len(unique_issues) == 5
+        
+    def test_analyzer_summary_get_unique_issues_unknown_intro(self):
+            
+        input_json = self.get_test_loc("multiple_files_unknown_intro.json")
+        all_issues = get_all_license_issues_in_codebase(input_json)
+        unique_issues = UniqueIssue.get_unique_issues(all_issues)
+        assert len(unique_issues) == 3
 
     def test_analyzer_summary_get_formatted_unique_issue(self):
         input_json = self.get_test_loc("one_issue.json")
@@ -197,6 +205,29 @@ class TestUniqueIssue(FileBasedTesting):
         )
         assert type(unique_issue.license_detection_issue) == dict
         assert len(unique_issue.license_detection_issue['original_licenses']) == 1
+
+class TestGetIdentifiers(FileBasedTesting):
+    test_data_dir = os.path.join(
+        os.path.dirname(__file__),
+        "data/analyzer-summary/"
+    )
+
+    def test_get_indetifiers_same_for_same_tokenized_text(self):
+            
+        input_json = self.get_test_loc(
+            "multiple_files_unknown_intro_same_tokenized_text.json"
+        )
+        issues = get_all_license_issues_in_codebase(input_json)
+        assert list(get_identifiers([issues[0]])) == list(get_identifiers([issues[1]]))
+        
+    def test_analyzer_summary_get_unique_issues_unknown_intro_same_tokenized_text(self):
+            
+        input_json = self.get_test_loc(
+            "multiple_files_unknown_intro_same_tokenized_text.json"
+        )
+        issues = get_all_license_issues_in_codebase(input_json)
+        unique_issues = UniqueIssue.get_unique_issues(issues)
+        assert len(unique_issues) == 1
 
 
 def get_all_license_issues_in_codebase(input_json):

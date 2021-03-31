@@ -10,6 +10,8 @@
 import attr
 from collections import Counter
 
+from licensedcode.tokenize import query_tokenizer
+
 # All values of match_coverage less than this value are taken as
 # `near-perfect-match-coverage` cases
 NEAR_PERFECT_MATCH_COVERAGE_THR = 100
@@ -197,6 +199,15 @@ ISSUE_TYPES_BY_CLASSIFICATION = {
         ),
         analysis_confidence="medium",
     ),
+    "intro-unknown-match": IssueType(
+        is_license_reference=True,
+        classification_id="intro-unknown-match",
+        classification_description=(
+            "A piece of common introduction to a license text/notice/reference is "
+            "detected."
+        ),
+        analysis_confidence="medium",
+    ),
 }
 
 
@@ -260,6 +271,24 @@ class LicenseDetectionIssue:
         data = []
         for license_match in self.original_licenses:
             identifier = (license_match.rule_identifier, license_match.match_coverage,)
+            data.append(identifier)
+
+        return tuple(data)
+    
+    @property
+    def identifier_for_unknown_intro(self):
+        """
+        This is an identifier for a issue, which is an unknown license intro,
+        based on it's underlying license matches.
+        """
+        data = []
+        for license_match in self.original_licenses:
+            tokenized_matched_text = tuple(query_tokenizer(license_match.matched_text))
+            identifier = (
+                license_match.rule_identifier,
+                license_match.match_coverage,
+                tokenized_matched_text,
+            )
             data.append(identifier)
 
         return tuple(data)

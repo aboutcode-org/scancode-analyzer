@@ -15,6 +15,7 @@ from commoncode.testcase import FileBasedTesting
 from file_io import load_json
 
 from results_analyze import analyzer
+from results_analyze.analyzer_summary import get_identifiers
 from results_analyze.analyzer_plugin import LicenseMatch
 
 @attr.s
@@ -405,7 +406,7 @@ class TestAnalyzer(FileBasedTesting):
         matched_text = analyzer.consolidate_matches(license_matches)
         assert matched_text == expected_match.matched_text
 
-    def test_get_identifiers_and_coverages(self):
+    def test_get_identifiers(self):
         test_file = self.get_test_loc(
             "analyzer_group_matches_notice_reference_fragments_group_1.json"
         )
@@ -416,8 +417,8 @@ class TestAnalyzer(FileBasedTesting):
             is_license_text=False,
             is_legal=False,
         )
-        result = next(issues).identifier
-        expected = (
+        result = list(get_identifiers([next(issues)]))
+        expected = [(
             ('lead-in_unknown_67.RULE', 100.0),
             ('lgpl_bare_single_word.RULE', 100.0),
             ('lead-in_unknown_67.RULE', 100.0),
@@ -425,7 +426,29 @@ class TestAnalyzer(FileBasedTesting):
             ('bsd-new_145.RULE', 100.0),
             ('agpl-3.0-plus_112.RULE', 90.83),
             ('lead-in_unknown_77.RULE', 100.0),
+        )]
+        assert result == expected
+        
+    def test_get_identifier_unknown_intro(self):
+        test_file = self.get_test_loc("analyzer_is_license_case_intro_one.json")
+        license_matches = load_license_matches_from_json(test_file)
+        issue = analyzer.LicenseDetectionIssue.from_license_matches(
+            license_matches=license_matches,
+            path="path/to/group_matches_by_location_analyze_result.json",
+            is_license_text=False,
+            is_legal=False,
         )
+        result = list(get_identifiers(issue))
+        expected = [(
+            (
+                'license-intro_26.RULE',
+                100.0,
+                (
+                    'this', 'file', 'and', 'its', 'contents', 'are', 'licensed',
+                    'under', 'the', 'timescale', 'license',
+                )
+            ),
+        )]
         assert result == expected
 
     def test_analyzer_analyze_region_for_license_scan_issues_notice(self):
