@@ -358,7 +358,10 @@ class LicenseDetectionIssue:
         if not license_matches:
             return []
 
-        groups_of_license_matches = group_matches(license_matches)
+        if not is_license_text:
+            groups_of_license_matches = group_matches(license_matches)
+        else:
+            groups_of_license_matches = [license_matches]
         return analyze_matches(
             groups_of_license_matches, path, is_license_text, is_legal
         )
@@ -590,13 +593,13 @@ def get_license_text_issue_type(is_license_text, is_legal):
     Classifies the license detection issue into one of ISSUE_TYPES_BY_CLASSIFICATION,
     where it is a license text.
     """
-    if is_license_text:
-        if is_legal:
+    if is_legal:
+        if is_license_text:
             return "text-legal-lic-files"
         else:
-            return "text-non-legal-lic-files"
+            return "text-lic-text-fragments"
     else:
-        return "text-lic-text-fragments"
+        return "text-non-legal-lic-files"
 
 
 def get_license_notice_issue_type(license_matches, issue_category):

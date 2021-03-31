@@ -506,7 +506,7 @@ class TestAnalyzer(FileBasedTesting):
         assert len(list(grouped_matches)) == 2
 
 
-class TestLicenseMatchErrorResult(FileBasedTesting):
+class TestFromLicenseMatches(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), "data/analyzer/")
 
     def test_analyze_license_matches_return_empty_list_with_none_matches(self):
@@ -516,6 +516,23 @@ class TestLicenseMatchErrorResult(FileBasedTesting):
     def test_analyze_license_matches_return_empty_list_with_empty_matches(self):
         results = analyzer.LicenseDetectionIssue.from_license_matches([])
         assert results == []
+
+    def test_dont_group_license_matches_in_high_license_text_files(self):
+        test_file = self.get_test_loc("dont_group_matches_in_legal_file.json")
+        file_scan_result = load_json(test_file)
+        matched_licences = LicenseMatch.from_files_licenses(
+            file_scan_result["licenses"]
+        )
+        is_license_text = True
+        is_legal = file_scan_result["is_legal"]
+        issues = analyzer.LicenseDetectionIssue.from_license_matches(
+            license_matches=matched_licences,
+            path="path/to/dont_group_matches_in_legal_file.json",
+            is_license_text=is_license_text,
+            is_legal=is_legal,
+        )
+        assert len(list(issues)) == 1
+        
 
     def test_group_license_matches_by_location_and_analyze(self):
         # TODO: Add Explanation for all creation of test Files from scancode scan results
