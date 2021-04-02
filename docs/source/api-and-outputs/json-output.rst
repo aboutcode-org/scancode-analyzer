@@ -1,13 +1,13 @@
 JSON Output Format
 ==================
 
-`scancode-results-analyzer` is meant to be used as a post-scan Plugin for Scancode, where after
+`scancode-analyzer` is meant to be used as a post-scan Plugin for Scancode, where after
 running a scan, the scan results are then analyzed for scan errors, and that information is
 added to the scancode JSON results.
 
-Command Line Argument to use ``scancode-results-analyzer``: ``--analyze-license-results``
+Command Line Argument to use ``scancode-analyzer``: ``--analyze-license-results``
 
-Here's how example result-JSONs from `scancode-results-analyzer` could look like, post-analysis.
+Here's how example result-JSONs from `scancode-analyzer` could look like, post-analysis.
 
 .. _license_detection_issues_result_json:
 
@@ -395,7 +395,7 @@ BERT model versions used.
 
     {
         "header": {
-            "tool_name": "scancode-results-analyzer",
+            "tool_name": "scancode-analyzer",
             "version": 0.1,
             "cases_version": 0.1,
             "ml_models": [
@@ -434,7 +434,7 @@ BERT model versions used.
 Related Issues
 --------------
 
-- `nexB/scancode-results-analyzer#22 <https://github.com/nexB/scancode-results-analyzer/issues/22>`_
-- `nexB/scancode-results-analyzer#20 <https://github.com/nexB/scancode-results-analyzer/issues/20>`_
-- `nexB/scancode-results-analyzer#21 <https://github.com/nexB/scancode-results-analyzer/issues/21>`_
+- `nexB/scancode-analyzer#22 <https://github.com/nexB/scancode-analyzer/issues/22>`_
+- `nexB/scancode-analyzer#20 <https://github.com/nexB/scancode-analyzer/issues/20>`_
+- `nexB/scancode-analyzer#21 <https://github.com/nexB/scancode-analyzer/issues/21>`_
 
