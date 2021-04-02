@@ -17,8 +17,8 @@ from commoncode.cliutils import POST_SCAN_GROUP
 from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
 
-from results_analyze import analyzer
-from results_analyze import analyzer_summary
+from scancode_analyzer import license_analyzer
+from scancode_analyzer import summary
 
 
 MISSING_OPTIONS_MESSAGE = (
@@ -100,7 +100,7 @@ class ResultsAnalyzer(PostScanPlugin):
                 raise ScancodeDataChangedError(msg)
             
             try:
-                ars = list(analyzer.LicenseDetectionIssue.from_license_matches(
+                ars = list(license_analyzer.LicenseDetectionIssue.from_license_matches(
                     license_matches=license_matches,
                     is_license_text=getattr(resource, "is_license_text", False),
                     is_legal=getattr(resource, "is_legal", False),
@@ -122,13 +122,13 @@ class ResultsAnalyzer(PostScanPlugin):
             
 
         try:
-            summary = analyzer_summary.SummaryLicenseIssues.summarize(
+            summary_license = summary.SummaryLicenseIssues.summarize(
                 license_issues,
                 count_has_license,
                 count_files_with_issues,
             )
             codebase.attributes.license_detection_issues_summary.update(
-                summary.to_dict(),
+                summary_license.to_dict(),
             )
 
         except Exception as e:
