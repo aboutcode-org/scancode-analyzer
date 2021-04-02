@@ -197,22 +197,22 @@ class UniqueIssue:
         :param license_issues: list of LicenseDetectionIssue
         :returns UniqueLicenseIssues: list of UniqueIssue
         """
-        all_identifiers = (issue.identifier for issue in license_issues)
-        unique_issue_category_counts = dict(Counter(all_identifiers))
+        identifiers = get_identifiers(license_issues)
+        unique_issue_category_counts = dict(Counter(identifiers))
 
         unique_license_issues = []
-        for issue_number, (unique_issue_categoryentifier, counts) in enumerate(
+        for issue_number, (unique_issue_identifier, counts) in enumerate(
             unique_issue_category_counts.items(), start=1,
         ):
             file_regions = (
                 issue.file_regions.pop()
                 for issue in license_issues
-                if issue.identifier == unique_issue_categoryentifier
+                if unique_issue_identifier in [issue.identifier, issue.identifier_for_unknown_intro]
             )
             all_issues = (
                 issue
                 for issue in license_issues
-                if issue.identifier == unique_issue_categoryentifier
+                if unique_issue_identifier in [issue.identifier, issue.identifier_for_unknown_intro]
             )
             unique_license_issues.append(
                 UniqueIssue.get_formatted_unique_issue(
@@ -223,3 +223,18 @@ class UniqueIssue:
             )
 
         return unique_license_issues
+
+
+def get_identifiers(license_issues):
+    """
+    Get identifiers for all license detection issues.
+
+    :param license_issues: list of LicenseDetectionIssue
+    :returns identifiers: list of tuples
+    """
+    identifiers = (
+        issue.identifier if issue.issue_category != "unknown-match"
+        else issue.identifier_for_unknown_intro
+        for issue in license_issues
+    )
+    return identifiers
