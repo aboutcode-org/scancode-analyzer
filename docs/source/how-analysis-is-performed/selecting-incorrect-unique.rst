@@ -44,7 +44,7 @@ Why we need to divide matches in a file into file-regions:
 
 2. If there are multiple matches in a region, they need to be analyzed as a whole, as even if most
    matches have perfect ``score`` and ``match_coverage``, only one of them with a imperfect
-   `match_coverage`` would mean there is a issue with that whole file-region. For example one
+   ``match_coverage`` would mean there is a issue with that whole file-region. For example one
    license notice can be matched to a notice rule with imperfect scores, and several small
    license reference rules.
 

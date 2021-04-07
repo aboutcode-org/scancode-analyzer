@@ -1,13 +1,13 @@
 JSON Output Format
 ==================
 
-`scancode-results-analyzer` is meant to be used as a post-scan Plugin for Scancode, where after
+`scancode-analyzer` is meant to be used as a post-scan Plugin for Scancode, where after
 running a scan, the scan results are then analyzed for scan errors, and that information is
 added to the scancode JSON results.
 
-Command Line Argument to use ``scancode-results-analyzer``: ``--analyze-license-results``
+Command Line Argument to use ``scancode-analyzer``: ``--analyze-license-results``
 
-Here's how example result-JSONs from `scancode-results-analyzer` could look like, post-analysis.
+Here's how example result-JSONs from `scancode-analyzer` could look like, post-analysis.
 
 .. _license_detection_issues_result_json:
 
@@ -23,13 +23,6 @@ for each resource in the codebase this list of dictionary will be added, where e
 is for each corresponding file-region :ref:`file_region`, having the results of the analysis for all
 the match(es) in that file-region.
 
-.. note::
-
-    [WIP]
-    There would also be a codebase-level dictionary added,
-    1. With statistics on the license_detection issues.
-    2. All the unique license detection issues and their occurrences.
-    3. Header information.
 
 .. code-block:: json
 
@@ -110,6 +103,7 @@ a file-region, and containing analysis results for all the license matches in a 
                     "is_license_notice": true,
                     "is_license_tag": false,
                     "is_license_reference": false,
+                    "is_license_intro": false,
                     "analysis_confidence": "high",
                     "is_suggested_matched_text_complete": true
                 },
@@ -159,6 +153,9 @@ location.
                 "licenses": [
                   {
                     "key": "lgpl-2.0"
+                  },
+                  {
+                    "key": "gpl-3.0-plus"
                   }
                 ],
                 "licence_detection_issues": [
@@ -174,13 +171,19 @@ location.
                             "is_license_notice": true,
                             "is_license_tag": false,
                             "is_license_reference": false,
+                            "is_license_intro": false,
                             "analysis_confidence": "medium",
                             "is_suggested_matched_text_complete": true
                         },
                         "suggested_license": {
                             "license_expression": "lgpl-2.0-plus",
                             "matched_text": " *  licensed under the terms of the LGPL.... "
-                        }
+                        },
+                        "original_licenses": [
+                            {
+                                "key": "lgpl-2.0"
+                            }
+                        ]
                     },
                     {
                         "start_line": 54,
@@ -194,6 +197,7 @@ location.
                             "is_license_notice": true,
                             "is_license_tag": false,
                             "is_license_reference": false,
+                            "is_license_intro": false,
                             "analysis_confidence": "high",
                             "is_suggested_matched_text_complete": true
                         },
@@ -201,7 +205,11 @@ location.
                             "license_expression": "gpl-3.0-plus",
                             "matched_text": "\"genshellopt is free software: you can redistribute it and/or modify it under \\\nthe terms of the GNU General Public License as published by the Free Software \\\nFoundation, either version 3 of the License, or (at your option) any later \\\nversion."
                         },
-                        "original_licenses": []
+                        "original_licenses": [
+                            {
+                                "key": "gpl-3.0-plus"
+                            }
+                        ]
                     }
                 ]
             }
@@ -260,6 +268,7 @@ it is an empty list.
                     "is_license_notice": true,
                     "is_license_tag": false,
                     "is_license_reference": false,
+                    "is_license_intro": false,
                     "analysis_confidence": "medium",
                     "is_suggested_matched_text_complete": true
                 },
@@ -304,13 +313,19 @@ it is an empty list.
                     "is_license_notice": true,
                     "is_license_tag": false,
                     "is_license_reference": false,
+                    "is_license_intro": false,
                     "analysis_confidence": "medium",
                     "is_suggested_matched_text_complete": true
                 },
                 "suggested_license": {
                     "license_expression": "lgpl-2.0-plus",
                     "matched_text": " *  licensed under the terms of the LGPL. "
-                }
+                },
+                "original_licenses": [
+                    {
+                        "key": "unknown"
+                    }
+                ]
             }
         ]
     }
@@ -336,22 +351,24 @@ All Unique License Detection Issues
 
 .. code-block:: json
 
-    "unique_license_detection_issues": [
-        {
-            "unique_identifier": 1,
-            "files": [
-                {
-                    "path": "1921-socat-2.0.0-error.h",
-                    "start_line": 3,
-                    "end_line": 3
+    {
+        "unique_license_detection_issues": [
+            {
+                "unique_identifier": 1,
+                "files": [
+                    {
+                        "path": "1921-socat-2.0.0-error.h",
+                        "start_line": 3,
+                        "end_line": 3
+                    }
+                ],
+                "license_detection_issue": {
+                    "issue_category": "imperfect-match-coverage",
+                    "issue_description": "The license detection is inconclusive with high confidence, because only a small part of the rule text is matched."
                 }
-            ],
-            "license_detection_issue": {
-                "issue_category": "imperfect-match-coverage",
-                "issue_description": "The license detection is inconclusive with high confidence, because only a small part of the rule text is matched."
             }
-        }
-    ]
+        ]
+    }
 
 
 Basic Statistics
@@ -395,7 +412,7 @@ BERT model versions used.
 
     {
         "header": {
-            "tool_name": "scancode-results-analyzer",
+            "tool_name": "scancode-analyzer",
             "version": 0.1,
             "cases_version": 0.1,
             "ml_models": [
@@ -434,7 +451,7 @@ BERT model versions used.
 Related Issues
 --------------
 
-- `nexB/scancode-results-analyzer#22 <https://github.com/nexB/scancode-results-analyzer/issues/22>`_
-- `nexB/scancode-results-analyzer#20 <https://github.com/nexB/scancode-results-analyzer/issues/20>`_
-- `nexB/scancode-results-analyzer#21 <https://github.com/nexB/scancode-results-analyzer/issues/21>`_
+- `nexB/scancode-analyzer#22 <https://github.com/nexB/scancode-analyzer/issues/22>`_
+- `nexB/scancode-analyzer#20 <https://github.com/nexB/scancode-analyzer/issues/20>`_
+- `nexB/scancode-analyzer#21 <https://github.com/nexB/scancode-analyzer/issues/21>`_
 

@@ -17,8 +17,8 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'scancode-results-analyzer'
-copyright = '2020, nexb'
+project = 'scancode-analyzer'
+copyright = '2021, nexb'
 author = 'nexb'
 
 # -- General configuration ---------------------------------------------------

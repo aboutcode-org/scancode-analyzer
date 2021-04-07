@@ -134,6 +134,10 @@ All Issue Types
       - ``reference-false-positive``
       - A piece of code/text is incorrectly detected as a license.
 
+    * - ``intro``
+      - ``intro-unknown-match``
+      - A piece of common introduction to a license text/notice/reference is detected.
+
 .. _case_lic_text:
 
 License Texts

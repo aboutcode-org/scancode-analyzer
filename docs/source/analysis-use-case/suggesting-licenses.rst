@@ -56,7 +56,7 @@ The steps are as follows:
 1. First from the list of `license expressions`, all the `license expressions` are sorted according
    to their occurrences.
 
-2. Generic `license_expressions` like `unknown`, `warranty-disclaimer` are removed fro, this sorted
+2. Generic `license_expressions` like `unknown`, `warranty-disclaimer` are removed from this sorted
    list.
 
 3. If there's only one `license_expression` with the most number of occurrences, then that is the
@@ -73,7 +73,7 @@ The steps are as follows:
 1. The boolean value denoting the license type, i.e. license text/notice/tag/reference is determined
    from their respective class of problem, which they are already divided into.
 
-2. The ``ignorable`` attributes are added later by using scripts.
+2. The ``ignorable`` attributes could be added later by using scripts.
 
 3. The possible license id (like ``mit``) is predicted as the license ID of the match with the
    longest ``match_coverage``. This has to be manually verified in most cases.

@@ -20,11 +20,11 @@ from scancode.cli_test_utils import check_json_scan
 from scancode.cli_test_utils import run_scan_click
 
 from file_io import load_json
-from results_analyze.analyzer_plugin import is_analyzable
-from results_analyze.analyzer_plugin import ResultsAnalyzer
-from results_analyze.analyzer_plugin import MISSING_OPTIONS_MESSAGE
-from results_analyze.analyzer_plugin import LicenseMatch
-from results_analyze.analyzer_plugin import ScancodeDataChangedError
+from scancode_analyzer.analyzer_plugin import is_analyzable
+from scancode_analyzer.analyzer_plugin import ResultsAnalyzer
+from scancode_analyzer.analyzer_plugin import MISSING_OPTIONS_MESSAGE
+from scancode_analyzer.analyzer_plugin import LicenseMatch
+from scancode_analyzer.analyzer_plugin import ScancodeDataChangedError
 
 
 

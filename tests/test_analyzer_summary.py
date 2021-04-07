@@ -15,13 +15,14 @@ from commoncode.resource import VirtualCodebase
 from scancode.cli_test_utils import check_json_scan
 from scancode.cli_test_utils import run_scan_click
 
-from results_analyze import analyzer
+from scancode_analyzer import license_analyzer
 from file_io import load_json
-from results_analyze.analyzer_plugin import LicenseMatch
-from results_analyze.analyzer_summary import SummaryLicenseIssues
-from results_analyze.analyzer_summary import StatisticsLicenseIssues
-from results_analyze.analyzer_summary import UniqueIssue
-from results_analyze.analyzer_summary import get_identifiers
+
+from scancode_analyzer.analyzer_plugin import LicenseMatch
+from scancode_analyzer.summary import SummaryLicenseIssues
+from scancode_analyzer.summary import StatisticsLicenseIssues
+from scancode_analyzer.summary import UniqueIssue
+from scancode_analyzer.summary import get_identifiers
 
 
 class TestAnalyzerPluginSummary(FileBasedTesting):
@@ -240,7 +241,7 @@ def get_all_license_issues_in_codebase(input_json):
         license_matches = LicenseMatch.from_files_licenses(
             getattr(resource, "licenses", [])
         )
-        ars = list(analyzer.LicenseDetectionIssue.from_license_matches(
+        ars = list(license_analyzer.LicenseDetectionIssue.from_license_matches(
             license_matches=license_matches,
             is_license_text=getattr(resource, "is_license_text", False),
             is_legal=getattr(resource, "is_legal", False),
