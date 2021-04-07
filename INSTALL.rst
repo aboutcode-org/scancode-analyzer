@@ -1,5 +1,11 @@
-Quickstart - Scancode Plugin
-----------------------------
+Installation
+============
+
+The installation methods install the `scancode-analyzer` post-scan plugin, installed
+with `scancode`, extending it to have the `--analyze-license-results` option.
+
+Install Plugin from Source
+--------------------------
 
 ``scancode-analyzer`` can be installed as a scancode post-scan plugin.
 
@@ -33,3 +39,14 @@ Quickstart - Scancode Plugin
     Even when loading from json, the scan generating these json files should have
     been run with this options for the analysis plugin to work.
 
+
+Install plugin via `pip`
+------------------------
+
+1. Install all `scancode` `prerequisites`_ and create a `virtualenvironment`_.
+
+2. Run `pip install scancode-analyzer` to install the latest version of Scancode Analyzer.
+
+
+.. _virtualenvironment: https://scancode-toolkit.readthedocs.io/en/latest/getting-started/install.html#installation-as-a-library-via-pip
+.. _prerequisites: https://scancode-toolkit.readthedocs.io/en/latest/getting-started/install.html#prerequisites
