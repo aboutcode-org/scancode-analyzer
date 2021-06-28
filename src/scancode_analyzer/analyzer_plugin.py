@@ -16,6 +16,8 @@ from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.cliutils import POST_SCAN_GROUP
 from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
+from scancode.api import _licenses_data_from_match
+from scancode.api import SCANCODE_LICENSEDB_URL
 
 from scancode_analyzer import license_analyzer
 from scancode_analyzer import summary
@@ -170,7 +172,7 @@ class LicenseMatch:
     @classmethod
     def from_files_licenses(cls, license_matches):
         """
-        Return LicenseMatch built from the scancode files.licenses data structure.
+        Return LicenseMatch built from the scancode files.licenses dictionary.
         """
         matches = []
         licensing = Licensing()
@@ -216,6 +218,30 @@ class LicenseMatch:
 
     def to_dict(self):
         return attr.asdict(self)
+
+
+def from_license_match_object(license_matches):
+    """
+    Return LicenseMatch built from a list of licensedcode.match.LicenseMatch objects.
+    """
+    detected_licenses = []
+
+    for match in license_matches:
+        detected_licenses.extend(
+            _licenses_data_from_match(
+                match=match,
+                include_text=True,
+                license_text_diagnostics=False,
+                license_url_template=SCANCODE_LICENSEDB_URL)
+        )
+        
+    try:
+        license_matches = LicenseMatch.from_files_licenses(detected_licenses)
+    except KeyError as e:
+        msg = f"Cannot convert scancode data to LicenseMatch class:"
+        raise ScancodeDataChangedError(msg)
+        
+    return license_matches
 
 
 def is_analyzable(resource):

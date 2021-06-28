@@ -205,7 +205,7 @@ class UniqueIssue:
             unique_issue_category_counts.items(), start=1,
         ):
             file_regions = (
-                issue.file_regions.pop()
+                issue.file_regions[0]
                 for issue in license_issues
                 if unique_issue_identifier in [issue.identifier, issue.identifier_for_unknown_intro]
             )
