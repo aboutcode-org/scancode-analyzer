@@ -16,4 +16,4 @@ jobs:
           image_name: ubuntu-18.04
           python_versions: ['3.6']
           test_suites:
-              all: tmp/bin/pytest -n 2 -vvs
+              all: tmp/bin/pytest -n 2 -vvs tests/
