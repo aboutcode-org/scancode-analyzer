@@ -3,19 +3,19 @@ scancode-analyzer
 
 .. what-is-scancode-analyzer
 
-What is Scancode-Analyzer
+What is ScanCode-Analyzer
 -------------------------
 
-`ScanCode`_ detects licenses, copyrights, package manifests and direct dependencies and more both in
-source code and binary files.
+`ScanCode`_ detects licenses, copyrights, package manifests, direct dependencies and more in
+source code orbinary files.
 
-ScanCode license detection is using multiple techniques to accurately detect licenses based on
+ScanCode license detection uses multiple techniques to accurately detect licenses based on
 automatons, inverted indexes and multiple sequence alignments. As the detection supports approximate
-matching, there's a lot of `unknown` detections, or multiple approximate matches.
+matching, there are many `unknown` detections, or multiple approximate matches.
 
-The goal of this project is to improve the accuracy of license detection leveraging scancode scans,
+The goal of this project is to improve the accuracy of license detection by leveraging ScanCode scan data.
 
-It is a `ScanCode`_ ``post-scan`` plugin to use it in scans directly, and in future as
+It is a `ScanCode`_ ``post-scan`` plugin for direct use in scans. In future we plan to add 
 `scancode.io`_ pipelines, with better issue review and reporting features.
 
 This project aims to:
@@ -23,9 +23,9 @@ This project aims to:
 - Write tools and create models to massively analyze the accuracy of license detection
 - Detect areas where the accuracy could be improved.
 - Add this as a `scancode`_ post-scan plugin
-- Add to pipelines in `scancode.io`_
+- Add this to pipelines in `scancode.io`_
 - Write reusable tools and models to assist in the semi-automated reviews of scan results.
-- It will also suggest new license detection rules semi-automatically to fix the detected anomalies
+- Suggest new license detection rules semi-automatically to fix the detected anomalies
 
 .. _ScanCode: https://github.com/nexB/scancode-toolkit
 .. _scancode.io: https://github.com/nexB/scancode.io
