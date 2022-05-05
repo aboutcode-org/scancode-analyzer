@@ -50,6 +50,7 @@ class TestAnalyzerPluginSummary(FileBasedTesting):
                 "results_analyzer_from_sample_json_expected_summary.json"
             ),
             result_file,
+            regen=False,
         )
 
 

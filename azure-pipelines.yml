@@ -20,4 +20,4 @@ jobs:
           image_name: ubuntu-20.04
           python_versions: ['3.6', '3.7', '3.8', '3.9', '3.10']
           test_suites:
-              all: tmp/bin/pytest -n 2 -vvs
+              all: tmp/bin/pytest -n 2 -vvs tests/

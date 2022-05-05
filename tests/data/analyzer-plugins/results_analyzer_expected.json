@@ -517,7 +517,7 @@
             "license_expression": "bsd-new",
             "licenses": [
               "bsd-new"
-            ],
+            ]
             "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": true,

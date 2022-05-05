@@ -72,6 +72,7 @@ class TestAnalyzerPlugin(FileBasedTesting):
         check_json_scan(
             self.get_test_loc("results_analyzer_from_sample_json_expected.json"),
             result_file,
+            regen=False,
         )
 
     @staticmethod
