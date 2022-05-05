@@ -25,7 +25,7 @@ Install Plugin from Source
 
 5. Run a scan using the ``--analyze-license-results`` command line options::
 
-    scancode -l --json-pp output.json /path/to/scan_files/ --license-text --is-license-text --classify --analyze-license-results
+    scancode -il --json-pp output.json /path/to/scan_files/ --license-text --is-license-text --classify --analyze-license-results
 
 6. OR, import a JSON scan result and run the plugin on that scan::
 

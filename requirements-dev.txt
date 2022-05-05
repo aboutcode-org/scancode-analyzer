@@ -1,0 +1,11 @@
+aboutcode-toolkit==7.0.0
+et-xmlfile==1.1.0
+execnet==1.9.0
+iniconfig==1.1.1
+openpyxl==3.0.9
+py==1.11.0
+pytest==7.0.1
+pytest-forked==1.4.0
+pytest-xdist==2.5.0
+tomli==1.2.3
+twine

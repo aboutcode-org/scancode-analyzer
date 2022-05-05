@@ -15,7 +15,7 @@ are:
 Dividing Matches into Region Groups
 -----------------------------------
 
-All the matches detected in a file, are grouped into `file-regions <file_region>`_,
+All the matches detected in a file, are grouped into :ref:`file_region`,
 (i.e. one file would have multiple, or at least one file-region) and then the analysis is
 performed separately on all these file-regions as these are to be handled independently
 from each other.

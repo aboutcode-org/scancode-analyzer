@@ -43,6 +43,14 @@ Using this Analysis
 
    analysis-use-case/index
 
+Contribute
+----------
+
+.. toctree::
+   :maxdepth: 2
+
+   contribute/contrib_doc
+
 Indices and tables
 ==================
 

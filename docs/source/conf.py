@@ -27,7 +27,6 @@ author = 'nexb'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'nbsphinx',
     'sphinx.ext.autodoc',
     'sphinx_rtd_theme',
 ]
@@ -46,11 +45,45 @@ exclude_patterns = []
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = "material"
+html_theme = "sphinx_rtd_theme"
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-# html_static_path = ['_static']
+html_static_path = ["_static"]
 
 master_doc = 'index'
+
+html_context = {
+    "display_github": True,
+    "github_user": "nexB",
+    "github_repo": "scancode-analyzer",
+    "github_version": "develop",  # branch
+    "conf_py_path": "/docs/source/",  # path in the checkout to the docs root
+}
+
+html_css_files = [
+    '_static/theme_overrides.css'
+    ]
+
+
+# If true, "Created using Sphinx" is shown in the HTML footer. Default is True.
+html_show_sphinx = True
+
+# Define CSS and HTML abbreviations used in .rst files.  These are examples.
+# .. role:: is used to refer to styles defined in _static/theme_overrides.css and is used like this: :red:`text`
+rst_prolog = """
+.. |psf| replace:: Python Software Foundation
+
+.. # define a hard line break for HTML
+.. |br| raw:: html
+
+   <br />
+
+.. role:: red
+
+.. role:: img-title
+
+.. role:: img-title-para
+
+"""

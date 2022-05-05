@@ -13,9 +13,12 @@
         "--license-text": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "output_format_version": "1.0.0",
       "message": null,
       "errors": [],
+      "warnings": [],
       "extra_data": {
+        "spdx_license_list_version": "3.14",
         "files_count": 3
       }
     }
@@ -202,6 +205,7 @@
           "short_name": "LGPL 2.0 or later",
           "category": "Copyleft Limited",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Free Software Foundation (FSF)",
           "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.0.html",
           "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.0-standalone.html",
@@ -219,11 +223,15 @@
               "lgpl-2.0-plus",
               "libtool-exception-2.0"
             ],
+            "referenced_filenames": [
+              "COPYING.LIB"
+            ],
             "is_license_text": false,
             "is_license_notice": true,
             "is_license_reference": false,
             "is_license_tag": false,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "3-seq",
             "rule_length": 188,
             "matched_length": 182,
@@ -239,6 +247,7 @@
           "short_name": "GNU Libtool exception to GPL 2.0",
           "category": "Copyleft Limited",
           "is_exception": true,
+          "is_unknown": false,
           "owner": "Free Software Foundation (FSF)",
           "homepage_url": "http://git.savannah.gnu.org/cgit/libtool.git/tree/m4/libtool.m4",
           "text_url": "",
@@ -256,11 +265,15 @@
               "lgpl-2.0-plus",
               "libtool-exception-2.0"
             ],
+            "referenced_filenames": [
+              "COPYING.LIB"
+            ],
             "is_license_text": false,
             "is_license_notice": true,
             "is_license_reference": false,
             "is_license_tag": false,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "3-seq",
             "rule_length": 188,
             "matched_length": 182,
@@ -359,6 +372,7 @@
           "short_name": "BSD-3-Clause",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Regents of the University of California",
           "homepage_url": "http://www.opensource.org/licenses/BSD-3-Clause",
           "text_url": "http://www.opensource.org/licenses/BSD-3-Clause",
@@ -377,11 +391,15 @@
               "gpl-2.0-plus",
               "bison-exception-2.2"
             ],
+            "referenced_filenames": [
+              "Copyright.txt"
+            ],
             "is_license_text": false,
             "is_license_notice": true,
             "is_license_reference": false,
             "is_license_tag": false,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "2-aho",
             "rule_length": 290,
             "matched_length": 290,
@@ -397,6 +415,7 @@
           "short_name": "GPL 2.0 or later",
           "category": "Copyleft",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Free Software Foundation (FSF)",
           "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
           "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
@@ -415,11 +434,15 @@
               "gpl-2.0-plus",
               "bison-exception-2.2"
             ],
+            "referenced_filenames": [
+              "Copyright.txt"
+            ],
             "is_license_text": false,
             "is_license_notice": true,
             "is_license_reference": false,
             "is_license_tag": false,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "2-aho",
             "rule_length": 290,
             "matched_length": 290,
@@ -435,6 +458,7 @@
           "short_name": "Bison 2.2 exception to GPL 2.0 or later",
           "category": "Copyleft Limited",
           "is_exception": true,
+          "is_unknown": false,
           "owner": "Free Software Foundation (FSF)",
           "homepage_url": null,
           "text_url": "",
@@ -453,11 +477,15 @@
               "gpl-2.0-plus",
               "bison-exception-2.2"
             ],
+            "referenced_filenames": [
+              "Copyright.txt"
+            ],
             "is_license_text": false,
             "is_license_notice": true,
             "is_license_reference": false,
             "is_license_tag": false,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "2-aho",
             "rule_length": 290,
             "matched_length": 290,
@@ -473,6 +501,7 @@
           "short_name": "BSD-3-Clause",
           "category": "Permissive",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Regents of the University of California",
           "homepage_url": "http://www.opensource.org/licenses/BSD-3-Clause",
           "text_url": "http://www.opensource.org/licenses/BSD-3-Clause",
@@ -489,11 +518,13 @@
             "licenses": [
               "bsd-new"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": true,
             "is_license_reference": false,
             "is_license_tag": false,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "2-aho",
             "rule_length": 41,
             "matched_length": 41,
@@ -547,6 +578,7 @@
           "short_name": "GPL 3.0 or later",
           "category": "Copyleft",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Free Software Foundation (FSF)",
           "homepage_url": "http://www.gnu.org/licenses/gpl-3.0-standalone.html",
           "text_url": "http://www.gnu.org/licenses/gpl-3.0-standalone.html",
@@ -563,11 +595,13 @@
             "licenses": [
               "gpl-3.0-plus"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": true,
             "is_license_reference": false,
             "is_license_tag": false,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "3-seq",
             "rule_length": 186,
             "matched_length": 178,
@@ -583,6 +617,7 @@
           "short_name": "GPL 3.0 or later",
           "category": "Copyleft",
           "is_exception": false,
+          "is_unknown": false,
           "owner": "Free Software Foundation (FSF)",
           "homepage_url": "http://www.gnu.org/licenses/gpl-3.0-standalone.html",
           "text_url": "http://www.gnu.org/licenses/gpl-3.0-standalone.html",
@@ -599,11 +634,13 @@
             "licenses": [
               "gpl-3.0-plus"
             ],
+            "referenced_filenames": [],
             "is_license_text": false,
             "is_license_notice": true,
             "is_license_reference": false,
             "is_license_tag": false,
             "is_license_intro": false,
+            "has_unknown": false,
             "matcher": "2-aho",
             "rule_length": 100,
             "matched_length": 100,
