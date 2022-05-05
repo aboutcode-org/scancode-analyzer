@@ -54,6 +54,7 @@ class TestAnalyzerPlugin(FileBasedTesting):
             self.get_test_loc("results_analyzer_expected.json"),
             result_file,
             remove_file_date=True,
+            regen=False,
         )
 
     def test_analyze_results_plugin_load_from_json_analyze(self):
