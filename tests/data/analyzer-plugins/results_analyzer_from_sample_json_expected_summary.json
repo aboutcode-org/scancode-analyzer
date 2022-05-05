@@ -2,7 +2,6 @@
   "headers": [
     {
       "tool_name": "scancode-toolkit",
-      "tool_version": "3.2.3",
       "options": {
         "input": "<path>",
         "--classify": true,
@@ -13,9 +12,6 @@
         "--license-text": true
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "start_timestamp": null,
-      "end_timestamp": null,
-      "duration": null,
       "message": null,
       "errors": [],
       "extra_data": {
@@ -24,13 +20,10 @@
     },
     {
       "tool_name": "scancode-toolkit",
-      "tool_version": "21.2.9",
       "options": {
         "input": "<path>",
         "--analyze-license-results": true,
-        "--from-json": [
-          true
-        ],
+        "--from-json": true,
         "--json-pp": "<file>"
       },
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
@@ -62,6 +55,63 @@
     "unique_license_detection_issues": [
       {
         "unique_identifier": 1,
+        "license_detection_issue": {
+          "issue_category": "imperfect-match-coverage",
+          "issue_description": "The license detection is inconclusive with high confidence, because only a small part of the rule text is matched.",
+          "issue_type": {
+            "classification_id": "notice-single-key-notice",
+            "classification_description": "A notice with a single license.",
+            "analysis_confidence": "high",
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_tag": false,
+            "is_license_reference": false,
+            "is_license_intro": false,
+            "is_suggested_matched_text_complete": true
+          },
+          "suggested_license": {
+            "license_expression": "gpl-3.0-plus WITH tex-exception",
+            "matched_text": "# Published under the GNU General Public License V.2, see file COPYING"
+          },
+          "original_licenses": [
+            {
+              "license_expression": "gpl-3.0-plus WITH tex-exception",
+              "score": 13.21,
+              "start_line": 4,
+              "end_line": 4,
+              "rule_identifier": "gpl-3.0-plus_with_tex-exception_4.RULE",
+              "is_license_text": false,
+              "is_license_notice": true,
+              "is_license_reference": false,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "matcher": "3-seq",
+              "matched_length": 7,
+              "rule_length": 53,
+              "match_coverage": 13.21,
+              "rule_relevance": 100,
+              "matched_text": "# Published under the GNU General Public License V.2, see file COPYING"
+            },
+            {
+              "license_expression": "gpl-2.0",
+              "score": 100.0,
+              "start_line": 4,
+              "end_line": 4,
+              "rule_identifier": "gpl-2.0_756.RULE",
+              "is_license_text": false,
+              "is_license_notice": false,
+              "is_license_reference": true,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "matcher": "2-aho",
+              "matched_length": 6,
+              "rule_length": 6,
+              "match_coverage": 100.0,
+              "rule_relevance": 100.0,
+              "matched_text": "# Published under the GNU General Public License V.2, see file COPYING"
+            }
+          ]
+        },
         "files": [
           {
             "path": "issues-files/socat-2.0.0-gatherinfo.sh",
@@ -78,7 +128,10 @@
             "start_line": 3,
             "end_line": 3
           }
-        ],
+        ]
+      },
+      {
+        "unique_identifier": 2,
         "license_detection_issue": {
           "issue_category": "imperfect-match-coverage",
           "issue_description": "The license detection is inconclusive with high confidence, because only a small part of the rule text is matched.",
@@ -86,59 +139,56 @@
             "classification_id": "notice-single-key-notice",
             "classification_description": "A notice with a single license.",
             "analysis_confidence": "high",
-            "is_license_intro": false,
             "is_license_text": false,
             "is_license_notice": true,
             "is_license_tag": false,
             "is_license_reference": false,
+            "is_license_intro": false,
             "is_suggested_matched_text_complete": true
           },
           "suggested_license": {
-            "license_expression": "gpl-3.0-plus WITH tex-exception",
-            "matched_text": "# Published under the GNU General Public License V.2, see file COPYING"
+            "license_expression": "gpl-2.0-plus",
+            "matched_text": " * This code is distributed under the terms of GNU GPL v2"
           },
           "original_licenses": [
             {
-              "score": 13.21,
-              "start_line": 4,
-              "end_line": 4,
-              "rule_identifier": "gpl-3.0-plus_with_tex-exception_4.RULE",
-              "license_expression": "gpl-3.0-plus WITH tex-exception",
+              "license_expression": "gpl-2.0-plus",
+              "score": 23.53,
+              "start_line": 8,
+              "end_line": 8,
+              "rule_identifier": "gpl-2.0-plus_180.RULE",
               "is_license_text": false,
               "is_license_notice": true,
               "is_license_reference": false,
               "is_license_tag": false,
               "is_license_intro": false,
               "matcher": "3-seq",
-              "rule_length": 53,
-              "matched_length": 7,
-              "match_coverage": 13.21,
+              "matched_length": 8,
+              "rule_length": 34,
+              "match_coverage": 23.53,
               "rule_relevance": 100,
-              "matched_text": "# Published under the GNU General Public License V.2, see file COPYING"
+              "matched_text": " * This code is distributed under the terms of GNU GPL v2"
             },
             {
-              "score": 100.0,
-              "start_line": 4,
-              "end_line": 4,
-              "rule_identifier": "gpl-2.0_756.RULE",
               "license_expression": "gpl-2.0",
+              "score": 90.0,
+              "start_line": 8,
+              "end_line": 8,
+              "rule_identifier": "gpl-2.0_223.RULE",
               "is_license_text": false,
-              "is_license_notice": false,
-              "is_license_reference": true,
+              "is_license_notice": true,
+              "is_license_reference": false,
               "is_license_tag": false,
               "is_license_intro": false,
               "matcher": "2-aho",
-              "rule_length": 6,
-              "matched_length": 6,
+              "matched_length": 3,
+              "rule_length": 3,
               "match_coverage": 100.0,
-              "rule_relevance": 100.0,
-              "matched_text": "# Published under the GNU General Public License V.2, see file COPYING"
+              "rule_relevance": 90.0,
+              "matched_text": " * This code is distributed under the terms of GNU GPL v2"
             }
           ]
-        }
-      },
-      {
-        "unique_identifier": 2,
+        },
         "files": [
           {
             "path": "issues-files/iptables1.4.10-ip6tables-restore.c",
@@ -150,64 +200,7 @@
             "start_line": 6,
             "end_line": 6
           }
-        ],
-        "license_detection_issue": {
-          "issue_category": "imperfect-match-coverage",
-          "issue_description": "The license detection is inconclusive with high confidence, because only a small part of the rule text is matched.",
-          "issue_type": {
-            "classification_id": "notice-single-key-notice",
-            "classification_description": "A notice with a single license.",
-            "analysis_confidence": "high",
-            "is_license_intro": false,
-            "is_license_text": false,
-            "is_license_notice": true,
-            "is_license_tag": false,
-            "is_license_reference": false,
-            "is_suggested_matched_text_complete": true
-          },
-          "suggested_license": {
-            "license_expression": "gpl-2.0-plus",
-            "matched_text": " * This code is distributed under the terms of GNU GPL v2"
-          },
-          "original_licenses": [
-            {
-              "score": 23.53,
-              "start_line": 8,
-              "end_line": 8,
-              "rule_identifier": "gpl-2.0-plus_180.RULE",
-              "license_expression": "gpl-2.0-plus",
-              "is_license_text": false,
-              "is_license_notice": true,
-              "is_license_reference": false,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "matcher": "3-seq",
-              "rule_length": 34,
-              "matched_length": 8,
-              "match_coverage": 23.53,
-              "rule_relevance": 100,
-              "matched_text": " * This code is distributed under the terms of GNU GPL v2"
-            },
-            {
-              "score": 90.0,
-              "start_line": 8,
-              "end_line": 8,
-              "rule_identifier": "gpl-2.0_223.RULE",
-              "license_expression": "gpl-2.0",
-              "is_license_text": false,
-              "is_license_notice": true,
-              "is_license_reference": false,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "matcher": "2-aho",
-              "rule_length": 3,
-              "matched_length": 3,
-              "match_coverage": 100.0,
-              "rule_relevance": 90.0,
-              "matched_text": " * This code is distributed under the terms of GNU GPL v2"
-            }
-          ]
-        }
+        ]
       }
     ]
   },
@@ -245,6 +238,348 @@
       "files_count": 5,
       "dirs_count": 0,
       "size_count": 44088,
+      "scan_errors": []
+    },
+    {
+      "path": "issues-files/iptables1.4.10-ip6tables-restore.c",
+      "type": "file",
+      "name": "ip6tables-restore.c",
+      "base_name": "ip6tables-restore",
+      "extension": ".c",
+      "size": 10879,
+      "date": "2010-10-29",
+      "sha1": "5f2a5ebe3ff3c8f6ed69fd423a747dd0442a6ea7",
+      "md5": "a2e1a2e51b6b8fab02759cec023f4062",
+      "sha256": null,
+      "mime_type": "text/x-c",
+      "file_type": "C source, ASCII text",
+      "programming_language": "C++",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "gpl-2.0-plus",
+          "score": 23.53,
+          "name": "GNU General Public License 2.0 or later",
+          "short_name": "GPL 2.0 or later",
+          "category": "Copyleft",
+          "is_exception": false,
+          "owner": "Free Software Foundation (FSF)",
+          "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
+          "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0-plus",
+          "spdx_license_key": "GPL-2.0-or-later",
+          "spdx_url": "https://spdx.org/licenses/GPL-2.0-or-later",
+          "start_line": 8,
+          "end_line": 8,
+          "matched_rule": {
+            "identifier": "gpl-2.0-plus_180.RULE",
+            "license_expression": "gpl-2.0-plus",
+            "licenses": [
+              "gpl-2.0-plus"
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "is_license_intro": false,
+            "matcher": "3-seq",
+            "rule_length": 34,
+            "matched_length": 8,
+            "match_coverage": 23.53,
+            "rule_relevance": 100
+          },
+          "matched_text": " * This code is distributed under the terms of GNU GPL v2"
+        },
+        {
+          "key": "gpl-2.0",
+          "score": 90.0,
+          "name": "GNU General Public License 2.0",
+          "short_name": "GPL 2.0",
+          "category": "Copyleft",
+          "is_exception": false,
+          "owner": "Free Software Foundation (FSF)",
+          "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
+          "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0",
+          "spdx_license_key": "GPL-2.0-only",
+          "spdx_url": "https://spdx.org/licenses/GPL-2.0-only",
+          "start_line": 8,
+          "end_line": 8,
+          "matched_rule": {
+            "identifier": "gpl-2.0_223.RULE",
+            "license_expression": "gpl-2.0",
+            "licenses": [
+              "gpl-2.0"
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "is_license_intro": false,
+            "matcher": "2-aho",
+            "rule_length": 3,
+            "matched_length": 3,
+            "match_coverage": 100.0,
+            "rule_relevance": 90.0
+          },
+          "matched_text": " * This code is distributed under the terms of GNU GPL v2"
+        }
+      ],
+      "license_expressions": [
+        "gpl-2.0-plus",
+        "gpl-2.0"
+      ],
+      "percentage_of_license_text": null,
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_license_text": false,
+      "license_detection_issues": [
+        {
+          "issue_category": "imperfect-match-coverage",
+          "issue_description": "The license detection is inconclusive with high confidence, because only a small part of the rule text is matched.",
+          "issue_type": {
+            "classification_id": "notice-single-key-notice",
+            "classification_description": "A notice with a single license.",
+            "analysis_confidence": "high",
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_tag": false,
+            "is_license_reference": false,
+            "is_license_intro": false,
+            "is_suggested_matched_text_complete": true
+          },
+          "suggested_license": {
+            "license_expression": "gpl-2.0-plus",
+            "matched_text": " * This code is distributed under the terms of GNU GPL v2"
+          },
+          "original_licenses": [
+            {
+              "license_expression": "gpl-2.0-plus",
+              "score": 23.53,
+              "start_line": 8,
+              "end_line": 8,
+              "rule_identifier": "gpl-2.0-plus_180.RULE",
+              "is_license_text": false,
+              "is_license_notice": true,
+              "is_license_reference": false,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "matcher": "3-seq",
+              "matched_length": 8,
+              "rule_length": 34,
+              "match_coverage": 23.53,
+              "rule_relevance": 100,
+              "matched_text": " * This code is distributed under the terms of GNU GPL v2"
+            },
+            {
+              "license_expression": "gpl-2.0",
+              "score": 90.0,
+              "start_line": 8,
+              "end_line": 8,
+              "rule_identifier": "gpl-2.0_223.RULE",
+              "is_license_text": false,
+              "is_license_notice": true,
+              "is_license_reference": false,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "matcher": "2-aho",
+              "matched_length": 3,
+              "rule_length": 3,
+              "match_coverage": 100.0,
+              "rule_relevance": 90.0,
+              "matched_text": " * This code is distributed under the terms of GNU GPL v2"
+            }
+          ],
+          "file_regions": [
+            {
+              "start_line": 8,
+              "end_line": 8
+            }
+          ]
+        }
+      ],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "issues-files/iptables1.4.10-iptables-xml.c",
+      "type": "file",
+      "name": "iptables-xml.c",
+      "base_name": "iptables-xml",
+      "extension": ".c",
+      "size": 20302,
+      "date": "2010-10-29",
+      "sha1": "6c574556090271b9802c6e10ee1163fbf157bcb5",
+      "md5": "266a65603e63fb1678e926f6adf48d64",
+      "sha256": null,
+      "mime_type": "text/x-c",
+      "file_type": "C source, ASCII text",
+      "programming_language": "C++",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "gpl-2.0-plus",
+          "score": 23.53,
+          "name": "GNU General Public License 2.0 or later",
+          "short_name": "GPL 2.0 or later",
+          "category": "Copyleft",
+          "is_exception": false,
+          "owner": "Free Software Foundation (FSF)",
+          "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
+          "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0-plus",
+          "spdx_license_key": "GPL-2.0-or-later",
+          "spdx_url": "https://spdx.org/licenses/GPL-2.0-or-later",
+          "start_line": 6,
+          "end_line": 6,
+          "matched_rule": {
+            "identifier": "gpl-2.0-plus_180.RULE",
+            "license_expression": "gpl-2.0-plus",
+            "licenses": [
+              "gpl-2.0-plus"
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "is_license_intro": false,
+            "matcher": "3-seq",
+            "rule_length": 34,
+            "matched_length": 8,
+            "match_coverage": 23.53,
+            "rule_relevance": 100
+          },
+          "matched_text": " * This code is distributed under the terms of GNU GPL v2"
+        },
+        {
+          "key": "gpl-2.0",
+          "score": 90.0,
+          "name": "GNU General Public License 2.0",
+          "short_name": "GPL 2.0",
+          "category": "Copyleft",
+          "is_exception": false,
+          "owner": "Free Software Foundation (FSF)",
+          "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
+          "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0",
+          "spdx_license_key": "GPL-2.0-only",
+          "spdx_url": "https://spdx.org/licenses/GPL-2.0-only",
+          "start_line": 6,
+          "end_line": 6,
+          "matched_rule": {
+            "identifier": "gpl-2.0_223.RULE",
+            "license_expression": "gpl-2.0",
+            "licenses": [
+              "gpl-2.0"
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
+            "is_license_intro": false,
+            "matcher": "2-aho",
+            "rule_length": 3,
+            "matched_length": 3,
+            "match_coverage": 100.0,
+            "rule_relevance": 90.0
+          },
+          "matched_text": " * This code is distributed under the terms of GNU GPL v2"
+        }
+      ],
+      "license_expressions": [
+        "gpl-2.0-plus",
+        "gpl-2.0"
+      ],
+      "percentage_of_license_text": null,
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_license_text": false,
+      "license_detection_issues": [
+        {
+          "issue_category": "imperfect-match-coverage",
+          "issue_description": "The license detection is inconclusive with high confidence, because only a small part of the rule text is matched.",
+          "issue_type": {
+            "classification_id": "notice-single-key-notice",
+            "classification_description": "A notice with a single license.",
+            "analysis_confidence": "high",
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_tag": false,
+            "is_license_reference": false,
+            "is_license_intro": false,
+            "is_suggested_matched_text_complete": true
+          },
+          "suggested_license": {
+            "license_expression": "gpl-2.0-plus",
+            "matched_text": " * This code is distributed under the terms of GNU GPL v2"
+          },
+          "original_licenses": [
+            {
+              "license_expression": "gpl-2.0-plus",
+              "score": 23.53,
+              "start_line": 6,
+              "end_line": 6,
+              "rule_identifier": "gpl-2.0-plus_180.RULE",
+              "is_license_text": false,
+              "is_license_notice": true,
+              "is_license_reference": false,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "matcher": "3-seq",
+              "matched_length": 8,
+              "rule_length": 34,
+              "match_coverage": 23.53,
+              "rule_relevance": 100,
+              "matched_text": " * This code is distributed under the terms of GNU GPL v2"
+            },
+            {
+              "license_expression": "gpl-2.0",
+              "score": 90.0,
+              "start_line": 6,
+              "end_line": 6,
+              "rule_identifier": "gpl-2.0_223.RULE",
+              "is_license_text": false,
+              "is_license_notice": true,
+              "is_license_reference": false,
+              "is_license_tag": false,
+              "is_license_intro": false,
+              "matcher": "2-aho",
+              "matched_length": 3,
+              "rule_length": 3,
+              "match_coverage": 100.0,
+              "rule_relevance": 90.0,
+              "matched_text": " * This code is distributed under the terms of GNU GPL v2"
+            }
+          ],
+          "file_regions": [
+            {
+              "start_line": 6,
+              "end_line": 6
+            }
+          ]
+        }
+      ],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
       "scan_errors": []
     },
     {
@@ -386,23 +721,17 @@
       "is_license_text": false,
       "license_detection_issues": [
         {
-          "file_regions": [
-            {
-              "start_line": 4,
-              "end_line": 4
-            }
-          ],
           "issue_category": "imperfect-match-coverage",
           "issue_description": "The license detection is inconclusive with high confidence, because only a small part of the rule text is matched.",
           "issue_type": {
             "classification_id": "notice-single-key-notice",
             "classification_description": "A notice with a single license.",
             "analysis_confidence": "high",
-            "is_license_intro": false,
             "is_license_text": false,
             "is_license_notice": true,
             "is_license_tag": false,
             "is_license_reference": false,
+            "is_license_intro": false,
             "is_suggested_matched_text_complete": true
           },
           "suggested_license": {
@@ -411,382 +740,46 @@
           },
           "original_licenses": [
             {
+              "license_expression": "gpl-3.0-plus WITH tex-exception",
               "score": 13.21,
               "start_line": 4,
               "end_line": 4,
               "rule_identifier": "gpl-3.0-plus_with_tex-exception_4.RULE",
-              "license_expression": "gpl-3.0-plus WITH tex-exception",
               "is_license_text": false,
               "is_license_notice": true,
               "is_license_reference": false,
               "is_license_tag": false,
               "is_license_intro": false,
               "matcher": "3-seq",
-              "rule_length": 53,
               "matched_length": 7,
+              "rule_length": 53,
               "match_coverage": 13.21,
               "rule_relevance": 100,
               "matched_text": "# Published under the GNU General Public License V.2, see file COPYING"
             },
             {
+              "license_expression": "gpl-2.0",
               "score": 100.0,
               "start_line": 4,
               "end_line": 4,
               "rule_identifier": "gpl-2.0_756.RULE",
-              "license_expression": "gpl-2.0",
               "is_license_text": false,
               "is_license_notice": false,
               "is_license_reference": true,
               "is_license_tag": false,
               "is_license_intro": false,
               "matcher": "2-aho",
-              "rule_length": 6,
               "matched_length": 6,
+              "rule_length": 6,
               "match_coverage": 100.0,
               "rule_relevance": 100.0,
               "matched_text": "# Published under the GNU General Public License V.2, see file COPYING"
             }
-          ]
-        }
-      ],
-      "files_count": 0,
-      "dirs_count": 0,
-      "size_count": 0,
-      "scan_errors": []
-    },
-    {
-      "path": "issues-files/iptables1.4.10-ip6tables-restore.c",
-      "type": "file",
-      "name": "ip6tables-restore.c",
-      "base_name": "ip6tables-restore",
-      "extension": ".c",
-      "size": 10879,
-      "date": "2010-10-29",
-      "sha1": "5f2a5ebe3ff3c8f6ed69fd423a747dd0442a6ea7",
-      "md5": "a2e1a2e51b6b8fab02759cec023f4062",
-      "sha256": null,
-      "mime_type": "text/x-c",
-      "file_type": "C source, ASCII text",
-      "programming_language": "C++",
-      "is_binary": false,
-      "is_text": true,
-      "is_archive": false,
-      "is_media": false,
-      "is_source": true,
-      "is_script": false,
-      "licenses": [
-        {
-          "key": "gpl-2.0-plus",
-          "score": 23.53,
-          "name": "GNU General Public License 2.0 or later",
-          "short_name": "GPL 2.0 or later",
-          "category": "Copyleft",
-          "is_exception": false,
-          "owner": "Free Software Foundation (FSF)",
-          "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
-          "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0-plus",
-          "spdx_license_key": "GPL-2.0-or-later",
-          "spdx_url": "https://spdx.org/licenses/GPL-2.0-or-later",
-          "start_line": 8,
-          "end_line": 8,
-          "matched_rule": {
-            "identifier": "gpl-2.0-plus_180.RULE",
-            "license_expression": "gpl-2.0-plus",
-            "licenses": [
-              "gpl-2.0-plus"
-            ],
-            "is_license_text": false,
-            "is_license_notice": true,
-            "is_license_reference": false,
-            "is_license_tag": false,
-            "is_license_intro": false,
-            "matcher": "3-seq",
-            "rule_length": 34,
-            "matched_length": 8,
-            "match_coverage": 23.53,
-            "rule_relevance": 100
-          },
-          "matched_text": " * This code is distributed under the terms of GNU GPL v2"
-        },
-        {
-          "key": "gpl-2.0",
-          "score": 90.0,
-          "name": "GNU General Public License 2.0",
-          "short_name": "GPL 2.0",
-          "category": "Copyleft",
-          "is_exception": false,
-          "owner": "Free Software Foundation (FSF)",
-          "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
-          "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0",
-          "spdx_license_key": "GPL-2.0-only",
-          "spdx_url": "https://spdx.org/licenses/GPL-2.0-only",
-          "start_line": 8,
-          "end_line": 8,
-          "matched_rule": {
-            "identifier": "gpl-2.0_223.RULE",
-            "license_expression": "gpl-2.0",
-            "licenses": [
-              "gpl-2.0"
-            ],
-            "is_license_text": false,
-            "is_license_notice": true,
-            "is_license_reference": false,
-            "is_license_tag": false,
-            "is_license_intro": false,
-            "matcher": "2-aho",
-            "rule_length": 3,
-            "matched_length": 3,
-            "match_coverage": 100.0,
-            "rule_relevance": 90.0
-          },
-          "matched_text": " * This code is distributed under the terms of GNU GPL v2"
-        }
-      ],
-      "license_expressions": [
-        "gpl-2.0-plus",
-        "gpl-2.0"
-      ],
-      "percentage_of_license_text": null,
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": false,
-      "is_key_file": false,
-      "is_license_text": false,
-      "license_detection_issues": [
-        {
+          ],
           "file_regions": [
             {
-              "start_line": 8,
-              "end_line": 8
-            }
-          ],
-          "issue_category": "imperfect-match-coverage",
-          "issue_description": "The license detection is inconclusive with high confidence, because only a small part of the rule text is matched.",
-          "issue_type": {
-            "classification_id": "notice-single-key-notice",
-            "classification_description": "A notice with a single license.",
-            "analysis_confidence": "high",
-            "is_license_intro": false,
-            "is_license_text": false,
-            "is_license_notice": true,
-            "is_license_tag": false,
-            "is_license_reference": false,
-            "is_suggested_matched_text_complete": true
-          },
-          "suggested_license": {
-            "license_expression": "gpl-2.0-plus",
-            "matched_text": " * This code is distributed under the terms of GNU GPL v2"
-          },
-          "original_licenses": [
-            {
-              "score": 23.53,
-              "start_line": 8,
-              "end_line": 8,
-              "rule_identifier": "gpl-2.0-plus_180.RULE",
-              "license_expression": "gpl-2.0-plus",
-              "is_license_text": false,
-              "is_license_notice": true,
-              "is_license_reference": false,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "matcher": "3-seq",
-              "rule_length": 34,
-              "matched_length": 8,
-              "match_coverage": 23.53,
-              "rule_relevance": 100,
-              "matched_text": " * This code is distributed under the terms of GNU GPL v2"
-            },
-            {
-              "score": 90.0,
-              "start_line": 8,
-              "end_line": 8,
-              "rule_identifier": "gpl-2.0_223.RULE",
-              "license_expression": "gpl-2.0",
-              "is_license_text": false,
-              "is_license_notice": true,
-              "is_license_reference": false,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "matcher": "2-aho",
-              "rule_length": 3,
-              "matched_length": 3,
-              "match_coverage": 100.0,
-              "rule_relevance": 90.0,
-              "matched_text": " * This code is distributed under the terms of GNU GPL v2"
-            }
-          ]
-        }
-      ],
-      "files_count": 0,
-      "dirs_count": 0,
-      "size_count": 0,
-      "scan_errors": []
-    },
-    {
-      "path": "issues-files/iptables1.4.10-iptables-xml.c",
-      "type": "file",
-      "name": "iptables-xml.c",
-      "base_name": "iptables-xml",
-      "extension": ".c",
-      "size": 20302,
-      "date": "2010-10-29",
-      "sha1": "6c574556090271b9802c6e10ee1163fbf157bcb5",
-      "md5": "266a65603e63fb1678e926f6adf48d64",
-      "sha256": null,
-      "mime_type": "text/x-c",
-      "file_type": "C source, ASCII text",
-      "programming_language": "C++",
-      "is_binary": false,
-      "is_text": true,
-      "is_archive": false,
-      "is_media": false,
-      "is_source": true,
-      "is_script": false,
-      "licenses": [
-        {
-          "key": "gpl-2.0-plus",
-          "score": 23.53,
-          "name": "GNU General Public License 2.0 or later",
-          "short_name": "GPL 2.0 or later",
-          "category": "Copyleft",
-          "is_exception": false,
-          "owner": "Free Software Foundation (FSF)",
-          "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
-          "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0-plus",
-          "spdx_license_key": "GPL-2.0-or-later",
-          "spdx_url": "https://spdx.org/licenses/GPL-2.0-or-later",
-          "start_line": 6,
-          "end_line": 6,
-          "matched_rule": {
-            "identifier": "gpl-2.0-plus_180.RULE",
-            "license_expression": "gpl-2.0-plus",
-            "licenses": [
-              "gpl-2.0-plus"
-            ],
-            "is_license_text": false,
-            "is_license_notice": true,
-            "is_license_reference": false,
-            "is_license_tag": false,
-            "is_license_intro": false,
-            "matcher": "3-seq",
-            "rule_length": 34,
-            "matched_length": 8,
-            "match_coverage": 23.53,
-            "rule_relevance": 100
-          },
-          "matched_text": " * This code is distributed under the terms of GNU GPL v2"
-        },
-        {
-          "key": "gpl-2.0",
-          "score": 90.0,
-          "name": "GNU General Public License 2.0",
-          "short_name": "GPL 2.0",
-          "category": "Copyleft",
-          "is_exception": false,
-          "owner": "Free Software Foundation (FSF)",
-          "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
-          "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0",
-          "spdx_license_key": "GPL-2.0-only",
-          "spdx_url": "https://spdx.org/licenses/GPL-2.0-only",
-          "start_line": 6,
-          "end_line": 6,
-          "matched_rule": {
-            "identifier": "gpl-2.0_223.RULE",
-            "license_expression": "gpl-2.0",
-            "licenses": [
-              "gpl-2.0"
-            ],
-            "is_license_text": false,
-            "is_license_notice": true,
-            "is_license_reference": false,
-            "is_license_tag": false,
-            "is_license_intro": false,
-            "matcher": "2-aho",
-            "rule_length": 3,
-            "matched_length": 3,
-            "match_coverage": 100.0,
-            "rule_relevance": 90.0
-          },
-          "matched_text": " * This code is distributed under the terms of GNU GPL v2"
-        }
-      ],
-      "license_expressions": [
-        "gpl-2.0-plus",
-        "gpl-2.0"
-      ],
-      "percentage_of_license_text": null,
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": false,
-      "is_key_file": false,
-      "is_license_text": false,
-      "license_detection_issues": [
-        {
-          "file_regions": [
-            {
-              "start_line": 6,
-              "end_line": 6
-            }
-          ],
-          "issue_category": "imperfect-match-coverage",
-          "issue_description": "The license detection is inconclusive with high confidence, because only a small part of the rule text is matched.",
-          "issue_type": {
-            "classification_id": "notice-single-key-notice",
-            "classification_description": "A notice with a single license.",
-            "analysis_confidence": "high",
-            "is_license_intro": false,
-            "is_license_text": false,
-            "is_license_notice": true,
-            "is_license_tag": false,
-            "is_license_reference": false,
-            "is_suggested_matched_text_complete": true
-          },
-          "suggested_license": {
-            "license_expression": "gpl-2.0-plus",
-            "matched_text": " * This code is distributed under the terms of GNU GPL v2"
-          },
-          "original_licenses": [
-            {
-              "score": 23.53,
-              "start_line": 6,
-              "end_line": 6,
-              "rule_identifier": "gpl-2.0-plus_180.RULE",
-              "license_expression": "gpl-2.0-plus",
-              "is_license_text": false,
-              "is_license_notice": true,
-              "is_license_reference": false,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "matcher": "3-seq",
-              "rule_length": 34,
-              "matched_length": 8,
-              "match_coverage": 23.53,
-              "rule_relevance": 100,
-              "matched_text": " * This code is distributed under the terms of GNU GPL v2"
-            },
-            {
-              "score": 90.0,
-              "start_line": 6,
-              "end_line": 6,
-              "rule_identifier": "gpl-2.0_223.RULE",
-              "license_expression": "gpl-2.0",
-              "is_license_text": false,
-              "is_license_notice": true,
-              "is_license_reference": false,
-              "is_license_tag": false,
-              "is_license_intro": false,
-              "matcher": "2-aho",
-              "rule_length": 3,
-              "matched_length": 3,
-              "match_coverage": 100.0,
-              "rule_relevance": 90.0,
-              "matched_text": " * This code is distributed under the terms of GNU GPL v2"
+              "start_line": 4,
+              "end_line": 4
             }
           ]
         }
@@ -935,23 +928,17 @@
       "is_license_text": false,
       "license_detection_issues": [
         {
-          "file_regions": [
-            {
-              "start_line": 3,
-              "end_line": 3
-            }
-          ],
           "issue_category": "imperfect-match-coverage",
           "issue_description": "The license detection is inconclusive with high confidence, because only a small part of the rule text is matched.",
           "issue_type": {
             "classification_id": "notice-single-key-notice",
             "classification_description": "A notice with a single license.",
             "analysis_confidence": "high",
-            "is_license_intro": false,
             "is_license_text": false,
             "is_license_notice": true,
             "is_license_tag": false,
             "is_license_reference": false,
+            "is_license_intro": false,
             "is_suggested_matched_text_complete": true
           },
           "suggested_license": {
@@ -960,40 +947,46 @@
           },
           "original_licenses": [
             {
+              "license_expression": "gpl-3.0-plus WITH tex-exception",
               "score": 13.21,
               "start_line": 3,
               "end_line": 3,
               "rule_identifier": "gpl-3.0-plus_with_tex-exception_4.RULE",
-              "license_expression": "gpl-3.0-plus WITH tex-exception",
               "is_license_text": false,
               "is_license_notice": true,
               "is_license_reference": false,
               "is_license_tag": false,
               "is_license_intro": false,
               "matcher": "3-seq",
-              "rule_length": 53,
               "matched_length": 7,
+              "rule_length": 53,
               "match_coverage": 13.21,
               "rule_relevance": 100,
               "matched_text": "/* Published under the GNU General Public License V.2, see file COPYING */"
             },
             {
+              "license_expression": "gpl-2.0",
               "score": 100.0,
               "start_line": 3,
               "end_line": 3,
               "rule_identifier": "gpl-2.0_756.RULE",
-              "license_expression": "gpl-2.0",
               "is_license_text": false,
               "is_license_notice": false,
               "is_license_reference": true,
               "is_license_tag": false,
               "is_license_intro": false,
               "matcher": "2-aho",
-              "rule_length": 6,
               "matched_length": 6,
+              "rule_length": 6,
               "match_coverage": 100.0,
               "rule_relevance": 100.0,
               "matched_text": "/* Published under the GNU General Public License V.2, see file COPYING */"
+            }
+          ],
+          "file_regions": [
+            {
+              "start_line": 3,
+              "end_line": 3
             }
           ]
         }
@@ -1142,23 +1135,17 @@
       "is_license_text": false,
       "license_detection_issues": [
         {
-          "file_regions": [
-            {
-              "start_line": 3,
-              "end_line": 3
-            }
-          ],
           "issue_category": "imperfect-match-coverage",
           "issue_description": "The license detection is inconclusive with high confidence, because only a small part of the rule text is matched.",
           "issue_type": {
             "classification_id": "notice-single-key-notice",
             "classification_description": "A notice with a single license.",
             "analysis_confidence": "high",
-            "is_license_intro": false,
             "is_license_text": false,
             "is_license_notice": true,
             "is_license_tag": false,
             "is_license_reference": false,
+            "is_license_intro": false,
             "is_suggested_matched_text_complete": true
           },
           "suggested_license": {
@@ -1167,40 +1154,46 @@
           },
           "original_licenses": [
             {
+              "license_expression": "gpl-3.0-plus WITH tex-exception",
               "score": 13.21,
               "start_line": 3,
               "end_line": 3,
               "rule_identifier": "gpl-3.0-plus_with_tex-exception_4.RULE",
-              "license_expression": "gpl-3.0-plus WITH tex-exception",
               "is_license_text": false,
               "is_license_notice": true,
               "is_license_reference": false,
               "is_license_tag": false,
               "is_license_intro": false,
               "matcher": "3-seq",
-              "rule_length": 53,
               "matched_length": 7,
+              "rule_length": 53,
               "match_coverage": 13.21,
               "rule_relevance": 100,
               "matched_text": "/* Published under the GNU General Public License V.2, see file COPYING */"
             },
             {
+              "license_expression": "gpl-2.0",
               "score": 100.0,
               "start_line": 3,
               "end_line": 3,
               "rule_identifier": "gpl-2.0_756.RULE",
-              "license_expression": "gpl-2.0",
               "is_license_text": false,
               "is_license_notice": false,
               "is_license_reference": true,
               "is_license_tag": false,
               "is_license_intro": false,
               "matcher": "2-aho",
-              "rule_length": 6,
               "matched_length": 6,
+              "rule_length": 6,
               "match_coverage": 100.0,
               "rule_relevance": 100.0,
               "matched_text": "/* Published under the GNU General Public License V.2, see file COPYING */"
+            }
+          ],
+          "file_regions": [
+            {
+              "start_line": 3,
+              "end_line": 3
             }
           ]
         }

@@ -54,6 +54,7 @@ class TestAnalyzerPlugin(FileBasedTesting):
             self.get_test_loc("results_analyzer_expected.json"),
             result_file,
             remove_file_date=True,
+            regen=False,
         )
 
     def test_analyze_results_plugin_load_from_json_analyze(self):
@@ -71,6 +72,7 @@ class TestAnalyzerPlugin(FileBasedTesting):
         check_json_scan(
             self.get_test_loc("results_analyzer_from_sample_json_expected.json"),
             result_file,
+            regen=False,
         )
 
     @staticmethod
