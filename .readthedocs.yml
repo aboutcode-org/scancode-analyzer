@@ -5,12 +5,14 @@
 # Required
 version: 2
 
-# Build documentation in the docs/ directory with Sphinx
+# Where the Sphinx conf.py file is located
 sphinx:
-  configuration: docs/source/conf.py
+   configuration: docs/source/conf.py
 
-# Python Version and requirements required to build docs
+# Setting the python version and doc build requirements
 python:
-  version: 3.6
   install:
-    - requirements: docs/requirements.txt
+    - method: pip
+      path: .
+      extra_requirements:
+        - docs
