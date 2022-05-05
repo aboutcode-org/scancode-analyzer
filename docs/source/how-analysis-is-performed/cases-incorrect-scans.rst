@@ -37,7 +37,7 @@ This further has many attributes:
 
 
 Here, the ``classification_id`` attribute is a id which corresponds to a issue type from
-`all possible issue types <issue_types_table>`_, which the license detection issue is
+:ref:`issue_types_table`, which the license detection issue is
 classified into. The ``classification_description`` describes the `issue_type` to provide
 more information and context about the analysis.
 

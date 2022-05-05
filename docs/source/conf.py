@@ -27,7 +27,6 @@ author = 'nexb'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'nbsphinx',
     'sphinx.ext.autodoc',
     'sphinx_rtd_theme',
 ]
