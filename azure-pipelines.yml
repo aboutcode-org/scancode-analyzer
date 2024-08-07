@@ -1,23 +1,13 @@
-
 ################################################################################
 # We use Azure to run the full tests suites on Python 3.6 -> 3.10
 # on Linux
 ################################################################################
 
 jobs:
-
-    - template: etc/ci/azure-posix.yml
-      parameters:
-          job_name: ubuntu18_cpython
-          image_name: ubuntu-18.04
-          python_versions: ['3.6', '3.7', '3.8', '3.9', '3.10']
-          test_suites:
-              all: venv/bin/pytest -n 2 -vvs tests/
-
-    - template: etc/ci/azure-posix.yml
-      parameters:
-          job_name: ubuntu20_cpython
-          image_name: ubuntu-20.04
-          python_versions: ['3.6', '3.7', '3.8', '3.9', '3.10']
-          test_suites:
-              all: venv/bin/pytest -n 2 -vvs tests/
+  - template: etc/ci/azure-posix.yml
+    parameters:
+      job_name: ubuntu20_cpython
+      image_name: ubuntu-20.04
+      python_versions: ["3.7", "3.8", "3.9", "3.10", "3.11"]
+      test_suites:
+        all: venv/bin/pytest -n 2 -vvs tests/
