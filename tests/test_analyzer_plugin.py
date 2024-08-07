@@ -3,7 +3,7 @@
 # ScanCode is a trademark of nexB Inc.
 # SPDX-License-Identifier: Apache-2.0
 # See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
-# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://github.com/aboutcode-org/scancode-toolkit for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
@@ -27,9 +27,9 @@ from scancode_analyzer.analyzer_plugin import LicenseMatch
 from scancode_analyzer.analyzer_plugin import ScancodeDataChangedError
 
 
-
 class TestAnalyzerPlugin(FileBasedTesting):
-    test_data_dir = os.path.join(os.path.dirname(__file__), "data/analyzer-plugins/")
+    test_data_dir = os.path.join(os.path.dirname(
+        __file__), "data/analyzer-plugins/")
     missing_options_full_msg = (
         "Cannot analyze scan for license detection errors, because "
         "required attributes are missing. " + MISSING_OPTIONS_MESSAGE,
@@ -70,7 +70,8 @@ class TestAnalyzerPlugin(FileBasedTesting):
         ]
         run_scan_click(args)
         check_json_scan(
-            self.get_test_loc("results_analyzer_from_sample_json_expected.json"),
+            self.get_test_loc(
+                "results_analyzer_from_sample_json_expected.json"),
             result_file,
             regen=False,
         )
@@ -161,9 +162,10 @@ class TestAnalyzerPlugin(FileBasedTesting):
             self.fail(msg="Exception not raised")
         except Exception:
             pass
-        
+
     def test_scancode_data_changed_exception(self):
-        input_json = self.get_test_loc("sample_file_make_data_deserealize_fail.json")
+        input_json = self.get_test_loc(
+            "sample_file_make_data_deserealize_fail.json")
         codebase = VirtualCodebase(input_json)
         analyzer_plugin = ResultsAnalyzer()
 
@@ -206,8 +208,9 @@ def initialize_and_analyze_mock_codebase(input_json):
 
 
 class TestLicenseMatch(FileBasedTesting):
-    test_data_dir = os.path.join(os.path.dirname(__file__), "data/analyzer-plugins/")
-    
+    test_data_dir = os.path.join(os.path.dirname(
+        __file__), "data/analyzer-plugins/")
+
     def test_from_files_license_empty_list(self):
         license_matches = LicenseMatch.from_files_licenses([])
         assert license_matches == []
@@ -215,7 +218,8 @@ class TestLicenseMatch(FileBasedTesting):
     def check_from_files_license(self, test_file, regen=False):
         test_file = self.get_test_loc(test_file)
         license_matches_serialized = load_json(test_file)
-        license_matches = LicenseMatch.from_files_licenses(license_matches_serialized)
+        license_matches = LicenseMatch.from_files_licenses(
+            license_matches_serialized)
         results = list(map(attr.asdict, license_matches))
         expected_file = test_file + "-expected"
         if regen:
@@ -224,7 +228,7 @@ class TestLicenseMatch(FileBasedTesting):
                 json.dump(expected, out, indent=2)
         else:
             expected = load_json(expected_file)
-        
+
         assert results == expected
 
     def test_from_files_license_one_match(self):
@@ -235,33 +239,40 @@ class TestLicenseMatch(FileBasedTesting):
             "from_files_license_multiple_match_simple_few.json"
         )
         license_matches_serialized = load_json(test_file)
-        license_matches = LicenseMatch.from_files_licenses(license_matches_serialized)
+        license_matches = LicenseMatch.from_files_licenses(
+            license_matches_serialized)
         assert len(license_matches) == 2
-        
+
     def test_from_files_license_multiple_match_simple_many(self):
         test_file = self.get_test_loc(
             "from_files_license_multiple_match_simple_many.json"
         )
         license_matches_serialized = load_json(test_file)
-        license_matches = LicenseMatch.from_files_licenses(license_matches_serialized)
+        license_matches = LicenseMatch.from_files_licenses(
+            license_matches_serialized)
         assert len(license_matches) == 7
 
     def test_from_files_license_two_match_complex(self):
-        test_file = self.get_test_loc("from_files_license_two_match_complex.json")
+        test_file = self.get_test_loc(
+            "from_files_license_two_match_complex.json")
         license_matches_serialized = load_json(test_file)
-        license_matches = LicenseMatch.from_files_licenses(license_matches_serialized)
+        license_matches = LicenseMatch.from_files_licenses(
+            license_matches_serialized)
         assert len(license_matches) == 1
-        
+
     def test_from_files_license_three_match_complex(self):
-        test_file = self.get_test_loc("from_files_license_three_match_complex.json")
+        test_file = self.get_test_loc(
+            "from_files_license_three_match_complex.json")
         license_matches_serialized = load_json(test_file)
-        license_matches = LicenseMatch.from_files_licenses(license_matches_serialized)
+        license_matches = LicenseMatch.from_files_licenses(
+            license_matches_serialized)
         assert len(license_matches) == 1
-        
+
     def test_from_files_license_match_simple_and_complex(self):
         test_file = self.get_test_loc(
             "from_files_license_match_simple_and_complex.json"
         )
         license_matches_serialized = load_json(test_file)
-        license_matches = LicenseMatch.from_files_licenses(license_matches_serialized)
+        license_matches = LicenseMatch.from_files_licenses(
+            license_matches_serialized)
         assert len(license_matches) == 4

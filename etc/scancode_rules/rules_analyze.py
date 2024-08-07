@@ -1,6 +1,6 @@
 #
 # Copyright (c) nexB Inc. and others. All rights reserved.
-# http://nexb.com and https://github.com/nexB/scancode-toolkit/
+# http://nexb.com and https://github.com/aboutcode-org/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
 # ScanCode is a trademark of nexB Inc.
@@ -20,7 +20,7 @@
 #  ScanCode should be considered or used as legal advice. Consult an Attorney
 #  for any legal advice.
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
-#  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
+#  Visit https://github.com/aboutcode-org/scancode-toolkit/ for support and download.
 
 import yaml
 import os
@@ -43,7 +43,8 @@ class LicenseRulesInfo:
 
         self.df_io = DataFrameFileIO()
 
-        self.hdf5_info_dfs = os.path.join(os.path.dirname(__file__), 'data/lic-rule-info/info_dfs.hdf5')
+        self.hdf5_info_dfs = os.path.join(os.path.dirname(
+            __file__), 'data/lic-rule-info/info_dfs.hdf5')
 
         self.rule_df = None
         self.lic_df = None
@@ -70,10 +71,14 @@ class LicenseRulesInfo:
         Load License and Rule DataFrames and Conversion Dictionary DataFrames from hdf5 files.
         """
 
-        self.rule_df = self.df_io.load_dataframe_from_hdf5(self.hdf5_info_dfs, "rule")
-        self.lic_df = self.df_io.load_dataframe_from_hdf5(self.hdf5_info_dfs, "lic")
-        self.identifier_df = self.df_io.load_dataframe_from_hdf5(self.hdf5_info_dfs, "id")
-        self.key_df = self.df_io.load_dataframe_from_hdf5(self.hdf5_info_dfs, "key")
+        self.rule_df = self.df_io.load_dataframe_from_hdf5(
+            self.hdf5_info_dfs, "rule")
+        self.lic_df = self.df_io.load_dataframe_from_hdf5(
+            self.hdf5_info_dfs, "lic")
+        self.identifier_df = self.df_io.load_dataframe_from_hdf5(
+            self.hdf5_info_dfs, "id")
+        self.key_df = self.df_io.load_dataframe_from_hdf5(
+            self.hdf5_info_dfs, "key")
 
         self.identifier_dict = self.df_io.df_to_inv_dict(self.identifier_df)
         self.key_dict = self.df_io.df_to_inv_dict(self.key_df)
@@ -136,8 +141,10 @@ class LicenseRulesInfo:
 
         appended_data = pd.concat(appended_data)
 
-        appended_data["rule_name"] = pd.Series(files_rule, index=appended_data.index)
-        appended_data.index = pd.RangeIndex(start=1, stop=appended_data.shape[0] + 1)
+        appended_data["rule_name"] = pd.Series(
+            files_rule, index=appended_data.index)
+        appended_data.index = pd.RangeIndex(
+            start=1, stop=appended_data.shape[0] + 1)
 
         return appended_data
 
@@ -168,7 +175,8 @@ class LicenseRulesInfo:
         notice_set = set([file_name[:-8] for file_name in files_notice])
         yml_set = set([file_name[:-4] for file_name in files_yml])
 
-        extra_yml_files = [name + '.yml' for name in list(yml_set - (notice_set & yml_set))]
+        extra_yml_files = [
+            name + '.yml' for name in list(yml_set - (notice_set & yml_set))]
         files_yml_new = [e for e in files_yml if e not in extra_yml_files]
 
         assert len(files_notice) == len(files_yml_new)
@@ -191,8 +199,10 @@ class LicenseRulesInfo:
 
         appended_data_notice = pd.concat(appended_data_notice)
 
-        appended_data_notice["license_name"] = pd.Series(files_notice, index=appended_data_notice.index)
-        appended_data_notice.index = pd.RangeIndex(start=1, stop=appended_data_notice.shape[0] + 1)
+        appended_data_notice["license_name"] = pd.Series(
+            files_notice, index=appended_data_notice.index)
+        appended_data_notice.index = pd.RangeIndex(
+            start=1, stop=appended_data_notice.shape[0] + 1)
 
         return appended_data_notice
 
@@ -207,13 +217,14 @@ class LicenseRulesInfo:
             The threshold value, above which rules have a relevance of 100
         """
 
-        rule_df.loc[(rule_df["is_false_positive"] is True) | (rule_df["is_negative"] is True), "relevance"] = 100
+        rule_df.loc[(rule_df["is_false_positive"] is True) | (
+            rule_df["is_negative"] is True), "relevance"] = 100
 
         rule_df.loc[rule_df["num_words"] >= threshold, "relevance"] = 100
 
         relevance_of_one_word = round((1 / threshold) * 100, 2)
         rule_df.loc[rule_df["relevance"].isna(), "relevance"] = rule_df.loc[
-                                                    rule_df["relevance"].isna(), "num_words"] * relevance_of_one_word
+            rule_df["relevance"].isna(), "num_words"] * relevance_of_one_word
 
     @staticmethod
     def rule_compute_min_cov(rule_df):
@@ -265,7 +276,8 @@ class LicenseRulesInfo:
         lic_name_df = self.lic_df["license_name"]
 
         identifier_df = pd.concat([lic_name_df, rule_name_df])
-        identifier_df.index = pd.RangeIndex(start=1, stop=identifier_df.shape[0] + 1)
+        identifier_df.index = pd.RangeIndex(
+            start=1, stop=identifier_df.shape[0] + 1)
 
         self.identifier_df = identifier_df
         self.identifier_dict = self.df_io.df_to_inv_dict(identifier_df)
@@ -319,7 +331,8 @@ class VisualizeLicRuleInfo:
     @staticmethod
     def show_wordcloud(self, dataframe, text_column):
 
-        wordcloud = WordCloud(width=self.wcloud_w, height=self.wcloud_h).generate(' '.join(dataframe[text_column]))
+        wordcloud = WordCloud(width=self.wcloud_w, height=self.wcloud_h).generate(
+            ' '.join(dataframe[text_column]))
         plt.figure(figsize=(32, 16))
         plt.imshow(wordcloud, interpolation='bilinear')
         plt.axis("off")

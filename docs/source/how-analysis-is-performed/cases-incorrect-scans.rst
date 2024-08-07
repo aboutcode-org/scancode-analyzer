@@ -302,7 +302,7 @@ cluster/separate could be:
 - Programming Language
 - Type of Files?
 
-Related Issue - https://github.com/nexB/scancode-toolkit/issues/707
+Related Issue - https://github.com/aboutcode-org/scancode-toolkit/issues/707
 
 Finding False Positives from License Tags Detections
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

@@ -1,6 +1,6 @@
 #
 # Copyright (c) nexB Inc. and others. All rights reserved.
-# http://nexb.com and https://github.com/nexB/scancode-toolkit/
+# http://nexb.com and https://github.com/aboutcode-org/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
 # ScanCode is a trademark of nexB Inc.
@@ -20,7 +20,7 @@
 #  ScanCode should be considered or used as legal advice. Consult an Attorney
 #  for any legal advice.
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
-#  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
+#  Visit https://github.com/aboutcode-org/scancode-toolkit/ for support and download.
 
 import pandas as pd
 
@@ -47,9 +47,10 @@ class LicenseRulesInfo:
     """
     Contains all Licenses and License Rules related information, loaded from scancode.
     """
+
     def __init__(
         self,
-        rules_folder=models.rules_data_dir, 
+        rules_folder=models.rules_data_dir,
         licenses_folder=models.licenses_data_dir
     ):
         self.rule_df = None
@@ -58,7 +59,6 @@ class LicenseRulesInfo:
         self.load_scancode_rules(rules_folder)
         self.load_scancode_licenses(licenses_folder)
         self.modify_lic_rule_info()
-        
 
     def load_scancode_rules(self, rules_folder):
         """
@@ -66,7 +66,7 @@ class LicenseRulesInfo:
         """
         rules = list(models.load_rules(rules_folder))
         rules_df = []
-        
+
         for rule in rules:
             df = pd.DataFrame.from_dict(rule.to_dict(), orient='index').T
             rule_text = rule.text()
@@ -74,9 +74,8 @@ class LicenseRulesInfo:
             df["text"] = rule_text
             df["words_count"] = len(rule_text.split())
             rules_df.append(df)
-        
-        self.rule_df = pd.concat(rules_df)
 
+        self.rule_df = pd.concat(rules_df)
 
     def load_scancode_licenses(self, licenses_folder):
         """
@@ -84,18 +83,17 @@ class LicenseRulesInfo:
         """
         licenses = models.load_licenses(licenses_folder)
         licenses_df = []
-        
+
         for license in licenses.values():
-            
+
             df = pd.DataFrame.from_dict(license.to_dict(), orient='index').T
             license_text = license.text
             df["license_filename"] = license.data_file.split("/")[-1][:-4]
             df["text"] = license_text
             df["words_count"] = len(license_text.split())
             licenses_df.append(df)
-            
-        self.lic_df = pd.concat(licenses_df)
 
+        self.lic_df = pd.concat(licenses_df)
 
     @staticmethod
     def rules_compute_relevance(rule_df, threshold=THRESHOLD_COMPUTE_RELEVANCE):

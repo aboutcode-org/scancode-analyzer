@@ -3,7 +3,7 @@
 # ScanCode is a trademark of nexB Inc.
 # SPDX-License-Identifier: Apache-2.0
 # See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
-# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://github.com/aboutcode-org/scancode-toolkit for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
@@ -243,7 +243,8 @@ class LicenseDetectionIssue:
     and identified by a start line and an end line.
     """
 
-    issue_category = attr.ib(type=str, validator=attr.validators.in_(ISSUE_CATEGORIES))
+    issue_category = attr.ib(
+        type=str, validator=attr.validators.in_(ISSUE_CATEGORIES))
     issue_description = attr.ib(type=str)
 
     issue_type = attr.ib()
@@ -252,11 +253,12 @@ class LicenseDetectionIssue:
     original_licenses = attr.ib()
 
     file_regions = attr.ib(default=attr.Factory(list))
-    
+
     def to_dict(self, is_summary=True):
         if is_summary:
             return attr.asdict(
-                self, filter=lambda attr, value: attr.name not in ["file_regions"],
+                self, filter=lambda attr, value: attr.name not in [
+                    "file_regions"],
             )
         else:
             return attr.asdict(
@@ -270,11 +272,12 @@ class LicenseDetectionIssue:
         """
         data = []
         for license_match in self.original_licenses:
-            identifier = (license_match.rule_identifier, license_match.match_coverage,)
+            identifier = (license_match.rule_identifier,
+                          license_match.match_coverage,)
             data.append(identifier)
 
         return tuple(data)
-    
+
     @property
     def identifier_for_unknown_intro(self):
         """
@@ -283,7 +286,8 @@ class LicenseDetectionIssue:
         """
         data = []
         for license_match in self.original_licenses:
-            tokenized_matched_text = tuple(query_tokenizer(license_match.matched_text))
+            tokenized_matched_text = tuple(
+                query_tokenizer(license_match.matched_text))
             identifier = (
                 license_match.rule_identifier,
                 license_match.match_coverage,
@@ -712,8 +716,10 @@ def get_start_end_line(license_matches):
     Returns start and end line for a license detection issue, from the
     license match(es).
     """
-    start_line = min([license_match.start_line for license_match in license_matches])
-    end_line = max([license_match.end_line for license_match in license_matches])
+    start_line = min(
+        [license_match.start_line for license_match in license_matches])
+    end_line = max(
+        [license_match.end_line for license_match in license_matches])
     return start_line, end_line
 
 
@@ -723,7 +729,7 @@ def predict_license_expression(license_matches):
     objects.
     """
     unknown_expressions = ['unknown', 'warranty-disclaimer']
-    
+
     license_expressions = (
         license_match.license_expression for license_match in license_matches
     )
@@ -732,10 +738,10 @@ def predict_license_expression(license_matches):
     ]
     if not known_expressions:
         return "unknown"
-    
+
     license_expressions_counts = dict(Counter(known_expressions).most_common())
     highest_count = list(license_expressions_counts.values())[0]
-    
+
     top_license_expressions = [
         expression
         for expression, count in license_expressions_counts.items()
@@ -792,7 +798,8 @@ def get_license_match_suggestion(license_matches, issue_category, issue_type):
                 license_expression = match.license_expression
                 matched_text = match.matched_text
             else:
-                license_expression = predict_license_expression(license_matches)
+                license_expression = predict_license_expression(
+                    license_matches)
                 matched_text = consolidate_matches(license_matches)
 
     return license_expression, matched_text
@@ -822,18 +829,21 @@ def consolidate_matches(license_matches):
 
         # Case: Has a line-overlap
         if string_end_line == present_start_line:
-            matched_text = merge_string_with_overlap(matched_text, present_text)
+            matched_text = merge_string_with_overlap(
+                matched_text, present_text)
             string_end_line = present_end_line
 
         # Case: Boundary doesn't overlap but just beside
         elif string_end_line < present_start_line:
-            matched_text = merge_string_without_overlap(matched_text, present_text)
+            matched_text = merge_string_without_overlap(
+                matched_text, present_text)
             string_end_line = present_end_line
 
         # Case: Deep Overlaps (Of more than one lines)
         elif string_end_line > present_start_line:
             if string_end_line < present_end_line:
-                matched_text = merge_string_with_overlap(matched_text, present_text)
+                matched_text = merge_string_with_overlap(
+                    matched_text, present_text)
                 string_end_line = present_end_line
 
     return matched_text
@@ -901,6 +911,7 @@ def modify_analysis_confidence(license_detection_issue):
         or license_detection_issue.issue_category == "unknown-match"
     ):
         license_detection_issue.issue_type.analysis_confidence = "low"
+
 
 def group_matches(license_matches, lines_threshold=LINES_THRESHOLD):
     """

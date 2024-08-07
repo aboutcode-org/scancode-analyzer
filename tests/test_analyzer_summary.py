@@ -3,7 +3,7 @@
 # ScanCode is a trademark of nexB Inc.
 # SPDX-License-Identifier: Apache-2.0
 # See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
-# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://github.com/aboutcode-org/scancode-toolkit for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
@@ -27,12 +27,12 @@ from scancode_analyzer.summary import get_identifiers
 
 class TestAnalyzerPluginSummary(FileBasedTesting):
     test_data_dir = os.path.join(
-        os.path.dirname(__file__), 
+        os.path.dirname(__file__),
         "data/analyzer-plugins/"
     )
 
     def test_analyze_results_plugin_load_from_json_analyze_summary(self):
-    
+
         input_json = self.get_test_loc(
             "sample_files_result_same_unique_issues.json"
         )
@@ -68,11 +68,11 @@ class TestSummaryLicenseIssues(FileBasedTesting):
         assert summary.statistics.license_info_type_counts == {}
         assert summary.statistics.analysis_confidence_counts == {}
         assert summary.unique_license_detection_issues == []
-        
+
     def test_analyzer_summary_statistics_one_issue(self):
         input_json = self.get_test_loc("one_issue.json")
         all_issues = get_all_license_issues_in_codebase(input_json)
-        summary = attr.asdict( 
+        summary = attr.asdict(
             SummaryLicenseIssues.summarize(all_issues, 1, 1)
         )
         expected_file = self.get_test_loc("one_issue_summary.json")
@@ -97,7 +97,7 @@ class TestStatisticsLicenseIssues(FileBasedTesting):
     def test_analyzer_summary_statistics_one_issue(self):
         input_json = self.get_test_loc("one_issue.json")
         all_issues = get_all_license_issues_in_codebase(input_json)
-        stats = attr.asdict( 
+        stats = attr.asdict(
             StatisticsLicenseIssues.generate_statistics(all_issues, 1, 1, 1)
         )
         expected_file = self.get_test_loc("one_issue_summary.json")
@@ -115,19 +115,18 @@ class TestUniqueIssue(FileBasedTesting):
     def test_analyzer_summary_get_unique_issues_empty_list():
         unique_license_issues = UniqueIssue.get_unique_issues([])
         assert unique_license_issues == []
-        
 
     def test_analyzer_summary_get_unique_issues_socat_count(self):
-        
+
         input_json = self.get_test_loc("multiple_files_same_issues_socat.json")
         all_issues = get_all_license_issues_in_codebase(input_json)
         unique_license_issues = UniqueIssue.get_unique_issues(
             all_issues
         )
         assert len(unique_license_issues) == 1
-        
+
     def test_analyzer_summary_get_unique_issues_socat_all_occurrences(self):
-        
+
         input_json = self.get_test_loc("multiple_files_same_issues_socat.json")
         expected_file = self.get_test_loc(
             "multiple_files_same_issues_socat_file_regions.json"
@@ -144,18 +143,18 @@ class TestUniqueIssue(FileBasedTesting):
         ]
         expected_file_regions = load_json(expected_file)
         assert unique_issue_file_regions == expected_file_regions
-        
+
     def test_analyzer_summary_get_unique_issues_iptables_count(self):
-        
+
         input_json = self.get_test_loc(
             "multiple_files_same_issues_iptables.json"
         )
         all_issues = get_all_license_issues_in_codebase(input_json)
         unique_issues = UniqueIssue.get_unique_issues(all_issues)
         assert len(unique_issues) == 1
-        
+
     def test_analyzer_summary_get_unique_issues_iptables_all_occurrences(self):
-        
+
         input_json = self.get_test_loc(
             "multiple_files_same_issues_iptables.json"
         )
@@ -173,21 +172,21 @@ class TestUniqueIssue(FileBasedTesting):
         assert unique_issue_file_regions == expected_file_regions
 
     def test_analyzer_summary_get_unique_issues_mixed_1(self):
-        
+
         input_json = self.get_test_loc("multiple_files_mixed_issues_1.json")
         all_issues = get_all_license_issues_in_codebase(input_json)
         unique_issues = UniqueIssue.get_unique_issues(all_issues)
         assert len(unique_issues) == 2
-        
+
     def test_analyzer_summary_get_unique_issues_mixed_2(self):
-            
+
         input_json = self.get_test_loc("multiple_files_mixed_issues_2.json")
         all_issues = get_all_license_issues_in_codebase(input_json)
         unique_issues = UniqueIssue.get_unique_issues(all_issues)
         assert len(unique_issues) == 5
-        
+
     def test_analyzer_summary_get_unique_issues_unknown_intro(self):
-            
+
         input_json = self.get_test_loc("multiple_files_unknown_intro.json")
         all_issues = get_all_license_issues_in_codebase(input_json)
         unique_issues = UniqueIssue.get_unique_issues(all_issues)
@@ -206,7 +205,9 @@ class TestUniqueIssue(FileBasedTesting):
             for key in ["path", "identifier"]
         )
         assert type(unique_issue.license_detection_issue) == dict
-        assert len(unique_issue.license_detection_issue['original_licenses']) == 1
+        assert len(
+            unique_issue.license_detection_issue['original_licenses']) == 1
+
 
 class TestGetIdentifiers(FileBasedTesting):
     test_data_dir = os.path.join(
@@ -215,15 +216,16 @@ class TestGetIdentifiers(FileBasedTesting):
     )
 
     def test_get_indetifiers_same_for_same_tokenized_text(self):
-            
+
         input_json = self.get_test_loc(
             "multiple_files_unknown_intro_same_tokenized_text.json"
         )
         issues = get_all_license_issues_in_codebase(input_json)
-        assert list(get_identifiers([issues[0]])) == list(get_identifiers([issues[1]]))
-        
+        assert list(get_identifiers([issues[0]])) == list(
+            get_identifiers([issues[1]]))
+
     def test_analyzer_summary_get_unique_issues_unknown_intro_same_tokenized_text(self):
-            
+
         input_json = self.get_test_loc(
             "multiple_files_unknown_intro_same_tokenized_text.json"
         )
@@ -233,7 +235,7 @@ class TestGetIdentifiers(FileBasedTesting):
 
 
 def get_all_license_issues_in_codebase(input_json):
-    
+
     codebase = VirtualCodebase(input_json)
     all_license_issues = []
 

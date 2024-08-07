@@ -451,7 +451,7 @@ BERT model versions used.
 Related Issues
 --------------
 
-- `nexB/scancode-analyzer#22 <https://github.com/nexB/scancode-analyzer/issues/22>`_
-- `nexB/scancode-analyzer#20 <https://github.com/nexB/scancode-analyzer/issues/20>`_
-- `nexB/scancode-analyzer#21 <https://github.com/nexB/scancode-analyzer/issues/21>`_
+- `nexB/scancode-analyzer#22 <https://github.com/aboutcode-org/scancode-analyzer/issues/22>`_
+- `nexB/scancode-analyzer#20 <https://github.com/aboutcode-org/scancode-analyzer/issues/20>`_
+- `nexB/scancode-analyzer#21 <https://github.com/aboutcode-org/scancode-analyzer/issues/21>`_
 

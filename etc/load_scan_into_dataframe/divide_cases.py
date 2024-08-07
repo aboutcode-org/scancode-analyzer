@@ -3,7 +3,7 @@
 # ScanCode is a trademark of nexB Inc.
 # SPDX-License-Identifier: Apache-2.0
 # See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
-# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://github.com/aboutcode-org/scancode-toolkit for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
@@ -33,7 +33,8 @@ class DivideCases:
         self.license_class_bools = ["is_license_text_lic", "is_license_notice", "is_license_tag",
                                     "is_license_reference"]
 
-        self.license_class_dict = {1: 'license_text',  2: 'license_notice', 3: 'license-tag', 4: 'license-reference'}
+        self.license_class_dict = {
+            1: 'license_text',  2: 'license_notice', 3: 'license-tag', 4: 'license-reference'}
 
     # TODO: Add another threshold and grouping based on stats (near-perfect scores, maybe 85/90 to 100)
     @staticmethod
@@ -102,8 +103,10 @@ class DivideCases:
         scans_2_aho_3_seq = all_scans_df[mask_2_aho_3_seq_scans]
 
         # Apply `get_values_low_match_coverages_or_score` File Wise, and results are stacked in mask_values
-        mask_values = scans_2_aho_3_seq.groupby(level="file_sha1").apply(self.get_values_low_match_coverages_or_score)
-        all_scans_df.loc[mask_2_aho_3_seq_scans, "score_coverage_based_groups"] = mask_values.values
+        mask_values = scans_2_aho_3_seq.groupby(level="file_sha1").apply(
+            self.get_values_low_match_coverages_or_score)
+        all_scans_df.loc[mask_2_aho_3_seq_scans,
+                         "score_coverage_based_groups"] = mask_values.values
 
     @staticmethod
     def get_id_match_cov_tuples(df):
@@ -136,7 +139,8 @@ class DivideCases:
 
         # Apply `get_id_match_cov_tuples` to every File
         # `file_level_id_match_cov` is a Series, one row for every File, and containing a List Of Tuples per File
-        file_level_id_match_cov = id_coverage_df.groupby(level="file_sha1").apply(self.get_id_match_cov_tuples)
+        file_level_id_match_cov = id_coverage_df.groupby(
+            level="file_sha1").apply(self.get_id_match_cov_tuples)
 
         # Create a DataFrame for Efficient removing of duplicates
         file_tuples = pd.DataFrame(file_level_id_match_cov, columns=["tuples"])
@@ -167,7 +171,8 @@ class DivideCases:
         incorrect_scans_df = dataframe[mask_incorrect_scans]
 
         mask_df = self.get_unique_cases_mask(incorrect_scans_df)
-        dataframe.loc[mask_incorrect_scans, "mask_unique"] = mask_df["mask"].values
+        dataframe.loc[mask_incorrect_scans,
+                      "mask_unique"] = mask_df["mask"].values
 
     @staticmethod
     def get_match_class(df):
@@ -223,7 +228,8 @@ class DivideCases:
         df.index = pd.RangeIndex(start=0, stop=num_matches_file)
 
         # Initialize Start/End counters for both lines numbers and their numerical Index values for the current match
-        start_line_present_match, end_line_present_match = list(df.loc[0, ["start_line", "end_line"]].values)
+        start_line_present_match, end_line_present_match = list(
+            df.loc[0, ["start_line", "end_line"]].values)
         start_line_idx, end_line_idx = [0, 0]
 
         # Initialize present group number counter and the Group No of first match to 1
@@ -233,7 +239,8 @@ class DivideCases:
         for match in range(1, num_matches_file):
 
             # Get Start and End line for the current match
-            start_line, end_line = list(df.loc[match, ["start_line", "end_line"]].values)
+            start_line, end_line = list(
+                df.loc[match, ["start_line", "end_line"]].values)
 
             # If present match falls in the present group
             if start_line <= (end_line_present_match + LINES_THRESHOLD):
@@ -271,7 +278,8 @@ class DivideCases:
             df.loc[start_line_idx:end_line_idx, self.license_class_bools])
 
         # Create a DataFrame with the columns as the Group and License Class information, with the Series Arrays
-        grouped_df = pd.DataFrame({'match_group_number': group_number_series, 'match_class': match_class_series})
+        grouped_df = pd.DataFrame(
+            {'match_group_number': group_number_series, 'match_class': match_class_series})
 
         return grouped_df
 
@@ -286,16 +294,18 @@ class DivideCases:
             Dataframe containing all unique incorrect license detections.
         """
         # Stacks output DataFrames from all Files into One DataFrame `grouped_by_location_class`
-        unique_incorrect_scans_mask = np.bitwise_and(dataframe.score_coverage_based_groups != 2, dataframe.mask_unique)
+        unique_incorrect_scans_mask = np.bitwise_and(
+            dataframe.score_coverage_based_groups != 2, dataframe.mask_unique)
         unique_incorrect_scans_df = dataframe[unique_incorrect_scans_mask]
 
         location_and_class_groups = unique_incorrect_scans_df.groupby(level="file_sha1").apply(
-                                                                                self.get_groups_by_location_and_class)
+            self.get_groups_by_location_and_class)
 
         # Add Group by Location and License Type information to main Dataframe
         dataframe.loc[unique_incorrect_scans_mask, "match_group_number"] = location_and_class_groups[
-                                                                                        "match_group_number"].values
-        dataframe.loc[unique_incorrect_scans_mask, "match_class"] = location_and_class_groups["match_class"].values
+            "match_group_number"].values
+        dataframe.loc[unique_incorrect_scans_mask,
+                      "match_class"] = location_and_class_groups["match_class"].values
 
     @staticmethod
     def get_possible_false_positives(dataframe):
@@ -306,7 +316,8 @@ class DivideCases:
         :param dataframe:
             DataFrame containing all the Scan Results.
         """
-        possible_false_positives_mask = np.bitwise_and(dataframe.is_license_tag, dataframe.rule_length == 1)
+        possible_false_positives_mask = np.bitwise_and(
+            dataframe.is_license_tag, dataframe.rule_length == 1)
         dataframe.loc[possible_false_positives_mask, "match_class"] = 5
 
     # TODO: Implement SubClasses in Match Classes
@@ -326,7 +337,7 @@ class DivideCases:
         # Adding column `query_coverage_diff` with the difference between `match_coverage * rule_relevance` and `score`
         # if this is positive, there are extra words
         dataframe.loc[:, "query_coverage_diff"] = ((dataframe["match_coverage"] * dataframe["rule_relevance"]) / 100
-                                            - dataframe["score"]).values
+                                                   - dataframe["score"]).values
 
         # initialize row for for group by License Scores
         dataframe.loc[:, "score_coverage_based_groups"] = 0
@@ -417,7 +428,8 @@ class CraftRules:
         # No of matches in this group
         num_matches = df.shape[0]
 
-        string_start_line, string_end_line = list(df.loc[df.index[0], ["start_line", "end_line"]].values)
+        string_start_line, string_end_line = list(
+            df.loc[df.index[0], ["start_line", "end_line"]].values)
         rule_text = df.loc[df.index[0], "matched_text"]
 
         for match in range(1, num_matches):
@@ -429,29 +441,35 @@ class CraftRules:
             # If String Boundaries Overlap
             if string_end_line == present_start_line:
 
-                rule_text = self.merge_string_with_overlap(rule_text, present_text)
+                rule_text = self.merge_string_with_overlap(
+                    rule_text, present_text)
                 string_end_line = present_end_line
 
             # Boundary doesn't overlap but just beside
             elif string_end_line < present_start_line:
 
-                rule_text = self.merge_string_without_overlap(rule_text, present_text)
+                rule_text = self.merge_string_without_overlap(
+                    rule_text, present_text)
                 string_end_line = present_end_line
 
             # Deep Overlaps (Of more than one lines)
             elif string_end_line > present_start_line:
 
                 if string_end_line < present_end_line:
-                    rule_text = self.merge_string_with_overlap(rule_text, present_text)
+                    rule_text = self.merge_string_with_overlap(
+                        rule_text, present_text)
                     string_end_line = present_end_line
 
         # Predict Key of the crafted Rule based on the keys of the fragment matches
         key_prediction = self.predict_key(df.loc[:, ["key", "matched_length"]])
-        path, rule_class = list(df.loc[df.index[0], ["path", "match_class"]].values)
+        path, rule_class = list(
+            df.loc[df.index[0], ["path", "match_class"]].values)
 
         # Creates a Single Row DataFrame with the Crafted Rule Text and other Attributes
-        rule_df = pd.DataFrame(columns=list(["path", "key", "rule_class", "start_line", "end_line", "rule_text"]))
-        rule_df.loc[group_number] = [path, key_prediction, rule_class, string_start_line, string_end_line, rule_text]
+        rule_df = pd.DataFrame(columns=list(
+            ["path", "key", "rule_class", "start_line", "end_line", "rule_text"]))
+        rule_df.loc[group_number] = [path, key_prediction,
+                                     rule_class, string_start_line, string_end_line, rule_text]
 
         return rule_df
 
@@ -523,6 +541,7 @@ class CraftRules:
         :param df:
         :return generated_rules:
         """
-        generated_rules = df.groupby(level="file_sha1").apply(self.get_rules_by_group)
+        generated_rules = df.groupby(
+            level="file_sha1").apply(self.get_rules_by_group)
 
         return generated_rules

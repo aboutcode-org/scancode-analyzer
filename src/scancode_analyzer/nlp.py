@@ -1,6 +1,6 @@
 #
 # Copyright (c) nexB Inc. and others. All rights reserved.
-# http://nexb.com and https://github.com/nexB/scancode-toolkit/
+# http://nexb.com and https://github.com/aboutcode-org/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
 # ScanCode is a trademark of nexB Inc.
@@ -20,7 +20,7 @@
 #  ScanCode should be considered or used as legal advice. Consult an Attorney
 #  for any legal advice.
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
-#  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
+#  Visit https://github.com/aboutcode-org/scancode-toolkit/ for support and download.
 
 # Refer https://github.com/labteral/ernie for usage docs
 from ernie import SentenceClassifier, Models
@@ -71,11 +71,13 @@ class SentenceClassifierTransformer:
 
         # Model name at huggingface for local/online backup
         self.hface_model_name = hface_model_name
-        self.local_model_dir = os.path.join(os.path.dirname(__file__), 'data/nlp-models/' + hface_model_name)
+        self.local_model_dir = os.path.join(os.path.dirname(
+            __file__), 'data/nlp-models/' + hface_model_name)
 
         # naming support for backing up different versions locally
         self.version = 1
-        self.local_model_dir_new = os.path.join(self.local_model_dir, '-v' + str(self.version))
+        self.local_model_dir_new = os.path.join(
+            self.local_model_dir, '-v' + str(self.version))
 
         # Main Model Parameters
         self.max_length_sentence = max_len
@@ -114,7 +116,8 @@ class SentenceClassifierTransformer:
                 self.classifier.dump(classifier_path)
             except FileExistsError:
                 self.version += 1
-                self.local_model_dir_new = os.path.join(self.local_model_dir, 'v' + str(self.version))
+                self.local_model_dir_new = os.path.join(
+                    self.local_model_dir, 'v' + str(self.version))
                 self.classifier.dump(self.local_model_dir_new)
         # Case 2: Where self.classifier has to be initialized as an ernie `SentenceClassifier` object
         else:
@@ -122,7 +125,8 @@ class SentenceClassifierTransformer:
                 os.makedirs(self.local_model_dir_new)
             except FileExistsError:
                 self.version += 1
-                self.local_model_dir_new = os.path.join(self.local_model_dir, 'v' + str(self.version))
+                self.local_model_dir_new = os.path.join(
+                    self.local_model_dir, 'v' + str(self.version))
                 os.makedirs(self.local_model_dir_new)
 
             self.model.save_pretrained(self.local_model_dir_new)
@@ -198,9 +202,11 @@ class SentenceClassifierTransformer:
         if classifier_type == 'new':
             self.load_classifier_new()
         elif classifier_type == 'offline_backup':
-            self.load_classifier_from_local_backup(classifier_path=self.local_model_dir)
+            self.load_classifier_from_local_backup(
+                classifier_path=self.local_model_dir)
         elif classifier_type == 'online_backup':
-            self.load_classifier_from_online_backup(hface_model_name=self.hface_model_name)
+            self.load_classifier_from_online_backup(
+                hface_model_name=self.hface_model_name)
 
 
 class NLPModelsTrain:
@@ -239,9 +245,11 @@ class NLPModelsTrain:
         """
 
         # Queries all License Tag Rules
-        lic_tags_positive = self.lic_rule_info.rule_df.query("is_license_tag == True")
+        lic_tags_positive = self.lic_rule_info.rule_df.query(
+            "is_license_tag == True")
         # Queries all the False Positive Rules
-        lic_tags_negative = self.lic_rule_info.rule_df.query("is_negative == True")
+        lic_tags_negative = self.lic_rule_info.rule_df.query(
+            "is_negative == True")
 
         # Label the License Tags to belong in class 1
         rule_texts_pos = lic_tags_positive[["Rule_text"]].copy()
@@ -258,8 +266,10 @@ class NLPModelsTrain:
 
         # Initialize a RangeIndex and randomly Re-Order the Rows to mix the two labels
         # Note: the classes are still unbalanced, i.e. one class has more examples than the other.
-        rule_texts_df.index = pd.RangeIndex(start=0, stop=rule_texts_df.shape[0])
-        input_data_false_pos = rule_texts_df.sample(frac=1).reset_index(drop=True)
+        rule_texts_df.index = pd.RangeIndex(
+            start=0, stop=rule_texts_df.shape[0])
+        input_data_false_pos = rule_texts_df.sample(
+            frac=1).reset_index(drop=True)
 
         return input_data_false_pos
 
@@ -274,9 +284,12 @@ class NLPModelsTrain:
         # As Scancode License Rules might have multiple classes, only take the dominant class (in this order)
         # This prepares row wise masks, to facilitate selection of all entries of that class, to assign their class.
         mask_text = df["is_license_text"]
-        mask_notice = np.bitwise_and(np.bitwise_not(mask_text), df["is_license_notice"])
-        mask_tag = np.bitwise_and(np.bitwise_not(mask_notice), df["is_license_tag"])
-        mask_reference = np.bitwise_and(np.bitwise_not(mask_tag), df["is_license_reference"])
+        mask_notice = np.bitwise_and(np.bitwise_not(
+            mask_text), df["is_license_notice"])
+        mask_tag = np.bitwise_and(np.bitwise_not(
+            mask_notice), df["is_license_tag"])
+        mask_reference = np.bitwise_and(
+            np.bitwise_not(mask_tag), df["is_license_reference"])
 
         # Label them as Classes 0-3, using the masks
         df.loc[mask_text, "class"] = 0
@@ -294,13 +307,17 @@ class NLPModelsTrain:
         self.divide_rules_into_classes(lic_rules)
 
         # Only select two columns, the Rule Text, and the class.
-        all_rules_input = lic_rules.loc[(lic_rules["class"] >= 0), ["Rule_text", "class"]]
-        all_rules_input.rename(columns={"Rule_text": 0, "class": 1}, inplace=True)
+        all_rules_input = lic_rules.loc[(lic_rules["class"] >= 0), [
+            "Rule_text", "class"]]
+        all_rules_input.rename(
+            columns={"Rule_text": 0, "class": 1}, inplace=True)
 
         # Initialize a RangeIndex and randomly Re-Order the Rows to mix the two labels
         # Note: the classes are still unbalanced, i.e. one class has more examples than the other.
-        all_rules_input.index = pd.RangeIndex(start=0, stop=all_rules_input.shape[0])
-        input_data_lic_class = all_rules_input.sample(frac=1).reset_index(drop=True)
+        all_rules_input.index = pd.RangeIndex(
+            start=0, stop=all_rules_input.shape[0])
+        input_data_lic_class = all_rules_input.sample(
+            frac=1).reset_index(drop=True)
 
         return input_data_lic_class
 
@@ -325,7 +342,8 @@ class NLPModelsTrain:
         # Load DataSet to Memory for Training, with a 90/10 Validation Split
         classifier.load_dataset(input_data, validation_split=validation_split)
 
-        classifier.fine_tune(epochs=epochs_num, learning_rate=2e-5, training_batch_size=32, validation_batch_size=64)
+        classifier.fine_tune(epochs=epochs_num, learning_rate=2e-5,
+                             training_batch_size=32, validation_batch_size=64)
 
     def train_basic_false_positive_classifier(self, classifier_type='new'):
         """
@@ -346,10 +364,12 @@ class NLPModelsTrain:
         self.false_positive_classifier.load_classifier(classifier_type)
 
         # Fine-tune the pre-trained Transformer Model on `input_data`
-        self.fine_tune_bert_on_data(classifier=self.false_positive_classifier.classifier, input_data=input_data)
+        self.fine_tune_bert_on_data(
+            classifier=self.false_positive_classifier.classifier, input_data=input_data)
 
         # Backup Classifier Weights/Parameters Locally
-        self.false_positive_classifier.save_classifier(self.false_positive_classifier.local_model_dir_new)
+        self.false_positive_classifier.save_classifier(
+            self.false_positive_classifier.local_model_dir_new)
 
     def train_basic_lic_class_classifier(self, classifier_type='new'):
         """
@@ -370,10 +390,12 @@ class NLPModelsTrain:
         self.license_class_classifier.load_classifier(classifier_type)
 
         # Fine-tune the pre-trained Transformer Model on `input_data`
-        self.fine_tune_bert_on_data(classifier=self.license_class_classifier.classifier, input_data=input_data)
+        self.fine_tune_bert_on_data(
+            classifier=self.license_class_classifier.classifier, input_data=input_data)
 
         # Backup Classifier Weights/Parameters Locally
-        self.license_class_classifier.save_classifier(self.license_class_classifier.local_model_dir_new)
+        self.license_class_classifier.save_classifier(
+            self.license_class_classifier.local_model_dir_new)
 
 
 class NLPModelsPredict:
@@ -419,7 +441,8 @@ class NLPModelsPredict:
         self.false_positive_classifier.load_classifier(classifier_type)
 
         # Generate Predictions using the Model
-        predictions = self.false_positive_classifier.classifier.predict(sen_list)
+        predictions = self.false_positive_classifier.classifier.predict(
+            sen_list)
 
         return predictions
 
@@ -443,6 +466,7 @@ class NLPModelsPredict:
         self.license_class_classifier.load_classifier(classifier_type)
 
         # Generate Predictions using the Model
-        predictions = self.license_class_classifier.classifier.predict(sen_list)
+        predictions = self.license_class_classifier.classifier.predict(
+            sen_list)
 
         return predictions

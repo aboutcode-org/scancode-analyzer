@@ -3,7 +3,7 @@
 # ScanCode is a trademark of nexB Inc.
 # SPDX-License-Identifier: Apache-2.0
 # See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
-# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://github.com/aboutcode-org/scancode-toolkit for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
@@ -58,13 +58,13 @@ class PostgresFetch:
         """
         query_string = "SELECT {columns_return} FROM {database} WHERE {columns_search} like '{tool_name}'" \
                        "OFFSET {offset} ROWS FETCH FIRST {num_rows} ROW ONLY;".format(
-                        columns_return=COLUMNS_RETURN,
-                        database=DATABASE_NAME,
-                        columns_search=COLUMNS_SEARCH,
-                        tool_name=TOOL_NAME,
-                        offset=self.offset,
-                        num_rows=num_rows
-                        )
+                           columns_return=COLUMNS_RETURN,
+                           database=DATABASE_NAME,
+                           columns_search=COLUMNS_SEARCH,
+                           tool_name=TOOL_NAME,
+                           offset=self.offset,
+                           num_rows=num_rows
+                       )
 
         return query_string
 

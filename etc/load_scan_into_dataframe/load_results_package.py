@@ -3,7 +3,7 @@
 # ScanCode is a trademark of nexB Inc.
 # SPDX-License-Identifier: Apache-2.0
 # See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
-# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://github.com/aboutcode-org/scancode-toolkit for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
@@ -51,7 +51,8 @@ class ResultsDataFramePackage:
         if not os.path.exists(self.df_io.hdf_dir):
             os.makedirs(self.df_io.hdf_dir)
 
-        file_path = os.path.join(self.df_io.get_hdf5_file_path(self.df_io.hdf_dir, self.df_io.metadata_filename))
+        file_path = os.path.join(self.df_io.get_hdf5_file_path(
+            self.df_io.hdf_dir, self.df_io.metadata_filename))
 
         if not os.path.isfile(self.df_io.get_hdf5_file_path(self.df_io.hdf_dir, filename=self.df_io.metadata_filename)):
             self.df_io.store_dataframe_to_hdf5(metadata_dataframe, file_path, df_key='metadata',
@@ -90,10 +91,12 @@ class ResultsDataFramePackage:
         """
         # Fetch A specified rows of Data From postgres Database, and load into a DataFrame
         data_memoryview = self.postgres.fetch_data(num_rows_to_fetch)
-        dataframe_memoryview = pd.DataFrame(data_memoryview, columns=['path', 'memoryview'])
+        dataframe_memoryview = pd.DataFrame(
+            data_memoryview, columns=['path', 'memoryview'])
 
         # Decompress entire `memoryview` column, add decompressed JSON dicts at `json_content`, then drop former.
-        dataframe_memoryview['json_content'] = dataframe_memoryview.memoryview.apply(self.decompress_dataframe)
+        dataframe_memoryview['json_content'] = dataframe_memoryview.memoryview.apply(
+            self.decompress_dataframe)
         dataframe_memoryview.drop(columns=['memoryview'], inplace=True)
 
         return dataframe_memoryview
@@ -149,7 +152,8 @@ class ResultsDataFramePackage:
         :returns dataframe : pd.DataFrame
             DataFrame, containing new columns for each dict keys, from the dict inside the JSON dict.
         """
-        dataframe_dicts = dataframe.json_content.apply(self.dict_to_rows_in_dataframes_l2, args=(key_1, key_2))
+        dataframe_dicts = dataframe.json_content.apply(
+            self.dict_to_rows_in_dataframes_l2, args=(key_1, key_2))
         new_df = pd.DataFrame(list(dataframe_dicts))
 
         # Merge By Index, which basically Appends Column-Wise
@@ -174,7 +178,8 @@ class ResultsDataFramePackage:
             DataFrame, containing a new column for the value/list, from inside the JSON dict.
         """
         if key_3 is None:
-            dataframe_dicts = dataframe.json_content.apply(self.dict_to_rows_in_dataframes_l2, args=(key_1, key_2))
+            dataframe_dicts = dataframe.json_content.apply(
+                self.dict_to_rows_in_dataframes_l2, args=(key_1, key_2))
         else:
             dataframe_dicts = dataframe.json_content.apply(self.dict_to_rows_in_dataframes_l3,
                                                            args=(key_1, key_2, key_3))
@@ -196,7 +201,8 @@ class ResultsDataFramePackage:
         :param new_col : string : Name of New Column
         """
         # Add Pandas DateTime Column
-        dataframe[new_col] = pd.to_datetime(dataframe[old_col].tolist(), format='%Y-%m-%d')
+        dataframe[new_col] = pd.to_datetime(
+            dataframe[old_col].tolist(), format='%Y-%m-%d')
 
         # Drop String DateTime Column
         dataframe.drop(columns=[old_col], inplace=True)
@@ -209,8 +215,10 @@ class ResultsDataFramePackage:
         """
         schema_df = pd.DataFrame(schema_series)
 
-        file_path = os.path.join(self.df_io.get_hdf5_file_path(self.df_io.hdf_dir, self.df_io.metadata_filename))
-        self.df_io.store_dataframe_to_hdf5(schema_df, file_path, df_key='schema', h5_format='table', is_append=True)
+        file_path = os.path.join(self.df_io.get_hdf5_file_path(
+            self.df_io.hdf_dir, self.df_io.metadata_filename))
+        self.df_io.store_dataframe_to_hdf5(
+            schema_df, file_path, df_key='schema', h5_format='table', is_append=True)
 
     def assert_dataframe_schema(self, path_json_dataframe):
         """
@@ -221,7 +229,8 @@ class ResultsDataFramePackage:
         """
 
         # Splits the contents of 'path' column and adds another column 'list_split' containing lists
-        path_json_dataframe['list_split'] = path_json_dataframe['path'].str.split(pat="/")
+        path_json_dataframe['list_split'] = path_json_dataframe['path'].str.split(
+            pat="/")
 
         # Convert these lists (each having 9 values) into DataFrame Columns named 0-8
         split_df = pd.DataFrame.from_dict(
@@ -238,11 +247,13 @@ class ResultsDataFramePackage:
         merged_df = path_json_dataframe.join(split_df)
 
         # Only keep Scancode scans of schemaVersion 3.2.2
-        merged_df.drop(merged_df[~ (merged_df['schema_ver'] == "3.2.2.json")].index, inplace=True)
+        merged_df.drop(
+            merged_df[~ (merged_df['schema_ver'] == "3.2.2.json")].index, inplace=True)
 
         # Columns 'revision', 'tool', 'scancode' has same entries, and info from "path", "list_split" is extracted
         # Delete these unnecessary columns
-        merged_df.drop(columns=["path", "list_split", 'revision', 'tool', 'scancode', 'schema_ver'], inplace=True)
+        merged_df.drop(columns=["path", "list_split", 'revision',
+                       'tool', 'scancode', 'schema_ver'], inplace=True)
 
         # Replace "-" entries in column "pkg_owner" with np.nan
         merged_df.loc[merged_df["pkg_owner"] == '-', "pkg_owner"] = np.nan
@@ -273,9 +284,11 @@ class ResultsDataFramePackage:
         metadata_dataframe.drop(columns=['json_content'], inplace=True)
 
         # Convert TimeProcess to TimeIndex
-        self.convert_string_to_datetime(metadata_dataframe, old_col='start_timestamp', new_col='TimeIndex')
+        self.convert_string_to_datetime(
+            metadata_dataframe, old_col='start_timestamp', new_col='TimeIndex')
 
-        files_dataframe = metadata_dataframe[['TimeIndex', 'Files']].copy(deep=True)
+        files_dataframe = metadata_dataframe[[
+            'TimeIndex', 'Files']].copy(deep=True)
         metadata_dataframe.drop(columns=['Files'], inplace=True)
 
         return files_dataframe, metadata_dataframe
@@ -294,7 +307,8 @@ class ResultsDataFramePackage:
         main_df["rule_length"] = main_df["rule_length"].astype(np.uint16)
         main_df["matched_length"] = main_df["matched_length"].astype(np.uint16)
 
-        main_df["license_detections_no"] = main_df["license_detections_no"].astype(np.uint16)
+        main_df["license_detections_no"] = main_df["license_detections_no"].astype(
+            np.uint16)
 
         main_df["start_line"] = main_df["start_line"].astype(np.uint32)
         main_df["end_line"] = main_df["end_line"].astype(np.uint32)
@@ -302,7 +316,8 @@ class ResultsDataFramePackage:
 
         # ToDo: Compress `file_type`, `mime_type`,  String->Int Mapping
         prog_lan_dict = self.df_io.get_prog_lang_dict()
-        main_df["programming_language"] = main_df["programming_language"].map(prog_lan_dict).fillna(0).astype(np.uint8)
+        main_df["programming_language"] = main_df["programming_language"].map(
+            prog_lan_dict).fillna(0).astype(np.uint8)
 
     def create_package_level_dataframe(self, json_filename=None, path_json_dataframe=None, load_df=True):
         """
@@ -320,7 +335,8 @@ class ResultsDataFramePackage:
         # Loads Dataframes
         if load_df:
             if json_filename:
-                path_json_dataframe = self.df_io.mock_db_data_from_json(json_filename)
+                path_json_dataframe = self.df_io.mock_db_data_from_json(
+                    json_filename)
             else:
                 path_json_dataframe = self.convert_records_to_json()
 
@@ -329,7 +345,8 @@ class ResultsDataFramePackage:
 
         # Converts information multiple levels inside dicts into columns
         # Package Level Data, TimeStamp, 'license_clarity_score' values,'files' list -> `New Columns`.
-        files_dataframe, metadata_dataframe = self.modify_package_level_dataframe(path_json_dataframe)
+        files_dataframe, metadata_dataframe = self.modify_package_level_dataframe(
+            path_json_dataframe)
 
         # Append metadata level information to a MetaData File
         # self.append_metadata_dataframe(metadata_dataframe)
@@ -340,7 +357,8 @@ class ResultsDataFramePackage:
         file_level_dataframes_list = []
         drop_files_index_list = []
         for package_scan_result in files_dataframe.itertuples():
-            has_data, file_level_dataframe = self.results_file.create_file_level_dataframe(package_scan_result[2])
+            has_data, file_level_dataframe = self.results_file.create_file_level_dataframe(
+                package_scan_result[2])
             if has_data:
                 file_level_dataframes_list.append(file_level_dataframe)
             else:
@@ -356,7 +374,8 @@ class ResultsDataFramePackage:
         #  into One Package Level Dataframe, using MultiIndex. Rename Primary Key column names.
         main_dataframe = pd.concat(file_level_dataframes_list,
                                    keys=list_file_level_keys)
-        main_dataframe.index.names = ['pkg_scan_time', 'file_sha1', 'lic_det_num']
+        main_dataframe.index.names = [
+            'pkg_scan_time', 'file_sha1', 'lic_det_num']
 
         # Compress Package Level DataFrame
         self.compress_pkg_dataframe(main_dataframe)

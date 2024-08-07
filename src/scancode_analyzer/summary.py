@@ -3,7 +3,7 @@
 # ScanCode is a trademark of nexB Inc.
 # SPDX-License-Identifier: Apache-2.0
 # See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
-# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://github.com/aboutcode-org/scancode-toolkit for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
@@ -51,6 +51,7 @@ codebase_level:
                 - low: 0
 """
 
+
 @attr.s
 class SummaryLicenseIssues:
     """
@@ -58,7 +59,7 @@ class SummaryLicenseIssues:
     """
     statistics = attr.ib()
     unique_license_detection_issues = attr.ib(factory=list)
-    
+
     def to_dict(self):
         return attr.asdict(self)
 
@@ -70,7 +71,7 @@ class SummaryLicenseIssues:
         unique_issues = UniqueIssue.get_unique_issues(
             license_issues,
         )
-        statistics=StatisticsLicenseIssues.generate_statistics(
+        statistics = StatisticsLicenseIssues.generate_statistics(
             license_issues=license_issues,
             count_unique_issues=len(unique_issues),
             count_has_license=count_has_license,
@@ -146,7 +147,7 @@ class StatisticsLicenseIssues:
                 for issue in license_issues
             )),
         }
-        
+
         license_info_type_statistics = {
             flag: count
             for flag, count in flags_statistics.items()
@@ -177,7 +178,7 @@ class UniqueIssue:
     unique_identifier = attr.ib(type=int)
     license_detection_issue = attr.ib()
     files = attr.ib(factory=list)
-    
+
     @staticmethod
     def get_formatted_unique_issue(
         license_issue, files, unique_identifier
@@ -185,7 +186,7 @@ class UniqueIssue:
         return UniqueIssue(
             license_detection_issue=license_issue.to_dict(),
             files=files,
-            unique_identifier = unique_identifier,
+            unique_identifier=unique_identifier,
         )
 
     @staticmethod

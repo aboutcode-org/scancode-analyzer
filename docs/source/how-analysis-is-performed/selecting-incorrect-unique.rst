@@ -54,7 +54,7 @@ Why we need to divide matches in a file into file-regions:
 File-Region Example
 ^^^^^^^^^^^^^^^^^^^
 
-In example - `scancode-toolkit#1907 <https://github.com/nexB/scancode-toolkit/issues/1907#issuecomment-597773239>`_
+In example - `scancode-toolkit#1907 <https://github.com/aboutcode-org/scancode-toolkit/issues/1907#issuecomment-597773239>`_
 
 - the first GPL detection is for this line range - {"start_line": 8, "end_line": 19}
 - the second is for the free-unknown for this line range: {"start_line": 349, "end_line": 350}
@@ -214,7 +214,7 @@ I.e. the policy is::
     one file among them and discard the others.
 
 
-For example, in `scancode-toolkit#1920 <https://github.com/nexB/scancode-toolkit/issues/1920>`_, socat-2.0.0 has
+For example, in `scancode-toolkit#1920 <https://github.com/aboutcode-org/scancode-toolkit/issues/1920>`_, socat-2.0.0 has
 multiple (6) files with each file having the same 3 matched rules and match_coverage sets, i.e. -
 
 - {"gpl-3.0-plus_with_tex-exception_4.RULE", 13.21}

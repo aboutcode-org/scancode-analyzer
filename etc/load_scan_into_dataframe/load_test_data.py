@@ -1,6 +1,6 @@
 #
 # Copyright (c) nexB Inc. and others. All rights reserved.
-# http://nexb.com and https://github.com/nexB/scancode-toolkit/
+# http://nexb.com and https://github.com/aboutcode-org/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
 # ScanCode is a trademark of nexB Inc.
@@ -10,7 +10,7 @@
 # ScanCode is a trademark of nexB Inc.
 # SPDX-License-Identifier: Apache-2.0
 # See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
-# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://github.com/aboutcode-org/scancode-toolkit for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
@@ -26,10 +26,13 @@ class TestData:
     def __init__(self):
 
         self.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
-        self.test_data_json_dir = os.path.join(os.path.dirname(__file__), 'data/results-test')
+        self.test_data_json_dir = os.path.join(
+            os.path.dirname(__file__), 'data/results-test')
         self.mock_metadata_filename = 'sample_metadata.json'
-        self.mock_metadata_filepath = os.path.join(self.test_data_dir, self.mock_metadata_filename)
-        self.json_dict_metadata = DataFrameFileIO.import_data_from_json(self.mock_metadata_filepath)
+        self.mock_metadata_filepath = os.path.join(
+            self.test_data_dir, self.mock_metadata_filename)
+        self.json_dict_metadata = DataFrameFileIO.import_data_from_json(
+            self.mock_metadata_filepath)
 
         self.rule_scans = self.get_scans_from_folder("rule")
         self.lic_scans = self.get_scans_from_folder("lic")
@@ -44,17 +47,22 @@ class TestData:
             filenames.sort()
             files_all.extend(filenames)
 
-        json_dict_metadata = DataFrameFileIO.import_data_from_json(self.mock_metadata_filepath)
-        mock_path = pd.Series(["mock/data/-/multiple-packages/random/1.0.0/tool/scancode/3.2.2.json"])
+        json_dict_metadata = DataFrameFileIO.import_data_from_json(
+            self.mock_metadata_filepath)
+        mock_path = pd.Series(
+            ["mock/data/-/multiple-packages/random/1.0.0/tool/scancode/3.2.2.json"])
 
         packages_all = []
 
         for file in files_all:
             json_filepath = os.path.join(data_path, file)
-            json_dict_content = DataFrameFileIO.import_data_from_json(json_filepath)
+            json_dict_content = DataFrameFileIO.import_data_from_json(
+                json_filepath)
 
-            json_dict = pd.Series([{"_metadata": json_dict_metadata, "content": json_dict_content}])
-            json_df = pd.DataFrame({"path": mock_path, "json_content": json_dict})
+            json_dict = pd.Series(
+                [{"_metadata": json_dict_metadata, "content": json_dict_content}])
+            json_df = pd.DataFrame(
+                {"path": mock_path, "json_content": json_dict})
 
             packages_all.append(json_df)
 
@@ -73,9 +81,12 @@ class DataFrameFileIO:
         self.mock_metadata_filename = 'sample_metadata.json'
 
         self.hdf_dir = os.path.join(os.path.dirname(__file__), 'data/hdf5/')
-        self.json_input_dir = os.path.join(os.path.dirname(__file__), 'data/json-scan-results/')
-        self.from_scancode_dir = os.path.join(os.path.dirname(__file__), 'data/from-scancode/')
-        self.path_scancode_folders_json = os.path.join(os.path.dirname(__file__), 'data/rule_lic_folder_paths.json')
+        self.json_input_dir = os.path.join(
+            os.path.dirname(__file__), 'data/json-scan-results/')
+        self.from_scancode_dir = os.path.join(
+            os.path.dirname(__file__), 'data/from-scancode/')
+        self.path_scancode_folders_json = os.path.join(
+            os.path.dirname(__file__), 'data/rule_lic_folder_paths.json')
 
     @staticmethod
     def import_data_from_json(file_path):
@@ -144,9 +155,11 @@ class DataFrameFileIO:
 
         if is_append:
             # File has to exist
-            dataframe.to_hdf(path_or_buf=file_path, key=df_key, mode='r+', format=h5_format)
+            dataframe.to_hdf(path_or_buf=file_path, key=df_key,
+                             mode='r+', format=h5_format)
         else:
-            dataframe.to_hdf(path_or_buf=file_path, key=df_key, mode='w', format=h5_format)
+            dataframe.to_hdf(path_or_buf=file_path, key=df_key,
+                             mode='w', format=h5_format)
 
     @staticmethod
     def df_to_inv_dict(df):
@@ -176,7 +189,8 @@ class DataFrameFileIO:
         :return inv_prog_map: dict
             String -> Integer Dictionary for all the Programming Languages
         """
-        prog_lang_file_path = os.path.join(self.from_scancode_dir, "languages.txt")
+        prog_lang_file_path = os.path.join(
+            self.from_scancode_dir, "languages.txt")
 
         prog_languages = []
         with open(prog_lang_file_path, "r") as file:
@@ -202,13 +216,16 @@ class DataFrameFileIO:
         """
 
         json_filepath = os.path.join(self.json_input_dir, json_filename)
-        mock_metadata_filepath = os.path.join(self.json_input_dir, self.mock_metadata_filename)
+        mock_metadata_filepath = os.path.join(
+            self.json_input_dir, self.mock_metadata_filename)
 
         json_dict_content = self.import_data_from_json(json_filepath)
         json_dict_metadata = self.import_data_from_json(mock_metadata_filepath)
 
-        json_dict = pd.Series([{"_metadata": json_dict_metadata, "content": json_dict_content}])
-        mock_path = pd.Series(["mock/data/-/multiple-packages/random/1.0.0/tool/scancode/3.2.2.json"])
+        json_dict = pd.Series(
+            [{"_metadata": json_dict_metadata, "content": json_dict_content}])
+        mock_path = pd.Series(
+            ["mock/data/-/multiple-packages/random/1.0.0/tool/scancode/3.2.2.json"])
 
         json_df = pd.DataFrame({"path": mock_path, "json_content": json_dict})
 
