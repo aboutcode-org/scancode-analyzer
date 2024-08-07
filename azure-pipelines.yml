@@ -1,5 +1,5 @@
 ################################################################################
-# We use Azure to run the full tests suites on Python 3.6 -> 3.10
+# We use Azure to run the full tests suites on Python 3.7 -> 3.11
 # on Linux
 ################################################################################
 
