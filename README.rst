@@ -41,11 +41,3 @@ Documentation
 -------------
 
 Documentation: https://scancode-analyzer.readthedocs.io/en/latest/
-
-Project Board
--------------
-
-`Project Board`_ for  ``scancode-analyzer`` : Analysing Scancode License Detection Results.
-
-.. _INSTALL.rst: https://github.com/aboutcode-org/scancode-analyzer/tree/master/INSTALL.rst
-.. _Project Board: https://github.com/aboutcode-org/scancode-analyzer/projects/1
