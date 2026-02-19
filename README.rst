@@ -37,6 +37,8 @@ Getting Started
 
 Refer to the installation instructions on `INSTALL.rst`_
 
+.. _INSTALL.rst: https://github.com/aboutcode-org/scancode-analyzer/blob/main/INSTALL.rst
+
 Documentation
 -------------
 
