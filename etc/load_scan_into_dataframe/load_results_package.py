@@ -220,9 +220,9 @@ class ResultsDataFramePackage:
         self.df_io.store_dataframe_to_hdf5(
             schema_df, file_path, df_key='schema', h5_format='table', is_append=True)
 
-    def assert_dataframe_schema(self, path_json_dataframe):
+    def validate_dataframe_schema(self, path_json_dataframe):
         """
-        This function takes a DataFrame containing columns 'path' and 'json_content', extracts info from path.
+        This function takes a DataFrame containing columns 'path' and 'json_content', extracts info from path,
         uses schema info to only keep schemaVersion 3.2.2, and saves the schema count which are deleted.
 
         :param path_json_dataframe : pd.DatFrame
@@ -340,8 +340,8 @@ class ResultsDataFramePackage:
             else:
                 path_json_dataframe = self.convert_records_to_json()
 
-        # Asserts if Scancode SchemaVersion is desired value, from path
-        path_json_dataframe = self.assert_dataframe_schema(path_json_dataframe)
+        # Validate that Scancode SchemaVersion is desired value, from path
+        path_json_dataframe = self.validate_dataframe_schema(path_json_dataframe)
 
         # Converts information multiple levels inside dicts into columns
         # Package Level Data, TimeStamp, 'license_clarity_score' values,'files' list -> `New Columns`.
